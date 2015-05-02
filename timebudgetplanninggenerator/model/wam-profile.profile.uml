@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_16_0_6340215_1238071602165_46753_478" name="wam-profile" URI="" metamodelReference="_16_0_6340215_1238071602165_46753_478_packageImportcreatedOnLoad">
+  <eAnnotations xmi:id="_KFAfPfCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_KFAfPvCvEeSkZdyM76T-4Q" name="wamprofile" nsURI="http:///schemas/wamprofile/_J8zlQPCvEeSkZdyM76T-4Q/0" nsPrefix="wamprofile">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KFAfP_CvEeSkZdyM76T-4Q" name="Container">
+        <eAnnotations xmi:id="_KFAfQPCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_0_6340215_1238071630120_205035_500"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KFAfQfCvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KFAfQ_CvEeSkZdyM76T-4Q" name="Tool">
+        <eAnnotations xmi:id="_KFAfRPCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_0_6340215_1238071681423_830046_524"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KFAfRfCvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KFAfR_CvEeSkZdyM76T-4Q" name="Material">
+        <eAnnotations xmi:id="_KFAfSPCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_0_6340215_1238071690939_226695_548"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KFAfSfCvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KFAfS_CvEeSkZdyM76T-4Q" name="Automat">
+        <eAnnotations xmi:id="_KFAfTPCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_0_6340215_1238071701750_978784_572"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KFAfTfCvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <packageImport xmi:id="_16_0_6340215_1238071602165_46753_478_packageImportcreatedOnLoad">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_0primitiveTypeswam-profile">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_0javaPrimitiveTypeswam-profile">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_16_0_6340215_1238071630120_205035_500" name="Container">
+    <ownedAttribute xmi:id="_16_0_6340215_1238071670456_45657_503" name="base_Classifier" visibility="private" association="_16_0_6340215_1238071670456_979451_502">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_16_0_6340215_1238071670456_979451_502" name="" memberEnd="_16_0_6340215_1238071670456_45657_503 _16_0_6340215_1238071670456_422726_504" navigableOwnedEnd="_16_0_6340215_1238071670456_422726_504">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_16_0_6340215_1238071670456_422726_504" name="extension_" visibility="private" type="_16_0_6340215_1238071630120_205035_500" aggregation="composite" association="_16_0_6340215_1238071670456_979451_502">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16_0_6340215_1238071670456_727760_505" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16_0_6340215_1238071670456_709079_506" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_16_0_6340215_1238071681423_830046_524" name="Tool">
+    <ownedAttribute xmi:id="_16_0_6340215_1238071686041_716854_527" name="base_Classifier" visibility="private" association="_16_0_6340215_1238071686041_763704_526">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_16_0_6340215_1238071686041_763704_526" name="" memberEnd="_16_0_6340215_1238071686041_716854_527 _16_0_6340215_1238071686041_445654_528" navigableOwnedEnd="_16_0_6340215_1238071686041_445654_528">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_16_0_6340215_1238071686041_445654_528" name="extension_" visibility="private" type="_16_0_6340215_1238071681423_830046_524" aggregation="composite" association="_16_0_6340215_1238071686041_763704_526">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16_0_6340215_1238071686041_804209_529" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16_0_6340215_1238071686041_920642_530" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_16_0_6340215_1238071690939_226695_548" name="Material">
+    <ownedAttribute xmi:id="_16_0_6340215_1238071695323_292606_551" name="base_Classifier" visibility="private" association="_16_0_6340215_1238071695323_306605_550">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_16_0_6340215_1238071695323_306605_550" name="" memberEnd="_16_0_6340215_1238071695323_292606_551 _16_0_6340215_1238071695323_24856_552" navigableOwnedEnd="_16_0_6340215_1238071695323_24856_552">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_16_0_6340215_1238071695323_24856_552" name="extension_" visibility="private" type="_16_0_6340215_1238071690939_226695_548" aggregation="composite" association="_16_0_6340215_1238071695323_306605_550">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16_0_6340215_1238071695323_913380_553" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16_0_6340215_1238071695323_805040_554" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_16_0_6340215_1238071701750_978784_572" name="Automat">
+    <ownedAttribute xmi:id="_16_0_6340215_1238071708255_348131_575" name="base_Classifier" visibility="private" association="_16_0_6340215_1238071708255_325343_574">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_16_0_6340215_1238071708255_325343_574" name="" memberEnd="_16_0_6340215_1238071708255_348131_575 _16_0_6340215_1238071708255_312367_576" navigableOwnedEnd="_16_0_6340215_1238071708255_312367_576">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_16_0_6340215_1238071708255_312367_576" name="extension_" visibility="private" type="_16_0_6340215_1238071701750_978784_572" aggregation="composite" association="_16_0_6340215_1238071708255_325343_574">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_16_0_6340215_1238071708255_627006_577" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_16_0_6340215_1238071708255_174604_578" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Profile>

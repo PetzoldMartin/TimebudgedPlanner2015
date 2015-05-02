@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	template for project specific typemappings
+ -->
+<tns:typeMapping xmlns:tns="http://www.genesez.org/typemapping"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<tns:include>
+		<tns:file>org/genesez/platform/java/typemapping/typemapping.xml</tns:file>
+	</tns:include>
+	<tns:externalTypes>
+		<tns:type from="JavaDate">
+			<tns:to>Date</tns:to>
+			<tns:context name="Import">java.util.Date</tns:context>
+		</tns:type>
+		<tns:type from="TBType">
+			<tns:to>Float</tns:to>
+			<tns:context name="Import">java.lang.Float</tns:context>
+		</tns:type>
+		<tns:type from="NameType">
+			<tns:to>String</tns:to>
+			<tns:context name="Import">java.lang.String</tns:context>
+		</tns:type>
+		<tns:type from="TextType">
+			<tns:to>String</tns:to>
+			<tns:context name="Import">java.lang.String</tns:context>
+		</tns:type>
+		<tns:type from="EmployeeListType">
+			<tns:to>LinkedList&lt;EmployeeSummary&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
+		<tns:type from="RoleListType">
+			<tns:to>LinkedList&lt;RoleSummary&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
+		<tns:type from="TaskListType">
+			<tns:to>LinkedList&lt;TaskSummary&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
+		<tns:type from="ObjType">
+			<tns:to>Object</tns:to>
+			<tns:context name="Import">java.lang.Object</tns:context>
+		</tns:type>
+		<tns:type from="ProjectType">
+			<tns:to>LinkedList&lt;ProjectSummary&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
+		<tns:type from="MilestoneListType">
+			<tns:to>LinkedList&lt;MilestoneSummary&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
+		<tns:type from="ProjectListType">
+			<tns:to>LinkedList&lt;ProjectSummary&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
+		<tns:type from="MilestoneType">
+			<tns:to>Milestone</tns:to>
+		</tns:type>
+		<tns:type from="InterceptorType">
+			<tns:to>InvocationContext</tns:to>
+			<tns:context name="Import">javax.interceptor.InvocationContext</tns:context>
+		</tns:type>
+	</tns:externalTypes>
+</tns:typeMapping>

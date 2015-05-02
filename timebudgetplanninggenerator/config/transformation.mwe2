@@ -1,0 +1,122 @@
+module org.genesez.example.java.forms
+
+var modelfile = "TBP"
+
+var uml2setup = org.genesez.adapter.uml2.workflow.UmlSetup {
+	standardUML2Setup = true
+}
+var gcore = org.eclipse.xtend.typesystem.emf.EmfMetaModel {
+	metaModelPackage = "org.genesez.metamodel.gcore.GcorePackage"
+}
+var uml = org.eclipse.xtend.typesystem.uml2.UML2MetaModel {}
+
+Workflow {
+	// read the uml2 model file
+	component = org.genesez.workflow.EmfReader {
+		file = "model/${modelfile}.uml"
+		slot = "uml2model"
+	}
+	// validate the uml2 model for transformability
+	component = org.genesez.workflow.xpand.ValidatorComponent {
+		metaModel = uml
+		slot = "uml2model"
+		
+		validator = org.genesez.adapter.uml2.workflow.UmlModelValidation {}
+		validator = org.genesez.adapter.uml2.workflow.UmlStateMachineValidation {}
+		validator = org.genesez.adapter.uml2.workflow.Uml2GcoreStateMachineValidation {}
+	}
+	// transform the uml2 model into a GeneSEZ model
+	component = org.genesez.workflow.xpand.Model2ModelComponent {
+		metaModel = uml
+		metaModel = gcore
+		slot = "uml2model"
+		outputSlot = "coremodel"
+		
+		model2model = org.genesez.adapter.uml2.workflow.Uml2Gcore {
+		}
+	}
+	// prepare gcore model for java source code generation
+	component = org.genesez.workflow.xpand.ModelModificationComponent {
+		metaModel = gcore
+		
+//		model2model = org.genesez.workflow.SimpleScript {
+//			script = "addClassifiers::transform"
+//		}
+		
+		// annotation definition and usage, singleton design pattern and hashCode + equals operations
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::platform::java::m2m::Prepare::prepare"
+		}
+		
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::platform::java::jpa::scripts::Functionality::additions"
+		}
+		
+		// cares about property access operations
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::platform::java::m2m::AccessOperation::prepare"
+			parameter = {
+				name = "usePropertyVisibilityForAccessors"
+				value = false
+			}
+		}
+		
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::platform::java::ejb3::scripts::Functionality::additions"
+		}
+
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::platform::java::jpa::scripts::Functionality::modifications"
+		}
+
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::platform::java::ejb3::scripts::Functionality::modifications"
+		}
+		
+		// automatically implement abstract and interface operations in classes
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::metamodel::core::util::m2m::Realization::realize"
+		}
+		// add necessary use dependencies for import generation
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "org::genesez::metamodel::core::util::m2m::UseDependencies::addUseDependencies"
+		}
+	}
+	// serialize the GeneSEZ model - just for info if you want to have a look at it
+	component = org.genesez.workflow.EmfWriter {
+		schemaLocationImplementation = true
+		file = "model/${modelfile}.gcore.xmi"
+		slot = "coremodel"
+	}
+	// validate the GeneSEZ model against general + java specific constraints
+	component = org.genesez.workflow.xpand.ValidatorComponent {
+		metaModel = gcore
+		validator = org.genesez.workflow.SimpleValidator {
+			script = "org::genesez::metamodel::core::util::validation::Constraints"
+		}
+		validator = org.genesez.workflow.SimpleValidator {
+			script = "org::genesez::platform::java::validation::Syntax"
+		}
+	}
+	// run the java code generation and transform the model into java source code
+	component = org.genesez.workflow.xpand.Model2TextSupport {
+		fileDeletion = {
+			enabled = false
+		}
+		folderDeletion = {
+			enabled = false
+		}
+		component = org.genesez.workflow.xpand.Model2TextComponent {
+			metaModel = gcore
+			outputDir = "../timebudgetplanning/src/main/java"
+			
+			importPreserverConfig = org.genesez.platform.java.workflow.JavaImportPreserverConfig {}
+			postProcessor = org.genesez.platform.java.workflow.GeneSezJavaPostProcessor {}
+			
+			typeMappingFile = "typemapping.xml"
+			aopTemplate = "org::genesez::platform::java::ejb3::templates::AspectsAll"
+			model2text = org.genesez.platform.java.workflow.Gcore2Java {
+			}
+		}
+	}
+}

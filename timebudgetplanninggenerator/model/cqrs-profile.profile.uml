@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_17_0_4_2_8210263_1430397060920_482850_3639" name="cqrs-profile" URI="" metamodelReference="_17_0_4_2_8210263_1430397060936_193885_3640">
+  <eAnnotations xmi:id="_KE_Q-_CvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_KE_Q_PCvEeSkZdyM76T-4Q" name="cqrsprofile" nsURI="http:///schemas/cqrsprofile/_J8qbUPCvEeSkZdyM76T-4Q/0" nsPrefix="cqrsprofile">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KE_Q_fCvEeSkZdyM76T-4Q" name="Query">
+        <eAnnotations xmi:id="_KE_Q_vCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_4_2_8210263_1430397208485_471478_3715"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KE_Q__CvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KE_RAfCvEeSkZdyM76T-4Q" name="Command">
+        <eAnnotations xmi:id="_KE_RAvCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_4_2_8210263_1430397261894_719305_3762"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KE_RA_CvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KE_RBfCvEeSkZdyM76T-4Q" name="Facade">
+        <eAnnotations xmi:id="_KE_RBvCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_4_2_8210263_1430397278469_551602_3786"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KE_RB_CvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_KE_RCfCvEeSkZdyM76T-4Q" name="DTO">
+        <eAnnotations xmi:id="_KE_RCvCvEeSkZdyM76T-4Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_4_2_8210263_1430397314371_777301_3810"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_KE_RC_CvEeSkZdyM76T-4Q" name="base_Classifier" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <packageImport xmi:id="_17_0_4_2_8210263_1430397060936_193885_3640">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_0primitiveTypescqrs-profile">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_0javaPrimitiveTypescqrs-profile">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_17_0_4_2_8210263_1430397208485_471478_3715" name="Query">
+    <ownedAttribute xmi:id="_17_0_4_2_8210263_1430397244219_105192_3740" name="base_Classifier" visibility="private" association="_17_0_4_2_8210263_1430397244219_969314_3739">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_4_2_8210263_1430397244219_969314_3739" name="" memberEnd="_17_0_4_2_8210263_1430397244219_105192_3740 _17_0_4_2_8210263_1430397244234_939623_3741" navigableOwnedEnd="_17_0_4_2_8210263_1430397244234_939623_3741">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_4_2_8210263_1430397244234_939623_3741" name="extension_Query" visibility="private" type="_17_0_4_2_8210263_1430397208485_471478_3715" aggregation="composite" association="_17_0_4_2_8210263_1430397244219_969314_3739">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_4_2_8210263_1430397244234_834029_3742" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_4_2_8210263_1430397244234_678673_3743" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_17_0_4_2_8210263_1430397261894_719305_3762" name="Command">
+    <ownedAttribute xmi:id="_17_0_4_2_8210263_1430397262081_459522_3764" name="base_Classifier" visibility="private" association="_17_0_4_2_8210263_1430397262081_533912_3763">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_4_2_8210263_1430397262081_533912_3763" name="" memberEnd="_17_0_4_2_8210263_1430397262081_459522_3764 _17_0_4_2_8210263_1430397262081_51813_3765" navigableOwnedEnd="_17_0_4_2_8210263_1430397262081_51813_3765">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_4_2_8210263_1430397262081_51813_3765" name="extension_Query" visibility="private" type="_17_0_4_2_8210263_1430397261894_719305_3762" aggregation="composite" association="_17_0_4_2_8210263_1430397262081_533912_3763">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_4_2_8210263_1430397262081_972170_3766" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_4_2_8210263_1430397262081_531298_3767" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_17_0_4_2_8210263_1430397278469_551602_3786" name="Facade">
+    <ownedAttribute xmi:id="_17_0_4_2_8210263_1430397278469_218279_3788" name="base_Classifier" visibility="private" association="_17_0_4_2_8210263_1430397278469_136629_3787">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_4_2_8210263_1430397278469_136629_3787" name="" memberEnd="_17_0_4_2_8210263_1430397278469_218279_3788 _17_0_4_2_8210263_1430397278469_152761_3789" navigableOwnedEnd="_17_0_4_2_8210263_1430397278469_152761_3789">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_4_2_8210263_1430397278469_152761_3789" name="extension_Query" visibility="private" type="_17_0_4_2_8210263_1430397278469_551602_3786" aggregation="composite" association="_17_0_4_2_8210263_1430397278469_136629_3787">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_4_2_8210263_1430397278469_33927_3790" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_4_2_8210263_1430397278469_687039_3791" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_17_0_4_2_8210263_1430397314371_777301_3810" name="DTO">
+    <ownedAttribute xmi:id="_17_0_4_2_8210263_1430397314371_455947_3812" name="base_Classifier" visibility="private" association="_17_0_4_2_8210263_1430397314371_363732_3811">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Classifier"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_4_2_8210263_1430397314371_363732_3811" name="" memberEnd="_17_0_4_2_8210263_1430397314371_455947_3812 _17_0_4_2_8210263_1430397314371_539943_3813" navigableOwnedEnd="_17_0_4_2_8210263_1430397314371_539943_3813">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_4_2_8210263_1430397314371_539943_3813" name="extension_Query" visibility="private" type="_17_0_4_2_8210263_1430397314371_777301_3810" aggregation="composite" association="_17_0_4_2_8210263_1430397314371_363732_3811">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_4_2_8210263_1430397314371_987734_3814" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_4_2_8210263_1430397314371_583612_3815" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Profile>
