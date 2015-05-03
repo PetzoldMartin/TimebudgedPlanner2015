@@ -12,6 +12,10 @@
 			<tns:to>Date</tns:to>
 			<tns:context name="Import">java.util.Date</tns:context>
 		</tns:type>
+		<tns:type from="date">
+			<tns:to>Date</tns:to>
+			<tns:context name="Import">java.util.Date</tns:context>
+		</tns:type>
 		<tns:type from="TBType">
 			<tns:to>Float</tns:to>
 			<tns:context name="Import">java.lang.Float</tns:context>
@@ -23,6 +27,10 @@
 		<tns:type from="TextType">
 			<tns:to>String</tns:to>
 			<tns:context name="Import">java.lang.String</tns:context>
+		</tns:type>
+		<tns:type from="ListType">
+			<tns:to>ArrayList</tns:to>
+			<tns:context name="Import">java.util.ArrayList</tns:context>
 		</tns:type>
 		<tns:type from="EmployeeListType">
 			<tns:to>LinkedList&lt;EmployeeSummary&gt;</tns:to>
