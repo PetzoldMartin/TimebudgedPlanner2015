@@ -13,11 +13,10 @@
         <!-- JBoss dependency versions -->
         <version.wildfly.maven.plugin>1.0.1.Final</version.wildfly.maven.plugin>
         <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
-        <version.jboss.bom>8.0.0.Final</version.jboss.bom>
-        <version.arquillian.container>8.0.0.Final</version.arquillian.container>
+        <version.jboss.bom>8.2.0.Final</version.jboss.bom>
+        <version.arquillian.container>8.2.0.Final</version.arquillian.container>
         <!-- other plugin versions -->
         <version.compiler.plugin>3.1</version.compiler.plugin>
-        <version.surefire.plugin>2.12</version.surefire.plugin>
         <version.war.plugin>2.1.1</version.war.plugin>
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -26,17 +25,6 @@
   
   	<dependencyManagement>
         <dependencies>
-            <!-- Define the version of JBoss' Java EE 7 APIs we want to import.
-                Any dependencies from org.jboss.spec will have their version defined by this 
-                BOM -->
-            <!-- JBoss distributes a complete set of Java EE 7 APIs including
-                a Bill of Materials (BOM). A BOM specifies the versions of a "stack" (or 
-                a collection) of artifacts. We use this here so that we always get the correct 
-                versions of artifacts. Here we use the jboss-javaee-7.0-with-tools stack
-                (you can read this as the JBoss stack of the Java EE 7 APIs, with some extras
-                tools for your project, such as Arquillian for testing) and the jboss-javaee-7.0-with-hibernate
-                stack you can read this as the JBoss stack of the Java EE 7 APIs, with extras
-                from the Hibernate family of projects) -->
             <dependency>
                 <groupId>org.wildfly.bom</groupId>
                 <artifactId>jboss-javaee-7.0-with-tools</artifactId>
@@ -44,26 +32,20 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
+            <!--dependency>
             	<groupId>org.jboss.spec.javax.faces</groupId>
             	<artifactId>jboss-jsf-api_2.2_spec</artifactId>
             	<version>2.2.4</version>
-            </dependency>
+            </dependency-->
         </dependencies>
     </dependencyManagement>
     
     <dependencies>
-        <!-- Import the CDI API, we use provided scope as the API is included in JBoss WildFly -->
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-			<groupId>org.jboss.weld</groupId>
-			<artifactId>weld-api</artifactId>
-			<version>2.1.Final</version>
-		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -78,8 +60,6 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-        <!-- Import the Common Annotations API (JSR-250), we use provided scope 
-            as the API is included in JBoss WildFly -->
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
             <artifactId>jboss-annotations-api_1.2_spec</artifactId>
@@ -89,25 +69,21 @@
 	      	<groupId>org.jboss.spec.javax.interceptor</groupId>
 	      	<artifactId>jboss-interceptors-api_1.2_spec</artifactId>
     	</dependency>
-        <!-- Import the JSF API, we use provided scope as the API is included in JBoss WildFly -->
-        <dependency>
+        <!--dependency>
             <groupId>org.jboss.spec.javax.faces</groupId>
             <artifactId>jboss-jsf-api_2.2_spec</artifactId>
-            <!--  -->
             <scope>provided</scope> 
-        </dependency>
+        </dependency-->
         <dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.0</version>
 		</dependency>
-        <!-- Import the EJB API, we use provided scope as the API is included in JBoss WildFly -->
         <dependency>
             <groupId>org.jboss.spec.javax.ejb</groupId>
             <artifactId>jboss-ejb-api_3.2_spec</artifactId>
             <scope>provided</scope>
         </dependency>
-        <!-- Import the Servlet API -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.servlet</groupId>
 			<artifactId>jboss-servlet-api_3.1_spec</artifactId>
@@ -123,17 +99,45 @@
             <artifactId>arquillian-junit-container</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jboss.arquillian.protocol</groupId>
-            <artifactId>arquillian-protocol-servlet</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
+    
+    <profiles>
+    	<profile>
+		    <id>arquillian-wildfly-remote</id>
+		    <dependencies>
+		        <dependency>
+		            <groupId>org.jboss.spec</groupId>
+		            <artifactId>jboss-javaee-7.0</artifactId>
+		            <version>1.0.0.Final</version>
+		            <type>pom</type>
+		            <scope>provided</scope>
+		        </dependency>
+		        <dependency>
+		            <groupId>org.wildfly</groupId>
+		            <artifactId>wildfly-arquillian-container-remote</artifactId>
+		            <version>$version.arquillian.container}</version>
+		            <scope>test</scope>
+		        </dependency>
+		        <!-- Optional -->
+		        <dependency>
+		            <groupId>org.jboss.arquillian.protocol</groupId>
+		            <artifactId>arquillian-protocol-servlet</artifactId>
+		            <scope>test</scope>
+		        </dependency>
+		    </dependencies>
+		    <build>
+		        <testResources>
+		            <testResource>
+		                <directory>src/test/resources</directory>
+		            </testResource>
+		        </testResources>
+		    </build>
+		</profile>
+	</profiles>
 
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
-            <!-- WildFly plugin to deploy -->
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
