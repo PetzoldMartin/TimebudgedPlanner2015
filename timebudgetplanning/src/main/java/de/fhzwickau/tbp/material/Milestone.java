@@ -6,23 +6,33 @@ package de.fhzwickau.tbp.material;
  */
 import de.fhzwickau.tbp.datatypes.MilestoneState;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Version;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
-public class Milestone {
+@Entity
+@Table(name = "tbl_Milestone")
+public class Milestone implements Serializable {
 	
 	/** Stores the linked object of association '<em><b>project</b></em>' */
-	
+	@ManyToOne(cascade = {})
 	private Project project;
 	
 	/** Stores all linked objects of association '<em><b>task</b></em>' */
-	
+	@OneToMany(cascade = {}, mappedBy = "milestone")
 	private java.util.Set<Task> task = new java.util.HashSet<Task>();
 	
 	/** Stores all linked objects of association '<em><b>milestoneData</b></em>' */
-	
+	@OneToMany(cascade = {})
 	private java.util.Set<MilestoneData> milestoneData = new java.util.HashSet<MilestoneData>();
 	
 	private String name;
@@ -30,6 +40,20 @@ public class Milestone {
 	private MilestoneState state;
 	
 	private Date date;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Version
+	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>Milestone</b></em>'.
+	 */
+	
+	public Milestone() {
+	}
 	
 	/**
 	 * Returns the linked object of association '<em><b>project</b></em>'.
@@ -122,6 +146,23 @@ public class Milestone {
 			return;
 		}
 		this.milestoneData.remove(milestoneData);
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>version</b></em>'.
+	 */
+	
+	public int getVersion() {
+		return version;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>version</b></em>'.
+	 * @param	version	the value to set.
+	 */
+	
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238071781778_202437_597) ENABLED START */

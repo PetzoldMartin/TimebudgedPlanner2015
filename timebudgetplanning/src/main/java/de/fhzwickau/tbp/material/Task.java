@@ -5,20 +5,30 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_16_0_6340215_1238072600591_810969_776) 
  */
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
+@Entity
 public class Task extends AbstractTask {
 	
 	/** Stores all linked objects of association '<em><b>booking</b></em>' */
-	
+	@OneToMany(cascade = {}, mappedBy = "task")
 	private java.util.Set<Booking> booking = new java.util.HashSet<Booking>();
 	
 	/** Stores the linked object of association '<em><b>milestone</b></em>' */
-	
+	@ManyToOne(cascade = {})
 	private Milestone milestone;
+	
+	/**
+	 * Constructor for class '<em><b>Task</b></em>'.
+	 */
+	
+	public Task() {
+	}
 	
 	/**
 	 * Returns all linked objects of association '<em><b>booking</b></em>'.

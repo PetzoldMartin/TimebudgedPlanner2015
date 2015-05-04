@@ -6,12 +6,26 @@ package de.fhzwickau.tbp.tools;
  */
 import de.fhzwickau.tbp.tools.dto.EmployeeList;
 import de.fhzwickau.tbp.tools.facade.EmployeeQueryTool;
+import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
+import javax.ejb.Stateless;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Stateless(name = "EmployeeQueryToolBean")
 public class EmployeeQueryToolBean implements EmployeeQueryTool {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	/**
+	 * Constructor for class '<em><b>EmployeeQueryToolBean</b></em>'.
+	 */
+	
+	public EmployeeQueryToolBean() {
+	}
 	
 	/**
 	 * Method stub for further implementation.

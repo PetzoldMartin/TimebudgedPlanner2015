@@ -5,12 +5,20 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_16_0_6340215_1238077486326_269500_1419) 
  */
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Version;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
-public class PlanningData {
+@Entity
+@Table(name = "tbl_PlanningData")
+public class PlanningData implements Serializable {
 	
 	private Date tstamp;
 	
@@ -19,6 +27,37 @@ public class PlanningData {
 	private Float timeBudgetPlan;
 	
 	private Date startTime;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Version
+	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>PlanningData</b></em>'.
+	 */
+	
+	public PlanningData() {
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>version</b></em>'.
+	 */
+	
+	public int getVersion() {
+		return version;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>version</b></em>'.
+	 * @param	version	the value to set.
+	 */
+	
+	public void setVersion(int version) {
+		this.version = version;
+	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238077486326_269500_1419) ENABLED START */
 	// TODO: put your own implementation code here

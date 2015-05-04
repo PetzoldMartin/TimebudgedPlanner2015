@@ -6,32 +6,55 @@ package de.fhzwickau.tbp.material;
  */
 import de.fhzwickau.tbp.datatypes.ProjectState;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Version;
+import javax.persistence.OneToMany;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
-public class Project {
+@Entity
+@Table(name = "tbl_Project")
+public class Project implements Serializable {
 	
 	/** Stores all linked objects of association '<em><b>milestone</b></em>' */
-	
+	@OneToMany(cascade = {}, mappedBy = "project")
 	private java.util.Set<Milestone> milestone = new java.util.HashSet<Milestone>();
 	
 	/** Stores all linked objects of association '<em><b>role</b></em>' */
-	
+	@OneToMany(cascade = {}, mappedBy = "project")
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
 	/** Stores all linked objects of association '<em><b>planningData</b></em>' */
-	
+	@OneToMany(cascade = {})
 	private java.util.Set<PlanningData> planningData = new java.util.HashSet<PlanningData>();
 	
 	/** Stores all linked objects of association '<em><b>task</b></em>' */
-	
+	@OneToMany(cascade = {})
 	private java.util.Set<AbstractTask> task = new java.util.HashSet<AbstractTask>();
 	
 	private String name;
 	
 	private ProjectState state;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Version
+	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>Project</b></em>'.
+	 */
+	
+	public Project() {
+	}
 	
 	/**
 	 * Returns all linked objects of association '<em><b>milestone</b></em>'.
@@ -163,6 +186,23 @@ public class Project {
 			return;
 		}
 		this.task.remove(task);
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>version</b></em>'.
+	 */
+	
+	public int getVersion() {
+		return version;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>version</b></em>'.
+	 * @param	version	the value to set.
+	 */
+	
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	/**

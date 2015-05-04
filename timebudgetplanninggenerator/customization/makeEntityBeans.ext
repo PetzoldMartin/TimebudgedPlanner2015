@@ -1,0 +1,27 @@
+import gcore;
+
+extension org::genesez::metamodel::core::util::AccessElement;
+extension org::genesez::metamodel::core::util::NavigateElement;
+extension org::genesez::metamodel::core::util::CreateElement;
+extension org::genesez::metamodel::core::util::CloneElement;
+
+MModel transform(MModel this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MPackage transform(MPackage this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MClassifier transform(MClassifier this) :
+	emHasStereotypeAssignment( "Material" )
+		? makeEntityBean(navModel())
+		: this;
+		
+/* http://documentation.genesez.org/en/genesez.platform.java.jpa.html#genesez.platform.java.jpa.entities */
+MStereotype makeEntityBean(MClassifier this, MModel model) :
+	let stereoType = createStereotype(model, "UID_jpaPersistentEntity" ,"jpaPersistentEntity") :
+	createTaggedValue(createTag(stereoType, "optimisticLocking", "Boolean"), "true" ) ->
+	stereoType;

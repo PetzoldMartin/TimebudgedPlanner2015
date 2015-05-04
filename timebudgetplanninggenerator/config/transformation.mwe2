@@ -39,9 +39,13 @@ Workflow {
 	component = org.genesez.workflow.xpand.ModelModificationComponent {
 		metaModel = gcore
 		
-//		model2model = org.genesez.workflow.SimpleScript {
-//			script = "addClassifiers::transform"
-//		}
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "makeEntityBeans::transform"
+		}
+		
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "makeSessionBeans::transform"
+		}
 		
 		// annotation definition and usage, singleton design pattern and hashCode + equals operations
 		model2model = org.genesez.workflow.SimpleScript {

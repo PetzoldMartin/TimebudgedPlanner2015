@@ -5,16 +5,25 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_16_0_6340215_1238072582713_596849_756) 
  */
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
+@Entity
 public class CompoundTask extends AbstractTask {
 	
 	/** Stores all linked objects of association '<em><b>abstractTask</b></em>' */
-	
+	@OneToMany(cascade = {}, mappedBy = "compoundTask")
 	private java.util.Set<AbstractTask> abstractTask = new java.util.HashSet<AbstractTask>();
+	
+	/**
+	 * Constructor for class '<em><b>CompoundTask</b></em>'.
+	 */
+	
+	public CompoundTask() {
+	}
 	
 	/**
 	 * Returns all linked objects of association '<em><b>abstractTask</b></em>'.

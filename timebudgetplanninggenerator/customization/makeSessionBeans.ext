@@ -1,0 +1,27 @@
+import gcore;
+
+extension org::genesez::metamodel::core::util::AccessElement;
+extension org::genesez::metamodel::core::util::NavigateElement;
+extension org::genesez::metamodel::core::util::CreateElement;
+extension org::genesez::metamodel::core::util::CloneElement;
+
+MModel transform(MModel this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MPackage transform(MPackage this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MClassifier transform(MClassifier this) :
+	emHasStereotypeAssignment( "Tool" )
+		? makeStatelessSessionBean(navModel())
+		: this;
+		
+MStereotype makeStatelessSessionBean(MClassifier this, MModel model) :
+	let stereoType = createStereotype(model, "UID_ejb3SessionBean", "ejb3SessionBean") :
+	createTaggedValue(createTag(stereoType, "stateful", "Boolean"), "false") ->
+    createTaggedValue(createTag(stereoType, "entityManager", "ejb3EntityManagerType"), "EntityManager") ->
+    stereoType;

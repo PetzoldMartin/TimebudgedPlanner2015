@@ -5,27 +5,53 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_16_0_6340215_1238071898762_449560_630) 
  */
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Version;
+
+import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
-public class Employee {
+@Entity
+@Table(name = "tbl_Employee")
+public class Employee implements Serializable {
 	
 	/** Stores all linked objects of association '<em><b>booking</b></em>' */
-	
+	@OneToMany(cascade = {}, mappedBy = "employee")
 	private java.util.Set<Booking> booking = new java.util.HashSet<Booking>();
 	
 	/** Stores all linked objects of association '<em><b>abstractTask</b></em>' */
-	
+	@ManyToMany(cascade = {}, mappedBy = "employee")
 	private java.util.Set<AbstractTask> abstractTask = new java.util.HashSet<AbstractTask>();
 	
 	/** Stores all linked objects of association '<em><b>role</b></em>' */
-	
+	@OneToMany(cascade = {}, mappedBy = "employee")
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
 	private String firstName;
 	
 	private String lastName;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Version
+	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>Employee</b></em>'.
+	 */
+	
+	public Employee() {
+	}
 	
 	/**
 	 * Returns all linked objects of association '<em><b>booking</b></em>'.
@@ -127,6 +153,23 @@ public class Employee {
 		}
 		this.role.remove(role);
 		role.setEmployee(null);
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>version</b></em>'.
+	 */
+	
+	public int getVersion() {
+		return version;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>version</b></em>'.
+	 * @param	version	the value to set.
+	 */
+	
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238071898762_449560_630) ENABLED START */

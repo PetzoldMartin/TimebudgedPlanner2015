@@ -5,22 +5,45 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_16_0_6340215_1238076348384_66899_1309) 
  */
 import de.fhzwickau.tbp.datatypes.RoleType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Version;
+import javax.persistence.ManyToOne;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
-public class Role {
+@Entity
+@Table(name = "tbl_Role")
+public class Role implements Serializable {
 	
 	/** Stores the linked object of association '<em><b>project</b></em>' */
-	
+	@ManyToOne(cascade = {})
 	private Project project;
 	
 	/** Stores the linked object of association '<em><b>employee</b></em>' */
-	
+	@ManyToOne(cascade = {})
 	private Employee employee;
 	
 	private RoleType role;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Version
+	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>Role</b></em>'.
+	 */
+	
+	public Role() {
+	}
 	
 	/**
 	 * Returns the linked object of association '<em><b>project</b></em>'.
@@ -74,6 +97,23 @@ public class Role {
 		if (employee != null) {
 			employee.addRole(this);
 		}
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>version</b></em>'.
+	 */
+	
+	public int getVersion() {
+		return version;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>version</b></em>'.
+	 * @param	version	the value to set.
+	 */
+	
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238076348384_66899_1309) ENABLED START */

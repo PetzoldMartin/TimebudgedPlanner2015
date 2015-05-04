@@ -5,7 +5,10 @@
     <nestedPackage name="fhzwickau" xmiGuid="_17_0_4_2_8210263_1430555890528_46596_3645">
       <nestedPackage name="tbp" xmiGuid="_17_0_4_2_8210263_1430555897844_305961_3646">
         <nestedPackage name="tools" xmiGuid="_16_0_6340215_1238160381819_243425_2427">
-          <classifier xsi:type="gcore:MClass" name="EmployeeCommandToolBean" xmiGuid="_17_0_4_2_8210263_1430556999742_353976_3849" stereotype="_17_0_4_2_8210263_1430397261894_719305_3762 _16_0_6340215_1238071681423_830046_524" visibility="public" realization="_17_0_4_2_8210263_1430558920341_164970_4544" supplier="//@externalTypes.2 _17_0_4_2_8210263_1430557045482_966245_3882 _17_0_4_2_8210263_1430558920341_164970_4544">
+          <classifier xsi:type="gcore:MClass" name="EmployeeCommandToolBean" xmiGuid="_17_0_4_2_8210263_1430556999742_353976_3849" stereotype="_17_0_4_2_8210263_1430397261894_719305_3762 _16_0_6340215_1238071681423_830046_524 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1430558920341_164970_4544" supplier="EntityManager //@externalTypes.2 _17_0_4_2_8210263_1430557045482_966245_3882 _17_0_4_2_8210263_1430558920341_164970_4544">
+            <taggedValue value="false" tag="//@anyStereotype.8/@property.0"/>
+            <taggedValue value="EntityManager" tag="//@anyStereotype.8/@property.1"/>
+            <operation name="EmployeeCommandToolBean" xmiGuid="_17_0_4_2_8210263_1430556999742_353976_3849_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="addEmployee" xmiGuid="_17_0_4_2_8210263_1430556999742_353976_3849__17_0_4_2_8210263_1430558947747_436241_4545" visibility="public">
               <parameter name="newEmployee" xmiGuid="_17_0_4_2_8210263_1430556999742_353976_3849__17_0_4_2_8210263_1430558947747_436241_4545__17_0_4_2_8210263_1430558968050_163137_4546" direction="in" type="_17_0_4_2_8210263_1430557045482_966245_3882" operation="_17_0_4_2_8210263_1430556999742_353976_3849__17_0_4_2_8210263_1430558947747_436241_4545">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -14,19 +17,28 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
+            <property xsi:type="gcore:MAttribute" name="entityManager" xmiGuid="_17_0_4_2_8210263_1430556999742_353976_3849_entityManager" stereotype="jpaPersistenceContext" visibility="private" type="EntityManager" defaultvalue="">
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="EmployeeQueryToolBean" xmiGuid="_17_0_4_2_8210263_1430558882147_703985_4363" stereotype="_17_0_4_2_8210263_1430397208485_471478_3715 _16_0_6340215_1238071681423_830046_524" visibility="public" realization="_17_0_4_2_8210263_1430559096349_243023_4570" supplier="_17_0_4_2_8210263_1430559152569_964572_4572 _17_0_4_2_8210263_1430559096349_243023_4570">
+          <classifier xsi:type="gcore:MClass" name="EmployeeQueryToolBean" xmiGuid="_17_0_4_2_8210263_1430558882147_703985_4363" stereotype="_17_0_4_2_8210263_1430397208485_471478_3715 _16_0_6340215_1238071681423_830046_524 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1430559096349_243023_4570" supplier="EntityManager _17_0_4_2_8210263_1430559152569_964572_4572 _17_0_4_2_8210263_1430559096349_243023_4570">
+            <taggedValue value="false" tag="//@anyStereotype.8/@property.0"/>
+            <taggedValue value="EntityManager" tag="//@anyStereotype.8/@property.1"/>
+            <operation name="EmployeeQueryToolBean" xmiGuid="_17_0_4_2_8210263_1430558882147_703985_4363_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="listAllEmployees" xmiGuid="_17_0_4_2_8210263_1430558882147_703985_4363__17_0_4_2_8210263_1430559133747_311112_4571" visibility="public">
               <return name="" xmiGuid="_17_0_4_2_8210263_1430558882147_703985_4363__17_0_4_2_8210263_1430559133747_311112_4571__17_0_4_2_8210263_1430559152570_999580_4573" direction="return" type="_17_0_4_2_8210263_1430559152569_964572_4572" operation="_17_0_4_2_8210263_1430558882147_703985_4363__17_0_4_2_8210263_1430559133747_311112_4571">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
+            <property xsi:type="gcore:MAttribute" name="entityManager" xmiGuid="_17_0_4_2_8210263_1430558882147_703985_4363_entityManager" stereotype="jpaPersistenceContext" visibility="private" type="EntityManager" defaultvalue="">
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
           </classifier>
           <nestedPackage name="dto" xmiGuid="_17_0_4_2_8210263_1430557077500_177451_3883">
             <classifier xsi:type="gcore:MClass" name="NewEmployee" xmiGuid="_17_0_4_2_8210263_1430557045482_966245_3882" stereotype="_17_0_4_2_8210263_1430397314371_777301_3810" visibility="public" supplier="//@externalTypes.0">
               <operation name="getName" xmiGuid="_17_0_4_2_8210263_1430557136277_124860_3934_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1430557136277_124860_3934_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>name&lt;/b>&lt;/em>'."/>
-                <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_17_0_4_2_8210263_1430557136277_124860_3934"/>
+                <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_17_0_4_2_8210263_1430557136277_124860_3934"/>
                 <return name="name" xmiGuid="_17_0_4_2_8210263_1430557136277_124860_3934_getReturn" direction="return" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1430557136277_124860_3934_get">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </return>
@@ -40,7 +52,7 @@
             <classifier xsi:type="gcore:MClass" name="EmployeeList" xmiGuid="_17_0_4_2_8210263_1430559152569_964572_4572" stereotype="_17_0_4_2_8210263_1430397314371_777301_3810" visibility="public" supplier="//@externalTypes.1">
               <operation name="getEmployees" xmiGuid="_17_0_4_2_8210263_1430559177059_652819_4593_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1430559177059_652819_4593_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>employees&lt;/b>&lt;/em>'."/>
-                <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_17_0_4_2_8210263_1430559177059_652819_4593"/>
+                <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_17_0_4_2_8210263_1430559177059_652819_4593"/>
                 <return name="employees" xmiGuid="_17_0_4_2_8210263_1430559177059_652819_4593_getReturn" direction="return" type="//@externalTypes.1" operation="_17_0_4_2_8210263_1430559177059_652819_4593_get">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </return>
@@ -73,17 +85,24 @@
           </nestedPackage>
         </nestedPackage>
         <nestedPackage name="material" xmiGuid="_17_0_4_2_8210263_1430555938701_686558_3807">
-          <classifier xsi:type="gcore:MClass" name="Role" xmiGuid="_16_0_6340215_1238076348384_66899_1309" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" supplier="_16_0_6340215_1238076603585_394897_1375 _16_0_6340215_1238071342394_302030_406 _16_0_6340215_1238071898762_449560_630">
+          <classifier xsi:type="gcore:MClass" name="Role" xmiGuid="_16_0_6340215_1238076348384_66899_1309" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" realization="java.io.Serializable" supplier="_16_0_6340215_1238076603585_394897_1375 _16_0_6340215_1238071342394_302030_406 _16_0_6340215_1238071898762_449560_630 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_Role" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="Role" xmiGuid="_16_0_6340215_1238076348384_66899_1309_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getProject" xmiGuid="_16_0_6340215_1238076354328_659498_1332_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076354328_659498_1332_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>project&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238076354328_659498_1332"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238076354328_659498_1332"/>
               <return name="project" xmiGuid="_16_0_6340215_1238076354328_659498_1332_getReturn" direction="return" type="_16_0_6340215_1238071342394_302030_406" operation="_16_0_6340215_1238076354328_659498_1332_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
             <operation name="setProject" xmiGuid="_16_0_6340215_1238076354328_659498_1332_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076354328_659498_1332_set_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>project&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.8/@property.0" valueReference="_16_0_6340215_1238076354328_659498_1332"/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238076354328_659498_1332"/>
               <parameter name="project" xmiGuid="_16_0_6340215_1238076354328_659498_1332_setParam" direction="in" type="_16_0_6340215_1238071342394_302030_406" operation="_16_0_6340215_1238076354328_659498_1332_set">
                 <ownedComment xmiGuid="_16_0_6340215_1238076354328_659498_1332_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -91,42 +110,88 @@
             </operation>
             <operation name="getEmployee" xmiGuid="_16_0_6340215_1238076357885_260813_1345_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076357885_260813_1345_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238076357885_260813_1345"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238076357885_260813_1345"/>
               <return name="employee" xmiGuid="_16_0_6340215_1238076357885_260813_1345_getReturn" direction="return" type="_16_0_6340215_1238071898762_449560_630" operation="_16_0_6340215_1238076357885_260813_1345_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
             <operation name="setEmployee" xmiGuid="_16_0_6340215_1238076357885_260813_1345_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076357885_260813_1345_set_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.8/@property.0" valueReference="_16_0_6340215_1238076357885_260813_1345"/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238076357885_260813_1345"/>
               <parameter name="employee" xmiGuid="_16_0_6340215_1238076357885_260813_1345_setParam" direction="in" type="_16_0_6340215_1238071898762_449560_630" operation="_16_0_6340215_1238076357885_260813_1345_set">
                 <ownedComment xmiGuid="_16_0_6340215_1238076357885_260813_1345_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </parameter>
             </operation>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238076348384_66899_1309_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238076348384_66899_1309_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238076348384_66899_1309_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238076348384_66899_1309_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238076348384_66899_1309_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238076348384_66899_1309_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238076348384_66899_1309_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238076348384_66899_1309_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238076348384_66899_1309_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238076348384_66899_1309_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238076348384_66899_1309_version_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" upperBound="1"/>
+              </parameter>
+            </operation>
             <property xsi:type="gcore:MAttribute" name="role" xmiGuid="_16_0_6340215_1238076579841_143496_1372" visibility="private" type="_16_0_6340215_1238076603585_394897_1375">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="project" xmiGuid="_16_0_6340215_1238076354328_659498_1332" visibility="private" type="_16_0_6340215_1238071342394_302030_406" association="_16_0_6340215_1238076354328_632336_1331" opposite="_16_0_6340215_1238076354328_615888_1333">
+            <property xsi:type="gcore:MAssociationRole" name="project" xmiGuid="_16_0_6340215_1238076354328_659498_1332" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071342394_302030_406" association="_16_0_6340215_1238076354328_632336_1331" opposite="_16_0_6340215_1238076354328_615888_1333">
+              <taggedValue value="ManyToOne" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="employee" xmiGuid="_16_0_6340215_1238076357885_260813_1345" visibility="private" type="_16_0_6340215_1238071898762_449560_630" association="_16_0_6340215_1238076357885_844563_1344" opposite="_16_0_6340215_1238076357885_966896_1346">
+            <property xsi:type="gcore:MAssociationRole" name="employee" xmiGuid="_16_0_6340215_1238076357885_260813_1345" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071898762_449560_630" association="_16_0_6340215_1238076357885_844563_1344" opposite="_16_0_6340215_1238076357885_966896_1346">
+              <taggedValue value="ManyToOne" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238076348384_66899_1309_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238076348384_66899_1309_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="Project" xmiGuid="_16_0_6340215_1238071342394_302030_406" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" supplier="//@externalTypes.5 //@externalTypes.4 _16_0_6340215_1238078203396_128566_1577 //@externalTypes.3 _16_0_6340215_1238071781778_202437_597 _16_0_6340215_1238076348384_66899_1309 _16_0_6340215_1238077486326_269500_1419 _16_0_6340215_1238071456742_174000_426">
+          <classifier xsi:type="gcore:MClass" name="Project" xmiGuid="_16_0_6340215_1238071342394_302030_406" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.5 //@externalTypes.4 _16_0_6340215_1238078203396_128566_1577 //@externalTypes.3 _16_0_6340215_1238071781778_202437_597 _16_0_6340215_1238076348384_66899_1309 _16_0_6340215_1238077486326_269500_1419 _16_0_6340215_1238071456742_174000_426 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_Project" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="Project" xmiGuid="_16_0_6340215_1238071342394_302030_406_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getMilestone" xmiGuid="_16_0_6340215_1238071834896_838978_621_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238071834896_838978_621_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>milestone&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238071834896_838978_621"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238071834896_838978_621"/>
               <return name="milestone" xmiGuid="_16_0_6340215_1238071834896_838978_621_getReturn" direction="return" type="_16_0_6340215_1238071781778_202437_597" operation="_16_0_6340215_1238071834896_838978_621_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addMilestone" xmiGuid="_16_0_6340215_1238071834896_838978_621_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238071834896_838978_621_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>milestone&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238071834896_838978_621"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238071834896_838978_621"/>
               <parameter name="milestone" xmiGuid="_16_0_6340215_1238071834896_838978_621_addParam" direction="in" type="_16_0_6340215_1238071781778_202437_597" operation="_16_0_6340215_1238071834896_838978_621_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238071834896_838978_621_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -134,7 +199,7 @@
             </operation>
             <operation name="removeMilestone" xmiGuid="_16_0_6340215_1238071834896_838978_621_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238071834896_838978_621_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>milestone&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238071834896_838978_621"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238071834896_838978_621"/>
               <parameter name="milestone" xmiGuid="_16_0_6340215_1238071834896_838978_621_removeParam" direction="in" type="_16_0_6340215_1238071781778_202437_597" operation="_16_0_6340215_1238071834896_838978_621_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238071834896_838978_621_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -142,14 +207,14 @@
             </operation>
             <operation name="getRole" xmiGuid="_16_0_6340215_1238076354328_615888_1333_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076354328_615888_1333_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>role&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238076354328_615888_1333"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238076354328_615888_1333"/>
               <return name="role" xmiGuid="_16_0_6340215_1238076354328_615888_1333_getReturn" direction="return" type="_16_0_6340215_1238076348384_66899_1309" operation="_16_0_6340215_1238076354328_615888_1333_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addRole" xmiGuid="_16_0_6340215_1238076354328_615888_1333_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076354328_615888_1333_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>role&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238076354328_615888_1333"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238076354328_615888_1333"/>
               <parameter name="role" xmiGuid="_16_0_6340215_1238076354328_615888_1333_addParam" direction="in" type="_16_0_6340215_1238076348384_66899_1309" operation="_16_0_6340215_1238076354328_615888_1333_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238076354328_615888_1333_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -157,7 +222,7 @@
             </operation>
             <operation name="removeRole" xmiGuid="_16_0_6340215_1238076354328_615888_1333_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076354328_615888_1333_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>role&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238076354328_615888_1333"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238076354328_615888_1333"/>
               <parameter name="role" xmiGuid="_16_0_6340215_1238076354328_615888_1333_removeParam" direction="in" type="_16_0_6340215_1238076348384_66899_1309" operation="_16_0_6340215_1238076354328_615888_1333_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238076354328_615888_1333_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -165,14 +230,14 @@
             </operation>
             <operation name="getPlanningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077710873_438148_1461_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>planningData&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238077710873_438148_1461"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238077710873_438148_1461"/>
               <return name="planningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461_getReturn" direction="return" type="_16_0_6340215_1238077486326_269500_1419" operation="_16_0_6340215_1238077710873_438148_1461_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addPlanningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077710873_438148_1461_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>planningData&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238077710873_438148_1461"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238077710873_438148_1461"/>
               <parameter name="planningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461_addParam" direction="in" type="_16_0_6340215_1238077486326_269500_1419" operation="_16_0_6340215_1238077710873_438148_1461_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238077710873_438148_1461_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -180,7 +245,7 @@
             </operation>
             <operation name="removePlanningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077710873_438148_1461_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>planningData&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238077710873_438148_1461"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238077710873_438148_1461"/>
               <parameter name="planningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461_removeParam" direction="in" type="_16_0_6340215_1238077486326_269500_1419" operation="_16_0_6340215_1238077710873_438148_1461_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238077710873_438148_1461_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -188,14 +253,14 @@
             </operation>
             <operation name="getTask" xmiGuid="_16_0_6340215_1238077715662_514447_1474_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077715662_514447_1474_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238077715662_514447_1474"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238077715662_514447_1474"/>
               <return name="task" xmiGuid="_16_0_6340215_1238077715662_514447_1474_getReturn" direction="return" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238077715662_514447_1474_get">
                 <multiplicity unique="true" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addTask" xmiGuid="_16_0_6340215_1238077715662_514447_1474_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077715662_514447_1474_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238077715662_514447_1474"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238077715662_514447_1474"/>
               <parameter name="task" xmiGuid="_16_0_6340215_1238077715662_514447_1474_addParam" direction="in" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238077715662_514447_1474_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238077715662_514447_1474_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -203,9 +268,24 @@
             </operation>
             <operation name="removeTask" xmiGuid="_16_0_6340215_1238077715662_514447_1474_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077715662_514447_1474_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238077715662_514447_1474"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238077715662_514447_1474"/>
               <parameter name="task" xmiGuid="_16_0_6340215_1238077715662_514447_1474_removeParam" direction="in" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238077715662_514447_1474_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238077715662_514447_1474_removeParam_comment" annotation="the object to remove."/>
+                <multiplicity unique="true" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238071342394_302030_406_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071342394_302030_406_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238071342394_302030_406_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238071342394_302030_406_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238071342394_302030_406_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238071342394_302030_406_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071342394_302030_406_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238071342394_302030_406_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238071342394_302030_406_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238071342394_302030_406_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238071342394_302030_406_version_setParam_comment" annotation="the value to set."/>
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
@@ -221,34 +301,75 @@
             <property xsi:type="gcore:MAttribute" name="timeBudgetAct" xmiGuid="_16_0_6340215_1238073288847_7255_1084" visibility="private" derived="true" type="//@externalTypes.3">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="milestone" xmiGuid="_16_0_6340215_1238071834896_838978_621" visibility="private" type="_16_0_6340215_1238071781778_202437_597" association="_16_0_6340215_1238071834896_359301_619" opposite="_16_0_6340215_1238071834896_155851_620">
+            <property xsi:type="gcore:MAssociationRole" name="milestone" xmiGuid="_16_0_6340215_1238071834896_838978_621" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071781778_202437_597" association="_16_0_6340215_1238071834896_359301_619" opposite="_16_0_6340215_1238071834896_155851_620">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="role" xmiGuid="_16_0_6340215_1238076354328_615888_1333" visibility="private" type="_16_0_6340215_1238076348384_66899_1309" association="_16_0_6340215_1238076354328_632336_1331" opposite="_16_0_6340215_1238076354328_659498_1332">
+            <property xsi:type="gcore:MAssociationRole" name="role" xmiGuid="_16_0_6340215_1238076354328_615888_1333" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238076348384_66899_1309" association="_16_0_6340215_1238076354328_632336_1331" opposite="_16_0_6340215_1238076354328_659498_1332">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="planningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461" visibility="private" type="_16_0_6340215_1238077486326_269500_1419" aggregation="true" association="_16_0_6340215_1238077710873_916573_1460">
+            <property xsi:type="gcore:MAssociationRole" name="planningData" xmiGuid="_16_0_6340215_1238077710873_438148_1461" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238077486326_269500_1419" aggregation="true" association="_16_0_6340215_1238077710873_916573_1460">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="task" xmiGuid="_16_0_6340215_1238077715662_514447_1474" visibility="private" type="_16_0_6340215_1238071456742_174000_426" aggregation="true" association="_16_0_6340215_1238077715662_219739_1473">
+            <property xsi:type="gcore:MAssociationRole" name="task" xmiGuid="_16_0_6340215_1238077715662_514447_1474" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071456742_174000_426" aggregation="true" association="_16_0_6340215_1238077715662_219739_1473">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238071342394_302030_406_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238071342394_302030_406_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="Employee" xmiGuid="_16_0_6340215_1238071898762_449560_630" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" supplier="//@externalTypes.5 _16_0_6340215_1238071966108_184437_650 _16_0_6340215_1238071456742_174000_426 _16_0_6340215_1238076348384_66899_1309">
+          <classifier xsi:type="gcore:MClass" name="Employee" xmiGuid="_16_0_6340215_1238071898762_449560_630" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.5 _16_0_6340215_1238071966108_184437_650 _16_0_6340215_1238071456742_174000_426 _16_0_6340215_1238076348384_66899_1309 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_Employee" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="Employee" xmiGuid="_16_0_6340215_1238071898762_449560_630_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getBooking" xmiGuid="_16_0_6340215_1238072027135_394385_687_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072027135_394385_687_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>booking&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072027135_394385_687"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072027135_394385_687"/>
               <return name="booking" xmiGuid="_16_0_6340215_1238072027135_394385_687_getReturn" direction="return" type="_16_0_6340215_1238071966108_184437_650" operation="_16_0_6340215_1238072027135_394385_687_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addBooking" xmiGuid="_16_0_6340215_1238072027135_394385_687_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072027135_394385_687_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>booking&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238072027135_394385_687"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238072027135_394385_687"/>
               <parameter name="booking" xmiGuid="_16_0_6340215_1238072027135_394385_687_addParam" direction="in" type="_16_0_6340215_1238071966108_184437_650" operation="_16_0_6340215_1238072027135_394385_687_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238072027135_394385_687_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -256,7 +377,7 @@
             </operation>
             <operation name="removeBooking" xmiGuid="_16_0_6340215_1238072027135_394385_687_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072027135_394385_687_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>booking&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238072027135_394385_687"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238072027135_394385_687"/>
               <parameter name="booking" xmiGuid="_16_0_6340215_1238072027135_394385_687_removeParam" direction="in" type="_16_0_6340215_1238071966108_184437_650" operation="_16_0_6340215_1238072027135_394385_687_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238072027135_394385_687_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -264,14 +385,14 @@
             </operation>
             <operation name="getAbstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238074577189_916449_1163_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238074577189_916449_1163"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238074577189_916449_1163"/>
               <return name="abstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163_getReturn" direction="return" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238074577189_916449_1163_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addAbstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238074577189_916449_1163_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238074577189_916449_1163"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238074577189_916449_1163"/>
               <parameter name="abstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163_addParam" direction="in" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238074577189_916449_1163_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238074577189_916449_1163_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -279,7 +400,7 @@
             </operation>
             <operation name="removeAbstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238074577189_916449_1163_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238074577189_916449_1163"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238074577189_916449_1163"/>
               <parameter name="abstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163_removeParam" direction="in" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238074577189_916449_1163_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238074577189_916449_1163_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -287,14 +408,14 @@
             </operation>
             <operation name="getRole" xmiGuid="_16_0_6340215_1238076357885_966896_1346_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076357885_966896_1346_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>role&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238076357885_966896_1346"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238076357885_966896_1346"/>
               <return name="role" xmiGuid="_16_0_6340215_1238076357885_966896_1346_getReturn" direction="return" type="_16_0_6340215_1238076348384_66899_1309" operation="_16_0_6340215_1238076357885_966896_1346_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addRole" xmiGuid="_16_0_6340215_1238076357885_966896_1346_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076357885_966896_1346_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>role&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238076357885_966896_1346"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238076357885_966896_1346"/>
               <parameter name="role" xmiGuid="_16_0_6340215_1238076357885_966896_1346_addParam" direction="in" type="_16_0_6340215_1238076348384_66899_1309" operation="_16_0_6340215_1238076357885_966896_1346_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238076357885_966896_1346_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -302,9 +423,24 @@
             </operation>
             <operation name="removeRole" xmiGuid="_16_0_6340215_1238076357885_966896_1346_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238076357885_966896_1346_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>role&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238076357885_966896_1346"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238076357885_966896_1346"/>
               <parameter name="role" xmiGuid="_16_0_6340215_1238076357885_966896_1346_removeParam" direction="in" type="_16_0_6340215_1238076348384_66899_1309" operation="_16_0_6340215_1238076357885_966896_1346_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238076357885_966896_1346_removeParam_comment" annotation="the object to remove."/>
+                <multiplicity unique="true" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238071898762_449560_630_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071898762_449560_630_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238071898762_449560_630_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238071898762_449560_630_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238071898762_449560_630_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238071898762_449560_630_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071898762_449560_630_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238071898762_449560_630_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238071898762_449560_630_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238071898762_449560_630_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238071898762_449560_630_version_setParam_comment" annotation="the value to set."/>
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
@@ -314,30 +450,66 @@
             <property xsi:type="gcore:MAttribute" name="lastName" xmiGuid="_16_0_6340215_1238074493183_807257_1157" visibility="private" type="//@externalTypes.5">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="booking" xmiGuid="_16_0_6340215_1238072027135_394385_687" visibility="private" type="_16_0_6340215_1238071966108_184437_650" association="_16_0_6340215_1238072027135_165728_685" opposite="_16_0_6340215_1238072027135_890494_686">
+            <property xsi:type="gcore:MAssociationRole" name="booking" xmiGuid="_16_0_6340215_1238072027135_394385_687" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071966108_184437_650" association="_16_0_6340215_1238072027135_165728_685" opposite="_16_0_6340215_1238072027135_890494_686">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="abstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163" visibility="private" type="_16_0_6340215_1238071456742_174000_426" association="_16_0_6340215_1238074577189_450890_1162" opposite="_16_0_6340215_1238074577189_800592_1164">
+            <property xsi:type="gcore:MAssociationRole" name="abstractTask" xmiGuid="_16_0_6340215_1238074577189_916449_1163" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071456742_174000_426" association="_16_0_6340215_1238074577189_450890_1162" opposite="_16_0_6340215_1238074577189_800592_1164">
+              <taggedValue value="ManyToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="role" xmiGuid="_16_0_6340215_1238076357885_966896_1346" visibility="private" type="_16_0_6340215_1238076348384_66899_1309" association="_16_0_6340215_1238076357885_844563_1344" opposite="_16_0_6340215_1238076357885_260813_1345">
+            <property xsi:type="gcore:MAssociationRole" name="role" xmiGuid="_16_0_6340215_1238076357885_966896_1346" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238076348384_66899_1309" association="_16_0_6340215_1238076357885_844563_1344" opposite="_16_0_6340215_1238076357885_260813_1345">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238071898762_449560_630_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238071898762_449560_630_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="CompoundTask" xmiGuid="_16_0_6340215_1238072582713_596849_756" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" generalization="_16_0_6340215_1238071456742_174000_426" supplier="//@externalTypes.3 //@externalTypes.4 _16_0_6340215_1238071456742_174000_426">
+          <classifier xsi:type="gcore:MClass" name="CompoundTask" xmiGuid="_16_0_6340215_1238072582713_596849_756" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" generalization="_16_0_6340215_1238071456742_174000_426" supplier="//@externalTypes.3 //@externalTypes.4 _16_0_6340215_1238071456742_174000_426">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="CompoundTask" xmiGuid="_16_0_6340215_1238072582713_596849_756_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getAbstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072710820_447688_808_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072710820_447688_808"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072710820_447688_808"/>
               <return name="abstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808_getReturn" direction="return" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238072710820_447688_808_get">
                 <multiplicity unique="true" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addAbstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072710820_447688_808_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238072710820_447688_808"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238072710820_447688_808"/>
               <parameter name="abstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808_addParam" direction="in" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238072710820_447688_808_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238072710820_447688_808_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -345,7 +517,7 @@
             </operation>
             <operation name="removeAbstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072710820_447688_808_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238072710820_447688_808"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238072710820_447688_808"/>
               <parameter name="abstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808_removeParam" direction="in" type="_16_0_6340215_1238071456742_174000_426" operation="_16_0_6340215_1238072710820_447688_808_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238072710820_447688_808_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -357,22 +529,34 @@
             <property xsi:type="gcore:MAttribute" name="endTime" xmiGuid="_16_0_6340215_1238077635681_458182_1438" visibility="private" derived="true" type="//@externalTypes.4">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="abstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808" visibility="private" type="_16_0_6340215_1238071456742_174000_426" aggregation="true" association="_16_0_6340215_1238072710820_930641_807" opposite="_16_0_6340215_1238072710820_487337_809">
+            <property xsi:type="gcore:MAssociationRole" name="abstractTask" xmiGuid="_16_0_6340215_1238072710820_447688_808" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071456742_174000_426" aggregation="true" association="_16_0_6340215_1238072710820_930641_807" opposite="_16_0_6340215_1238072710820_487337_809">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="AbstractTask" xmiGuid="_16_0_6340215_1238071456742_174000_426" stereotype="_16_0_6340215_1238071690939_226695_548" specialization="_16_0_6340215_1238072582713_596849_756 _16_0_6340215_1238072600591_810969_776" visibility="public" abstract="true" supplier="//@externalTypes.5 //@externalTypes.6 //@externalTypes.4 _17_0_4_2_8210263_1430502669380_788306_3798 //@externalTypes.3 _16_0_6340215_1238072582713_596849_756 _16_0_6340215_1238071898762_449560_630">
+          <classifier xsi:type="gcore:MClass" name="AbstractTask" xmiGuid="_16_0_6340215_1238071456742_174000_426" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" specialization="_16_0_6340215_1238072582713_596849_756 _16_0_6340215_1238072600591_810969_776" visibility="public" abstract="true" realization="java.io.Serializable" supplier="//@externalTypes.5 //@externalTypes.6 //@externalTypes.4 _17_0_4_2_8210263_1430502669380_788306_3798 //@externalTypes.3 _16_0_6340215_1238072582713_596849_756 _16_0_6340215_1238071898762_449560_630 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_AbstractTask" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="AbstractTask" xmiGuid="_16_0_6340215_1238071456742_174000_426_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getCompoundTask" xmiGuid="_16_0_6340215_1238072710820_487337_809_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072710820_487337_809_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>compoundTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072710820_487337_809"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072710820_487337_809"/>
               <return name="compoundTask" xmiGuid="_16_0_6340215_1238072710820_487337_809_getReturn" direction="return" type="_16_0_6340215_1238072582713_596849_756" operation="_16_0_6340215_1238072710820_487337_809_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
             <operation name="setCompoundTask" xmiGuid="_16_0_6340215_1238072710820_487337_809_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072710820_487337_809_set_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>compoundTask&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.8/@property.0" valueReference="_16_0_6340215_1238072710820_487337_809"/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238072710820_487337_809"/>
               <parameter name="compoundTask" xmiGuid="_16_0_6340215_1238072710820_487337_809_setParam" direction="in" type="_16_0_6340215_1238072582713_596849_756" operation="_16_0_6340215_1238072710820_487337_809_set">
                 <ownedComment xmiGuid="_16_0_6340215_1238072710820_487337_809_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -380,14 +564,14 @@
             </operation>
             <operation name="getEmployee" xmiGuid="_16_0_6340215_1238074577189_800592_1164_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238074577189_800592_1164_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238074577189_800592_1164"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238074577189_800592_1164"/>
               <return name="employee" xmiGuid="_16_0_6340215_1238074577189_800592_1164_getReturn" direction="return" type="_16_0_6340215_1238071898762_449560_630" operation="_16_0_6340215_1238074577189_800592_1164_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addEmployee" xmiGuid="_16_0_6340215_1238074577189_800592_1164_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238074577189_800592_1164_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238074577189_800592_1164"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238074577189_800592_1164"/>
               <parameter name="employee" xmiGuid="_16_0_6340215_1238074577189_800592_1164_addParam" direction="in" type="_16_0_6340215_1238071898762_449560_630" operation="_16_0_6340215_1238074577189_800592_1164_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238074577189_800592_1164_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -395,9 +579,24 @@
             </operation>
             <operation name="removeEmployee" xmiGuid="_16_0_6340215_1238074577189_800592_1164_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238074577189_800592_1164_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238074577189_800592_1164"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238074577189_800592_1164"/>
               <parameter name="employee" xmiGuid="_16_0_6340215_1238074577189_800592_1164_removeParam" direction="in" type="_16_0_6340215_1238071898762_449560_630" operation="_16_0_6340215_1238074577189_800592_1164_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238074577189_800592_1164_removeParam_comment" annotation="the object to remove."/>
+                <multiplicity unique="true" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238071456742_174000_426_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071456742_174000_426_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238071456742_174000_426_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238071456742_174000_426_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238071456742_174000_426_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238071456742_174000_426_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071456742_174000_426_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238071456742_174000_426_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238071456742_174000_426_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238071456742_174000_426_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238071456742_174000_426_version_setParam_comment" annotation="the value to set."/>
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
@@ -416,26 +615,57 @@
             <property xsi:type="gcore:MAttribute" name="timeBudgetAct" xmiGuid="_16_0_6340215_1238073508542_255441_1094" visibility="private" derived="true" type="//@externalTypes.3">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="compoundTask" xmiGuid="_16_0_6340215_1238072710820_487337_809" visibility="private" type="_16_0_6340215_1238072582713_596849_756" association="_16_0_6340215_1238072710820_930641_807" opposite="_16_0_6340215_1238072710820_447688_808">
+            <property xsi:type="gcore:MAssociationRole" name="compoundTask" xmiGuid="_16_0_6340215_1238072710820_487337_809" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238072582713_596849_756" association="_16_0_6340215_1238072710820_930641_807" opposite="_16_0_6340215_1238072710820_447688_808">
+              <taggedValue value="ManyToOne" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" upperBound="-1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="employee" xmiGuid="_16_0_6340215_1238074577189_800592_1164" visibility="private" type="_16_0_6340215_1238071898762_449560_630" association="_16_0_6340215_1238074577189_450890_1162" opposite="_16_0_6340215_1238074577189_916449_1163">
+            <property xsi:type="gcore:MAssociationRole" name="employee" xmiGuid="_16_0_6340215_1238074577189_800592_1164" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071898762_449560_630" association="_16_0_6340215_1238074577189_450890_1162" opposite="_16_0_6340215_1238074577189_916449_1163">
+              <taggedValue value="ManyToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
             </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238071456742_174000_426_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238071456742_174000_426_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="Booking" xmiGuid="_16_0_6340215_1238071966108_184437_650" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" supplier="//@externalTypes.4 //@externalTypes.3 _16_0_6340215_1238071898762_449560_630 _16_0_6340215_1238072600591_810969_776">
+          <classifier xsi:type="gcore:MClass" name="Booking" xmiGuid="_16_0_6340215_1238071966108_184437_650" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.3 _16_0_6340215_1238071898762_449560_630 _16_0_6340215_1238072600591_810969_776 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_Booking" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="Booking" xmiGuid="_16_0_6340215_1238071966108_184437_650_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getEmployee" xmiGuid="_16_0_6340215_1238072027135_890494_686_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072027135_890494_686_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072027135_890494_686"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072027135_890494_686"/>
               <return name="employee" xmiGuid="_16_0_6340215_1238072027135_890494_686_getReturn" direction="return" type="_16_0_6340215_1238071898762_449560_630" operation="_16_0_6340215_1238072027135_890494_686_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
             <operation name="setEmployee" xmiGuid="_16_0_6340215_1238072027135_890494_686_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072027135_890494_686_set_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.8/@property.0" valueReference="_16_0_6340215_1238072027135_890494_686"/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238072027135_890494_686"/>
               <parameter name="employee" xmiGuid="_16_0_6340215_1238072027135_890494_686_setParam" direction="in" type="_16_0_6340215_1238071898762_449560_630" operation="_16_0_6340215_1238072027135_890494_686_set">
                 <ownedComment xmiGuid="_16_0_6340215_1238072027135_890494_686_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -443,17 +673,32 @@
             </operation>
             <operation name="getTask" xmiGuid="_16_0_6340215_1238072685455_293858_802_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072685455_293858_802_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072685455_293858_802"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072685455_293858_802"/>
               <return name="task" xmiGuid="_16_0_6340215_1238072685455_293858_802_getReturn" direction="return" type="_16_0_6340215_1238072600591_810969_776" operation="_16_0_6340215_1238072685455_293858_802_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
             <operation name="setTask" xmiGuid="_16_0_6340215_1238072685455_293858_802_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072685455_293858_802_set_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.8/@property.0" valueReference="_16_0_6340215_1238072685455_293858_802"/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238072685455_293858_802"/>
               <parameter name="task" xmiGuid="_16_0_6340215_1238072685455_293858_802_setParam" direction="in" type="_16_0_6340215_1238072600591_810969_776" operation="_16_0_6340215_1238072685455_293858_802_set">
                 <ownedComment xmiGuid="_16_0_6340215_1238072685455_293858_802_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238071966108_184437_650_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071966108_184437_650_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238071966108_184437_650_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238071966108_184437_650_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238071966108_184437_650_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238071966108_184437_650_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071966108_184437_650_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238071966108_184437_650_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238071966108_184437_650_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238071966108_184437_650_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238071966108_184437_650_version_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
             <property xsi:type="gcore:MAttribute" name="date" xmiGuid="_16_0_6340215_1238074258309_183747_1147" visibility="private" type="//@externalTypes.4">
@@ -465,29 +710,70 @@
             <property xsi:type="gcore:MAttribute" name="start" xmiGuid="_16_0_6340215_1238074453044_447557_1151" visibility="private" type="//@externalTypes.4">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAttribute" name="end" xmiGuid="_16_0_6340215_1238074455509_667661_1153" visibility="private" type="//@externalTypes.4">
+            <property xsi:type="gcore:MAttribute" name="end" xmiGuid="_16_0_6340215_1238074455509_667661_1153" stereotype="jpaColumn" visibility="private" type="//@externalTypes.4">
+              <taggedValue value="true" tag="//@anyStereotype.18/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.18/@property.1"/>
+              <taggedValue value="booking_end" tag="//@anyStereotype.18/@property.2"/>
+              <taggedValue value="0" tag="//@anyStereotype.18/@property.3"/>
+              <taggedValue value="0" tag="//@anyStereotype.18/@property.4"/>
+              <taggedValue value="255" tag="//@anyStereotype.18/@property.5"/>
+              <taggedValue value="null" tag="//@anyStereotype.18/@property.6"/>
+              <taggedValue value="null" tag="//@anyStereotype.18/@property.7"/>
+              <taggedValue value="true" tag="//@anyStereotype.18/@property.8"/>
+              <taggedValue value="false" tag="//@anyStereotype.18/@property.9"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="employee" xmiGuid="_16_0_6340215_1238072027135_890494_686" visibility="private" type="_16_0_6340215_1238071898762_449560_630" association="_16_0_6340215_1238072027135_165728_685" opposite="_16_0_6340215_1238072027135_394385_687">
+            <property xsi:type="gcore:MAssociationRole" name="employee" xmiGuid="_16_0_6340215_1238072027135_890494_686" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071898762_449560_630" association="_16_0_6340215_1238072027135_165728_685" opposite="_16_0_6340215_1238072027135_394385_687">
+              <taggedValue value="ManyToOne" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="task" xmiGuid="_16_0_6340215_1238072685455_293858_802" visibility="private" type="_16_0_6340215_1238072600591_810969_776" association="_16_0_6340215_1238072685455_881946_801" opposite="_16_0_6340215_1238072685455_471729_803">
+            <property xsi:type="gcore:MAssociationRole" name="task" xmiGuid="_16_0_6340215_1238072685455_293858_802" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238072600591_810969_776" association="_16_0_6340215_1238072685455_881946_801" opposite="_16_0_6340215_1238072685455_471729_803">
+              <taggedValue value="ManyToOne" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238071966108_184437_650_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238071966108_184437_650_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="Task" xmiGuid="_16_0_6340215_1238072600591_810969_776" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" generalization="_16_0_6340215_1238071456742_174000_426" supplier="//@externalTypes.3 //@externalTypes.4 _16_0_6340215_1238071966108_184437_650 _16_0_6340215_1238071781778_202437_597 _16_0_6340215_1238071456742_174000_426">
+          <classifier xsi:type="gcore:MClass" name="Task" xmiGuid="_16_0_6340215_1238072600591_810969_776" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" generalization="_16_0_6340215_1238071456742_174000_426" supplier="//@externalTypes.3 //@externalTypes.4 _16_0_6340215_1238071966108_184437_650 _16_0_6340215_1238071781778_202437_597 _16_0_6340215_1238071456742_174000_426">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="Task" xmiGuid="_16_0_6340215_1238072600591_810969_776_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getBooking" xmiGuid="_16_0_6340215_1238072685455_471729_803_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072685455_471729_803_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>booking&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072685455_471729_803"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072685455_471729_803"/>
               <return name="booking" xmiGuid="_16_0_6340215_1238072685455_471729_803_getReturn" direction="return" type="_16_0_6340215_1238071966108_184437_650" operation="_16_0_6340215_1238072685455_471729_803_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addBooking" xmiGuid="_16_0_6340215_1238072685455_471729_803_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072685455_471729_803_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>booking&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238072685455_471729_803"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238072685455_471729_803"/>
               <parameter name="booking" xmiGuid="_16_0_6340215_1238072685455_471729_803_addParam" direction="in" type="_16_0_6340215_1238071966108_184437_650" operation="_16_0_6340215_1238072685455_471729_803_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238072685455_471729_803_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -495,7 +781,7 @@
             </operation>
             <operation name="removeBooking" xmiGuid="_16_0_6340215_1238072685455_471729_803_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072685455_471729_803_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>booking&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238072685455_471729_803"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238072685455_471729_803"/>
               <parameter name="booking" xmiGuid="_16_0_6340215_1238072685455_471729_803_removeParam" direction="in" type="_16_0_6340215_1238071966108_184437_650" operation="_16_0_6340215_1238072685455_471729_803_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238072685455_471729_803_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -503,14 +789,14 @@
             </operation>
             <operation name="getMilestone" xmiGuid="_16_0_6340215_1238072727980_622561_821_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072727980_622561_821_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>milestone&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072727980_622561_821"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072727980_622561_821"/>
               <return name="milestone" xmiGuid="_16_0_6340215_1238072727980_622561_821_getReturn" direction="return" type="_16_0_6340215_1238071781778_202437_597" operation="_16_0_6340215_1238072727980_622561_821_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
             <operation name="setMilestone" xmiGuid="_16_0_6340215_1238072727980_622561_821_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072727980_622561_821_set_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>milestone&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.8/@property.0" valueReference="_16_0_6340215_1238072727980_622561_821"/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238072727980_622561_821"/>
               <parameter name="milestone" xmiGuid="_16_0_6340215_1238072727980_622561_821_setParam" direction="in" type="_16_0_6340215_1238071781778_202437_597" operation="_16_0_6340215_1238072727980_622561_821_set">
                 <ownedComment xmiGuid="_16_0_6340215_1238072727980_622561_821_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -522,26 +808,43 @@
             <property xsi:type="gcore:MAttribute" name="endTime" xmiGuid="_16_0_6340215_1238077637709_751670_1440" visibility="private" derived="true" type="//@externalTypes.4">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="booking" xmiGuid="_16_0_6340215_1238072685455_471729_803" visibility="private" type="_16_0_6340215_1238071966108_184437_650" association="_16_0_6340215_1238072685455_881946_801" opposite="_16_0_6340215_1238072685455_293858_802">
+            <property xsi:type="gcore:MAssociationRole" name="booking" xmiGuid="_16_0_6340215_1238072685455_471729_803" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071966108_184437_650" association="_16_0_6340215_1238072685455_881946_801" opposite="_16_0_6340215_1238072685455_293858_802">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="milestone" xmiGuid="_16_0_6340215_1238072727980_622561_821" visibility="private" type="_16_0_6340215_1238071781778_202437_597" association="_16_0_6340215_1238072727980_296379_820" opposite="_16_0_6340215_1238072727980_65420_822">
+            <property xsi:type="gcore:MAssociationRole" name="milestone" xmiGuid="_16_0_6340215_1238072727980_622561_821" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071781778_202437_597" association="_16_0_6340215_1238072727980_296379_820" opposite="_16_0_6340215_1238072727980_65420_822">
+              <taggedValue value="ManyToOne" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="Milestone" xmiGuid="_16_0_6340215_1238071781778_202437_597" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" supplier="//@externalTypes.5 _16_0_6340215_1238078219620_370918_1596 //@externalTypes.4 _16_0_6340215_1238071342394_302030_406 _16_0_6340215_1238072600591_810969_776 _16_0_6340215_1238077842958_926606_1494">
+          <classifier xsi:type="gcore:MClass" name="Milestone" xmiGuid="_16_0_6340215_1238071781778_202437_597" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.5 _16_0_6340215_1238078219620_370918_1596 //@externalTypes.4 _16_0_6340215_1238071342394_302030_406 _16_0_6340215_1238072600591_810969_776 _16_0_6340215_1238077842958_926606_1494 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_Milestone" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="Milestone" xmiGuid="_16_0_6340215_1238071781778_202437_597_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getProject" xmiGuid="_16_0_6340215_1238071834896_155851_620_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238071834896_155851_620_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>project&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238071834896_155851_620"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238071834896_155851_620"/>
               <return name="project" xmiGuid="_16_0_6340215_1238071834896_155851_620_getReturn" direction="return" type="_16_0_6340215_1238071342394_302030_406" operation="_16_0_6340215_1238071834896_155851_620_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
             <operation name="setProject" xmiGuid="_16_0_6340215_1238071834896_155851_620_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238071834896_155851_620_set_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>project&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.8/@property.0" valueReference="_16_0_6340215_1238071834896_155851_620"/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238071834896_155851_620"/>
               <parameter name="project" xmiGuid="_16_0_6340215_1238071834896_155851_620_setParam" direction="in" type="_16_0_6340215_1238071342394_302030_406" operation="_16_0_6340215_1238071834896_155851_620_set">
                 <ownedComment xmiGuid="_16_0_6340215_1238071834896_155851_620_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -549,14 +852,14 @@
             </operation>
             <operation name="getTask" xmiGuid="_16_0_6340215_1238072727980_65420_822_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072727980_65420_822_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238072727980_65420_822"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238072727980_65420_822"/>
               <return name="task" xmiGuid="_16_0_6340215_1238072727980_65420_822_getReturn" direction="return" type="_16_0_6340215_1238072600591_810969_776" operation="_16_0_6340215_1238072727980_65420_822_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addTask" xmiGuid="_16_0_6340215_1238072727980_65420_822_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072727980_65420_822_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238072727980_65420_822"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238072727980_65420_822"/>
               <parameter name="task" xmiGuid="_16_0_6340215_1238072727980_65420_822_addParam" direction="in" type="_16_0_6340215_1238072600591_810969_776" operation="_16_0_6340215_1238072727980_65420_822_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238072727980_65420_822_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -564,7 +867,7 @@
             </operation>
             <operation name="removeTask" xmiGuid="_16_0_6340215_1238072727980_65420_822_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238072727980_65420_822_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>task&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238072727980_65420_822"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238072727980_65420_822"/>
               <parameter name="task" xmiGuid="_16_0_6340215_1238072727980_65420_822_removeParam" direction="in" type="_16_0_6340215_1238072600591_810969_776" operation="_16_0_6340215_1238072727980_65420_822_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238072727980_65420_822_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -572,14 +875,14 @@
             </operation>
             <operation name="getMilestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077893143_686973_1525_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>milestoneData&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.7/@property.0" valueReference="_16_0_6340215_1238077893143_686973_1525"/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238077893143_686973_1525"/>
               <return name="milestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525_getReturn" direction="return" type="_16_0_6340215_1238077842958_926606_1494" operation="_16_0_6340215_1238077893143_686973_1525_get">
                 <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               </return>
             </operation>
             <operation name="addMilestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077893143_686973_1525_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>milestoneData&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.9/@property.0" valueReference="_16_0_6340215_1238077893143_686973_1525"/>
+              <taggedValue tag="//@anyStereotype.13/@property.0" valueReference="_16_0_6340215_1238077893143_686973_1525"/>
               <parameter name="milestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525_addParam" direction="in" type="_16_0_6340215_1238077842958_926606_1494" operation="_16_0_6340215_1238077893143_686973_1525_add">
                 <ownedComment xmiGuid="_16_0_6340215_1238077893143_686973_1525_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
@@ -587,9 +890,24 @@
             </operation>
             <operation name="removeMilestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
               <ownedComment xmiGuid="_16_0_6340215_1238077893143_686973_1525_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>milestoneData&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.10/@property.0" valueReference="_16_0_6340215_1238077893143_686973_1525"/>
+              <taggedValue tag="//@anyStereotype.14/@property.0" valueReference="_16_0_6340215_1238077893143_686973_1525"/>
               <parameter name="milestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525_removeParam" direction="in" type="_16_0_6340215_1238077842958_926606_1494" operation="_16_0_6340215_1238077893143_686973_1525_remove">
                 <ownedComment xmiGuid="_16_0_6340215_1238077893143_686973_1525_removeParam_comment" annotation="the object to remove."/>
+                <multiplicity unique="true" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238071781778_202437_597_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071781778_202437_597_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238071781778_202437_597_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238071781778_202437_597_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238071781778_202437_597_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238071781778_202437_597_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238071781778_202437_597_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238071781778_202437_597_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238071781778_202437_597_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238071781778_202437_597_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238071781778_202437_597_version_setParam_comment" annotation="the value to set."/>
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
@@ -602,20 +920,71 @@
             <property xsi:type="gcore:MAttribute" name="date" xmiGuid="_16_0_6340215_1238075097511_535885_1224" visibility="private" type="//@externalTypes.4">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="project" xmiGuid="_16_0_6340215_1238071834896_155851_620" visibility="private" type="_16_0_6340215_1238071342394_302030_406" association="_16_0_6340215_1238071834896_359301_619" opposite="_16_0_6340215_1238071834896_838978_621">
+            <property xsi:type="gcore:MAssociationRole" name="project" xmiGuid="_16_0_6340215_1238071834896_155851_620" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238071342394_302030_406" association="_16_0_6340215_1238071834896_359301_619" opposite="_16_0_6340215_1238071834896_838978_621">
+              <taggedValue value="ManyToOne" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="task" xmiGuid="_16_0_6340215_1238072727980_65420_822" visibility="private" type="_16_0_6340215_1238072600591_810969_776" association="_16_0_6340215_1238072727980_296379_820" opposite="_16_0_6340215_1238072727980_622561_821">
+            <property xsi:type="gcore:MAssociationRole" name="task" xmiGuid="_16_0_6340215_1238072727980_65420_822" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238072600591_810969_776" association="_16_0_6340215_1238072727980_296379_820" opposite="_16_0_6340215_1238072727980_622561_821">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="milestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525" visibility="private" type="_16_0_6340215_1238077842958_926606_1494" aggregation="true" association="_16_0_6340215_1238077893143_815013_1524">
+            <property xsi:type="gcore:MAssociationRole" name="milestoneData" xmiGuid="_16_0_6340215_1238077893143_686973_1525" stereotype="jpaAssociation" visibility="private" type="_16_0_6340215_1238077842958_926606_1494" aggregation="true" association="_16_0_6340215_1238077893143_815013_1524">
+              <taggedValue value="OneToMany" tag="//@anyStereotype.16/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.16/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.16/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.16/@property.4"/>
+              <taggedValue value="null" tag="//@anyStereotype.16/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238071781778_202437_597_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238071781778_202437_597_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="PlanningData" xmiGuid="_16_0_6340215_1238077486326_269500_1419" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" supplier="//@externalTypes.4 //@externalTypes.6 //@externalTypes.3">
+          <classifier xsi:type="gcore:MClass" name="PlanningData" xmiGuid="_16_0_6340215_1238077486326_269500_1419" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.6 //@externalTypes.3 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_PlanningData" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="PlanningData" xmiGuid="_16_0_6340215_1238077486326_269500_1419_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238077486326_269500_1419_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238077486326_269500_1419_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238077486326_269500_1419_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238077486326_269500_1419_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238077486326_269500_1419_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238077486326_269500_1419_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238077486326_269500_1419_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238077486326_269500_1419_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238077486326_269500_1419_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238077486326_269500_1419_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238077486326_269500_1419_version_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" upperBound="1"/>
+              </parameter>
+            </operation>
             <property xsi:type="gcore:MAttribute" name="tstamp" xmiGuid="_16_0_6340215_1238077656429_698505_1442" visibility="private" type="//@externalTypes.4">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
@@ -628,8 +997,44 @@
             <property xsi:type="gcore:MAttribute" name="startTime" xmiGuid="_16_0_6340215_1238073013008_673053_1056" visibility="private" type="//@externalTypes.4">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238077486326_269500_1419_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238077486326_269500_1419_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="MilestoneData" xmiGuid="_16_0_6340215_1238077842958_926606_1494" stereotype="_16_0_6340215_1238071690939_226695_548" visibility="public" supplier="//@externalTypes.6 //@externalTypes.4">
+          <classifier xsi:type="gcore:MClass" name="MilestoneData" xmiGuid="_16_0_6340215_1238077842958_926606_1494" stereotype="_16_0_6340215_1238071690939_226695_548 UID_jpaPersistentEntity _14_0_b6f02e1_1212567706968_503410_178" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.6 //@externalTypes.4 int java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.7/@property.0"/>
+            <taggedValue value="tbl_MilestoneData" tag="//@anyStereotype.7/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+            <operation name="MilestoneData" xmiGuid="_16_0_6340215_1238077842958_926606_1494_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
+            <operation name="getVersion" xmiGuid="_16_0_6340215_1238077842958_926606_1494_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238077842958_926606_1494_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.11/@property.0" valueReference="_16_0_6340215_1238077842958_926606_1494_version"/>
+              <return name="version" xmiGuid="_16_0_6340215_1238077842958_926606_1494_version_getReturn" direction="return" type="int" operation="_16_0_6340215_1238077842958_926606_1494_version_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setVersion" xmiGuid="_16_0_6340215_1238077842958_926606_1494_version_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_16_0_6340215_1238077842958_926606_1494_version_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.12/@property.0" valueReference="_16_0_6340215_1238077842958_926606_1494_version"/>
+              <parameter name="version" xmiGuid="_16_0_6340215_1238077842958_926606_1494_version_setParam" direction="in" type="int" operation="_16_0_6340215_1238077842958_926606_1494_version_set">
+                <ownedComment xmiGuid="_16_0_6340215_1238077842958_926606_1494_version_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" upperBound="1"/>
+              </parameter>
+            </operation>
             <property xsi:type="gcore:MAttribute" name="description" xmiGuid="_16_0_6340215_1238077857840_982704_1513" visibility="private" type="//@externalTypes.6">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
@@ -638,6 +1043,20 @@
             </property>
             <property xsi:type="gcore:MAttribute" name="datePlan" xmiGuid="_16_0_6340215_1238075108291_35834_1226" visibility="private" type="//@externalTypes.4">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_16_0_6340215_1238077842958_926606_1494_id" stereotype="jpaPrimaryKey" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.10/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.10/@property.1"/>
+              <taggedValue value="AUTO" tag="//@anyStereotype.10/@property.2"/>
+              <taggedValue value="" tag="//@anyStereotype.10/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+            <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_16_0_6340215_1238077842958_926606_1494_version" stereotype="_14_0_b6f02e1_1212567706968_503410_178 jpaOptimisticLocking" visibility="private" type="int" defaultvalue="">
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.1/@property.3"/>
+              <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
           <association name="" xmiGuid="_16_0_6340215_1238072027135_165728_685" end="_16_0_6340215_1238072027135_890494_686 _16_0_6340215_1238072027135_394385_687"/>
@@ -679,12 +1098,29 @@
   <anyStereotype name="accessor" xmiGuid="_14_0_b6f02e1_1212567706968_503410_178">
     <property name="getter" type="Boolean"/>
     <property name="setter" type="Boolean"/>
+    <property name="add" type="Boolean"/>
+    <property name="remove" type="Boolean"/>
   </anyStereotype>
   <anyStereotype name="Facade" xmiGuid="_17_0_4_2_8210263_1430397278469_551602_3786"/>
   <anyStereotype name="Command" xmiGuid="_17_0_4_2_8210263_1430397261894_719305_3762"/>
   <anyStereotype name="Tool" xmiGuid="_16_0_6340215_1238071681423_830046_524"/>
   <anyStereotype name="Query" xmiGuid="_17_0_4_2_8210263_1430397208485_471478_3715"/>
   <anyStereotype name="Material" xmiGuid="_16_0_6340215_1238071690939_226695_548"/>
+  <anyStereotype name="jpaPersistentEntity" xmiGuid="UID_jpaPersistentEntity">
+    <property name="optimisticLocking" type="Boolean"/>
+    <property name="tableName" type="String"/>
+  </anyStereotype>
+  <anyStereotype name="ejb3SessionBean" xmiGuid="UID_ejb3SessionBean">
+    <property name="stateful" type="Boolean"/>
+    <property name="entityManager" type="ejb3EntityManagerType"/>
+  </anyStereotype>
+  <anyStereotype name="http://www.genesez.org/StandardConstructor" xmiGuid="http://www.genesez.org/StandardConstructor"/>
+  <anyStereotype name="jpaPrimaryKey" xmiGuid="jpaPrimaryKey">
+    <property name="generatedValue" type="Boolean"/>
+    <property name="embeddedId" type="Boolean"/>
+    <property name="strategy" type="String"/>
+    <property name="generatorName" type="String"/>
+  </anyStereotype>
   <anyStereotype name="http://www.genesez.org/access/GetOperation" xmiGuid="http://www.genesez.org/access/GetOperation">
     <property name="property" type="MProperty"/>
   </anyStereotype>
@@ -697,6 +1133,32 @@
   <anyStereotype name="http://www.genesez.org/access/RemoveOperation" xmiGuid="http://www.genesez.org/access/RemoveOperation">
     <property name="property" type="MProperty"/>
   </anyStereotype>
+  <anyStereotype name="jpaPersistenceContext" xmiGuid="jpaPersistenceContext">
+    <property name="type" type="jpaPersistenceContextType"/>
+    <property name="unitName" type="String"/>
+    <property name="name" type="String"/>
+  </anyStereotype>
+  <anyStereotype name="jpaAssociation" xmiGuid="jpaAssociation">
+    <property name="type" type="jpaAssociationType"/>
+    <property name="cascade" type="jpaCascadeType"/>
+    <property name="fetch" type="jpaFetchType"/>
+    <property name="optional" type="Boolean"/>
+    <property name="mappedBy" type="String"/>
+    <property name="targetEntity" type="String"/>
+  </anyStereotype>
+  <anyStereotype name="jpaOptimisticLocking" xmiGuid="jpaOptimisticLocking"/>
+  <anyStereotype name="jpaColumn" xmiGuid="jpaColumn">
+    <property name="updatable" type="String"/>
+    <property name="insertable" type="String"/>
+    <property name="name" type="String"/>
+    <property name="scale" type="String"/>
+    <property name="precision" type="String"/>
+    <property name="length" type="String"/>
+    <property name="columnDefinition" type="String"/>
+    <property name="table" type="String"/>
+    <property name="nullable" type="String"/>
+    <property name="unique" type="String"/>
+  </anyStereotype>
   <externalTypes name="String"/>
   <externalTypes name="ListType"/>
   <externalTypes name="void"/>
@@ -704,4 +1166,7 @@
   <externalTypes name="date"/>
   <externalTypes name="NameType"/>
   <externalTypes name="TextType"/>
+  <externalTypes name="Serializable" xmiGuid="java.io.Serializable"/>
+  <externalTypes name="int" xmiGuid="int"/>
+  <externalTypes name="EntityManager" xmiGuid="EntityManager"/>
 </gcore:MModel>

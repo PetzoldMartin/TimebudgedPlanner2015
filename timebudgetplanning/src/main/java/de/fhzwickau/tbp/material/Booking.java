@@ -5,19 +5,29 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_16_0_6340215_1238071966108_184437_650) 
  */
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Version;
+import javax.persistence.ManyToOne;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
-public class Booking {
+@Entity
+@Table(name = "tbl_Booking")
+public class Booking implements Serializable {
 	
 	/** Stores the linked object of association '<em><b>employee</b></em>' */
-	
+	@ManyToOne(cascade = {})
 	private Employee employee;
 	
 	/** Stores the linked object of association '<em><b>task</b></em>' */
-	
+	@ManyToOne(cascade = {})
 	private Task task;
 	
 	private Date date;
@@ -26,7 +36,22 @@ public class Booking {
 	
 	private Date start;
 	
+	@Column(name = "booking_end")
 	private Date end;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Version
+	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>Booking</b></em>'.
+	 */
+	
+	public Booking() {
+	}
 	
 	/**
 	 * Returns the linked object of association '<em><b>employee</b></em>'.
@@ -80,6 +105,23 @@ public class Booking {
 		if (task != null) {
 			task.addBooking(this);
 		}
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>version</b></em>'.
+	 */
+	
+	public int getVersion() {
+		return version;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>version</b></em>'.
+	 * @param	version	the value to set.
+	 */
+	
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238071966108_184437_650) ENABLED START */

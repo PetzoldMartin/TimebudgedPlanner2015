@@ -6,19 +6,29 @@ package de.fhzwickau.tbp.material;
  */
 import de.fhzwickau.tbp.datatypes.TaskState;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Version;
+import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
-
-public abstract class AbstractTask {
+@Entity
+@Table(name = "tbl_AbstractTask")
+public abstract class AbstractTask implements Serializable {
 	
 	/** Stores the linked object of association '<em><b>compoundTask</b></em>' */
-	
+	@ManyToOne(cascade = {})
 	private CompoundTask compoundTask;
 	
 	/** Stores all linked objects of association '<em><b>employee</b></em>' */
-	
+	@ManyToMany(cascade = {})
 	private java.util.Set<Employee> employee = new java.util.HashSet<Employee>();
 	
 	private String name;
@@ -26,6 +36,20 @@ public abstract class AbstractTask {
 	private String description;
 	
 	private TaskState state;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	@Version
+	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>AbstractTask</b></em>'.
+	 */
+	
+	public AbstractTask() {
+	}
 	
 	/**
 	 * Returns the linked object of association '<em><b>compoundTask</b></em>'.
@@ -86,6 +110,23 @@ public abstract class AbstractTask {
 		}
 		this.employee.remove(employee);
 		employee.removeAbstractTask(this);
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>version</b></em>'.
+	 */
+	
+	public int getVersion() {
+		return version;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>version</b></em>'.
+	 * @param	version	the value to set.
+	 */
+	
+	public void setVersion(int version) {
+		this.version = version;
 	}
 	
 	/**

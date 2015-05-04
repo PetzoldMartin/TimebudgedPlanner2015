@@ -6,12 +6,26 @@ package de.fhzwickau.tbp.tools;
  */
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
 import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
+import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
+import javax.ejb.Stateless;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Stateless(name = "EmployeeCommandToolBean")
 public class EmployeeCommandToolBean implements EmployeeCommandTool {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	/**
+	 * Constructor for class '<em><b>EmployeeCommandToolBean</b></em>'.
+	 */
+	
+	public EmployeeCommandToolBean() {
+	}
 	
 	/**
 	 * Method stub for further implementation.
