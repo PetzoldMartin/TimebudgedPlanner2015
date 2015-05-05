@@ -5,13 +5,11 @@ package de.fhzwickau.tbp.tools.facade;
  * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462591_738255_3479) 
  */
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
-import javax.ejb.Remote;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
-@Remote
 public interface EmployeeCommandTool {
 	
 	/**
