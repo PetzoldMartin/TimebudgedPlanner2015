@@ -2,14 +2,16 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_16_0_6340215_1238071781778_202437_597) 
+ * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_462926_3386) 
  */
 import de.fhzwickau.tbp.datatypes.MilestoneState;
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 import javax.persistence.Version;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Id;
@@ -165,7 +167,7 @@ public class Milestone implements Serializable {
 		this.version = version;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238071781778_202437_597) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_462926_3386) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

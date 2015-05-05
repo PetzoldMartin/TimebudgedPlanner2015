@@ -2,7 +2,7 @@ package de.fhzwickau.tbp.tools.facade;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_8210263_1430559096349_243023_4570) 
+ * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462591_752181_3480) 
  */
 import de.fhzwickau.tbp.tools.dto.EmployeeList;
 
@@ -18,7 +18,7 @@ public interface EmployeeQueryTool {
 	
 	public EmployeeList listAllEmployees();
 	
-	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_8210263_1430559096349_243023_4570) ENABLED START */
+	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_a9002bd_1430731462591_752181_3480) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

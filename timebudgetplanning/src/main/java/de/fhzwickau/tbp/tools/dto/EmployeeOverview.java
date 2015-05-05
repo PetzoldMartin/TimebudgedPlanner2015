@@ -2,18 +2,37 @@ package de.fhzwickau.tbp.tools.dto;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462529_323492_3454) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1430832527974_304566_3757) 
  */
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
-public class NewEmployee {
+public class EmployeeOverview {
+	
+	private int id;
 	
 	private String firstName;
 	
 	private String lastName;
+	
+	/**
+	 * Returns the value of attribute '<em><b>id</b></em>'.
+	 */
+	
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>id</b></em>'.
+	 * @param	id	the value to set.
+	 */
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	/**
 	 * Returns the value of attribute '<em><b>firstName</b></em>'.
@@ -49,7 +68,7 @@ public class NewEmployee {
 		this.lastName = lastName;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462529_323492_3454) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1430832527974_304566_3757) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

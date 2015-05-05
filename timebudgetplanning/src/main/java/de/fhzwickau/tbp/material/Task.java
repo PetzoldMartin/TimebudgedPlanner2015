@@ -2,10 +2,12 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_16_0_6340215_1238072600591_810969_776) 
+ * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_697469_3388) 
  */
 import java.util.Date;
+
 import javax.persistence.Entity;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -95,7 +97,7 @@ public class Task extends AbstractTask {
 	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
 	 */
 	private Float getTimeBudgetAct() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._16_0_6340215_1238073597852_602345_1104) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462622_199825_3528) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
 		/* PROTECTED REGION END */
@@ -105,13 +107,13 @@ public class Task extends AbstractTask {
 	 * Returns the value of attribute '<em><b>endTime</b></em>'
 	 */
 	private Date getEndTime() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._16_0_6340215_1238077637709_751670_1440) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462622_950415_3529) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'endTime'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
 		/* PROTECTED REGION END */
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238072600591_810969_776) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_697469_3388) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

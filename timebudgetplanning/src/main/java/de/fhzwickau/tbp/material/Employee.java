@@ -2,7 +2,7 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_16_0_6340215_1238071898762_449560_630) 
+ * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_232288_3383) 
  */
 
 import javax.persistence.Entity;
@@ -45,6 +45,18 @@ public class Employee implements Serializable {
 	
 	@Version
 	private int version;
+	
+	/**
+	 * Constructor for class '<em><b>Employee</b></em>'.
+	 */
+	
+	public Employee(String firstName, String lastName) {
+		/* PROTECTED REGION ID(java.constructor._17_0_4_2_a9002bd_1430752246633_334531_4548) ENABLED START */
+		// TODO: implementation of constructor for class 'Employee'
+		this.firstName = firstName;
+		this.lastName = lastName;
+		/* PROTECTED REGION END */
+	}
 	
 	/**
 	 * Constructor for class '<em><b>Employee</b></em>'.
@@ -156,6 +168,48 @@ public class Employee implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>firstName</b></em>'.
+	 */
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>firstName</b></em>'.
+	 * @param	firstName	the value to set.
+	 */
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>lastName</b></em>'.
+	 */
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>lastName</b></em>'.
+	 * @param	lastName	the value to set.
+	 */
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>id</b></em>'.
+	 */
+	
+	public int getId() {
+		return id;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	
@@ -172,7 +226,7 @@ public class Employee implements Serializable {
 		this.version = version;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238071898762_449560_630) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_232288_3383) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

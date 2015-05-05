@@ -2,14 +2,16 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_16_0_6340215_1238071456742_174000_426) 
+ * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_946606_3389) 
  */
-import de.fhzwickau.tbp.datatypes.TaskState;
 import java.util.Date;
+import de.fhzwickau.tbp.datatypes.TaskState;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 import javax.persistence.Version;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.ManyToMany;
 import javax.persistence.Id;
@@ -133,7 +135,7 @@ public abstract class AbstractTask implements Serializable {
 	 * Returns the value of attribute '<em><b>endTime</b></em>'
 	 */
 	private Date getEndTime() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._16_0_6340215_1238073508542_693709_1091) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462622_242103_3534) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'endTime'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
 		/* PROTECTED REGION END */
@@ -143,13 +145,13 @@ public abstract class AbstractTask implements Serializable {
 	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
 	 */
 	private Float getTimeBudgetAct() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._16_0_6340215_1238073508542_255441_1094) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462622_585137_3536) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
 		/* PROTECTED REGION END */
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._16_0_6340215_1238071456742_174000_426) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_946606_3389) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }
