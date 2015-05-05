@@ -8,6 +8,11 @@
 		<tns:file>org/genesez/platform/java/typemapping/typemapping.xml</tns:file>
 	</tns:include>
 	<tns:externalTypes>
+		<!-- Mapping from Serializable to Serializable is required since the import is otherwise not generated for out DTO classes -->
+		<tns:type from="Serializable">
+			<tns:to>Serializable</tns:to>
+			<tns:context name="Import">java.io.Serializable</tns:context>
+		</tns:type>
 		<tns:type from="JavaDate">
 			<tns:to>Date</tns:to>
 			<tns:context name="Import">java.util.Date</tns:context>

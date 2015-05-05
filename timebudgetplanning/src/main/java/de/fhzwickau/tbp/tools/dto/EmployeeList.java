@@ -5,12 +5,13 @@ package de.fhzwickau.tbp.tools.dto;
  * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462544_997291_3455) 
  */
 import java.util.LinkedList;
+import java.io.Serializable;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
-public class EmployeeList {
+public class EmployeeList implements Serializable {
 	
 	private LinkedList<EmployeeOverview> employees;
 	

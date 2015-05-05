@@ -1,0 +1,27 @@
+import gcore;
+
+extension org::genesez::metamodel::core::util::AccessElement;
+extension org::genesez::metamodel::core::util::NavigateElement;
+extension org::genesez::metamodel::core::util::CreateElement;
+extension org::genesez::metamodel::core::util::CloneElement;
+extension org::genesez::platform::java::util::JavaTypes;
+
+MModel transform(MModel this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MPackage transform(MPackage this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MClassifier transform(MClassifier this) :
+	emHasStereotypeAssignment( "DTO" )
+		? addSerializableInterface()
+		: this;
+		
+/* org.genesez.platform.java.jpa.scripts.Class.ext		-->		MClassifier addSerializable(MClassifier this) : */
+MClassifier addSerializableInterface(MClassifier this) :
+	this.realization.add(this.navModel().typeSerializable()) ->
+	this;

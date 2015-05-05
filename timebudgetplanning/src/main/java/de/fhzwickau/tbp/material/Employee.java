@@ -4,7 +4,6 @@ package de.fhzwickau.tbp.material;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_232288_3383) 
  */
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;

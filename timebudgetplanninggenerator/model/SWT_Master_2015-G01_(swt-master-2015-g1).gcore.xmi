@@ -34,7 +34,7 @@
             </property>
           </classifier>
           <nestedPackage name="dto" xmiGuid="_17_0_4_2_a9002bd_1430731462466_268697_3357">
-            <classifier xsi:type="gcore:MClass" name="NewEmployee" xmiGuid="_17_0_4_2_a9002bd_1430731462529_323492_3454" stereotype="_17_0_4_2_a9002bd_1430751723377_911858_3467 _17_0_4_2_a9002bd_1430731462435_928052_3272" visibility="public" supplier="//@externalTypes.0">
+            <classifier xsi:type="gcore:MClass" name="NewEmployee" xmiGuid="_17_0_4_2_a9002bd_1430731462529_323492_3454" stereotype="_17_0_4_2_a9002bd_1430751723377_911858_3467 _17_0_4_2_a9002bd_1430731462435_928052_3272" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
@@ -76,7 +76,7 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="EmployeeList" xmiGuid="_17_0_4_2_a9002bd_1430731462544_997291_3455" stereotype="_17_0_4_2_a9002bd_1430751723377_911858_3467 _17_0_4_2_a9002bd_1430731462435_928052_3272" visibility="public" supplier="//@externalTypes.1 //@externalTypes.2 //@externalTypes.3 _17_0_4_2_8210263_1430832527974_304566_3757">
+            <classifier xsi:type="gcore:MClass" name="EmployeeList" xmiGuid="_17_0_4_2_a9002bd_1430731462544_997291_3455" stereotype="_17_0_4_2_a9002bd_1430751723377_911858_3467 _17_0_4_2_a9002bd_1430731462435_928052_3272" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.1 //@externalTypes.2 //@externalTypes.3 _17_0_4_2_8210263_1430832527974_304566_3757 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
               <taggedValue value="false" tag="//@anyStereotype.0/@property.1"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
@@ -109,7 +109,7 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="EmployeeOverview" xmiGuid="_17_0_4_2_8210263_1430832527974_304566_3757" stereotype="_17_0_4_2_a9002bd_1430751723377_911858_3467 _17_0_4_2_a9002bd_1430731462435_928052_3272" visibility="public" supplier="//@externalTypes.4 //@externalTypes.0">
+            <classifier xsi:type="gcore:MClass" name="EmployeeOverview" xmiGuid="_17_0_4_2_8210263_1430832527974_304566_3757" stereotype="_17_0_4_2_a9002bd_1430751723377_911858_3467 _17_0_4_2_a9002bd_1430731462435_928052_3272" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
