@@ -9,6 +9,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 
 import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -17,7 +18,7 @@ import javax.persistence.OneToMany;
 public class CompoundTask extends AbstractTask {
 	
 	/** Stores all linked objects of association '<em><b>abstractTask</b></em>' */
-	@OneToMany(cascade = {}, mappedBy = "compoundTask")
+	@ManyToMany(cascade = {})
 	private java.util.Set<AbstractTask> abstractTask = new java.util.HashSet<AbstractTask>();
 	
 	/**
@@ -45,7 +46,6 @@ public class CompoundTask extends AbstractTask {
 			return;
 		}
 		this.abstractTask.add(abstractTask);
-		abstractTask.setCompoundTask(this);
 	}
 	
 	/**
@@ -58,7 +58,6 @@ public class CompoundTask extends AbstractTask {
 			return;
 		}
 		this.abstractTask.remove(abstractTask);
-		abstractTask.setCompoundTask(null);
 	}
 	
 	/**

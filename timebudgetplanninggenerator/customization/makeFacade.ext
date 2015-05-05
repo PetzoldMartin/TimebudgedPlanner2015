@@ -1,0 +1,28 @@
+import gcore;
+
+extension org::genesez::metamodel::core::util::AccessElement;
+extension org::genesez::metamodel::core::util::NavigateElement;
+extension org::genesez::metamodel::core::util::CreateElement;
+extension org::genesez::metamodel::core::util::CloneElement;
+extension org::genesez::platform::java::ejb3::scripts::Stereotypes;
+
+MModel transform(MModel this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MPackage transform(MPackage this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+/* org.genesez.platform.java.ejb3.scripts.Stereotypes.ext		-->		MStereotype makeRemoteStereotype(MClassifier container) : */
+/* org.genesez.platform.java.ejb3.scripts.Stereotypes.ext		-->		Void addRemoteStereotype(MClassifier this, String name) : */
+MClassifier transform(MClassifier this) :
+	emHasStereotypeAssignment( "Facade" )
+		? addRemoteAnnotation(navModel())
+		: this;
+		
+Void addRemoteAnnotation(MClassifier this, MModel model) :
+	let stereoType = createStereotype(model, "ejb3Remote", "ejb3Remote") :
+	this.stereotype.add(stereoType);

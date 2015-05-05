@@ -25,10 +25,6 @@ import javax.persistence.GenerationType;
 @Table(name = "tbl_AbstractTask")
 public abstract class AbstractTask implements Serializable {
 	
-	/** Stores the linked object of association '<em><b>compoundTask</b></em>' */
-	@ManyToOne(cascade = {})
-	private CompoundTask compoundTask;
-	
 	/** Stores all linked objects of association '<em><b>employee</b></em>' */
 	@ManyToMany(cascade = {})
 	private java.util.Set<Employee> employee = new java.util.HashSet<Employee>();
@@ -51,33 +47,6 @@ public abstract class AbstractTask implements Serializable {
 	 */
 	
 	public AbstractTask() {
-	}
-	
-	/**
-	 * Returns the linked object of association '<em><b>compoundTask</b></em>'.
-	 */
-	
-	public CompoundTask getCompoundTask() {
-		return compoundTask;
-	}
-	
-	/**
-	 * Establishes a link to the specified object for association '<em><b>compoundTask</b></em>'.
-	 * @param	compoundTask	the object to associate.
-	 */
-	
-	public void setCompoundTask(CompoundTask compoundTask) {
-		if (this.compoundTask == compoundTask) {
-			return;
-		}
-		CompoundTask former = this.compoundTask;
-		this.compoundTask = compoundTask;
-		if (former != null) {
-			former.removeAbstractTask(this);
-		}
-		if (compoundTask != null) {
-			compoundTask.addAbstractTask(this);
-		}
 	}
 	
 	/**

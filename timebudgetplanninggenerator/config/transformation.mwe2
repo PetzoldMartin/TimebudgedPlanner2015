@@ -51,6 +51,10 @@ Workflow {
 			script = "makeDTOs::transform"
 		}
 		
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "makeFacade::transform"
+		}
+		
 		// annotation definition and usage, singleton design pattern and hashCode + equals operations
 		model2model = org.genesez.workflow.SimpleScript {
 			script = "org::genesez::platform::java::m2m::Prepare::prepare"
