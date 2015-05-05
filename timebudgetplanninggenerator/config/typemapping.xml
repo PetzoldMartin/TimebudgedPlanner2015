@@ -28,12 +28,8 @@
 			<tns:to>String</tns:to>
 			<tns:context name="Import">java.lang.String</tns:context>
 		</tns:type>
-		<tns:type from="ListType">
-			<tns:to>ArrayList</tns:to>
-			<tns:context name="Import">java.util.ArrayList</tns:context>
-		</tns:type>
 		<tns:type from="EmployeeListType">
-			<tns:to>LinkedList&lt;EmployeeSummary&gt;</tns:to>
+			<tns:to>LinkedList&lt;EmployeeOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
 		<tns:type from="RoleListType">
