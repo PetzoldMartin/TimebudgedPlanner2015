@@ -5,13 +5,16 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_836605_3385) 
  */
 import java.util.Date;
+
 import de.fhzwickau.tbp.datatypes.ProjectState;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.io.Serializable;
-import javax.persistence.Version;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Version;
 import javax.persistence.OneToMany;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
@@ -33,7 +36,7 @@ public class Project implements Serializable {
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
 	/** Stores all linked objects of association '<em><b>planningData</b></em>' */
-	@OneToMany(cascade = {})
+	@OneToMany(cascade = { CascadeType.ALL })
 	private java.util.Set<PlanningData> planningData = new java.util.HashSet<PlanningData>();
 	
 	/** Stores all linked objects of association '<em><b>task</b></em>' */
@@ -42,7 +45,11 @@ public class Project implements Serializable {
 	
 	private String name;
 	
+	private Date endTime;
+	
 	private ProjectState state;
+	
+	private Float timeBudgetAct;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -208,6 +215,74 @@ public class Project implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>endTime</b></em>'.
+	 */
+	
+	public Date getEndTime() {
+		return new Date(endTime.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>endTime</b></em>'.
+	 * @param	endTime	the value to set.
+	 */
+	
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>state</b></em>'.
+	 */
+	
+	public ProjectState getState() {
+		return state;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>state</b></em>'.
+	 * @param	state	the value to set.
+	 */
+	
+	public void setState(ProjectState state) {
+		this.state = state;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'.
+	 */
+	
+	public Float getTimeBudgetAct() {
+		return timeBudgetAct;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>timeBudgetAct</b></em>'.
+	 * @param	timeBudgetAct	the value to set.
+	 */
+	
+	public void setTimeBudgetAct(Float timeBudgetAct) {
+		this.timeBudgetAct = timeBudgetAct;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>id</b></em>'.
+	 */
+	
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>id</b></em>'.
+	 * @param	id	the value to set.
+	 */
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	
@@ -222,26 +297,6 @@ public class Project implements Serializable {
 	
 	public void setVersion(int version) {
 		this.version = version;
-	}
-	
-	/**
-	 * Returns the value of attribute '<em><b>endTime</b></em>'
-	 */
-	private Date getEndTime() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_737707_3507) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'endTime'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
-		/* PROTECTED REGION END */
-	}
-	
-	/**
-	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
-	 */
-	private Float getTimeBudgetAct() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_72500_3509) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
-		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_836605_3385) ENABLED START */

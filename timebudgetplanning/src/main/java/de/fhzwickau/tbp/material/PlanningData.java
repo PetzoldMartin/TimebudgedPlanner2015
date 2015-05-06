@@ -45,6 +45,91 @@ public class PlanningData implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>tstamp</b></em>'.
+	 */
+	
+	public Date getTstamp() {
+		return new Date(tstamp.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>tstamp</b></em>'.
+	 * @param	tstamp	the value to set.
+	 */
+	
+	public void setTstamp(Date tstamp) {
+		this.tstamp = tstamp;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>description</b></em>'.
+	 */
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>description</b></em>'.
+	 * @param	description	the value to set.
+	 */
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudgetPlan</b></em>'.
+	 */
+	
+	public Float getTimeBudgetPlan() {
+		return timeBudgetPlan;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>timeBudgetPlan</b></em>'.
+	 * @param	timeBudgetPlan	the value to set.
+	 */
+	
+	public void setTimeBudgetPlan(Float timeBudgetPlan) {
+		this.timeBudgetPlan = timeBudgetPlan;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>startTime</b></em>'.
+	 */
+	
+	public Date getStartTime() {
+		return new Date(startTime.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>startTime</b></em>'.
+	 * @param	startTime	the value to set.
+	 */
+	
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>id</b></em>'.
+	 */
+	
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>id</b></em>'.
+	 * @param	id	the value to set.
+	 */
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	

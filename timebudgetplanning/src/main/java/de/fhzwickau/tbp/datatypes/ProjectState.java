@@ -10,7 +10,7 @@ package de.fhzwickau.tbp.datatypes;
  */
 public enum ProjectState {
 	
-	OPEN, RUNNING, CLOSED;
+	OPEN, CLOSED;
 	
 	/* PROTECTED REGION ID(java.enumeration.own.code.implementation._17_0_4_2_a9002bd_1430731462513_552180_3429) ENABLED START */
 	// TODO: put your own implementation code here
