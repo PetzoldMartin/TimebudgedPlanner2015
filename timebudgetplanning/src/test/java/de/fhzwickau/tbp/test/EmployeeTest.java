@@ -1,5 +1,7 @@
 package de.fhzwickau.tbp.test;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -91,21 +93,50 @@ public class EmployeeTest {
     	NewEmployee newEmployee = new NewEmployee();
     	newEmployee.setFirstName("Test");
     	employeeCommandTool.addEmployee(newEmployee);
-    	System.out.println("Employee added");
-    	EmployeeList employeeList = employeeQueryTool.listAllEmployees();
-    	Assert.assertEquals(employeeList.getEmployees().size(), 1);
-    	Assert.assertEquals(employeeList.getEmployees().get(0).getFirstName(), "Test");
+    	@SuppressWarnings("unchecked")
+		List<Employee> resultList = em.createQuery("SELECT e FROM Employee e").getResultList();
+    	Assert.assertEquals(resultList.size(), 1);
+    	Assert.assertEquals(resultList.get(0).getFirstName(), "Test");
+    }
+    
+    @Test
+    public void alterEmployeeTest() throws Exception {
+    	NewEmployee newEmployee = new NewEmployee();
+    	newEmployee.setFirstName("Test");
+    	employeeCommandTool.addEmployee(newEmployee);
+    	Employee e = (Employee) em.createQuery("SELECT e FROM Employee e").getResultList().get(0);
+    	
     	AlteredEmployee alteredEmployee = new AlteredEmployee();
-    	alteredEmployee.setId(employeeList.getEmployees().get(0).getId());
+    	alteredEmployee.setId(e.getId());
     	alteredEmployee.setFirstName("ABC");
     	employeeCommandTool.alterEmployee(alteredEmployee);
-    	System.out.println("Employee altered");
-    	employeeList = employeeQueryTool.listAllEmployees();
-    	Assert.assertEquals(employeeList.getEmployees().size(), 1);
-    	Assert.assertEquals(employeeList.getEmployees().get(0).getFirstName(), "ABC");
-    	EmployeeDetails eDetails = employeeQueryTool.getEmployeeDetails(employeeList.getEmployees().get(0).getId());
-    	Assert.assertEquals(eDetails.getFirstName(), "ABC");
-    	Assert.assertEquals(eDetails.getId(), employeeList.getEmployees().get(0).getId());
+    	
+    	e = (Employee) em.createQuery("SELECT e FROM Employee e").getResultList().get(0);
+    	Assert.assertEquals(e.getFirstName(), "ABC");
+    }
+    
+    @Test
+    public void listAllEmployeesTest() throws Exception {
+    	NewEmployee newEmployee = new NewEmployee();
+    	newEmployee.setFirstName("Test");
+    	employeeCommandTool.addEmployee(newEmployee);
+    	newEmployee.setFirstName("ABC");
+    	employeeCommandTool.addEmployee(newEmployee);
+    	EmployeeList employeeList = employeeQueryTool.listAllEmployees();
+    	Assert.assertEquals(employeeList.getEmployees().size(), 2);
+    	Assert.assertTrue((employeeList.getEmployees().get(0).getFirstName().equals("Test") && employeeList.getEmployees().get(1).getFirstName().equals("ABC")) ||
+    			(employeeList.getEmployees().get(0).getFirstName().equals("ABC") && employeeList.getEmployees().get(1).getFirstName().equals("Test")));
+    }
+    
+    @Test
+    public void getEmployeeDetailsTest() throws Exception {
+    	NewEmployee newEmployee = new NewEmployee();
+    	newEmployee.setFirstName("Test");
+    	employeeCommandTool.addEmployee(newEmployee);
+    	Employee e = (Employee) em.createQuery("SELECT e FROM Employee e").getResultList().get(0);
+    	EmployeeDetails eDetails = employeeQueryTool.getEmployeeDetails(e.getId());
+    	Assert.assertEquals(eDetails.getFirstName(), "Test");
+    	Assert.assertEquals(eDetails.getId(), e.getId());
     }
     
 }
