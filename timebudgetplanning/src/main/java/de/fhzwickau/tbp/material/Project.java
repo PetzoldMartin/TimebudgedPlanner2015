@@ -191,6 +191,23 @@ public class Project implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>name</b></em>'.
+	 */
+	
+	public String getName() {
+		return name;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>name</b></em>'.
+	 * @param	name	the value to set.
+	 */
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	

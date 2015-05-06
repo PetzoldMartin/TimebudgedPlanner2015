@@ -22,6 +22,8 @@ import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
 import de.fhzwickau.tbp.tools.EmployeeQueryToolBean;
+import de.fhzwickau.tbp.tools.dto.AlteredEmployee;
+import de.fhzwickau.tbp.tools.dto.EmployeeDetails;
 import de.fhzwickau.tbp.tools.dto.EmployeeList;
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
 import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
@@ -92,6 +94,18 @@ public class EmployeeTest {
     	System.out.println("Employee added");
     	EmployeeList employeeList = employeeQueryTool.listAllEmployees();
     	Assert.assertEquals(employeeList.getEmployees().size(), 1);
+    	Assert.assertEquals(employeeList.getEmployees().get(0).getFirstName(), "Test");
+    	AlteredEmployee alteredEmployee = new AlteredEmployee();
+    	alteredEmployee.setId(employeeList.getEmployees().get(0).getId());
+    	alteredEmployee.setFirstName("ABC");
+    	employeeCommandTool.alterEmployee(alteredEmployee);
+    	System.out.println("Employee altered");
+    	employeeList = employeeQueryTool.listAllEmployees();
+    	Assert.assertEquals(employeeList.getEmployees().size(), 1);
+    	Assert.assertEquals(employeeList.getEmployees().get(0).getFirstName(), "ABC");
+    	EmployeeDetails eDetails = employeeQueryTool.getEmployeeDetails(employeeList.getEmployees().get(0).getId());
+    	Assert.assertEquals(eDetails.getFirstName(), "ABC");
+    	Assert.assertEquals(eDetails.getId(), employeeList.getEmployees().get(0).getId());
     }
     
 }

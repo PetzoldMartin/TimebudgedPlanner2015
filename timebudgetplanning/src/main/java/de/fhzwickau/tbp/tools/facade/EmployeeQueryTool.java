@@ -5,6 +5,7 @@ package de.fhzwickau.tbp.tools.facade;
  * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462591_752181_3480) 
  */
 import de.fhzwickau.tbp.tools.dto.EmployeeList;
+import de.fhzwickau.tbp.tools.dto.EmployeeDetails;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -17,6 +18,12 @@ public interface EmployeeQueryTool {
 	 */
 	
 	public EmployeeList listAllEmployees();
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public EmployeeDetails getEmployeeDetails(int id);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_a9002bd_1430731462591_752181_3480) ENABLED START */
 	// TODO: put your own implementation code here

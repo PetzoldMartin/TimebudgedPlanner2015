@@ -102,6 +102,23 @@ public class Role implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>role</b></em>'.
+	 */
+	
+	public RoleType getRole() {
+		return role;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>role</b></em>'.
+	 * @param	role	the value to set.
+	 */
+	
+	public void setRole(RoleType role) {
+		this.role = role;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	
