@@ -7,14 +7,18 @@ package de.fhzwickau.tbp.tools;
 import java.util.Date;
 
 import de.fhzwickau.tbp.datatypes.ProjectState;
+import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.PlanningData;
 import de.fhzwickau.tbp.material.Project;
+import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.tools.dto.NewProject;
 import de.fhzwickau.tbp.tools.facade.ProjectCommandTool;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
+
+import de.fhzwickau.tbp.datatypes.RoleType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -50,6 +54,25 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		planningData.setTstamp(new Date());
 		project.addPlanningData(planningData);
 		entityManager.persist(project);
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void addEmployeeWithRole(int projectId, int employeeId, RoleType role) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430926180891_231972_4601__17_0_4_2_8210263_1431022427718_832380_4394) ENABLED START */
+		// TODO: implementation of method 'ProjectCommandToolBean.addEmployeeWithRole(...)'
+		Role r = new Role();
+		Employee e = entityManager.find(Employee.class, employeeId);
+		Project p = entityManager.find(Project.class, projectId);
+		if (e == null || p == null)
+			return;
+		r.setEmployee(e);
+		r.setProject(p);
+		r.setRole(role);
+		entityManager.persist(r);
 		/* PROTECTED REGION END */
 	}
 	

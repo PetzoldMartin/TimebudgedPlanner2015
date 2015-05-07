@@ -32,7 +32,7 @@ public class Project implements Serializable {
 	private java.util.Set<Milestone> milestone = new java.util.HashSet<Milestone>();
 	
 	/** Stores all linked objects of association '<em><b>role</b></em>' */
-	@OneToMany(cascade = {}, mappedBy = "project")
+	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "project")
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
 	/** Stores all linked objects of association '<em><b>planningData</b></em>' */
@@ -59,6 +59,17 @@ public class Project implements Serializable {
 	 */
 	
 	public Project() {
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public int getId() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431023803475_882671_4735) ENABLED START */
+		// TODO: implementation of method 'Project.getId(...)'
+		return id;
+		/* PROTECTED REGION END */
 	}
 	
 	/**
@@ -225,23 +236,6 @@ public class Project implements Serializable {
 	
 	public void setState(ProjectState state) {
 		this.state = state;
-	}
-	
-	/**
-	 * Returns the value of attribute '<em><b>id</b></em>'.
-	 */
-	
-	public int getId() {
-		return id;
-	}
-	
-	/**
-	 * Sets the value of attribute '<em><b>id</b></em>'.
-	 * @param	id	the value to set.
-	 */
-	
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	/**

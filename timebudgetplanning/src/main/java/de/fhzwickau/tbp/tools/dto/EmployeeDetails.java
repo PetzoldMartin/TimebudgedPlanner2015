@@ -5,7 +5,10 @@ package de.fhzwickau.tbp.tools.dto;
  * 	@FILE-ID : (_17_0_4_2_8210263_1430900018594_370904_4065) 
  */
 import java.util.HashMap;
+import java.util.HashSet;
+
 import de.fhzwickau.tbp.datatypes.RoleType;
+
 import java.io.Serializable;
 
 /**
@@ -20,7 +23,7 @@ public class EmployeeDetails implements Serializable {
 	
 	private String lastName;
 	
-	private HashMap<String, RoleType> projectRoleMap;
+	private HashMap<String, HashSet<RoleType>> projectRoleMap;
 	
 	/**
 	 * Constructor for class '<em><b>EmployeeDetails</b></em>'.
@@ -29,7 +32,7 @@ public class EmployeeDetails implements Serializable {
 	public EmployeeDetails() {
 		/* PROTECTED REGION ID(java.constructor._17_0_4_2_8210263_1430900601497_232455_4121) ENABLED START */
 		// TODO: implementation of constructor for class 'EmployeeDetails'
-		projectRoleMap = new HashMap<String, RoleType>();
+		projectRoleMap = new HashMap<String, HashSet<RoleType>>();
 		/* PROTECTED REGION END */
 	}
 	
@@ -40,7 +43,9 @@ public class EmployeeDetails implements Serializable {
 	public void addRoleInProject(String projectName, RoleType role) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430900621241_439147_4125) ENABLED START */
 		// TODO: implementation of method 'EmployeeDetails.addRoleInProject(...)'
-		projectRoleMap.put(projectName, role);
+		HashSet<RoleType> roleTypes = projectRoleMap.get(projectName);
+		roleTypes.add(role);
+		projectRoleMap.put(projectName, roleTypes);
 		/* PROTECTED REGION END */
 	}
 	
@@ -53,11 +58,12 @@ public class EmployeeDetails implements Serializable {
 		// TODO: implementation of method 'EmployeeDetails.removeRoleInProject(...)'
 		for (String pName : projectRoleMap.keySet()) {
 			if (pName.equals(projectName)) {
-				RoleType rType = projectRoleMap.get(pName);
-				if (rType.equals(role)) {
-					projectRoleMap.remove(pName);
-					return;
+				HashSet<RoleType> roleTypes = projectRoleMap.get(pName);
+				if (roleTypes.contains(role)) {
+					roleTypes.remove(role);
+					projectRoleMap.put(pName, roleTypes);
 				}
+				return;
 			}
 		}
 		/* PROTECTED REGION END */
@@ -118,7 +124,7 @@ public class EmployeeDetails implements Serializable {
 	 * Returns the value of attribute '<em><b>projectRoleMap</b></em>'.
 	 */
 	
-	public HashMap<String, RoleType> getProjectRoleMap() {
+	public HashMap<String, HashSet<RoleType>> getProjectRoleMap() {
 		return projectRoleMap;
 	}
 	
@@ -127,7 +133,7 @@ public class EmployeeDetails implements Serializable {
 	 * @param	projectRoleMap	the value to set.
 	 */
 	
-	public void setProjectRoleMap(HashMap<String, RoleType> projectRoleMap) {
+	public void setProjectRoleMap(HashMap<String, HashSet<RoleType>> projectRoleMap) {
 		this.projectRoleMap = projectRoleMap;
 	}
 	

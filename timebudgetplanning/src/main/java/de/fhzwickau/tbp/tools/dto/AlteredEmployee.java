@@ -4,12 +4,13 @@ package de.fhzwickau.tbp.tools.dto;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_8210263_1430899817387_329232_3769) 
  */
+import java.io.Serializable;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
-public class AlteredEmployee {
+public class AlteredEmployee implements Serializable {
 	
 	private int id;
 	

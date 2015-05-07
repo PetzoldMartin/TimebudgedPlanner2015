@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.CascadeType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -31,7 +32,7 @@ public class Employee implements Serializable {
 	private java.util.Set<AbstractTask> abstractTask = new java.util.HashSet<AbstractTask>();
 	
 	/** Stores all linked objects of association '<em><b>role</b></em>' */
-	@OneToMany(cascade = {}, mappedBy = "employee")
+	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "employee")
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
 	private String firstName;
@@ -206,6 +207,15 @@ public class Employee implements Serializable {
 	
 	public int getId() {
 		return id;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>id</b></em>'.
+	 * @param	id	the value to set.
+	 */
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	/**
