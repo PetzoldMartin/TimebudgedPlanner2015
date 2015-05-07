@@ -15,7 +15,7 @@ public class NewProject implements Serializable {
 	
 	private String name;
 	
-	private Date endTime;
+	private Date startTime;
 	
 	private String description;
 	
@@ -39,20 +39,20 @@ public class NewProject implements Serializable {
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>endTime</b></em>'.
+	 * Returns the value of attribute '<em><b>startTime</b></em>'.
 	 */
 	
-	public Date getEndTime() {
-		return new Date(endTime.getTime());
+	public Date getStartTime() {
+		return new Date(startTime.getTime());
 	}
 	
 	/**
-	 * Sets the value of attribute '<em><b>endTime</b></em>'.
-	 * @param	endTime	the value to set.
+	 * Sets the value of attribute '<em><b>startTime</b></em>'.
+	 * @param	startTime	the value to set.
 	 */
 	
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
 	}
 	
 	/**

@@ -42,16 +42,12 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		// TODO: implementation of method 'ProjectCommandToolBean.addProject(...)'
 		Project project = new Project();
 		project.setName(newProject.getName());
-		project.setEndTime(newProject.getEndTime());
 		project.setState(ProjectState.OPEN);
-		project.setTimeBudgetAct((float) 0.0);
 		PlanningData planningData = new PlanningData();
+		planningData.setStartTime(newProject.getStartTime());
 		planningData.setDescription(newProject.getDescription());
 		planningData.setTimeBudgetPlan(newProject.getTimeBudgetPlanned());
-		// TODO What's the difference between startTime and tstamp?
-		Date now = new Date();
-		planningData.setStartTime(now);
-		planningData.setTstamp(now);
+		planningData.setTstamp(new Date());
 		project.addPlanningData(planningData);
 		entityManager.persist(project);
 		/* PROTECTED REGION END */

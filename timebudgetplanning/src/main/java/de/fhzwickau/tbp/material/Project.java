@@ -45,11 +45,7 @@ public class Project implements Serializable {
 	
 	private String name;
 	
-	private Date endTime;
-	
 	private ProjectState state;
-	
-	private Float timeBudgetAct;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -215,23 +211,6 @@ public class Project implements Serializable {
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>endTime</b></em>'.
-	 */
-	
-	public Date getEndTime() {
-		return new Date(endTime.getTime());
-	}
-	
-	/**
-	 * Sets the value of attribute '<em><b>endTime</b></em>'.
-	 * @param	endTime	the value to set.
-	 */
-	
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
-	}
-	
-	/**
 	 * Returns the value of attribute '<em><b>state</b></em>'.
 	 */
 	
@@ -246,23 +225,6 @@ public class Project implements Serializable {
 	
 	public void setState(ProjectState state) {
 		this.state = state;
-	}
-	
-	/**
-	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'.
-	 */
-	
-	public Float getTimeBudgetAct() {
-		return timeBudgetAct;
-	}
-	
-	/**
-	 * Sets the value of attribute '<em><b>timeBudgetAct</b></em>'.
-	 * @param	timeBudgetAct	the value to set.
-	 */
-	
-	public void setTimeBudgetAct(Float timeBudgetAct) {
-		this.timeBudgetAct = timeBudgetAct;
 	}
 	
 	/**
@@ -297,6 +259,26 @@ public class Project implements Serializable {
 	
 	public void setVersion(int version) {
 		this.version = version;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>endTime</b></em>'
+	 */
+	private Date getEndTime() {
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_737707_3507) ENABLED START */
+		// TODO: implementation of derived (calculated) attribute 'endTime'
+		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
+	 */
+	private Float getTimeBudgetAct() {
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_72500_3509) ENABLED START */
+		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
+		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
+		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_836605_3385) ENABLED START */

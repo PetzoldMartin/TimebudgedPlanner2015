@@ -89,19 +89,17 @@ public class ProjectTest {
     	newProject.setName("Test");
     	newProject.setDescription("Test Description");
     	Date now = new Date();
-    	newProject.setEndTime(now);
+    	newProject.setStartTime(now);
     	newProject.setTimeBudgetPlanned((float) 10000); 
     	ProjectCommandTool.addProject(newProject);
     	@SuppressWarnings("unchecked")
 		List<Project> resultList = em.createQuery("SELECT e FROM Project e").getResultList();
     	Assert.assertEquals(resultList.size(), 1);
     	Assert.assertEquals(resultList.get(0).getName(), "Test");
-    	Assert.assertEquals(resultList.get(0).getEndTime(), now);
     	Assert.assertEquals(resultList.get(0).getState(), ProjectState.OPEN);
-    	Assert.assertEquals(resultList.get(0).getTimeBudgetAct(), (float) 0, 0.05);
     	PlanningData planningData = resultList.get(0).getPlanningData().iterator().next();
     	Assert.assertEquals(planningData.getDescription(), "Test Description");
-    	Assert.assertEquals(planningData.getStartTime(), planningData.getTstamp());
+    	Assert.assertEquals(planningData.getStartTime(), now);
     	Assert.assertEquals(planningData.getTimeBudgetPlan(), (float) 10000, 0.05);
     }
     
