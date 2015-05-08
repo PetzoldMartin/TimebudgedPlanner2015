@@ -2,7 +2,7 @@ package de.fhzwickau.tbp.tools.dto;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_8210263_1430899817387_329232_3769) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898927_748431_3708) 
  */
 import java.io.Serializable;
 
@@ -69,7 +69,7 @@ public class AlteredEmployee implements Serializable {
 		this.lastName = lastName;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1430899817387_329232_3769) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898927_748431_3708) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

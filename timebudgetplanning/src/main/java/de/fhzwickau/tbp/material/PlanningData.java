@@ -2,15 +2,17 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_915343_3390) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898916_172192_3681) 
  */
 import java.util.Date;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 import javax.persistence.Version;
 
+import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +23,10 @@ import javax.persistence.GenerationType;
 @Entity
 @Table(name = "tbl_PlanningData")
 public class PlanningData implements Serializable {
+	
+	/** Stores the linked object of association '<em><b>project</b></em>' */
+	@ManyToOne(cascade = {})
+	private Project project;
 	
 	private Date tstamp;
 	
@@ -42,6 +48,33 @@ public class PlanningData implements Serializable {
 	 */
 	
 	public PlanningData() {
+	}
+	
+	/**
+	 * Returns the linked object of association '<em><b>project</b></em>'.
+	 */
+	
+	public Project getProject() {
+		return project;
+	}
+	
+	/**
+	 * Establishes a link to the specified object for association '<em><b>project</b></em>'.
+	 * @param	project	the object to associate.
+	 */
+	
+	public void setProject(Project project) {
+		if (this.project == project) {
+			return;
+		}
+		Project former = this.project;
+		this.project = project;
+		if (former != null) {
+			former.removePlanningData(this);
+		}
+		if (project != null) {
+			project.addPlanningData(this);
+		}
 	}
 	
 	/**
@@ -146,7 +179,7 @@ public class PlanningData implements Serializable {
 		this.version = version;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_915343_3390) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898916_172192_3681) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

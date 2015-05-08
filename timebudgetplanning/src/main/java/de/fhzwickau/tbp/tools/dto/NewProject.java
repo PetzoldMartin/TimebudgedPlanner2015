@@ -2,7 +2,7 @@ package de.fhzwickau.tbp.tools.dto;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_8210263_1430925728346_742872_4497) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898928_74315_3710) 
  */
 import java.util.Date;
 import java.io.Serializable;
@@ -89,7 +89,7 @@ public class NewProject implements Serializable {
 		this.timeBudgetPlanned = timeBudgetPlanned;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1430925728346_742872_4497) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898928_74315_3710) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

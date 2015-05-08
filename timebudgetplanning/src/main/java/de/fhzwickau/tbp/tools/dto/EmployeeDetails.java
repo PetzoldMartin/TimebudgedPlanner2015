@@ -2,7 +2,7 @@ package de.fhzwickau.tbp.tools.dto;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_8210263_1430900018594_370904_4065) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898928_459953_3709) 
  */
 import java.util.HashMap;
 import java.util.HashSet;
@@ -30,8 +30,7 @@ public class EmployeeDetails implements Serializable {
 	 */
 	
 	public EmployeeDetails() {
-		/* PROTECTED REGION ID(java.constructor._17_0_4_2_8210263_1430900601497_232455_4121) ENABLED START */
-		// TODO: implementation of constructor for class 'EmployeeDetails'
+		/* PROTECTED REGION ID(java.constructor._17_0_4_2_8210263_1431069898956_361663_3818) ENABLED START */
 		projectRoleMap = new HashMap<String, HashSet<RoleType>>();
 		/* PROTECTED REGION END */
 	}
@@ -41,8 +40,7 @@ public class EmployeeDetails implements Serializable {
 	 */
 	
 	public void addRoleInProject(String projectName, RoleType role) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430900621241_439147_4125) ENABLED START */
-		// TODO: implementation of method 'EmployeeDetails.addRoleInProject(...)'
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898957_927125_3819) ENABLED START */
 		HashSet<RoleType> roleTypes = projectRoleMap.get(projectName);
 		roleTypes.add(role);
 		projectRoleMap.put(projectName, roleTypes);
@@ -54,8 +52,7 @@ public class EmployeeDetails implements Serializable {
 	 */
 	
 	public void removeRoleInProject(String projectName, RoleType role) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430900653626_786610_4130) ENABLED START */
-		// TODO: implementation of method 'EmployeeDetails.removeRoleInProject(...)'
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898957_866586_3820) ENABLED START */
 		for (String pName : projectRoleMap.keySet()) {
 			if (pName.equals(projectName)) {
 				HashSet<RoleType> roleTypes = projectRoleMap.get(pName);
@@ -128,16 +125,7 @@ public class EmployeeDetails implements Serializable {
 		return projectRoleMap;
 	}
 	
-	/**
-	 * Sets the value of attribute '<em><b>projectRoleMap</b></em>'.
-	 * @param	projectRoleMap	the value to set.
-	 */
-	
-	public void setProjectRoleMap(HashMap<String, HashSet<RoleType>> projectRoleMap) {
-		this.projectRoleMap = projectRoleMap;
-	}
-	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1430900018594_370904_4065) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898928_459953_3709) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

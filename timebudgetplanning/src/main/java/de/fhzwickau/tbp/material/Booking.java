@@ -2,9 +2,10 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_600119_3384) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898912_691863_3675) 
  */
 import java.util.Date;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -126,7 +127,7 @@ public class Booking implements Serializable {
 		this.version = version;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_600119_3384) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898912_691863_3675) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

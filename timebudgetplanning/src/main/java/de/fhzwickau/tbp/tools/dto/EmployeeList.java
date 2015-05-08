@@ -2,7 +2,7 @@ package de.fhzwickau.tbp.tools.dto;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462544_997291_3455) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898926_209813_3706) 
  */
 import java.util.LinkedList;
 import java.io.Serializable;
@@ -20,8 +20,7 @@ public class EmployeeList implements Serializable {
 	 */
 	
 	public EmployeeList() {
-		/* PROTECTED REGION ID(java.constructor._17_0_4_2_8210263_1430834084361_871715_4104) ENABLED START */
-		// TODO: implementation of constructor for class 'EmployeeList'
+		/* PROTECTED REGION ID(java.constructor._17_0_4_2_8210263_1431069898953_760150_3805) ENABLED START */
 		employees = new LinkedList<EmployeeOverview>();
 		/* PROTECTED REGION END */
 	}
@@ -31,8 +30,7 @@ public class EmployeeList implements Serializable {
 	 */
 	
 	public void addEmployee(EmployeeOverview employee) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430833706639_231423_4096) ENABLED START */
-		// TODO: implementation of method 'EmployeeList.addEmployee(...)'
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898953_564259_3806) ENABLED START */
 		employees.add(employee);
 		/* PROTECTED REGION END */
 	}
@@ -42,8 +40,7 @@ public class EmployeeList implements Serializable {
 	 */
 	
 	public boolean removeEmployee(EmployeeOverview employee) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430833727425_235537_4100) ENABLED START */
-		// TODO: implementation of method 'EmployeeList.removeEmployee(...)'
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898953_262792_3807) ENABLED START */
 		for (EmployeeOverview e : employees) {
 			if (e.getId() == employee.getId()) {
 				employees.remove(e);
@@ -62,7 +59,7 @@ public class EmployeeList implements Serializable {
 		return employees;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462544_997291_3455) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898926_209813_3706) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

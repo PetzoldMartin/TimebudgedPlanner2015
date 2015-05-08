@@ -2,7 +2,7 @@ package de.fhzwickau.tbp.tools.dto;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_67b0227_1431012753884_35059_9652) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898929_214298_3711) 
  */
 import java.io.Serializable;
 
@@ -50,7 +50,7 @@ public class NewTask implements Serializable {
 		this.description = description;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431012753884_35059_9652) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898929_214298_3711) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

@@ -2,10 +2,11 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_462926_3386) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898914_143571_3677) 
  */
 import de.fhzwickau.tbp.datatypes.MilestoneState;
 import java.util.Date;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -29,13 +30,13 @@ public class Milestone implements Serializable {
 	@ManyToOne(cascade = {})
 	private Project project;
 	
-	/** Stores all linked objects of association '<em><b>task</b></em>' */
-	@OneToMany(cascade = {}, mappedBy = "milestone")
-	private java.util.Set<Task> task = new java.util.HashSet<Task>();
-	
 	/** Stores all linked objects of association '<em><b>milestoneData</b></em>' */
-	@OneToMany(cascade = {})
+	@OneToMany(cascade = {}, mappedBy = "milestone")
 	private java.util.Set<MilestoneData> milestoneData = new java.util.HashSet<MilestoneData>();
+	
+	/** Stores all linked objects of association '<em><b>akstractTasl</b></em>' */
+	@OneToMany(cascade = {}, mappedBy = "milestone")
+	private java.util.Set<AbstractTask> akstractTasl = new java.util.HashSet<AbstractTask>();
 	
 	private String name;
 	
@@ -85,40 +86,6 @@ public class Milestone implements Serializable {
 	}
 	
 	/**
-	 * Returns all linked objects of association '<em><b>task</b></em>'.
-	 */
-	
-	public java.util.Set<Task> getTask() {
-		return task;
-	}
-	
-	/**
-	 * Establishes a link to the specified object for association '<em><b>task</b></em>'.
-	 * @param	task	the object to associate.
-	 */
-	
-	public void addTask(Task task) {
-		if (task == null || this.task.contains(task)) {
-			return;
-		}
-		this.task.add(task);
-		task.setMilestone(this);
-	}
-	
-	/**
-	 * Removes the link to the specified specified object from association '<em><b>task</b></em>'.
-	 * @param	task	the object to remove.
-	 */
-	
-	public void removeTask(Task task) {
-		if (task == null || !this.task.contains(task)) {
-			return;
-		}
-		this.task.remove(task);
-		task.setMilestone(null);
-	}
-	
-	/**
 	 * Returns all linked objects of association '<em><b>milestoneData</b></em>'.
 	 */
 	
@@ -136,6 +103,7 @@ public class Milestone implements Serializable {
 			return;
 		}
 		this.milestoneData.add(milestoneData);
+		milestoneData.setMilestone(this);
 	}
 	
 	/**
@@ -148,6 +116,41 @@ public class Milestone implements Serializable {
 			return;
 		}
 		this.milestoneData.remove(milestoneData);
+		milestoneData.setMilestone(null);
+	}
+	
+	/**
+	 * Returns all linked objects of association '<em><b>akstractTasl</b></em>'.
+	 */
+	
+	public java.util.Set<AbstractTask> getAkstractTasl() {
+		return akstractTasl;
+	}
+	
+	/**
+	 * Establishes a link to the specified object for association '<em><b>akstractTasl</b></em>'.
+	 * @param	akstractTasl	the object to associate.
+	 */
+	
+	public void addAkstractTasl(AbstractTask akstractTasl) {
+		if (akstractTasl == null || this.akstractTasl.contains(akstractTasl)) {
+			return;
+		}
+		this.akstractTasl.add(akstractTasl);
+		akstractTasl.setMilestone(this);
+	}
+	
+	/**
+	 * Removes the link to the specified specified object from association '<em><b>akstractTasl</b></em>'.
+	 * @param	akstractTasl	the object to remove.
+	 */
+	
+	public void removeAkstractTasl(AbstractTask akstractTasl) {
+		if (akstractTasl == null || !this.akstractTasl.contains(akstractTasl)) {
+			return;
+		}
+		this.akstractTasl.remove(akstractTasl);
+		akstractTasl.setMilestone(null);
 	}
 	
 	/**
@@ -167,7 +170,7 @@ public class Milestone implements Serializable {
 		this.version = version;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_462926_3386) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898914_143571_3677) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

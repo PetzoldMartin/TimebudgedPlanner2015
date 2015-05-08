@@ -2,9 +2,10 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462482_386671_3381) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898909_405156_3672) 
  */
 import de.fhzwickau.tbp.datatypes.RoleType;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -12,10 +13,10 @@ import java.io.Serializable;
 import javax.persistence.Version;
 
 import javax.persistence.ManyToOne;
+import javax.persistence.CascadeType;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.CascadeType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -136,7 +137,7 @@ public class Role implements Serializable {
 		this.version = version;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462482_386671_3381) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898909_405156_3672) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

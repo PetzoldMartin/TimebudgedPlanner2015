@@ -2,20 +2,19 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462498_836605_3385) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898913_422495_3676) 
  */
 import java.util.Date;
-
 import de.fhzwickau.tbp.datatypes.ProjectState;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
 import java.io.Serializable;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Version;
+
 import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,21 +26,21 @@ import javax.persistence.GenerationType;
 @Table(name = "tbl_Project")
 public class Project implements Serializable {
 	
-	/** Stores all linked objects of association '<em><b>milestone</b></em>' */
-	@OneToMany(cascade = {}, mappedBy = "project")
-	private java.util.Set<Milestone> milestone = new java.util.HashSet<Milestone>();
+	/** Stores all linked objects of association '<em><b>task</b></em>' */
+	@OneToMany(cascade = {})
+	private java.util.Set<AbstractTask> task = new java.util.HashSet<AbstractTask>();
+	
+	/** Stores all linked objects of association '<em><b>planningData</b></em>' */
+	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "project")
+	private java.util.Set<PlanningData> planningData = new java.util.HashSet<PlanningData>();
 	
 	/** Stores all linked objects of association '<em><b>role</b></em>' */
 	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "project")
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
-	/** Stores all linked objects of association '<em><b>planningData</b></em>' */
-	@OneToMany(cascade = { CascadeType.ALL })
-	private java.util.Set<PlanningData> planningData = new java.util.HashSet<PlanningData>();
-	
-	/** Stores all linked objects of association '<em><b>task</b></em>' */
-	@OneToMany(cascade = {})
-	private java.util.Set<AbstractTask> task = new java.util.HashSet<AbstractTask>();
+	/** Stores all linked objects of association '<em><b>milestone</b></em>' */
+	@OneToMany(cascade = {}, mappedBy = "project")
+	private java.util.Set<Milestone> milestone = new java.util.HashSet<Milestone>();
 	
 	private String name;
 	
@@ -66,44 +65,75 @@ public class Project implements Serializable {
 	 */
 	
 	public int getId() {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431023803475_882671_4735) ENABLED START */
-		// TODO: implementation of method 'Project.getId(...)'
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898938_763436_3743) ENABLED START */
 		return id;
 		/* PROTECTED REGION END */
 	}
 	
 	/**
-	 * Returns all linked objects of association '<em><b>milestone</b></em>'.
+	 * Returns all linked objects of association '<em><b>task</b></em>'.
 	 */
 	
-	public java.util.Set<Milestone> getMilestone() {
-		return milestone;
+	public java.util.Set<AbstractTask> getTask() {
+		return task;
 	}
 	
 	/**
-	 * Establishes a link to the specified object for association '<em><b>milestone</b></em>'.
-	 * @param	milestone	the object to associate.
+	 * Establishes a link to the specified object for association '<em><b>task</b></em>'.
+	 * @param	task	the object to associate.
 	 */
 	
-	public void addMilestone(Milestone milestone) {
-		if (milestone == null || this.milestone.contains(milestone)) {
+	public void addTask(AbstractTask task) {
+		if (task == null || this.task.contains(task)) {
 			return;
 		}
-		this.milestone.add(milestone);
-		milestone.setProject(this);
+		this.task.add(task);
 	}
 	
 	/**
-	 * Removes the link to the specified specified object from association '<em><b>milestone</b></em>'.
-	 * @param	milestone	the object to remove.
+	 * Removes the link to the specified specified object from association '<em><b>task</b></em>'.
+	 * @param	task	the object to remove.
 	 */
 	
-	public void removeMilestone(Milestone milestone) {
-		if (milestone == null || !this.milestone.contains(milestone)) {
+	public void removeTask(AbstractTask task) {
+		if (task == null || !this.task.contains(task)) {
 			return;
 		}
-		this.milestone.remove(milestone);
-		milestone.setProject(null);
+		this.task.remove(task);
+	}
+	
+	/**
+	 * Returns all linked objects of association '<em><b>planningData</b></em>'.
+	 */
+	
+	public java.util.Set<PlanningData> getPlanningData() {
+		return planningData;
+	}
+	
+	/**
+	 * Establishes a link to the specified object for association '<em><b>planningData</b></em>'.
+	 * @param	planningData	the object to associate.
+	 */
+	
+	public void addPlanningData(PlanningData planningData) {
+		if (planningData == null || this.planningData.contains(planningData)) {
+			return;
+		}
+		this.planningData.add(planningData);
+		planningData.setProject(this);
+	}
+	
+	/**
+	 * Removes the link to the specified specified object from association '<em><b>planningData</b></em>'.
+	 * @param	planningData	the object to remove.
+	 */
+	
+	public void removePlanningData(PlanningData planningData) {
+		if (planningData == null || !this.planningData.contains(planningData)) {
+			return;
+		}
+		this.planningData.remove(planningData);
+		planningData.setProject(null);
 	}
 	
 	/**
@@ -141,67 +171,37 @@ public class Project implements Serializable {
 	}
 	
 	/**
-	 * Returns all linked objects of association '<em><b>planningData</b></em>'.
+	 * Returns all linked objects of association '<em><b>milestone</b></em>'.
 	 */
 	
-	public java.util.Set<PlanningData> getPlanningData() {
-		return planningData;
+	public java.util.Set<Milestone> getMilestone() {
+		return milestone;
 	}
 	
 	/**
-	 * Establishes a link to the specified object for association '<em><b>planningData</b></em>'.
-	 * @param	planningData	the object to associate.
+	 * Establishes a link to the specified object for association '<em><b>milestone</b></em>'.
+	 * @param	milestone	the object to associate.
 	 */
 	
-	public void addPlanningData(PlanningData planningData) {
-		if (planningData == null || this.planningData.contains(planningData)) {
+	public void addMilestone(Milestone milestone) {
+		if (milestone == null || this.milestone.contains(milestone)) {
 			return;
 		}
-		this.planningData.add(planningData);
+		this.milestone.add(milestone);
+		milestone.setProject(this);
 	}
 	
 	/**
-	 * Removes the link to the specified specified object from association '<em><b>planningData</b></em>'.
-	 * @param	planningData	the object to remove.
+	 * Removes the link to the specified specified object from association '<em><b>milestone</b></em>'.
+	 * @param	milestone	the object to remove.
 	 */
 	
-	public void removePlanningData(PlanningData planningData) {
-		if (planningData == null || !this.planningData.contains(planningData)) {
+	public void removeMilestone(Milestone milestone) {
+		if (milestone == null || !this.milestone.contains(milestone)) {
 			return;
 		}
-		this.planningData.remove(planningData);
-	}
-	
-	/**
-	 * Returns all linked objects of association '<em><b>task</b></em>'.
-	 */
-	
-	public java.util.Set<AbstractTask> getTask() {
-		return task;
-	}
-	
-	/**
-	 * Establishes a link to the specified object for association '<em><b>task</b></em>'.
-	 * @param	task	the object to associate.
-	 */
-	
-	public void addTask(AbstractTask task) {
-		if (task == null || this.task.contains(task)) {
-			return;
-		}
-		this.task.add(task);
-	}
-	
-	/**
-	 * Removes the link to the specified specified object from association '<em><b>task</b></em>'.
-	 * @param	task	the object to remove.
-	 */
-	
-	public void removeTask(AbstractTask task) {
-		if (task == null || !this.task.contains(task)) {
-			return;
-		}
-		this.task.remove(task);
+		this.milestone.remove(milestone);
+		milestone.setProject(null);
 	}
 	
 	/**
@@ -259,7 +259,7 @@ public class Project implements Serializable {
 	 * Returns the value of attribute '<em><b>endTime</b></em>'
 	 */
 	private Date getEndTime() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_737707_3507) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898939_134799_3746) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'endTime'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
 		/* PROTECTED REGION END */
@@ -269,13 +269,13 @@ public class Project implements Serializable {
 	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
 	 */
 	private Float getTimeBudgetAct() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_72500_3509) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898940_432963_3748) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
 		/* PROTECTED REGION END */
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462498_836605_3385) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898913_422495_3676) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

@@ -2,13 +2,12 @@ package de.fhzwickau.tbp.material;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_a9002bd_1430731462482_198814_3382) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898910_767832_3673) 
  */
 import java.util.Date;
 
 import javax.persistence.Entity;
 
-import javax.persistence.OneToMany;
 import javax.persistence.ManyToMany;
 
 /**
@@ -64,7 +63,7 @@ public class CompoundTask extends AbstractTask {
 	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
 	 */
 	private Float getTimeBudgetAct() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_165458_3488) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898933_113639_3725) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
 		/* PROTECTED REGION END */
@@ -74,13 +73,13 @@ public class CompoundTask extends AbstractTask {
 	 * Returns the value of attribute '<em><b>endTime</b></em>'
 	 */
 	private Date getEndTime() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1430731462607_113615_3489) ENABLED START */
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898934_834174_3726) ENABLED START */
 		// TODO: implementation of derived (calculated) attribute 'endTime'
 		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
 		/* PROTECTED REGION END */
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_a9002bd_1430731462482_198814_3382) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898910_767832_3673) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

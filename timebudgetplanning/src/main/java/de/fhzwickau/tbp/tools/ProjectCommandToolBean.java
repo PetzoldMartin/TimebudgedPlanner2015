@@ -2,23 +2,22 @@ package de.fhzwickau.tbp.tools;
 
 /* 
  *	Do not place import/include statements above this comment, just below. 
- * 	@FILE-ID : (_17_0_4_2_8210263_1430926180891_231972_4601) 
+ * 	@FILE-ID : (_17_0_4_2_8210263_1431069898909_18254_3671) 
  */
 import java.util.Date;
 
-import de.fhzwickau.tbp.datatypes.ProjectState;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.PlanningData;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.tools.dto.NewProject;
+import de.fhzwickau.tbp.datatypes.ProjectState;
+import de.fhzwickau.tbp.datatypes.RoleType;
 import de.fhzwickau.tbp.tools.facade.ProjectCommandTool;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
-
-import de.fhzwickau.tbp.datatypes.RoleType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -42,8 +41,7 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 	 */
 	
 	public void addProject(NewProject newProject) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430926180891_231972_4601__17_0_4_2_8210263_1430926146039_557030_4595) ENABLED START */
-		// TODO: implementation of method 'ProjectCommandToolBean.addProject(...)'
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_531788_3840) ENABLED START */
 		Project project = new Project();
 		project.setName(newProject.getName());
 		project.setState(ProjectState.OPEN);
@@ -62,8 +60,7 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 	 */
 	
 	public void addEmployeeWithRole(int projectId, int employeeId, RoleType role) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1430926180891_231972_4601__17_0_4_2_8210263_1431022427718_832380_4394) ENABLED START */
-		// TODO: implementation of method 'ProjectCommandToolBean.addEmployeeWithRole(...)'
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841) ENABLED START */
 		Role r = new Role();
 		Employee e = entityManager.find(Employee.class, employeeId);
 		Project p = entityManager.find(Project.class, projectId);
@@ -76,7 +73,7 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		/* PROTECTED REGION END */
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1430926180891_231972_4601) ENABLED START */
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898909_18254_3671) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }
