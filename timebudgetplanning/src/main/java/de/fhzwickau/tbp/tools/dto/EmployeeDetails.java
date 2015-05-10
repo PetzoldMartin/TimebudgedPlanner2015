@@ -42,6 +42,8 @@ public class EmployeeDetails implements Serializable {
 	public void addRoleInProject(String projectName, RoleType role) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898957_927125_3819) ENABLED START */
 		HashSet<RoleType> roleTypes = projectRoleMap.get(projectName);
+		if (roleTypes == null)
+			roleTypes = new HashSet<RoleType>();
 		roleTypes.add(role);
 		projectRoleMap.put(projectName, roleTypes);
 		/* PROTECTED REGION END */

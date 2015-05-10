@@ -6,19 +6,12 @@
   <name>TimeBudgetPlanning</name>
   
  	<properties>
-        <!-- Explicitly declaring the source encoding eliminates the following message: -->
-        <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered 
-            resources, i.e. build is platform dependent! -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- JBoss dependency versions -->
         <version.wildfly.maven.plugin>1.0.1.Final</version.wildfly.maven.plugin>
-        <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
         <version.jboss.bom>8.2.0.Final</version.jboss.bom>
         <version.arquillian.container>8.2.0.Final</version.arquillian.container>
-        <!-- other plugin versions -->
         <version.compiler.plugin>3.1</version.compiler.plugin>
         <version.war.plugin>2.1.1</version.war.plugin>
-        <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
@@ -76,11 +69,11 @@
 	      	<groupId>org.jboss.spec.javax.interceptor</groupId>
 	      	<artifactId>jboss-interceptors-api_1.2_spec</artifactId>
     	</dependency>
-        <!--dependency>
+        <dependency>
             <groupId>org.jboss.spec.javax.faces</groupId>
             <artifactId>jboss-jsf-api_2.2_spec</artifactId>
             <scope>provided</scope> 
-        </dependency-->
+        </dependency>
         <dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
@@ -122,10 +115,8 @@
 		        <dependency>
 		            <groupId>org.wildfly</groupId>
 		            <artifactId>wildfly-arquillian-container-remote</artifactId>
-		            <!--version>$version.arquillian.container}</version-->
 		            <scope>test</scope>
 		        </dependency>
-		        <!-- Optional -->
 		        <dependency>
 		            <groupId>org.jboss.arquillian.protocol</groupId>
 		            <artifactId>arquillian-protocol-servlet</artifactId>
@@ -146,6 +137,14 @@
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.war.plugin}</version>
+                <configuration>
+                <warSourceDirectory>WebContent</warSourceDirectory>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>${version.wildfly.maven.plugin}</version>
@@ -160,5 +159,7 @@
             </plugin>
         </plugins>
     </build>
+    
+    <packaging>war</packaging>
     
 </project>

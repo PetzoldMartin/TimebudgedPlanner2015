@@ -17,11 +17,13 @@ import de.fhzwickau.tbp.tools.facade.EmployeeQueryTool;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
+import javax.inject.Named;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("employeeQuery")
 @Stateless(name = "EmployeeQueryToolBean")
 public class EmployeeQueryToolBean implements EmployeeQueryTool {
 	

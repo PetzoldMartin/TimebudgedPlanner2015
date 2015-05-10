@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="content">
+		<h1>Mitarbeiterverwaltung</h1>
+		<p>
+			<h3>Angelegte Mitarbeiter:</h3>
+			<br />
+			<ui:repeat var="v_employee" value="#{employeeQuery.listAllEmployees().getEmployees()}">
+				<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
+					<f:param name="eid" value="#{v_employee.id}" />
+				</h:link>
+				<br />
+			</ui:repeat>
+		</p>
+	</ui:define>
+</ui:composition>

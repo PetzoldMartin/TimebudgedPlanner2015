@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="content">
+		<p>
+			Mitarbeiter ID: #{request.getParameter('eid')} <br />
+			Vorname: #{employeeQuery.getEmployeeDetails(request.getParameter('eid')).firstName} <br />
+			Nachname: #{employeeQuery.getEmployeeDetails(request.getParameter('eid')).lastName} <br />
+			Projekte: <br/>
+			<ui:repeat var="v_project" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.keySet().toArray()}">
+				#{v_project} - Rollen:
+				<ui:repeat var="v_role" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.get(v_project).toArray()}">
+					<div style="text-indent: 40px;">#{v_role}</div> <br />
+				</ui:repeat>
+				<br />
+			</ui:repeat>
+		</p>
+	</ui:define>
+</ui:composition>
