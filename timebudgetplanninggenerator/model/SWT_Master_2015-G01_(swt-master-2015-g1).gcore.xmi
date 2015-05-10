@@ -79,6 +79,22 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
+          <classifier xsi:type="gcore:MClass" name="TaskCommandToolBean" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490" stereotype="_17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431069898875_798049_3530 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_67b0227_1431276253958_640908_3465" supplier="EntityManager //@externalTypes.2 _17_0_4_2_8210263_1431069898929_214298_3711 _17_0_4_2_67b0227_1431276253958_640908_3465">
+            <taggedValue value="false" tag="//@anyStereotype.10/@property.0"/>
+            <taggedValue value="EntityManager" tag="//@anyStereotype.10/@property.1"/>
+            <operation name="TaskCommandToolBean" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
+            <operation name="addTask" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484" visibility="public">
+              <parameter name="newTask" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484__17_0_4_2_67b0227_1431276441773_851413_3486" direction="in" type="_17_0_4_2_8210263_1431069898929_214298_3711" operation="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </parameter>
+              <return name="" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484__17_0_4_2_67b0227_1431276441806_81415_3487" direction="return" type="//@externalTypes.2" operation="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </return>
+            </operation>
+            <property xsi:type="gcore:MAttribute" name="entityManager" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490_entityManager" stereotype="jpaPersistenceContext" visibility="private" type="EntityManager" defaultvalue="">
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+          </classifier>
           <nestedPackage name="dto" xmiGuid="_17_0_4_2_8210263_1431069898907_162062_3668">
             <classifier xsi:type="gcore:MClass" name="NewEmployee" xmiGuid="_17_0_4_2_8210263_1431069898925_16848_3705" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
@@ -547,6 +563,16 @@
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </parameter>
                 <return name="" xmiGuid="_17_0_4_2_8210263_1431069898985_881012_3950" direction="return" type="//@externalTypes.2" operation="_17_0_4_2_8210263_1431069898963_27512_3841">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+            </classifier>
+            <classifier xsi:type="gcore:MInterface" name="TaskCommandTool" xmiGuid="_17_0_4_2_67b0227_1431276253958_640908_3465" stereotype="_17_0_4_2_8210263_1431069898878_292934_3541" visibility="public" supplier="//@externalTypes.2 _17_0_4_2_8210263_1431069898929_214298_3711">
+              <operation name="addTask" xmiGuid="_17_0_4_2_67b0227_1431276272635_392480_3484" visibility="public">
+                <parameter name="newTask" xmiGuid="_17_0_4_2_67b0227_1431276441773_851413_3486" direction="in" type="_17_0_4_2_8210263_1431069898929_214298_3711" operation="_17_0_4_2_67b0227_1431276272635_392480_3484">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+                <return name="" xmiGuid="_17_0_4_2_67b0227_1431276441806_81415_3487" direction="return" type="//@externalTypes.2" operation="_17_0_4_2_67b0227_1431276272635_392480_3484">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </return>
               </operation>
