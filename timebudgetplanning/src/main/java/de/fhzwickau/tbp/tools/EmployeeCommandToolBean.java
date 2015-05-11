@@ -12,11 +12,15 @@ import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
+import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("employeeCommand")
+@RequestScoped
 @Stateless(name = "EmployeeCommandToolBean")
 public class EmployeeCommandToolBean implements EmployeeCommandTool {
 	
@@ -34,10 +38,11 @@ public class EmployeeCommandToolBean implements EmployeeCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addEmployee(NewEmployee newEmployee) {
+	public String addEmployee(NewEmployee newEmployee) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898907_434497_3667__17_0_4_2_8210263_1431069898961_661377_3834) ENABLED START */
 		Employee employee = new Employee(newEmployee.getFirstName(), newEmployee.getLastName());
 		entityManager.persist(employee);
+		return "employee";
 		/* PROTECTED REGION END */
 	}
 	

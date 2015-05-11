@@ -9,14 +9,20 @@
 			Mitarbeiter ID: #{request.getParameter('eid')} <br />
 			Vorname: #{employeeQuery.getEmployeeDetails(request.getParameter('eid')).firstName} <br />
 			Nachname: #{employeeQuery.getEmployeeDetails(request.getParameter('eid')).lastName} <br />
-			Projekte: <br/>
-			<ui:repeat var="v_project" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.keySet().toArray()}">
-				#{v_project} - Rollen:
-				<ui:repeat var="v_role" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.get(v_project).toArray()}">
-					<div style="text-indent: 40px;">#{v_role}</div> <br />
+			<table>
+				<tr>
+					<th>Projekt</th>
+					<th>Rollen</th>
+				</tr>
+				<ui:repeat var="v_project" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.keySet().toArray()}">
+					<td>#{v_project}</td>
+					<td>
+						<ui:repeat var="v_role" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.get(v_project).toArray()}">
+							#{v_role}
+						</ui:repeat>
+					</td>
 				</ui:repeat>
-				<br />
-			</ui:repeat>
+			</table>
 		</p>
 	</ui:define>
 </ui:composition>

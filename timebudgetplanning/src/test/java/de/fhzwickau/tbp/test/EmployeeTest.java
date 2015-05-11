@@ -22,6 +22,7 @@ import org.junit.runner.RunWith;
 
 import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.Employee;
+import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
 import de.fhzwickau.tbp.tools.EmployeeQueryToolBean;
 import de.fhzwickau.tbp.tools.dto.AlteredEmployee;
@@ -66,7 +67,10 @@ public class EmployeeTest {
     private void clearData() throws Exception {
         utx.begin();
         em.joinTransaction();
-        em.createQuery("DELETE FROM Employee").executeUpdate();
+        List<Employee> resultList = em.createQuery("SELECT e FROM Employee e").getResultList();
+        for (Employee e : resultList) {
+        	em.remove(e);
+        }
         utx.commit();
     }
     

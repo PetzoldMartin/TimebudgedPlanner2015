@@ -17,7 +17,7 @@ public interface EmployeeCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addEmployee(NewEmployee newEmployee);
+	public String addEmployee(NewEmployee newEmployee);
 	
 	/**
 	 * Method stub for further implementation.

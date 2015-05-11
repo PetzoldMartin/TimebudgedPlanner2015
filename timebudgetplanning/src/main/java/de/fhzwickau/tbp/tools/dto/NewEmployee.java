@@ -6,10 +6,15 @@ package de.fhzwickau.tbp.tools.dto;
  */
 import java.io.Serializable;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("newEmployeeDTO")
+@RequestScoped
 public class NewEmployee implements Serializable {
 	
 	private String firstName;
