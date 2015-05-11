@@ -116,6 +116,57 @@ public abstract class AbstractTask implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>name</b></em>'.
+	 */
+	
+	public String getName() {
+		return name;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>name</b></em>'.
+	 * @param	name	the value to set.
+	 */
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>description</b></em>'.
+	 */
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>description</b></em>'.
+	 * @param	description	the value to set.
+	 */
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>state</b></em>'.
+	 */
+	
+	public TaskState getState() {
+		return state;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>state</b></em>'.
+	 * @param	state	the value to set.
+	 */
+	
+	public void setState(TaskState state) {
+		this.state = state;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	

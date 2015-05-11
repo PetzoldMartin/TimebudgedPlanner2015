@@ -6,11 +6,11 @@ package de.fhzwickau.tbp.tools;
  */
 import de.fhzwickau.tbp.tools.dto.NewTask;
 import de.fhzwickau.tbp.tools.facade.TaskCommandTool;
+import de.fhzwickau.tbp.datatypes.TaskState;
+import de.fhzwickau.tbp.material.Task;
 
 import javax.persistence.PersistenceContext;
-
 import javax.persistence.EntityManager;
-
 import javax.ejb.Stateless;
 
 /**
@@ -37,7 +37,11 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	public void addTask(NewTask newTask) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484) ENABLED START */
 		// TODO: implementation of method 'TaskCommandToolBean.addTask(...)'
-		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		Task task = new Task();
+		task.setName(newTask.getName());
+		task.setDescription(newTask.getDescription());
+		task.setState(TaskState.OPEN);
+		entityManager.persist(task);
 		/* PROTECTED REGION END */
 	}
 	
