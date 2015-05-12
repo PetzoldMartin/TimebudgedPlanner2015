@@ -60,8 +60,7 @@ public abstract class AbstractTask implements Serializable {
 	
 	public int getId() {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431438232389_656920_4463) ENABLED START */
-		// TODO: implementation of method 'AbstractTask.getId(...)'
-		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		return id;
 		/* PROTECTED REGION END */
 	}
 	

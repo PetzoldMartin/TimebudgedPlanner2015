@@ -24,6 +24,12 @@ public interface TaskCommandTool {
 	
 	public void addEmployee(int taskId, int employeeId);
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void removeEmployee(int taskId, int employeeId);
+	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431276253958_640908_3465) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
