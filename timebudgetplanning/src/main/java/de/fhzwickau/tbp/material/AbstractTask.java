@@ -55,6 +55,17 @@ public abstract class AbstractTask implements Serializable {
 	}
 	
 	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public int getId() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431438232389_656920_4463) ENABLED START */
+		// TODO: implementation of method 'AbstractTask.getId(...)'
+		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		/* PROTECTED REGION END */
+	}
+	
+	/**
 	 * Returns the linked object of association '<em><b>milestone</b></em>'.
 	 */
 	

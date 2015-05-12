@@ -17,7 +17,7 @@ public interface ProjectCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addProject(NewProject newProject);
+	public String addProject(NewProject newProject);
 	
 	/**
 	 * Method stub for further implementation.

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="content">
+		<h1>Projektverwaltung</h1>
+		<p>
+			<h3>Angelegte Projekte:</h3>
+			<table>
+			<ui:repeat var="v_project" value="#{projectQuery.listAllProjects().getProjects()}">
+				<tr>
+					<td>
+						<h:link outcome="projectDetails" value="#{v_project.name}">
+							<f:param name="pid" value="#{v_project.id}" />
+						</h:link>
+					</td>
+					<td>#{v_project.status}</td>
+				</tr>
+			</ui:repeat>
+			</table>
+			<br />
+			<h:button outcome="addProject.jsf" value="Neues Project anlegen" />
+		</p>
+	</ui:define>
+</ui:composition>

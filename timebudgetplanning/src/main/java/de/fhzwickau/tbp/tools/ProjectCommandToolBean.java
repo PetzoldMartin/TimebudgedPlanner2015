@@ -18,11 +18,15 @@ import de.fhzwickau.tbp.tools.facade.ProjectCommandTool;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
+import javax.faces.bean.RequestScoped;
+import javax.inject.Named;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("projectCommand")
+@RequestScoped
 @Stateless(name = "ProjectCommandToolBean")
 public class ProjectCommandToolBean implements ProjectCommandTool {
 	
@@ -40,7 +44,7 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addProject(NewProject newProject) {
+	public String addProject(NewProject newProject) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_531788_3840) ENABLED START */
 		Project project = new Project();
 		project.setName(newProject.getName());
@@ -52,6 +56,7 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		planningData.setTstamp(new Date());
 		project.addPlanningData(planningData);
 		entityManager.persist(project);
+		return "project";
 		/* PROTECTED REGION END */
 	}
 	

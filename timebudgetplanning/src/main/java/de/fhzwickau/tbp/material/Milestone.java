@@ -154,6 +154,74 @@ public class Milestone implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>name</b></em>'.
+	 */
+	
+	public String getName() {
+		return name;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>name</b></em>'.
+	 * @param	name	the value to set.
+	 */
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>state</b></em>'.
+	 */
+	
+	public MilestoneState getState() {
+		return state;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>state</b></em>'.
+	 * @param	state	the value to set.
+	 */
+	
+	public void setState(MilestoneState state) {
+		this.state = state;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>date</b></em>'.
+	 */
+	
+	public Date getDate() {
+		return new Date(date.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>date</b></em>'.
+	 * @param	date	the value to set.
+	 */
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>id</b></em>'.
+	 */
+	
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>id</b></em>'.
+	 * @param	id	the value to set.
+	 */
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	

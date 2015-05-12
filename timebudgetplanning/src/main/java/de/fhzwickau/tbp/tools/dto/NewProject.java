@@ -6,11 +6,15 @@ package de.fhzwickau.tbp.tools.dto;
  */
 import java.util.Date;
 import java.io.Serializable;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("newProjectDTO")
+@RequestScoped
 public class NewProject implements Serializable {
 	
 	private String name;
@@ -91,5 +95,10 @@ public class NewProject implements Serializable {
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898928_74315_3710) ENABLED START */
 	// TODO: put your own implementation code here
+	
+	public NewProject() {
+		startTime = new Date();
+	}
+	
 	/* PROTECTED REGION END */
 }

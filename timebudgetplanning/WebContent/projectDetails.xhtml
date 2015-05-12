@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/template.xhtml">
+	<ui:define name="content">
+		<p>
+			Projekt ID: #{request.getParameter('pid')} <br />
+			Name: #{projectQuery.getProjectDetails(request.getParameter('pid')).name} <br />
+			Beschreibung: #{projectQuery.getProjectDetails(request.getParameter('pid')).description} <br />
+			Startdatum: #{projectQuery.getProjectDetails(request.getParameter('pid')).startDate} <br />
+			Geplantes Zeitbudget: #{projectQuery.getProjectDetails(request.getParameter('pid')).timeBudgetPlanned} <br />
+			<br />
+			Zugewiesene Mitarbeiter:
+			<table>
+				<ui:repeat var="v_employee" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).employeeRoleMap.keySet().toArray()}">
+					<td>
+						<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
+								<f:param name="eid" value="#{v_employee.id}" />
+						</h:link>
+					</td>
+					<td>
+						<ui:repeat var="v_role" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).getRoleTypes(v_employee)}">
+							#{v_role}
+						</ui:repeat>
+					</td>
+				</ui:repeat>
+			</table>
+			<br />
+			Angelegte Meilensteine:
+			<table>
+				<ui:repeat var="v_milestone" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
+					<td>#{v_milestone.name}</td>
+					<td>#{v_milestone.state}</td>
+				</ui:repeat>
+			</table>
+			<br />
+		</p>
+	</ui:define>
+</ui:composition>

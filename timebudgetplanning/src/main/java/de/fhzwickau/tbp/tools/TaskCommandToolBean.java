@@ -45,6 +45,17 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		/* PROTECTED REGION END */
 	}
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void addEmployee(int taskId, int employeeId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431435861434_256127_3719) ENABLED START */
+		// TODO: implementation of method 'TaskCommandToolBean.addEmployee(...)'
+		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		/* PROTECTED REGION END */
+	}
+	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431276472150_541750_3490) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */

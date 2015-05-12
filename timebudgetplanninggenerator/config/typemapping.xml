@@ -49,6 +49,10 @@
 			<tns:to>HashMap&lt;String,HashSet&lt;RoleType&gt;&gt;</tns:to>
 			<tns:context name="Import">java.util.HashMap</tns:context>
 		</tns:type>
+		<tns:type from="EmployeeRoleMapType">
+			<tns:to>HashMap&lt;EmployeeOverview,HashSet&lt;RoleType&gt;&gt;</tns:to>
+			<tns:context name="Import">java.util.HashMap</tns:context>
+		</tns:type>
 		<tns:type from="ObjType">
 			<tns:to>Object</tns:to>
 			<tns:context name="Import">java.lang.Object</tns:context>
@@ -58,11 +62,11 @@
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
 		<tns:type from="MilestoneListType">
-			<tns:to>LinkedList&lt;MilestoneSummary&gt;</tns:to>
+			<tns:to>LinkedList&lt;MilestoneOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
 		<tns:type from="ProjectListType">
-			<tns:to>LinkedList&lt;ProjectSummary&gt;</tns:to>
+			<tns:to>LinkedList&lt;ProjectOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
 		<tns:type from="MilestoneType">

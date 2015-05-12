@@ -95,7 +95,7 @@ public class ProjectTest {
         utx.commit();
     }
     
-    @Test
+    //@Test
     public void addNewProjectTest() throws Exception {
     	NewProject newProject = new NewProject();
     	newProject.setName("Test");
