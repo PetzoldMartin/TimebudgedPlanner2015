@@ -59,7 +59,7 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		if (task == null || employee == null)
 			return;
 		task.addEmployee(employee);
-		entityManager.persist(task);
+		entityManager.merge(task);
 		/* PROTECTED REGION END */
 	}
 	
@@ -75,7 +75,7 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		if (task == null || employee == null)
 			return;
 		task.removeEmployee(employee);
-		entityManager.persist(task);
+		entityManager.merge(task);
 		/* PROTECTED REGION END */
 	}
 	
