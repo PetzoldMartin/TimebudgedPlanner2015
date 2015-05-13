@@ -20,6 +20,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import de.fhzwickau.tbp.datatypes.TaskState;
+import de.fhzwickau.tbp.material.AbstractTask;
+import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Task;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
@@ -67,8 +69,8 @@ public class TaskTest {
 	private void clearData() throws Exception {
 		utx.begin();
 		em.joinTransaction();
-		List<Task> tasks = em.createQuery("SELECT t FROM Task t").getResultList();
-		for (Task t : tasks) {
+		List<AbstractTask> tasks = em.createQuery("SELECT t FROM AbstractTask t").getResultList();
+		for (AbstractTask t : tasks) {
 			em.remove(t);
 		}
 		List<Employee> employees = em.createQuery("SELECT e FROM Employee e").getResultList();
@@ -96,9 +98,22 @@ public class TaskTest {
 		newTask.setDescription("New Test Task Description");
 		taskCommandTool.addTask(newTask);
 		@SuppressWarnings("unchecked")
-		List<Task> resultList = em.createQuery("SELECT e FROM Task e").getResultList();
+		List<Task> resultList = em.createQuery("SELECT t FROM Task t").getResultList();
 		Assert.assertEquals(resultList.size(), 1);
 		Assert.assertEquals(resultList.get(0).getName(), name);
+	}
+	
+	@Test
+	public void addNewCompoundTask() throws Exception {
+		NewTask newTask = new NewTask();
+		newTask.setName("new compound task");
+		newTask.setDescription("new cTask description");
+		
+		taskCommandTool.addCompoundTask(newTask);
+		@SuppressWarnings("unchecked")
+		List<AbstractTask> resultList = em.createQuery("SELECT t FROM AbstractTask t").getResultList();
+		Assert.assertEquals(resultList.size(), 1);
+		Assert.assertEquals(resultList.get(0).getName(), "new compound task");
 	}
 	
 	@Test
@@ -112,13 +127,10 @@ public class TaskTest {
 		newTask.setName("Test name");
 		taskCommandTool.addTask(newTask);
 		
-		int employeeId = ((Employee)em.createQuery("SELECT e FROM Employee e").getResultList().get(0)).getId();
-		int taskId = ((Task)em.createQuery("SELECT t FROM Task t").getResultList().get(0)).getId();
+		Employee e = (Employee)em.createQuery("SELECT e FROM Employee e").getResultList().get(0);
+		Task t = (Task)em.createQuery("SELECT t FROM Task t").getResultList().get(0);
 		
-		taskCommandTool.addEmployee(taskId, employeeId);
-		
-		Task t = em.find(Task.class, taskId);
-		Employee e = em.find(Employee.class, employeeId);
+		taskCommandTool.addEmployee(t.getId(), e.getId());
 		
 		Assert.assertEquals(t.getName(), "Test name");
 		Assert.assertEquals(t.getEmployee().size(), 1);
@@ -134,11 +146,10 @@ public class TaskTest {
 	public void removeEmployeeTest() throws Exception {
 		// run test for adding first and remove employee later
 		addEmployeeTest();
-		int employeeId = ((Employee)em.createQuery("SELECT e FROM Employee e").getResultList().get(0)).getId();
-		int taskId = ((Task)em.createQuery("SELECT t FROM Task t").getResultList().get(0)).getId();
 		
-		Task t = em.find(Task.class, taskId);
-		Employee e = em.find(Employee.class, employeeId);
+		Task t = (Task)em.createQuery("SELECT t FROM Task t").getResultList().get(0);
+		Employee e = (Employee)em.createQuery("SELECT e FROM Employee e").getResultList().get(0);
+		
 		
 		Assert.assertEquals(t.getName(), "Test name");
 		Assert.assertEquals(t.getEmployee().size(), 1);
@@ -149,7 +160,7 @@ public class TaskTest {
 		Assert.assertTrue(t.getEmployee().contains(e));
 		Assert.assertTrue(e.getAbstractTask().contains(t));
 		
-		taskCommandTool.removeEmployee(taskId, employeeId);
+		taskCommandTool.removeEmployee(t.getId(), e.getId());
 		Assert.assertEquals(t.getEmployee().size(), 0);
 		Assert.assertEquals(e.getAbstractTask().size(), 0);
 	}
@@ -162,21 +173,57 @@ public class TaskTest {
 		
 		taskCommandTool.addTask(newTask);
 		
-		int taskId = ((Task) em.createQuery("SELECT t FROM Task t").getResultList().get(0)).getId();
-		Task t = em.find(Task.class, taskId);
+		Task t = (Task) em.createQuery("SELECT t FROM Task t").getResultList().get(0);
 		
 		Assert.assertEquals(t.getName(), "initial task");
 		
 		AlteredTask alteredTask = new AlteredTask();
-		alteredTask.setId(taskId);
+		alteredTask.setId(t.getId());
 		alteredTask.setName("altered task name");
 		alteredTask.setDescription("altered description");
 		
 		taskCommandTool.alterTask(alteredTask);
 		
-		t = em.find(Task.class, taskId);
+		t = em.find(Task.class, t.getId());
 		
-		Assert.assertEquals(t.getName(), "altered task name");
-		Assert.assertEquals(t.getDescription(), "altered description");
+		Assert.assertEquals("altered task name", t.getName());
+		Assert.assertEquals("altered description", t.getDescription());
+	}
+	
+	@Test
+	public void addSubtaskTest() throws Exception {
+		NewTask newTask = new NewTask();
+		newTask.setName("task name");
+		newTask.setDescription("inital description");
+		taskCommandTool.addTask(newTask);
+		
+		newTask.setName("new compound task");
+		newTask.setDescription("new cTask description");
+		taskCommandTool.addCompoundTask(newTask);
+		
+		CompoundTask cTask = (CompoundTask)em.createQuery("SELECT t FROM CompoundTask t").getResultList().get(0);
+		Task task = (Task)em.createQuery("SELECT t from Task t").getResultList().get(0);
+		
+		Assert.assertEquals(0, cTask.getAbstractTask().size());
+		Assert.assertFalse(cTask.getAbstractTask().contains(task));
+		
+		cTask.addAbstractTask(task);
+		
+		Assert.assertEquals(1, cTask.getAbstractTask().size());
+		Assert.assertTrue(cTask.getAbstractTask().contains(task));
+	}
+	
+	@Test
+	public void removeSubtaskTest() throws Exception {
+		// run test for adding first and remove subtask later
+		addSubtaskTest();
+		
+		CompoundTask cTask = (CompoundTask)em.createQuery("SELECT t FROM CompoundTask t").getResultList().get(0);
+		Task task = (Task)em.createQuery("SELECT t from Task t").getResultList().get(0);
+		
+		taskCommandTool.removeSubtaskFromCompoundTask(cTask.getId(), task.getId());
+		
+		Assert.assertEquals(0, cTask.getAbstractTask().size());
+		Assert.assertFalse(cTask.getAbstractTask().contains(task));
 	}
 }

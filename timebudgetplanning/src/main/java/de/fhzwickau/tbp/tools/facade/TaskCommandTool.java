@@ -23,6 +23,12 @@ public interface TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
+	public void addCompoundTask(NewTask newTask);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
 	public void addEmployee(int taskId, int employeeId);
 	
 	/**
@@ -36,6 +42,18 @@ public interface TaskCommandTool {
 	 */
 	
 	public void alterTask(AlteredTask alteredTask);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void addSubtaskToCompoundTask(int compoundTaskId, int subtaskId);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431276253958_640908_3465) ENABLED START */
 	// TODO: put your own implementation code here

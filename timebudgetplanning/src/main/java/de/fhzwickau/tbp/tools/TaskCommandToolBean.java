@@ -8,12 +8,14 @@ import de.fhzwickau.tbp.tools.dto.NewTask;
 import de.fhzwickau.tbp.tools.facade.TaskCommandTool;
 import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.AbstractTask;
+import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Task;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
+
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
 
 /**
@@ -45,6 +47,21 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		task.setDescription(newTask.getDescription());
 		task.setState(TaskState.OPEN);
 		entityManager.persist(task);
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void addCompoundTask(NewTask newTask) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431534436418_545037_8891) ENABLED START */
+		// TODO: implementation of method 'TaskCommandToolBean.addCompoundTask(...)'
+		CompoundTask cTask = new CompoundTask();
+		cTask.setName(newTask.getName());
+		cTask.setDescription(newTask.getDescription());
+		cTask.setState(TaskState.OPEN);
+		entityManager.persist(cTask);
 		/* PROTECTED REGION END */
 	}
 	
@@ -91,6 +108,34 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		task.setName(alteredTask.getName());
 		task.setDescription(alteredTask.getDescription());
 		entityManager.merge(task);
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void addSubtaskToCompoundTask(int compoundTaskId, int subtaskId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431548056928_616978_3737) ENABLED START */
+		// TODO: implementation of method 'TaskCommandToolBean.addSubtaskToCompoundTask(...)'
+		Task task = entityManager.find(Task.class, subtaskId);
+		CompoundTask cTask = entityManager.find(CompoundTask.class, compoundTaskId);
+		cTask.addAbstractTask(task);
+		entityManager.merge(cTask);
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431548124199_571091_3742) ENABLED START */
+		// TODO: implementation of method 'TaskCommandToolBean.removeSubtaskFromCompoundTask(...)'
+		Task task = entityManager.find(Task.class, subtaskId);
+		CompoundTask cTask = entityManager.find(CompoundTask.class, compoundTaskId);
+		cTask.removeAbstractTask(task);
+		entityManager.merge(cTask);
 		/* PROTECTED REGION END */
 	}
 	
