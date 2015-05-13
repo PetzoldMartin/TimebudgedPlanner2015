@@ -14,6 +14,7 @@ import de.fhzwickau.tbp.material.Task;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
+import de.fhzwickau.tbp.tools.dto.AlteredTask;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -75,6 +76,20 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		if (task == null || employee == null)
 			return;
 		task.removeEmployee(employee);
+		entityManager.merge(task);
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void alterTask(AlteredTask alteredTask) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431529388865_21163_4611) ENABLED START */
+		// TODO: implementation of method 'TaskCommandToolBean.alterTask(...)'
+		AbstractTask task = entityManager.find(AbstractTask.class, alteredTask.getId());
+		task.setName(alteredTask.getName());
+		task.setDescription(alteredTask.getDescription());
 		entityManager.merge(task);
 		/* PROTECTED REGION END */
 	}

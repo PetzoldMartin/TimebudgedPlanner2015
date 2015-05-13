@@ -5,6 +5,7 @@ package de.fhzwickau.tbp.tools.facade;
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431276253958_640908_3465) 
  */
 import de.fhzwickau.tbp.tools.dto.NewTask;
+import de.fhzwickau.tbp.tools.dto.AlteredTask;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -29,6 +30,12 @@ public interface TaskCommandTool {
 	 */
 	
 	public void removeEmployee(int taskId, int employeeId);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void alterTask(AlteredTask alteredTask);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431276253958_640908_3465) ENABLED START */
 	// TODO: put your own implementation code here

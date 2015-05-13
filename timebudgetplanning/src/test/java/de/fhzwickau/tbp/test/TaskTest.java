@@ -24,6 +24,8 @@ import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Task;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
 import de.fhzwickau.tbp.tools.TaskCommandToolBean;
+import de.fhzwickau.tbp.tools.dto.AlteredEmployee;
+import de.fhzwickau.tbp.tools.dto.AlteredTask;
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
 import de.fhzwickau.tbp.tools.dto.NewTask;
 import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
@@ -65,7 +67,7 @@ public class TaskTest {
 	private void clearData() throws Exception {
 		utx.begin();
 		em.joinTransaction();
-		List<Task> tasks = em.createQuery("SELECT e FROM Task e").getResultList();
+		List<Task> tasks = em.createQuery("SELECT t FROM Task t").getResultList();
 		for (Task t : tasks) {
 			em.remove(t);
 		}
@@ -110,8 +112,8 @@ public class TaskTest {
 		newTask.setName("Test name");
 		taskCommandTool.addTask(newTask);
 		
-		int employeeId = ((Employee)em.createQuery("SELECT e from Employee e").getResultList().get(0)).getId();
-		int taskId = ((Task)em.createQuery("SELECT t from Task t").getResultList().get(0)).getId();
+		int employeeId = ((Employee)em.createQuery("SELECT e FROM Employee e").getResultList().get(0)).getId();
+		int taskId = ((Task)em.createQuery("SELECT t FROM Task t").getResultList().get(0)).getId();
 		
 		taskCommandTool.addEmployee(taskId, employeeId);
 		
@@ -130,6 +132,51 @@ public class TaskTest {
 	
 	@Test
 	public void removeEmployeeTest() throws Exception {
-		// TODO implement Test
+		// run test for adding first and remove employee later
+		addEmployeeTest();
+		int employeeId = ((Employee)em.createQuery("SELECT e FROM Employee e").getResultList().get(0)).getId();
+		int taskId = ((Task)em.createQuery("SELECT t FROM Task t").getResultList().get(0)).getId();
+		
+		Task t = em.find(Task.class, taskId);
+		Employee e = em.find(Employee.class, employeeId);
+		
+		Assert.assertEquals(t.getName(), "Test name");
+		Assert.assertEquals(t.getEmployee().size(), 1);
+		
+		Assert.assertEquals(e.getFirstName(), "firstName");
+		Assert.assertEquals(e.getAbstractTask().size(), 1);
+		
+		Assert.assertTrue(t.getEmployee().contains(e));
+		Assert.assertTrue(e.getAbstractTask().contains(t));
+		
+		taskCommandTool.removeEmployee(taskId, employeeId);
+		Assert.assertEquals(t.getEmployee().size(), 0);
+		Assert.assertEquals(e.getAbstractTask().size(), 0);
+	}
+	
+	@Test
+	public void alterTaskTest() throws Exception {
+		NewTask newTask = new NewTask();
+		newTask.setName("initial task");
+		newTask.setDescription("inital description");
+		
+		taskCommandTool.addTask(newTask);
+		
+		int taskId = ((Task) em.createQuery("SELECT t FROM Task t").getResultList().get(0)).getId();
+		Task t = em.find(Task.class, taskId);
+		
+		Assert.assertEquals(t.getName(), "initial task");
+		
+		AlteredTask alteredTask = new AlteredTask();
+		alteredTask.setId(taskId);
+		alteredTask.setName("altered task name");
+		alteredTask.setDescription("altered description");
+		
+		taskCommandTool.alterTask(alteredTask);
+		
+		t = em.find(Task.class, taskId);
+		
+		Assert.assertEquals(t.getName(), "altered task name");
+		Assert.assertEquals(t.getDescription(), "altered description");
 	}
 }
