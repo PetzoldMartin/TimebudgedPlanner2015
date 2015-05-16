@@ -4,6 +4,7 @@ package de.fhzwickau.tbp.tools;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_8210263_1431069898909_18254_3671) 
  */
+import java.io.IOException;
 import java.util.Date;
 
 import de.fhzwickau.tbp.material.Employee;
@@ -21,6 +22,8 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
+
 import de.fhzwickau.tbp.tools.dto.AddEmployeeWithRole;
 
 /**
@@ -65,17 +68,20 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addEmployeeWithRole(AddEmployeeWithRole employeeWithRole) {
+	public String addEmployeeWithRole(AddEmployeeWithRole employeeWithRole) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841) ENABLED START */
+		System.out.println(employeeWithRole.getEmployeeId() + " " + employeeWithRole.getProjectId() + " " + employeeWithRole.getRole());
 		Role r = new Role();
 		Employee e = entityManager.find(Employee.class, employeeWithRole.getEmployeeId());
 		Project p = entityManager.find(Project.class, employeeWithRole.getProjectId());
-		if (e == null || p == null)
-			return;
+		if (e == null || p == null) {
+			return "projectDetails?faces-redirect=true&pid=" + employeeWithRole.getProjectId();
+		}
 		r.setEmployee(e);
 		r.setProject(p);
 		r.setRole(employeeWithRole.getRole());
 		entityManager.persist(r);
+		return "projectDetails?faces-redirect=true&pid=" + employeeWithRole.getProjectId();
 		/* PROTECTED REGION END */
 	}
 	

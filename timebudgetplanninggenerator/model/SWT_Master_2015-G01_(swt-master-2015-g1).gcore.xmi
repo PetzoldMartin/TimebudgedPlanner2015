@@ -29,7 +29,7 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="EmployeeQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431069898908_528929_3669" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_936855_3715" supplier="EntityManager _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_8210263_1431069898928_459953_3709 //@externalTypes.4 _17_0_4_2_8210263_1431069898931_936855_3715">
+          <classifier xsi:type="gcore:MClass" name="EmployeeQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431069898908_528929_3669" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_936855_3715" supplier="EntityManager _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_8210263_1431069898928_459953_3709 //@externalTypes.11 //@externalTypes.4 _17_0_4_2_8210263_1431069898931_936855_3715">
             <taggedValue value="employeeQuery" tag="//@anyStereotype.3/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.14/@property.1"/>
@@ -47,11 +47,16 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
+            <operation name="listAllRoleTypes" xmiGuid="_17_0_4_2_8210263_1431069898908_528929_3669__17_0_4_2_8210263_1431775930893_889054_5189" visibility="public">
+              <return name="" xmiGuid="_17_0_4_2_8210263_1431069898908_528929_3669__17_0_4_2_8210263_1431775930893_889054_5189__17_0_4_2_8210263_1431775945264_691550_5192" direction="return" type="//@externalTypes.11" operation="_17_0_4_2_8210263_1431069898908_528929_3669__17_0_4_2_8210263_1431775930893_889054_5189">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </return>
+            </operation>
             <property xsi:type="gcore:MAttribute" name="entityManager" xmiGuid="_17_0_4_2_8210263_1431069898908_528929_3669_entityManager" stereotype="jpaPersistenceContext" visibility="private" type="EntityManager" defaultvalue="">
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="ProjectCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431069898909_18254_3671" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_715428_3716" supplier="EntityManager //@externalTypes.0 //@externalTypes.2 _17_0_4_2_8210263_1431069898928_74315_3710 _17_0_4_2_8210263_1431773678972_926874_5154 _17_0_4_2_8210263_1431069898931_715428_3716">
+          <classifier xsi:type="gcore:MClass" name="ProjectCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431069898909_18254_3671" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_715428_3716" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431069898928_74315_3710 _17_0_4_2_8210263_1431773678972_926874_5154 _17_0_4_2_8210263_1431069898931_715428_3716">
             <taggedValue value="projectCommand" tag="//@anyStereotype.3/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.14/@property.1"/>
@@ -68,7 +73,7 @@
               <parameter name="employeeWithRole" xmiGuid="_17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841__17_0_4_2_8210263_1431773818140_34426_5187" direction="in" type="_17_0_4_2_8210263_1431773678972_926874_5154" operation="_17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </parameter>
-              <return name="" xmiGuid="_17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841__17_0_4_2_8210263_1431773818141_338252_5188" direction="return" type="//@externalTypes.2" operation="_17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841">
+              <return name="" xmiGuid="_17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841__17_0_4_2_8210263_1431792643238_380052_5193" direction="return" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </return>
             </operation>
@@ -1194,7 +1199,7 @@
                 </return>
               </operation>
             </classifier>
-            <classifier xsi:type="gcore:MInterface" name="EmployeeQueryTool" xmiGuid="_17_0_4_2_8210263_1431069898931_936855_3715" stereotype="_17_0_4_2_8210263_1431069898878_292934_3541" visibility="public" supplier="_17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_8210263_1431069898928_459953_3709 //@externalTypes.4">
+            <classifier xsi:type="gcore:MInterface" name="EmployeeQueryTool" xmiGuid="_17_0_4_2_8210263_1431069898931_936855_3715" stereotype="_17_0_4_2_8210263_1431069898878_292934_3541" visibility="public" supplier="_17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_8210263_1431069898928_459953_3709 //@externalTypes.11 //@externalTypes.4">
               <operation name="listAllEmployees" xmiGuid="_17_0_4_2_8210263_1431069898962_515880_3837" visibility="public">
                 <return name="" xmiGuid="_17_0_4_2_8210263_1431069898983_806502_3942" direction="return" type="_17_0_4_2_8210263_1431069898926_209813_3706" operation="_17_0_4_2_8210263_1431069898962_515880_3837">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -1208,8 +1213,13 @@
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </return>
               </operation>
+              <operation name="listAllRoleTypes" xmiGuid="_17_0_4_2_8210263_1431775930893_889054_5189" visibility="public">
+                <return name="" xmiGuid="_17_0_4_2_8210263_1431775945264_691550_5192" direction="return" type="//@externalTypes.11" operation="_17_0_4_2_8210263_1431775930893_889054_5189">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
             </classifier>
-            <classifier xsi:type="gcore:MInterface" name="ProjectCommandTool" xmiGuid="_17_0_4_2_8210263_1431069898931_715428_3716" stereotype="_17_0_4_2_8210263_1431069898878_292934_3541" visibility="public" supplier="//@externalTypes.0 //@externalTypes.2 _17_0_4_2_8210263_1431069898928_74315_3710 _17_0_4_2_8210263_1431773678972_926874_5154">
+            <classifier xsi:type="gcore:MInterface" name="ProjectCommandTool" xmiGuid="_17_0_4_2_8210263_1431069898931_715428_3716" stereotype="_17_0_4_2_8210263_1431069898878_292934_3541" visibility="public" supplier="//@externalTypes.0 _17_0_4_2_8210263_1431069898928_74315_3710 _17_0_4_2_8210263_1431773678972_926874_5154">
               <operation name="addProject" xmiGuid="_17_0_4_2_8210263_1431069898963_531788_3840" visibility="public">
                 <parameter name="newProject" xmiGuid="_17_0_4_2_8210263_1431069898984_657440_3945" direction="in" type="_17_0_4_2_8210263_1431069898928_74315_3710" operation="_17_0_4_2_8210263_1431069898963_531788_3840">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -1222,7 +1232,7 @@
                 <parameter name="employeeWithRole" xmiGuid="_17_0_4_2_8210263_1431773818140_34426_5187" direction="in" type="_17_0_4_2_8210263_1431773678972_926874_5154" operation="_17_0_4_2_8210263_1431069898963_27512_3841">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </parameter>
-                <return name="" xmiGuid="_17_0_4_2_8210263_1431773818141_338252_5188" direction="return" type="//@externalTypes.2" operation="_17_0_4_2_8210263_1431069898963_27512_3841">
+                <return name="" xmiGuid="_17_0_4_2_8210263_1431792643238_380052_5193" direction="return" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431069898963_27512_3841">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </return>
               </operation>

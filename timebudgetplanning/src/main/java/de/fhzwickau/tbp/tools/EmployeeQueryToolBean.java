@@ -6,6 +6,7 @@ package de.fhzwickau.tbp.tools;
  */
 import java.util.List;
 
+import de.fhzwickau.tbp.datatypes.RoleType;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
@@ -72,6 +73,17 @@ public class EmployeeQueryToolBean implements EmployeeQueryTool {
 			employeeDetails.addRoleInProject(p.getName(), r.getRole());
 		}
 		return employeeDetails;
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public RoleType[] listAllRoleTypes() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898908_528929_3669__17_0_4_2_8210263_1431775930893_889054_5189) ENABLED START */
+		// TODO: implementation of method 'EmployeeQueryToolBean.listAllRoleTypes(...)'
+		return RoleType.values();
 		/* PROTECTED REGION END */
 	}
 	
