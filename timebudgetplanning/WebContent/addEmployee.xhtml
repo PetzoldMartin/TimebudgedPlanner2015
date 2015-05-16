@@ -6,9 +6,11 @@
 	template="/WEB-INF/templates/template.xhtml">
 	<ui:define name="content">
 		<h:form id="form">
-            Vorname : <h:inputText value="#{newEmployeeDTO.firstName}" />
-            Nachname : <h:inputText value="#{newEmployeeDTO.lastName}" />
-			<h:commandButton value="Hinzufügen" action="#{employeeCommand.addEmployee(newEmployeeDTO)}" />
+			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
+	            Vorname : <h:inputText value="#{newEmployeeDTO.firstName}" /> <br />
+	            Nachname : <h:inputText value="#{newEmployeeDTO.lastName}" /> <br />
+				<h:commandButton value="Hinzufügen" action="#{employeeCommand.addEmployee(newEmployeeDTO)}" />
+			</h:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>

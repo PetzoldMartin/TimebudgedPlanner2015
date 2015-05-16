@@ -37,14 +37,6 @@
 			<tns:to>LinkedList&lt;EmployeeOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
-		<tns:type from="RoleListType">
-			<tns:to>LinkedList&lt;RoleSummary&gt;</tns:to>
-			<tns:context name="Import">java.util.LinkedList</tns:context>
-		</tns:type>
-		<tns:type from="TaskListType">
-			<tns:to>LinkedList&lt;TaskSummary&gt;</tns:to>
-			<tns:context name="Import">java.util.LinkedList</tns:context>
-		</tns:type>
 		<tns:type from="ProjectRoleMapType">
 			<tns:to>HashMap&lt;String,HashSet&lt;RoleType&gt;&gt;</tns:to>
 			<tns:context name="Import">java.util.HashMap</tns:context>
@@ -57,9 +49,8 @@
 			<tns:to>Object</tns:to>
 			<tns:context name="Import">java.lang.Object</tns:context>
 		</tns:type>
-		<tns:type from="ProjectType">
-			<tns:to>LinkedList&lt;ProjectSummary&gt;</tns:to>
-			<tns:context name="Import">java.util.LinkedList</tns:context>
+		<tns:type from="RoleTypeArray">
+			<tns:to>RoleType[]</tns:to>
 		</tns:type>
 		<tns:type from="MilestoneListType">
 			<tns:to>LinkedList&lt;MilestoneOverview&gt;</tns:to>
@@ -68,13 +59,6 @@
 		<tns:type from="ProjectListType">
 			<tns:to>LinkedList&lt;ProjectOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
-		</tns:type>
-		<tns:type from="MilestoneType">
-			<tns:to>Milestone</tns:to>
-		</tns:type>
-		<tns:type from="InterceptorType">
-			<tns:to>InvocationContext</tns:to>
-			<tns:context name="Import">javax.interceptor.InvocationContext</tns:context>
 		</tns:type>
 	</tns:externalTypes>
 </tns:typeMapping>

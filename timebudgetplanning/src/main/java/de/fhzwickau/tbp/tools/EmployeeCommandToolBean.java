@@ -12,15 +12,15 @@ import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
-import javax.faces.bean.RequestScoped;
 import javax.inject.Named;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
 @Named("employeeCommand")
-@RequestScoped
 @Stateless(name = "EmployeeCommandToolBean")
 public class EmployeeCommandToolBean implements EmployeeCommandTool {
 	

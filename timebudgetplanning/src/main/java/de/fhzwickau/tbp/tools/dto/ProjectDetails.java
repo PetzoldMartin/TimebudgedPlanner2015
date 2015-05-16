@@ -102,6 +102,32 @@ public class ProjectDetails implements Serializable {
 	}
 	
 	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public RoleType[] getRoleTypes(EmployeeOverview employee) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431769439500_504827_3761) ENABLED START */
+		// TODO: implementation of method 'ProjectDetails.getRoleTypes(...)'
+		Set<RoleType> rTypes = null;
+		for (EmployeeOverview e : employeeRoleMap.keySet()) {
+			if (e.getId() == employee.getId()) {
+				rTypes = employeeRoleMap.get(e);
+				break;
+			}
+		}
+		if (rTypes == null)
+			return new RoleType[] {};
+		RoleType[] roleTypes = new RoleType[rTypes.size()];
+		int counter = 0;
+		for (RoleType r : rTypes) {
+			roleTypes[counter] = r;
+			++counter;
+		}
+		return roleTypes;
+		/* PROTECTED REGION END */
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>id</b></em>'.
 	 */
 	
@@ -256,26 +282,5 @@ public class ProjectDetails implements Serializable {
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431444853571_934375_5860) ENABLED START */
 	// TODO: put your own implementation code here
-	
-	// TODO Add to model
-	public RoleType[] getRoleTypes(EmployeeOverview employee) {
-		Set<RoleType> rTypes = null;
-		for (EmployeeOverview e : employeeRoleMap.keySet()) {
-			if (e.getId() == employee.getId()) {
-				rTypes = employeeRoleMap.get(e);
-				break;
-			}
-		}
-		if (rTypes == null)
-			return new RoleType[] {};
-		RoleType[] roleTypes = new RoleType[rTypes.size()];
-		int counter = 0;
-		for (RoleType r : rTypes) {
-			roleTypes[counter] = r;
-			++counter;
-		}
-		return roleTypes;
-	}
-	
 	/* PROTECTED REGION END */
 }
