@@ -21,6 +21,7 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import de.fhzwickau.tbp.tools.dto.AddEmployeeWithRole;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -64,16 +65,16 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addEmployeeWithRole(int projectId, int employeeId, RoleType role) {
+	public void addEmployeeWithRole(AddEmployeeWithRole employeeWithRole) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841) ENABLED START */
 		Role r = new Role();
-		Employee e = entityManager.find(Employee.class, employeeId);
-		Project p = entityManager.find(Project.class, projectId);
+		Employee e = entityManager.find(Employee.class, employeeWithRole.getEmployeeId());
+		Project p = entityManager.find(Project.class, employeeWithRole.getProjectId());
 		if (e == null || p == null)
 			return;
 		r.setEmployee(e);
 		r.setProject(p);
-		r.setRole(role);
+		r.setRole(employeeWithRole.getRole());
 		entityManager.persist(r);
 		/* PROTECTED REGION END */
 	}

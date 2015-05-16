@@ -30,6 +30,7 @@ import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
 import de.fhzwickau.tbp.tools.ProjectCommandToolBean;
+import de.fhzwickau.tbp.tools.dto.AddEmployeeWithRole;
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
 import de.fhzwickau.tbp.tools.dto.NewProject;
 import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
@@ -132,7 +133,11 @@ public class ProjectTest {
 		int projectId = ((Project) em.createQuery("SELECT e FROM Project e").getResultList().get(0)).getId();
     	int employeeId = ((Employee) em.createQuery("SELECT e FROM Employee e").getResultList().get(0)).getId();
     	
-    	ProjectCommandTool.addEmployeeWithRole(projectId, employeeId, RoleType.WORKER);
+    	AddEmployeeWithRole addEmployeeWithRole = new AddEmployeeWithRole();
+    	addEmployeeWithRole.setProjectId(projectId);
+    	addEmployeeWithRole.setEmployeeId(employeeId);
+    	addEmployeeWithRole.setRole(RoleType.WORKER);
+    	ProjectCommandTool.addEmployeeWithRole(addEmployeeWithRole);
     	
     	@SuppressWarnings("unchecked")
 		List<Role> resultList = (List<Role>) em.createQuery("SELECT e FROM Role e").getResultList();

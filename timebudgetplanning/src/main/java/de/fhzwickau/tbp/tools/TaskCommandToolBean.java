@@ -17,11 +17,13 @@ import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
 
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
+import javax.inject.Named;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("taskCommand")
 @Stateless(name = "TaskCommandToolBean")
 public class TaskCommandToolBean implements TaskCommandTool {
 	
