@@ -57,9 +57,16 @@ public class ProjectDetails implements Serializable {
 	public void addEmployeeWithRole(EmployeeOverview employee, RoleType role) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431445017966_389714_5894) ENABLED START */
 		// TODO: implementation of method 'ProjectDetails.addEmployeeWithRole(...)'
-		HashSet<RoleType> roleTypes = employeeRoleMap.get(employee);
-		if (roleTypes == null)
-			roleTypes = new HashSet<RoleType>();
+		HashSet<RoleType> roleTypes = null;
+		for (EmployeeOverview e : employeeRoleMap.keySet()) {
+			if (e.getId() == employee.getId()) {
+				roleTypes = employeeRoleMap.get(e);
+				roleTypes.add(role);
+				employeeRoleMap.put(e, roleTypes);
+				return;
+			}
+		}
+		roleTypes = new HashSet<RoleType>();
 		roleTypes.add(role);
 		employeeRoleMap.put(employee, roleTypes);
 		/* PROTECTED REGION END */
@@ -72,10 +79,18 @@ public class ProjectDetails implements Serializable {
 	public void removeEmployeeWithRole(EmployeeOverview employee, RoleType role) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431445035201_351348_5899) ENABLED START */
 		// TODO: implementation of method 'ProjectDetails.removeEmployeeWithRole(...)'
-		HashSet<RoleType> roleTypes = employeeRoleMap.get(employee);
-		if (roleTypes == null || !roleTypes.contains(employee))
-			return;
-		roleTypes.remove(role);
+		HashSet<RoleType> roleTypes = null;
+		for (EmployeeOverview e : employeeRoleMap.keySet()) {
+			if (e.getId() == employee.getId()) {
+				roleTypes = employeeRoleMap.get(e);
+				roleTypes.remove(role);
+				if (roleTypes.size() == 0)
+					employeeRoleMap.remove(e);
+				else
+					employeeRoleMap.put(e, roleTypes);
+				return;
+			}
+		}
 		/* PROTECTED REGION END */
 	}
 	
@@ -97,7 +112,12 @@ public class ProjectDetails implements Serializable {
 	public void removeMilestone(MilestoneOverview milestone) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431445472823_634842_5977) ENABLED START */
 		// TODO: implementation of method 'ProjectDetails.removeMilestone(...)'
-		milestones.remove(milestone);
+		for (MilestoneOverview m : milestones) {
+			if (m.getId() == milestone.getId()) {
+				milestones.remove(m);
+				return;
+			}
+		}
 		/* PROTECTED REGION END */
 	}
 	
