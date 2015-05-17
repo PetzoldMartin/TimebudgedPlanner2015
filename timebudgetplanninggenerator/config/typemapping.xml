@@ -37,6 +37,10 @@
 			<tns:to>LinkedList&lt;EmployeeOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
+		<tns:type from="TaskListType">
+			<tns:to>LinkedList&lt;TaskOverview&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
 		<tns:type from="ProjectRoleMapType">
 			<tns:to>HashMap&lt;String,HashSet&lt;RoleType&gt;&gt;</tns:to>
 			<tns:context name="Import">java.util.HashMap</tns:context>

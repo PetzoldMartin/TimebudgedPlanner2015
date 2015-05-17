@@ -49,7 +49,11 @@
 		<table>
 			<ui:repeat var="v_milestone" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
 				<tr>
-					<td>#{v_milestone.name}</td>
+					<td>
+						<h:link outcome="milestoneDetails" value="#{v_milestone.name}">
+							<f:param name="mid" value="#{v_milestone.id}" />
+						</h:link>
+					</td>
 					<td>#{v_milestone.state}</td>
 					<td><h:outputText value="#{v_milestone.endDate}">
 						<f:convertDateTime pattern="dd.MM.yyyy" />

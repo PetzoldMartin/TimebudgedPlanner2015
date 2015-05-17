@@ -5,11 +5,15 @@ package de.fhzwickau.tbp.tools.dto;
  * 	@FILE-ID : (_17_0_4_2_8210263_1431069898929_214298_3711) 
  */
 import java.io.Serializable;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("newTaskDTO")
+@RequestScoped
 public class NewTask implements Serializable {
 	
 	private String name;

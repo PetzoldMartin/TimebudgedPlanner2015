@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/WEB-INF/templates/template.xhtml">
+	<f:metadata>
+        <f:viewParam name="mid" value="#{newTaskDTO.milestoneId}" />
+    </f:metadata>
+	<ui:define name="content">
+		Meilenstein ID: #{request.getParameter('mid')} <br />
+		Name: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).name} <br />
+		Beschreibung: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).description} <br />
+		<h:outputText value="Geplantes " rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
+		Enddatum: <h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}">
+			<f:convertDateTime pattern="dd.MM.yyyy" />
+		</h:outputText> <br />
+		Status: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state} <br />
+		Angelegte Aufgaben:
+		<table>
+			<!--ui:repeat var="v_milestone" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
+				<tr>
+					<td>#{v_milestone.name}</td>
+					<td>#{v_milestone.state}</td>
+					<td><h:outputText value="#{v_milestone.endDate}">
+						<f:convertDateTime pattern="dd.MM.yyyy" />
+					</h:outputText>
+					</td>
+				</tr>
+			</ui:repeat-->
+		</table>
+		<br />
+		<h:button outcome="addTask" value="Aufgabe anlegen">
+			<f:param name="mid" value="#{newTaskDTO.milestoneId}" />
+		</h:button>
+	</ui:define>
+</ui:composition>
