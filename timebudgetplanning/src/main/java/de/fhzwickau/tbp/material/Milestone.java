@@ -18,6 +18,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.CascadeType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -31,18 +32,16 @@ public class Milestone implements Serializable {
 	private Project project;
 	
 	/** Stores all linked objects of association '<em><b>milestoneData</b></em>' */
-	@OneToMany(cascade = {}, mappedBy = "milestone")
+	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "milestone")
 	private java.util.Set<MilestoneData> milestoneData = new java.util.HashSet<MilestoneData>();
 	
-	/** Stores all linked objects of association '<em><b>akstractTasl</b></em>' */
+	/** Stores all linked objects of association '<em><b>abstractTask</b></em>' */
 	@OneToMany(cascade = {}, mappedBy = "milestone")
-	private java.util.Set<AbstractTask> akstractTasl = new java.util.HashSet<AbstractTask>();
+	private java.util.Set<AbstractTask> abstractTask = new java.util.HashSet<AbstractTask>();
 	
 	private String name;
 	
 	private MilestoneState state;
-	
-	private Date date;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -56,6 +55,17 @@ public class Milestone implements Serializable {
 	 */
 	
 	public Milestone() {
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public int getId() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845322822_274027_5249) ENABLED START */
+		// TODO: implementation of method 'Milestone.getId(...)'
+		return id;
+		/* PROTECTED REGION END */
 	}
 	
 	/**
@@ -120,37 +130,37 @@ public class Milestone implements Serializable {
 	}
 	
 	/**
-	 * Returns all linked objects of association '<em><b>akstractTasl</b></em>'.
+	 * Returns all linked objects of association '<em><b>abstractTask</b></em>'.
 	 */
 	
-	public java.util.Set<AbstractTask> getAkstractTasl() {
-		return akstractTasl;
+	public java.util.Set<AbstractTask> getAbstractTask() {
+		return abstractTask;
 	}
 	
 	/**
-	 * Establishes a link to the specified object for association '<em><b>akstractTasl</b></em>'.
-	 * @param	akstractTasl	the object to associate.
+	 * Establishes a link to the specified object for association '<em><b>abstractTask</b></em>'.
+	 * @param	abstractTask	the object to associate.
 	 */
 	
-	public void addAkstractTasl(AbstractTask akstractTasl) {
-		if (akstractTasl == null || this.akstractTasl.contains(akstractTasl)) {
+	public void addAbstractTask(AbstractTask abstractTask) {
+		if (abstractTask == null || this.abstractTask.contains(abstractTask)) {
 			return;
 		}
-		this.akstractTasl.add(akstractTasl);
-		akstractTasl.setMilestone(this);
+		this.abstractTask.add(abstractTask);
+		abstractTask.setMilestone(this);
 	}
 	
 	/**
-	 * Removes the link to the specified specified object from association '<em><b>akstractTasl</b></em>'.
-	 * @param	akstractTasl	the object to remove.
+	 * Removes the link to the specified specified object from association '<em><b>abstractTask</b></em>'.
+	 * @param	abstractTask	the object to remove.
 	 */
 	
-	public void removeAkstractTasl(AbstractTask akstractTasl) {
-		if (akstractTasl == null || !this.akstractTasl.contains(akstractTasl)) {
+	public void removeAbstractTask(AbstractTask abstractTask) {
+		if (abstractTask == null || !this.abstractTask.contains(abstractTask)) {
 			return;
 		}
-		this.akstractTasl.remove(akstractTasl);
-		akstractTasl.setMilestone(null);
+		this.abstractTask.remove(abstractTask);
+		abstractTask.setMilestone(null);
 	}
 	
 	/**
@@ -188,40 +198,6 @@ public class Milestone implements Serializable {
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>date</b></em>'.
-	 */
-	
-	public Date getDate() {
-		return new Date(date.getTime());
-	}
-	
-	/**
-	 * Sets the value of attribute '<em><b>date</b></em>'.
-	 * @param	date	the value to set.
-	 */
-	
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	
-	/**
-	 * Returns the value of attribute '<em><b>id</b></em>'.
-	 */
-	
-	public int getId() {
-		return id;
-	}
-	
-	/**
-	 * Sets the value of attribute '<em><b>id</b></em>'.
-	 * @param	id	the value to set.
-	 */
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	
@@ -236,6 +212,16 @@ public class Milestone implements Serializable {
 	
 	public void setVersion(int version) {
 		this.version = version;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>endTime</b></em>'
+	 */
+	private Date getEndTime() {
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898942_151186_3757) ENABLED START */
+		// TODO: implementation of derived (calculated) attribute 'endTime'
+		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
+		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898914_143571_3677) ENABLED START */

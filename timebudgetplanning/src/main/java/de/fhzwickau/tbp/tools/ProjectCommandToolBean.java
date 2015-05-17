@@ -70,7 +70,6 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 	
 	public String addEmployeeWithRole(AddEmployeeWithRole employeeWithRole) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1431069898963_27512_3841) ENABLED START */
-		System.out.println(employeeWithRole.getEmployeeId() + " " + employeeWithRole.getProjectId() + " " + employeeWithRole.getRole());
 		Role r = new Role();
 		Employee e = entityManager.find(Employee.class, employeeWithRole.getEmployeeId());
 		Project p = entityManager.find(Project.class, employeeWithRole.getProjectId());

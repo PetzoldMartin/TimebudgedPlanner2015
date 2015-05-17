@@ -51,9 +51,16 @@
 				<tr>
 					<td>#{v_milestone.name}</td>
 					<td>#{v_milestone.state}</td>
+					<td><h:outputText value="#{v_milestone.endDate}">
+						<f:convertDateTime pattern="dd.MM.yyyy" />
+					</h:outputText>
+					</td>
 				</tr>
 			</ui:repeat>
 		</table>
 		<br />
+		<h:button outcome="addMilestone" value="Meilenstein anlegen">
+			<f:param name="pid" value="#{addEmployeeWithRoleDTO.projectId}" />
+		</h:button>
 	</ui:define>
 </ui:composition>

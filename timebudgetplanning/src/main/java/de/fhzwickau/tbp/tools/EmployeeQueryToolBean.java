@@ -65,12 +65,18 @@ public class EmployeeQueryToolBean implements EmployeeQueryTool {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898908_528929_3669__17_0_4_2_8210263_1431069898962_725091_3838) ENABLED START */
 		Employee e = entityManager.find(Employee.class, id);
 		EmployeeDetails employeeDetails = new EmployeeDetails();
-		employeeDetails.setId(e.getId());
-		employeeDetails.setFirstName(e.getFirstName());
-		employeeDetails.setLastName(e.getLastName());
-		for (Role r : e.getRole()) {
-			Project p = r.getProject();
-			employeeDetails.addRoleInProject(p.getName(), r.getRole());
+		if (e == null) {
+			employeeDetails.setId(0);
+			employeeDetails.setFirstName("");
+			employeeDetails.setLastName("");
+		} else {
+			employeeDetails.setId(e.getId());
+			employeeDetails.setFirstName(e.getFirstName());
+			employeeDetails.setLastName(e.getLastName());
+			for (Role r : e.getRole()) {
+				Project p = r.getProject();
+				employeeDetails.addRoleInProject(p.getName(), r.getRole());
+			}
 		}
 		return employeeDetails;
 		/* PROTECTED REGION END */

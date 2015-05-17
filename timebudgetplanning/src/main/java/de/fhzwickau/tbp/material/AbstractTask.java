@@ -84,10 +84,10 @@ public abstract class AbstractTask implements Serializable {
 		Milestone former = this.milestone;
 		this.milestone = milestone;
 		if (former != null) {
-			former.removeAkstractTasl(this);
+			former.removeAbstractTask(this);
 		}
 		if (milestone != null) {
-			milestone.addAkstractTasl(this);
+			milestone.addAbstractTask(this);
 		}
 	}
 	

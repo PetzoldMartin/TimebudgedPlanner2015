@@ -16,6 +16,8 @@ public class NewTask implements Serializable {
 	
 	private String description;
 	
+	private int milestoneId;
+	
 	/**
 	 * Returns the value of attribute '<em><b>name</b></em>'.
 	 */
@@ -48,6 +50,23 @@ public class NewTask implements Serializable {
 	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>milestoneId</b></em>'.
+	 */
+	
+	public int getMilestoneId() {
+		return milestoneId;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>milestoneId</b></em>'.
+	 * @param	milestoneId	the value to set.
+	 */
+	
+	public void setMilestoneId(int milestoneId) {
+		this.milestoneId = milestoneId;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898929_214298_3711) ENABLED START */

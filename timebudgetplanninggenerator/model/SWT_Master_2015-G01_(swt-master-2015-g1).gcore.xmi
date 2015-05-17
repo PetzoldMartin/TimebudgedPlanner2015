@@ -196,6 +196,23 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
+          <classifier xsi:type="gcore:MClass" name="MilestoneCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431844692471_274903_5195" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431845056158_686510_5218 _17_0_4_2_8210263_1431844692471_274903_5195">
+            <taggedValue value="milestoneCommand" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="false" tag="//@anyStereotype.14/@property.0"/>
+            <taggedValue value="EntityManager" tag="//@anyStereotype.14/@property.1"/>
+            <operation name="MilestoneCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
+            <operation name="addMilestone" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215" visibility="public">
+              <parameter name="milestone" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215__17_0_4_2_8210263_1431845665385_13007_5269" direction="in" type="_17_0_4_2_8210263_1431845056158_686510_5218" operation="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </parameter>
+              <return name="" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215__17_0_4_2_8210263_1431845665386_749893_5270" direction="return" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </return>
+            </operation>
+            <property xsi:type="gcore:MAttribute" name="entityManager" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272_entityManager" stereotype="jpaPersistenceContext" visibility="private" type="EntityManager" defaultvalue="">
+              <multiplicity unique="true" upperBound="1"/>
+            </property>
+          </classifier>
           <nestedPackage name="dto" xmiGuid="_17_0_4_2_8210263_1431069898907_162062_3668">
             <classifier xsi:type="gcore:MClass" name="NewEmployee" xmiGuid="_17_0_4_2_8210263_1431069898925_16848_3705" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
@@ -569,7 +586,7 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="NewTask" xmiGuid="_17_0_4_2_8210263_1431069898929_214298_3711" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 java.io.Serializable">
+            <classifier xsi:type="gcore:MClass" name="NewTask" xmiGuid="_17_0_4_2_8210263_1431069898929_214298_3711" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.4 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
@@ -604,10 +621,28 @@
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </parameter>
               </operation>
+              <operation name="getMilestoneId" xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>milestoneId&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431845813069_57003_5300"/>
+                <return name="milestoneId" xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300_getReturn" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431845813069_57003_5300_get">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+              <operation name="setMilestoneId" xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>milestoneId&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431845813069_57003_5300"/>
+                <parameter name="milestoneId" xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300_setParam" direction="in" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431845813069_57003_5300_set">
+                  <ownedComment xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300_setParam_comment" annotation="the value to set."/>
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+              </operation>
               <property xsi:type="gcore:MAttribute" name="name" xmiGuid="_17_0_4_2_8210263_1431069898960_39322_3831" visibility="private" type="//@externalTypes.0">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
               <property xsi:type="gcore:MAttribute" name="description" xmiGuid="_17_0_4_2_8210263_1431069898960_632468_3832" visibility="private" type="//@externalTypes.0">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </property>
+              <property xsi:type="gcore:MAttribute" name="milestoneId" xmiGuid="_17_0_4_2_8210263_1431845813069_57003_5300" visibility="private" type="//@externalTypes.4">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
@@ -919,7 +954,7 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="MilestoneOverview" xmiGuid="_17_0_4_2_8210263_1431445368544_746787_5939" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_213176_3695 java.io.Serializable">
+            <classifier xsi:type="gcore:MClass" name="MilestoneOverview" xmiGuid="_17_0_4_2_8210263_1431445368544_746787_5939" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
               <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
@@ -969,6 +1004,21 @@
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </parameter>
               </operation>
+              <operation name="getEndDate" xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>endDate&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431847709366_345555_5304"/>
+                <return name="endDate" xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304_getReturn" direction="return" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431847709366_345555_5304_get">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+              <operation name="setEndDate" xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>endDate&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431847709366_345555_5304"/>
+                <parameter name="endDate" xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304_setParam" direction="in" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431847709366_345555_5304_set">
+                  <ownedComment xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304_setParam_comment" annotation="the value to set."/>
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+              </operation>
               <property xsi:type="gcore:MAttribute" name="id" xmiGuid="_17_0_4_2_8210263_1431445391271_418665_5964" visibility="private" type="//@externalTypes.4">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
@@ -976,6 +1026,9 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
               <property xsi:type="gcore:MAttribute" name="state" xmiGuid="_17_0_4_2_8210263_1431445397966_516096_5968" visibility="private" type="_17_0_4_2_8210263_1431069898921_213176_3695">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </property>
+              <property xsi:type="gcore:MAttribute" name="endDate" xmiGuid="_17_0_4_2_8210263_1431847709366_345555_5304" visibility="private" type="//@externalTypes.6">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
@@ -1179,6 +1232,85 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
+            <classifier xsi:type="gcore:MClass" name="NewMilestone" xmiGuid="_17_0_4_2_8210263_1431845056158_686510_5218" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.6 //@externalTypes.4 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="newMilestoneDTO" tag="//@anyStereotype.3/@property.0"/>
+              <operation name="getName" xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>name&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431845601693_65739_5263"/>
+                <return name="name" xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_getReturn" direction="return" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431845601693_65739_5263_get">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+              <operation name="setName" xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>name&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431845601693_65739_5263"/>
+                <parameter name="name" xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_setParam" direction="in" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431845601693_65739_5263_set">
+                  <ownedComment xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_setParam_comment" annotation="the value to set."/>
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+              </operation>
+              <operation name="getDescription" xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>description&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431845605825_614116_5265"/>
+                <return name="description" xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265_getReturn" direction="return" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431845605825_614116_5265_get">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+              <operation name="setDescription" xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>description&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431845605825_614116_5265"/>
+                <parameter name="description" xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265_setParam" direction="in" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431845605825_614116_5265_set">
+                  <ownedComment xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265_setParam_comment" annotation="the value to set."/>
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+              </operation>
+              <operation name="getEndDatePlanned" xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>endDatePlanned&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431845610578_690652_5267"/>
+                <return name="endDatePlanned" xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267_getReturn" direction="return" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431845610578_690652_5267_get">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+              <operation name="setEndDatePlanned" xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>endDatePlanned&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431845610578_690652_5267"/>
+                <parameter name="endDatePlanned" xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267_setParam" direction="in" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431845610578_690652_5267_set">
+                  <ownedComment xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267_setParam_comment" annotation="the value to set."/>
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+              </operation>
+              <operation name="getProjectId" xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>projectId&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431845801119_4997_5298"/>
+                <return name="projectId" xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298_getReturn" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431845801119_4997_5298_get">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+              <operation name="setProjectId" xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>projectId&lt;/b>&lt;/em>'."/>
+                <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431845801119_4997_5298"/>
+                <parameter name="projectId" xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298_setParam" direction="in" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431845801119_4997_5298_set">
+                  <ownedComment xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298_setParam_comment" annotation="the value to set."/>
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+              </operation>
+              <property xsi:type="gcore:MAttribute" name="name" xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263" visibility="private" type="//@externalTypes.0">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </property>
+              <property xsi:type="gcore:MAttribute" name="description" xmiGuid="_17_0_4_2_8210263_1431845605825_614116_5265" visibility="private" type="//@externalTypes.0">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </property>
+              <property xsi:type="gcore:MAttribute" name="endDatePlanned" xmiGuid="_17_0_4_2_8210263_1431845610578_690652_5267" visibility="private" type="//@externalTypes.6">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </property>
+              <property xsi:type="gcore:MAttribute" name="projectId" xmiGuid="_17_0_4_2_8210263_1431845801119_4997_5298" visibility="private" type="//@externalTypes.4">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </property>
+            </classifier>
           </nestedPackage>
           <nestedPackage name="facade" xmiGuid="_17_0_4_2_8210263_1431069898908_582990_3670">
             <classifier xsi:type="gcore:MInterface" name="EmployeeCommandTool" xmiGuid="_17_0_4_2_8210263_1431069898930_40027_3714" stereotype="_17_0_4_2_8210263_1431069898878_292934_3541" visibility="public" supplier="//@externalTypes.0 //@externalTypes.2 _17_0_4_2_8210263_1431069898925_16848_3705 _17_0_4_2_8210263_1431069898927_748431_3708">
@@ -1328,6 +1460,16 @@
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </parameter>
                 <return name="" xmiGuid="_17_0_4_2_67b0227_1431693002345_952440_4697" direction="return" type="_17_0_4_2_67b0227_1431687844640_177568_3920" operation="_17_0_4_2_67b0227_1431687761133_523686_3904">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </return>
+              </operation>
+            </classifier>
+            <classifier xsi:type="gcore:MInterface" name="MilestoneCommandTool" xmiGuid="_17_0_4_2_8210263_1431844692471_274903_5195" stereotype="_17_0_4_2_8210263_1431069898878_292934_3541" visibility="public" supplier="//@externalTypes.0 _17_0_4_2_8210263_1431845056158_686510_5218">
+              <operation name="addMilestone" xmiGuid="_17_0_4_2_8210263_1431844722678_156468_5215" visibility="public">
+                <parameter name="milestone" xmiGuid="_17_0_4_2_8210263_1431845665385_13007_5269" direction="in" type="_17_0_4_2_8210263_1431845056158_686510_5218" operation="_17_0_4_2_8210263_1431844722678_156468_5215">
+                  <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+                </parameter>
+                <return name="" xmiGuid="_17_0_4_2_8210263_1431845665386_749893_5270" direction="return" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431844722678_156468_5215">
                   <multiplicity unique="true" lowerBound="1" upperBound="1"/>
                 </return>
               </operation>
@@ -2404,13 +2546,18 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="Milestone" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 _17_0_4_2_8210263_1431069898873_421655_3523 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.12 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 _17_0_4_2_8210263_1431069898913_422495_3676 _17_0_4_2_8210263_1431069898914_271009_3678 _17_0_4_2_8210263_1431069898916_49315_3680 //@externalTypes.4 java.io.Serializable">
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+          <classifier xsi:type="gcore:MClass" name="Milestone" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.12 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 _17_0_4_2_8210263_1431069898913_422495_3676 _17_0_4_2_8210263_1431069898914_271009_3678 _17_0_4_2_8210263_1431069898916_49315_3680 //@externalTypes.4 java.io.Serializable">
             <taggedValue value="true" tag="//@anyStereotype.13/@property.0"/>
             <taggedValue value="tbl_Milestone" tag="//@anyStereotype.13/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431845322822_274027_5249" visibility="public">
+              <return name="" xmiGuid="_17_0_4_2_8210263_1431845329613_653824_5252" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431845322822_274027_5249">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </return>
+            </operation>
             <operation name="Milestone" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getProject" xmiGuid="_17_0_4_2_8210263_1431071231508_394275_8177_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_17_0_4_2_8210263_1431071231508_394275_8177_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>project&lt;/b>&lt;/em>'."/>
@@ -2450,25 +2597,25 @@
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
-            <operation name="getAkstractTasl" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
-              <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>akstractTasl&lt;/b>&lt;/em>'."/>
+            <operation name="getAbstractTask" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
               <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431071324108_364412_8304"/>
-              <return name="akstractTasl" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_getReturn" direction="return" type="_17_0_4_2_8210263_1431069898916_49315_3680" operation="_17_0_4_2_8210263_1431071324108_364412_8304_get">
+              <return name="abstractTask" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_getReturn" direction="return" type="_17_0_4_2_8210263_1431069898916_49315_3680" operation="_17_0_4_2_8210263_1431071324108_364412_8304_get">
                 <multiplicity unique="true" upperBound="-1"/>
               </return>
             </operation>
-            <operation name="addAkstractTasl" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
-              <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>akstractTasl&lt;/b>&lt;/em>'."/>
+            <operation name="addAbstractTask" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_add" stereotype="http://www.genesez.org/access/AddOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_add_comment" annotation="Establishes a link to the specified object for association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
               <taggedValue tag="//@anyStereotype.19/@property.0" valueReference="_17_0_4_2_8210263_1431071324108_364412_8304"/>
-              <parameter name="akstractTasl" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_addParam" direction="in" type="_17_0_4_2_8210263_1431069898916_49315_3680" operation="_17_0_4_2_8210263_1431071324108_364412_8304_add">
+              <parameter name="abstractTask" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_addParam" direction="in" type="_17_0_4_2_8210263_1431069898916_49315_3680" operation="_17_0_4_2_8210263_1431071324108_364412_8304_add">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_addParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
-            <operation name="removeAkstractTasl" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
-              <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>akstractTasl&lt;/b>&lt;/em>'."/>
+            <operation name="removeAbstractTask" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_remove" stereotype="http://www.genesez.org/access/RemoveOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_remove_comment" annotation="Removes the link to the specified specified object from association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
               <taggedValue tag="//@anyStereotype.20/@property.0" valueReference="_17_0_4_2_8210263_1431071324108_364412_8304"/>
-              <parameter name="akstractTasl" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_removeParam" direction="in" type="_17_0_4_2_8210263_1431069898916_49315_3680" operation="_17_0_4_2_8210263_1431071324108_364412_8304_remove">
+              <parameter name="abstractTask" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_removeParam" direction="in" type="_17_0_4_2_8210263_1431069898916_49315_3680" operation="_17_0_4_2_8210263_1431071324108_364412_8304_remove">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304_removeParam_comment" annotation="the object to remove."/>
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
@@ -2503,36 +2650,6 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </parameter>
             </operation>
-            <operation name="getDate" xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
-              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>date&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431069898942_151186_3757"/>
-              <return name="date" xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757_getReturn" direction="return" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431069898942_151186_3757_get">
-                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
-              </return>
-            </operation>
-            <operation name="setDate" xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
-              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>date&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898942_151186_3757"/>
-              <parameter name="date" xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757_setParam" direction="in" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431069898942_151186_3757_set">
-                <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757_setParam_comment" annotation="the value to set."/>
-                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
-              </parameter>
-            </operation>
-            <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_id_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
-              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_id_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431069898914_143571_3677_id"/>
-              <return name="id" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_id_getReturn" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431069898914_143571_3677_id_get">
-                <multiplicity unique="true" upperBound="1"/>
-              </return>
-            </operation>
-            <operation name="setId" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_id_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
-              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_id_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
-              <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898914_143571_3677_id"/>
-              <parameter name="id" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_id_setParam" direction="in" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431069898914_143571_3677_id_set">
-                <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_id_setParam_comment" annotation="the value to set."/>
-                <multiplicity unique="true" upperBound="1"/>
-              </parameter>
-            </operation>
             <operation name="getVersion" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_version_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>version&lt;/b>&lt;/em>'."/>
               <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431069898914_143571_3677_version"/>
@@ -2548,13 +2665,21 @@
                 <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
-            <property xsi:type="gcore:MAttribute" name="name" xmiGuid="_17_0_4_2_8210263_1431069898942_294643_3755" visibility="private" type="//@externalTypes.12">
+            <property xsi:type="gcore:MAttribute" name="name" xmiGuid="_17_0_4_2_8210263_1431069898942_294643_3755" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.12">
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAttribute" name="state" xmiGuid="_17_0_4_2_8210263_1431069898942_728851_3756" visibility="private" type="_17_0_4_2_8210263_1431069898921_213176_3695">
+            <property xsi:type="gcore:MAttribute" name="state" xmiGuid="_17_0_4_2_8210263_1431069898942_728851_3756" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="_17_0_4_2_8210263_1431069898921_213176_3695">
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAttribute" name="date" xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757" visibility="private" type="//@externalTypes.6">
+            <property xsi:type="gcore:MAttribute" name="endTime" xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757" visibility="private" derived="true" type="//@externalTypes.6">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAssociationRole" name="project" xmiGuid="_17_0_4_2_8210263_1431071231508_394275_8177" stereotype="jpaAssociation _17_0_4_2_8210263_1431069898887_813051_3549" visibility="private" type="_17_0_4_2_8210263_1431069898913_422495_3676" association="_17_0_4_2_8210263_1431071231508_140603_8175" opposite="_17_0_4_2_8210263_1431071231508_423021_8176">
@@ -2568,16 +2693,16 @@
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" upperBound="-1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="milestoneData" xmiGuid="_17_0_4_2_8210263_1431071289365_166112_8264" stereotype="jpaAssociation" visibility="private" type="_17_0_4_2_8210263_1431069898914_271009_3678" association="_17_0_4_2_8210263_1431071289364_686815_8262" opposite="_17_0_4_2_8210263_1431071289364_644017_8263">
-              <taggedValue value="OneToMany" tag="//@anyStereotype.23/@property.0"/>
-              <taggedValue value="DEFAULT" tag="//@anyStereotype.23/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.23/@property.3"/>
-              <taggedValue value="true" tag="//@anyStereotype.23/@property.4"/>
-              <taggedValue value="null" tag="//@anyStereotype.23/@property.5"/>
+            <property xsi:type="gcore:MAssociationRole" name="milestoneData" xmiGuid="_17_0_4_2_8210263_1431071289365_166112_8264" stereotype="_17_0_4_2_8210263_1431069898887_813051_3549" visibility="private" type="_17_0_4_2_8210263_1431069898914_271009_3678" association="_17_0_4_2_8210263_1431071289364_686815_8262" opposite="_17_0_4_2_8210263_1431071289364_644017_8263">
+              <taggedValue value="ALL" tag="//@anyStereotype.11/@property.0"/>
+              <taggedValue value="DEFAULT" tag="//@anyStereotype.11/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.11/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.11/@property.3"/>
+              <taggedValue value="OneToMany" tag="//@anyStereotype.11/@property.5"/>
               <multiplicity unique="true" lowerBound="1" upperBound="-1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="akstractTasl" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304" stereotype="jpaAssociation _17_0_4_2_8210263_1431069898887_813051_3549" visibility="private" type="_17_0_4_2_8210263_1431069898916_49315_3680" aggregation="true" association="_17_0_4_2_8210263_1431071324108_859358_8303" opposite="_17_0_4_2_8210263_1431071324108_676740_8305">
+            <property xsi:type="gcore:MAssociationRole" name="abstractTask" xmiGuid="_17_0_4_2_8210263_1431071324108_364412_8304" stereotype="jpaAssociation _17_0_4_2_8210263_1431069898887_813051_3549" visibility="private" type="_17_0_4_2_8210263_1431069898916_49315_3680" aggregation="true" association="_17_0_4_2_8210263_1431071324108_859358_8303" opposite="_17_0_4_2_8210263_1431071324108_676740_8305">
               <taggedValue value="OneToMany" tag="//@anyStereotype.23/@property.0"/>
               <taggedValue value="DEFAULT" tag="//@anyStereotype.23/@property.2"/>
               <taggedValue value="true" tag="//@anyStereotype.23/@property.3"/>
@@ -2603,13 +2728,13 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="MilestoneData" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.13 //@externalTypes.6 _17_0_4_2_8210263_1431069898914_143571_3677 //@externalTypes.4 java.io.Serializable">
-            <taggedValue value="true" tag="//@anyStereotype.13/@property.0"/>
-            <taggedValue value="tbl_MilestoneData" tag="//@anyStereotype.13/@property.1"/>
+          <classifier xsi:type="gcore:MClass" name="MilestoneData" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 _17_0_4_2_8210263_1431069898873_421655_3523 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.13 //@externalTypes.6 _17_0_4_2_8210263_1431069898914_143571_3677 //@externalTypes.4 java.io.Serializable">
             <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
             <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
+            <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.13/@property.0"/>
+            <taggedValue value="tbl_MilestoneData" tag="//@anyStereotype.13/@property.1"/>
             <operation name="MilestoneData" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getMilestone" xmiGuid="_17_0_4_2_8210263_1431071289364_644017_8263_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_17_0_4_2_8210263_1431071289364_644017_8263_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>milestone&lt;/b>&lt;/em>'."/>
@@ -2624,6 +2749,66 @@
               <parameter name="milestone" xmiGuid="_17_0_4_2_8210263_1431071289364_644017_8263_setParam" direction="in" type="_17_0_4_2_8210263_1431069898914_143571_3677" operation="_17_0_4_2_8210263_1431071289364_644017_8263_set">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431071289364_644017_8263_setParam_comment" annotation="the object to associate."/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getDescription" xmiGuid="_17_0_4_2_8210263_1431069898943_465578_3760_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_465578_3760_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>description&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431069898943_465578_3760"/>
+              <return name="description" xmiGuid="_17_0_4_2_8210263_1431069898943_465578_3760_getReturn" direction="return" type="//@externalTypes.13" operation="_17_0_4_2_8210263_1431069898943_465578_3760_get">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setDescription" xmiGuid="_17_0_4_2_8210263_1431069898943_465578_3760_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_465578_3760_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>description&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898943_465578_3760"/>
+              <parameter name="description" xmiGuid="_17_0_4_2_8210263_1431069898943_465578_3760_setParam" direction="in" type="//@externalTypes.13" operation="_17_0_4_2_8210263_1431069898943_465578_3760_set">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_465578_3760_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getTstamp" xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>tstamp&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431069898943_557257_3761"/>
+              <return name="tstamp" xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761_getReturn" direction="return" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431069898943_557257_3761_get">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setTstamp" xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>tstamp&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898943_557257_3761"/>
+              <parameter name="tstamp" xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761_setParam" direction="in" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431069898943_557257_3761_set">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getEndDatePlanned" xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>endDatePlanned&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431069898943_754846_3762"/>
+              <return name="endDatePlanned" xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762_getReturn" direction="return" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431069898943_754846_3762_get">
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setEndDatePlanned" xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>endDatePlanned&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898943_754846_3762"/>
+              <parameter name="endDatePlanned" xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762_setParam" direction="in" type="//@externalTypes.6" operation="_17_0_4_2_8210263_1431069898943_754846_3762_set">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
+              </parameter>
+            </operation>
+            <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_id_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_id_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.17/@property.0" valueReference="_17_0_4_2_8210263_1431069898914_271009_3678_id"/>
+              <return name="id" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_id_getReturn" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431069898914_271009_3678_id_get">
+                <multiplicity unique="true" upperBound="1"/>
+              </return>
+            </operation>
+            <operation name="setId" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_id_set" stereotype="http://www.genesez.org/access/SetOperation" visibility="public">
+              <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_id_set_comment" annotation="Sets the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
+              <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898914_271009_3678_id"/>
+              <parameter name="id" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_id_setParam" direction="in" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431069898914_271009_3678_id_set">
+                <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_id_setParam_comment" annotation="the value to set."/>
+                <multiplicity unique="true" upperBound="1"/>
               </parameter>
             </operation>
             <operation name="getVersion" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_version_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
@@ -2647,17 +2832,15 @@
             <property xsi:type="gcore:MAttribute" name="tstamp" xmiGuid="_17_0_4_2_8210263_1431069898943_557257_3761" visibility="private" type="//@externalTypes.6">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAttribute" name="datePlan" xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762" visibility="private" type="//@externalTypes.6">
+            <property xsi:type="gcore:MAttribute" name="endDatePlanned" xmiGuid="_17_0_4_2_8210263_1431069898943_754846_3762" visibility="private" type="//@externalTypes.6">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
-            <property xsi:type="gcore:MAssociationRole" name="milestone" xmiGuid="_17_0_4_2_8210263_1431071289364_644017_8263" stereotype="jpaAssociation _17_0_4_2_8210263_1431069898887_813051_3549" visibility="private" type="_17_0_4_2_8210263_1431069898914_143571_3677" association="_17_0_4_2_8210263_1431071289364_686815_8262" opposite="_17_0_4_2_8210263_1431071289365_166112_8264">
+            <property xsi:type="gcore:MAssociationRole" name="milestone" xmiGuid="_17_0_4_2_8210263_1431071289364_644017_8263" stereotype="jpaAssociation" visibility="private" type="_17_0_4_2_8210263_1431069898914_143571_3677" association="_17_0_4_2_8210263_1431071289364_686815_8262" opposite="_17_0_4_2_8210263_1431071289365_166112_8264">
               <taggedValue value="ManyToOne" tag="//@anyStereotype.23/@property.0"/>
               <taggedValue value="DEFAULT" tag="//@anyStereotype.23/@property.2"/>
               <taggedValue value="true" tag="//@anyStereotype.23/@property.3"/>
               <taggedValue value="false" tag="//@anyStereotype.23/@property.4"/>
               <taggedValue value="null" tag="//@anyStereotype.23/@property.5"/>
-              <taggedValue value="ManyToOne" tag="//@anyStereotype.11/@property.5"/>
-              <taggedValue value="false" tag="//@anyStereotype.11/@property.2"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="-1"/>
             </property>

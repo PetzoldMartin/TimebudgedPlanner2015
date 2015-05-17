@@ -32,7 +32,7 @@ public class MilestoneData implements Serializable {
 	
 	private Date tstamp;
 	
-	private Date datePlan;
+	private Date endDatePlanned;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -73,6 +73,74 @@ public class MilestoneData implements Serializable {
 		if (milestone != null) {
 			milestone.addMilestoneData(this);
 		}
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>description</b></em>'.
+	 */
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>description</b></em>'.
+	 * @param	description	the value to set.
+	 */
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>tstamp</b></em>'.
+	 */
+	
+	public Date getTstamp() {
+		return new Date(tstamp.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>tstamp</b></em>'.
+	 * @param	tstamp	the value to set.
+	 */
+	
+	public void setTstamp(Date tstamp) {
+		this.tstamp = tstamp;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>endDatePlanned</b></em>'.
+	 */
+	
+	public Date getEndDatePlanned() {
+		return new Date(endDatePlanned.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>endDatePlanned</b></em>'.
+	 * @param	endDatePlanned	the value to set.
+	 */
+	
+	public void setEndDatePlanned(Date endDatePlanned) {
+		this.endDatePlanned = endDatePlanned;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>id</b></em>'.
+	 */
+	
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>id</b></em>'.
+	 * @param	id	the value to set.
+	 */
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	/**

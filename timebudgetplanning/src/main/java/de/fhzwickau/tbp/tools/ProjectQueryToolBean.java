@@ -4,14 +4,19 @@ package de.fhzwickau.tbp.tools;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_8210263_1431440332515_22477_5154) 
  */
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import de.fhzwickau.tbp.datatypes.MilestoneState;
 import de.fhzwickau.tbp.material.Milestone;
+import de.fhzwickau.tbp.material.MilestoneData;
 import de.fhzwickau.tbp.material.PlanningData;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
@@ -90,11 +95,21 @@ public class ProjectQueryToolBean implements ProjectQueryTool {
 			employee.setLastName(r.getEmployee().getLastName());
 			details.addEmployeeWithRole(employee, r.getRole());
 		}
-		for (Milestone m : p.getMilestone()) {
+		for (Milestone m : sortMilestonesByStateAndEndDate(p.getMilestone())) {
 			MilestoneOverview milestone = new MilestoneOverview();
 			milestone.setId(m.getId());
 			milestone.setName(m.getName());
 			milestone.setState(m.getState());
+			MilestoneData latestMilestoneData = null;
+			for (MilestoneData mData : m.getMilestoneData()) {
+				if (latestMilestoneData == null || latestMilestoneData.getTstamp().getTime() < mData.getTstamp().getTime()) {
+					latestMilestoneData = mData;
+				}
+			}
+			if (m.getState() == MilestoneState.OPEN)
+				milestone.setEndDate(latestMilestoneData.getEndDatePlanned());
+			else
+				; // Set calculated end date
 			details.addMilestone(milestone);
 		}
 		return details;
@@ -103,5 +118,36 @@ public class ProjectQueryToolBean implements ProjectQueryTool {
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431440332515_22477_5154) ENABLED START */
 	// TODO: put your own implementation code here
+	
+	private ArrayList<Milestone> sortMilestonesByStateAndEndDate(Set<Milestone> milestones) {
+		ArrayList<Milestone> sortedList = new ArrayList<Milestone>();
+		HashMap<Milestone, MilestoneData> mDatas = new HashMap<Milestone, MilestoneData>();
+		for (Milestone m : milestones) {
+			MilestoneData latestMilestoneData = null;
+			for (MilestoneData mData : m.getMilestoneData()) {
+				if (latestMilestoneData == null || latestMilestoneData.getTstamp().getTime() < mData.getTstamp().getTime()) {
+					latestMilestoneData = mData;
+				}
+			}
+			mDatas.put(m, latestMilestoneData);
+		}
+		// Find all milestones with state OPEN first and sort them by end date
+		for (Milestone m : milestones) {
+			if (m.getState() == MilestoneState.OPEN) {
+				int i = 0;
+				for (; i < sortedList.size(); ++i) {
+					Milestone mStone = sortedList.get(i);
+					if (mDatas.get(m).getEndDatePlanned().getTime() <= mDatas.get(mStone).getEndDatePlanned().getTime()) {
+						break;
+					}
+				}
+				sortedList.add(i, m);
+			}
+		}
+		// Find all milestones that are already closed and sort them by end date TODO
+		
+		return sortedList;
+	}
+	
 	/* PROTECTED REGION END */
 }
