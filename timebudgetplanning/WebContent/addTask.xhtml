@@ -9,11 +9,12 @@
     </f:metadata>
 	<ui:define name="content">
 		<h:form id="form">
-			<!--h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-	            Vorname : <h:inputText value="#{newEmployeeDTO.firstName}" /> <br />
-	            Nachname : <h:inputText value="#{newEmployeeDTO.lastName}" /> <br />
-				<h:commandButton value="Hinzufügen" action="#{employeeCommand.addEmployee(newEmployeeDTO)}" />
-			</h:panelGrid-->
+			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
+	            Name : <h:inputText value="#{newTaskDTO.name}" /> <br />
+	            Beschreibung : <h:inputText value="#{newTaskDTO.description}" /> <br />
+				<h:commandButton value="Compound Task hinzufügen" action="#{taskCommand.addCompoundTask(newTaskDTO)}" />
+				<h:commandButton value="Normal Task hinzufügen" action="#{taskCommand.addTask(newTaskDTO)}" />
+			</h:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>

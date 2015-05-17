@@ -20,6 +20,8 @@ public class TaskDetails implements Serializable {
 	
 	private EmployeeList employees;
 	
+	private String type;
+	
 	/**
 	 * Constructor for class '<em><b>TaskDetails</b></em>'.
 	 */
@@ -97,6 +99,23 @@ public class TaskDetails implements Serializable {
 	
 	public void setEmployees(EmployeeList employees) {
 		this.employees = employees;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>type</b></em>'.
+	 */
+	
+	public String getType() {
+		return type;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>type</b></em>'.
+	 * @param	type	the value to set.
+	 */
+	
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431687844640_177568_3920) ENABLED START */

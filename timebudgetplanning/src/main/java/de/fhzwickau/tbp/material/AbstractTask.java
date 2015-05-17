@@ -18,6 +18,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.CascadeType;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -27,7 +28,7 @@ import javax.persistence.GenerationType;
 public abstract class AbstractTask implements Serializable {
 	
 	/** Stores the linked object of association '<em><b>milestone</b></em>' */
-	@ManyToOne(cascade = {})
+	@ManyToOne(cascade = { CascadeType.ALL })
 	private Milestone milestone;
 	
 	/** Stores all linked objects of association '<em><b>employee</b></em>' */

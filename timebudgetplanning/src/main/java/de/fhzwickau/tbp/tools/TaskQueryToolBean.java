@@ -12,11 +12,13 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 
 import javax.ejb.Stateless;
+import javax.inject.Named;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("taskQuery")
 @Stateless(name = "TaskQueryToolBean")
 public class TaskQueryToolBean implements TaskQueryTool {
 	

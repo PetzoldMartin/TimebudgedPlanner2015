@@ -17,13 +17,13 @@ public interface TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addTask(NewTask newTask);
+	public String addTask(NewTask newTask);
 	
 	/**
 	 * Method stub for further implementation.
 	 */
 	
-	public void addCompoundTask(NewTask newTask);
+	public String addCompoundTask(NewTask newTask);
 	
 	/**
 	 * Method stub for further implementation.

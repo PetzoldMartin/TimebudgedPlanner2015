@@ -10,6 +10,7 @@ import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Employee;
+import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.Task;
 
 import javax.persistence.PersistenceContext;
@@ -17,6 +18,7 @@ import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
 
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
+
 import javax.inject.Named;
 
 /**
@@ -41,14 +43,19 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addTask(NewTask newTask) {
+	public String addTask(NewTask newTask) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484) ENABLED START */
 		// TODO: implementation of method 'TaskCommandToolBean.addTask(...)'
+		Milestone m = entityManager.find(Milestone.class, newTask.getMilestoneId());
+		if (m == null)
+			return "project";
 		Task task = new Task();
 		task.setName(newTask.getName());
 		task.setDescription(newTask.getDescription());
 		task.setState(TaskState.OPEN);
+		task.setMilestone(m);
 		entityManager.persist(task);
+		return "milestoneDetails?faces-redirect=true&mid=" + newTask.getMilestoneId();
 		/* PROTECTED REGION END */
 	}
 	
@@ -56,14 +63,19 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addCompoundTask(NewTask newTask) {
+	public String addCompoundTask(NewTask newTask) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431534436418_545037_8891) ENABLED START */
 		// TODO: implementation of method 'TaskCommandToolBean.addCompoundTask(...)'
+		Milestone m = entityManager.find(Milestone.class, newTask.getMilestoneId());
+		if (m == null)
+			return "project";
 		CompoundTask cTask = new CompoundTask();
 		cTask.setName(newTask.getName());
 		cTask.setDescription(newTask.getDescription());
 		cTask.setState(TaskState.OPEN);
+		cTask.setMilestone(m);
 		entityManager.persist(cTask);
+		return "milestoneDetails?faces-redirect=true&mid=" + newTask.getMilestoneId();
 		/* PROTECTED REGION END */
 	}
 	

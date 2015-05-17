@@ -7,9 +7,12 @@ package de.fhzwickau.tbp.tools;
 import java.util.Date;
 
 import de.fhzwickau.tbp.datatypes.MilestoneState;
+import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.MilestoneData;
+import de.fhzwickau.tbp.material.Task;
 import de.fhzwickau.tbp.tools.dto.MilestoneDetails;
+import de.fhzwickau.tbp.tools.dto.TaskOverview;
 import de.fhzwickau.tbp.tools.facade.MilestoneQueryTool;
 
 import javax.persistence.PersistenceContext;
@@ -54,6 +57,18 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 			milestoneDetails.setId(m.getId());
 			milestoneDetails.setName(m.getName());
 			milestoneDetails.setState(m.getState());
+			for (AbstractTask t : m.getAbstractTask()) {
+				TaskOverview tOverview = new TaskOverview();
+				tOverview.setId(t.getId());
+				tOverview.setName(t.getName());
+				tOverview.setState(t.getState());
+				if (t instanceof Task) {
+					tOverview.setType("Normal Task");
+				} else {
+					tOverview.setType("Compound Task");
+				}
+				milestoneDetails.addTask(tOverview);
+			}
 			MilestoneData latestMilestoneData = null;
 			for (MilestoneData mData : m.getMilestoneData()) {
 				if (latestMilestoneData == null || latestMilestoneData.getTstamp().getTime() < mData.getTstamp().getTime()) {

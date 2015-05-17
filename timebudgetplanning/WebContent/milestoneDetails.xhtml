@@ -19,16 +19,17 @@
 		Status: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state} <br />
 		Angelegte Aufgaben:
 		<table>
-			<!--ui:repeat var="v_milestone" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
+			<ui:repeat var="v_task" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).tasks.toArray()}">
 				<tr>
-					<td>#{v_milestone.name}</td>
-					<td>#{v_milestone.state}</td>
-					<td><h:outputText value="#{v_milestone.endDate}">
-						<f:convertDateTime pattern="dd.MM.yyyy" />
-					</h:outputText>
+					<td>
+						<h:link outcome="taskDetails" value="#{v_task.name}">
+							<f:param name="tid" value="#{v_task.id}" />
+						</h:link>
 					</td>
+					<td>#{v_task.state}</td>
+					<td>#{v_task.type}</td>
 				</tr>
-			</ui:repeat-->
+			</ui:repeat>
 		</table>
 		<br />
 		<h:button outcome="addTask" value="Aufgabe anlegen">
