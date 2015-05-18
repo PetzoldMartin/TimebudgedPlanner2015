@@ -5,6 +5,7 @@ package de.fhzwickau.tbp.tools.facade;
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431687649394_793036_3858) 
  */
 import de.fhzwickau.tbp.tools.dto.TaskDetails;
+import de.fhzwickau.tbp.tools.dto.CompoundTaskDetails;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -17,6 +18,12 @@ public interface TaskQueryTool {
 	 */
 	
 	public TaskDetails getTaskDetails(int taskId);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public CompoundTaskDetails getCompoundTaskDetails(int taskId);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431687649394_793036_3858) ENABLED START */
 	// TODO: put your own implementation code here
