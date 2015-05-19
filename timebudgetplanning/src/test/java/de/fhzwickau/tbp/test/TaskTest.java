@@ -45,6 +45,7 @@ public class TaskTest {
 				.addPackage(EmployeeCommandToolBean.class.getPackage())
 				.addPackage(EmployeeCommandTool.class.getPackage())
 				.addAsResource("test-persistence.xml", "META-INF/persistence.xml")
+	            .addAsWebInfResource("wildfly-ds.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 	

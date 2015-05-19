@@ -14,6 +14,8 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.jboss.shrinkwrap.descriptor.api.Descriptor;
+import org.jboss.shrinkwrap.descriptor.api.Descriptors;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,6 +37,11 @@ import de.fhzwickau.tbp.tools.facade.EmployeeQueryTool;
 @RunWith(Arquillian.class)
 public class EmployeeTest {
 	
+//	@Deployment
+//	public static Descriptor createTestDeployment() {
+//		return Descriptors.create(DataSourceDescriptor.class);
+//	}
+	
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
@@ -42,6 +49,7 @@ public class EmployeeTest {
         	.addPackage(NewEmployee.class.getPackage())
         	.addPackage(Employee.class.getPackage())
         	.addPackage(TaskState.class.getPackage())
+        	.addAsWebInfResource("wildfly-ds.xml")
             .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
             .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }

@@ -47,6 +47,7 @@ public class ProjectTest {
         	.addPackage(Project.class.getPackage())
         	.addPackage(TaskState.class.getPackage())
             .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
+            .addAsWebInfResource("wildfly-ds.xml")
             .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }
     
