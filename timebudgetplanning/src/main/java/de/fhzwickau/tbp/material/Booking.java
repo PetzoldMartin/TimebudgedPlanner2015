@@ -35,8 +35,6 @@ public class Booking implements Serializable {
 	
 	private Date date;
 	
-	private Float amount;
-	
 	private Date start;
 	
 	@Column(name = "booking_end")
@@ -111,6 +109,57 @@ public class Booking implements Serializable {
 	}
 	
 	/**
+	 * Returns the value of attribute '<em><b>date</b></em>'.
+	 */
+	
+	public Date getDate() {
+		return new Date(date.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>date</b></em>'.
+	 * @param	date	the value to set.
+	 */
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>start</b></em>'.
+	 */
+	
+	public Date getStart() {
+		return new Date(start.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>start</b></em>'.
+	 * @param	start	the value to set.
+	 */
+	
+	public void setStart(Date start) {
+		this.start = start;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>end</b></em>'.
+	 */
+	
+	public Date getEnd() {
+		return new Date(end.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>end</b></em>'.
+	 * @param	end	the value to set.
+	 */
+	
+	public void setEnd(Date end) {
+		this.end = end;
+	}
+	
+	/**
 	 * Returns the value of attribute '<em><b>version</b></em>'.
 	 */
 	
@@ -125,6 +174,16 @@ public class Booking implements Serializable {
 	
 	public void setVersion(int version) {
 		this.version = version;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>amount</b></em>'
+	 */
+	private Float getAmount() {
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898937_184140_3739) ENABLED START */
+		// TODO: implementation of derived (calculated) attribute 'amount'
+		throw new UnsupportedOperationException("The implementation of the derived attribute 'amount' is missing!");
+		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898912_691863_3675) ENABLED START */
