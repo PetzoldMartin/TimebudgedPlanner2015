@@ -72,7 +72,7 @@ public class EmployeeTest {
     
     @Test
     @InSequence(1)
-    public void addNewEmployeeTest() throws Exception {
+    public void addEmployeeTest() throws Exception {
     	NewEmployee newEmployee = new NewEmployee();
     	newEmployee.setFirstName("Max");
     	newEmployee.setLastName("Mustermann");
