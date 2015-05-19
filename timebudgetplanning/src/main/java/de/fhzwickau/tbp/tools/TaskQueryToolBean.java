@@ -80,11 +80,12 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		
 		Set<AbstractTask> tasks = cTask.getAbstractTask();
 		TaskList taskList = new TaskList();
-		for(AbstractTask t : tasks) {
+		for (AbstractTask t : tasks) {
 			TaskOverview tOverview = new TaskOverview();
 			tOverview.setId(t.getId());
 			tOverview.setName(t.getName());
-			tOverview.setState(t.getState());;
+			tOverview.setState(t.getState());
+			;
 			taskList.addTask(tOverview);
 		}
 		
