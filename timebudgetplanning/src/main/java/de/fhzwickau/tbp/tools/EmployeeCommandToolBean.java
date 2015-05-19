@@ -54,7 +54,7 @@ public class EmployeeCommandToolBean implements EmployeeCommandTool {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898907_434497_3667__17_0_4_2_8210263_1431069898961_908822_3835) ENABLED START */
 		Employee e = entityManager.find(Employee.class, alteredEmployee.getId());
 		e.setFirstName(alteredEmployee.getFirstName());
-		e.setLastName(e.getLastName());
+		e.setLastName(alteredEmployee.getLastName());
 		entityManager.merge(e);
 		/* PROTECTED REGION END */
 	}
