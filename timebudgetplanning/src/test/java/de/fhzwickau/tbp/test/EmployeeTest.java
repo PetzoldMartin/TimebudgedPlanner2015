@@ -17,15 +17,11 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import de.fhzwickau.tbp.datatypes.TaskState;
-import de.fhzwickau.tbp.material.AbstractTask;
-import de.fhzwickau.tbp.material.Booking;
 import de.fhzwickau.tbp.material.Employee;
-import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
 import de.fhzwickau.tbp.tools.EmployeeQueryToolBean;
 import de.fhzwickau.tbp.tools.dto.AlteredEmployee;
@@ -63,23 +59,6 @@ public class EmployeeTest {
     @Inject
     EmployeeQueryTool employeeQueryTool;
  
-    private void clearData() throws Exception {
-        utx.begin();
-        em.joinTransaction();
-        @SuppressWarnings("unchecked")
-		List<Employee> resultList = em.createQuery("SELECT e FROM Employee e").getResultList();
-        for (Employee e : resultList) {
-        	for (AbstractTask t : e.getAbstractTask())
-        		em.remove(t);
-        	for (Booking b : e.getBooking())
-        		em.remove(b);
-        	for (Role r : e.getRole())
-        		em.remove(r);
-        	em.remove(e);
-        }
-        utx.commit();
-    }
-
     @Before
     public void startTransaction() throws Exception {
         utx.begin();

@@ -3,7 +3,6 @@ package de.fhzwickau.tbp.test;
 import java.util.Date;
 import java.util.List;
 
-import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,6 +10,7 @@ import javax.transaction.UserTransaction;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.junit.InSequence;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
@@ -64,30 +64,7 @@ public class ProjectTest {
     EmployeeCommandTool employeeCommandTool;
  
     @Before
-    public void preparePersistenceTest() throws Exception {
-    	clearData();
-        startTransaction();
-    }
-    
-    private void clearData() throws Exception {
-        utx.begin();
-        em.joinTransaction();
-        List<Project> resultList = em.createQuery("SELECT e FROM Project e").getResultList();
-        for (Project p : resultList) {
-        	em.remove(p);
-        }
-        utx.commit();
-    }
-    
-    /**
-     * em.joinTransaction();
-     * 
-     * Notice we have to explicitly enlist the EntityManager in the JTA transaction. 
-     * This step is necessary since we are using the two resources independently. 
-     * This may look abnormal if you’re used to using JPA from within an EJB, where enlistment happens automatically.
-     */
-
-    private void startTransaction() throws Exception {
+    public void startTransaction() throws Exception {
         utx.begin();
         em.joinTransaction();
     }
@@ -97,8 +74,9 @@ public class ProjectTest {
         utx.commit();
     }
     
-    //@Test
-    public void addNewProjectTest() throws Exception {
+    @Test
+    @InSequence(1)
+    public void addProjectTest() throws Exception {
     	NewProject newProject = new NewProject();
     	newProject.setName("Test");
     	newProject.setDescription("Test Description");
@@ -118,17 +96,11 @@ public class ProjectTest {
     }
     
     @Test
+    @InSequence(2)
     public void addEmployeeWithRoleTest() throws Exception {
-    	NewProject newProject = new NewProject();
-    	newProject.setName("Test");
-    	newProject.setDescription("Test Description");
-    	Date now = new Date();
-    	newProject.setStartTime(now);
-    	newProject.setTimeBudgetPlanned((float) 10000); 
-    	ProjectCommandTool.addProject(newProject);
-    	
     	NewEmployee newEmployee = new NewEmployee();
-    	newEmployee.setFirstName("Test");
+    	newEmployee.setFirstName("Max");
+    	newEmployee.setLastName("Mustermann");
     	employeeCommandTool.addEmployee(newEmployee);
 
 		int projectId = ((Project) em.createQuery("SELECT e FROM Project e").getResultList().get(0)).getId();
@@ -146,6 +118,18 @@ public class ProjectTest {
     	Assert.assertEquals(resultList.get(0).getRole(), RoleType.WORKER);
     	Assert.assertEquals(resultList.get(0).getProject().getId(), projectId);
     	Assert.assertEquals(resultList.get(0).getEmployee().getId(), employeeId);
+    	
+    	Project project = (Project) em.createQuery("SELECT e FROM Project e").getResultList().get(0);
+    	Employee employee = (Employee) em.createQuery("SELECT e FROM Employee e").getResultList().get(0);
+    	
+    	Assert.assertEquals(project.getRole().size(), 1);
+    	Assert.assertEquals(project.getRole().iterator().next().getEmployee().getFirstName(), "Max");
+    	Assert.assertEquals(project.getRole().iterator().next().getEmployee().getLastName(), "Mustermann");
+    	Assert.assertEquals(project.getRole().iterator().next().getEmployee().getId(), employeeId);
+    	
+    	Assert.assertEquals(employee.getRole().size(), 1);
+    	Assert.assertEquals(employee.getRole().iterator().next().getProject().getName(), "Test");
+    	Assert.assertEquals(employee.getRole().iterator().next().getProject().getId(), projectId);
     }
     
 }
