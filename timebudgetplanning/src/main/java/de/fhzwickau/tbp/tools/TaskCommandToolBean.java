@@ -83,15 +83,16 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addEmployee(int taskId, int employeeId) {
+	public String addEmployee(int taskId, int employeeId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431435861434_256127_3719) ENABLED START */
 		// TODO: implementation of method 'TaskCommandToolBean.addEmployee(...)'
 		AbstractTask task = entityManager.find(AbstractTask.class, taskId);
 		Employee employee = entityManager.find(Employee.class, employeeId);
 		if (task == null || employee == null)
-			return;
+			return "project";
 		task.addEmployee(employee);
 		entityManager.merge(task);
+		return "taskDetails?faces-redirect=true&tid=" + taskId;
 		/* PROTECTED REGION END */
 	}
 	

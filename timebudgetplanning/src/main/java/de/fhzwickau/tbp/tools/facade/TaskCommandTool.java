@@ -27,9 +27,10 @@ public interface TaskCommandTool {
 	
 	/**
 	 * Method stub for further implementation.
+	 * @return 
 	 */
 	
-	public void addEmployee(int taskId, int employeeId);
+	public String addEmployee(int taskId, int employeeId);
 	
 	/**
 	 * Method stub for further implementation.

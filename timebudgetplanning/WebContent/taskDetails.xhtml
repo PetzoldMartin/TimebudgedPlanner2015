@@ -4,11 +4,37 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:o="http://omnifaces.org/ui"
 	template="/WEB-INF/templates/template.xhtml">
 	<f:metadata>
-        <f:viewParam name="tid" value="#{addEmployeeDTO.taskId}" />
+        <f:viewParam required="true" name="tid" value="#{addEmployeeDTO.taskId}"/>
     </f:metadata>
 	<ui:define name="content">
-		Aufgaben ID: #{request.getParameter('tid')} <br />
+		Aufgaben ID: #{addEmployeeDTO.taskId} <br />
+		Name: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).name} <br />
+		Beschreibung: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).description} <br />
+		Zugewiesene Mitarbeiter:
+		<table>
+			<ui:repeat var="v_employee" value="#{taskQuery.getTaskDetails(addEmployeeDTO.taskId).employees.employees.toArray()}">
+				<tr>
+					<td>
+						<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
+								<f:param name="eid" value="#{v_employee.id}" />
+						</h:link>
+					</td>
+				</tr>
+			</ui:repeat>
+		</table>
+		<o:form id="form" includeViewParams="true">
+			Mitarbeiter hinzufügen: <br />
+			<!-- TODO Only display employees of the project and those that are not already assigned -->
+			<h:selectOneMenu value="#{addEmployeeDTO.employeeId}">
+				<f:selectItems value="#{employeeQuery.listAllEmployees().getEmployees()}" var="v_employee"
+   					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+			</h:selectOneMenu>
+			<h:commandButton value="Hinzufügen" action="#{taskCommand.addEmployee(addEmployeeDTO.taskId, addEmployeeDTO.employeeId)}">
+				<f:param name="tid" value="#{param.tid}" />
+			</h:commandButton>
+		</o:form>
 	</ui:define>
 </ui:composition>
