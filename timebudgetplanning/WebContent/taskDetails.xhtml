@@ -27,9 +27,8 @@
 		</table>
 		<o:form id="form" includeViewParams="true">
 			Mitarbeiter hinzufügen: <br />
-			<!-- TODO Only display employees of the project and those that are not already assigned -->
 			<h:selectOneMenu value="#{addEmployeeDTO.employeeId}">
-				<f:selectItems value="#{employeeQuery.listAllEmployees().getEmployees()}" var="v_employee"
+   				<f:selectItems value="#{taskQuery.getAddableEmployees(request.getParameter('tid')).getEmployees()}" var="v_employee"
    					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
 			</h:selectOneMenu>
 			<h:commandButton value="Hinzufügen" action="#{taskCommand.addEmployee(addEmployeeDTO)}" />

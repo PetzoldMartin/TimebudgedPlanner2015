@@ -4,11 +4,16 @@ package de.fhzwickau.tbp.tools;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431687680065_876144_3879) 
  */
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Employee;
+import de.fhzwickau.tbp.material.Project;
+import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.material.Task;
 import de.fhzwickau.tbp.tools.dto.EmployeeList;
 import de.fhzwickau.tbp.tools.dto.EmployeeOverview;
@@ -64,6 +69,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 			eOverview.setLastName(e.getLastName());
 			employeeList.addEmployee(eOverview);
 		}
+		employeeList = sortEmployeesByName(employeeList);
 		details.setEmployees(employeeList);
 		return details;
 		/* PROTECTED REGION END */
@@ -97,8 +103,65 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		return details;
 		/* PROTECTED REGION END */
 	}
-	
+
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431687680065_876144_3879) ENABLED START */
 	// TODO: put your own implementation code here
+	
+	// TODO Add to model
+	@Override
+	public EmployeeList getAddableEmployees(int taskId) {
+		EmployeeList list = new EmployeeList();
+		AbstractTask t = entityManager.find(AbstractTask.class, taskId);
+		if (t == null)
+			return list;
+		Project p = t.getMilestone().getProject();
+		Set<Employee> projectEmployees = new HashSet<Employee>();
+		for (Role r : p.getRole()) {
+			projectEmployees.add(r.getEmployee());
+		}
+		for (Employee e : projectEmployees) {
+			if (t.getEmployee().contains(e))
+				continue;
+			EmployeeOverview overview = new EmployeeOverview();
+			overview.setId(e.getId());
+			overview.setFirstName(e.getFirstName());
+			overview.setLastName(e.getLastName());
+			list.addEmployee(overview);
+		}
+		list = sortEmployeesByName(list);
+		return list;
+	}
+	
+	private EmployeeList sortEmployeesByName(EmployeeList list) {
+		HashMap<String, EmployeeOverview> mappingNameToOverview = new HashMap<String, EmployeeOverview>();
+		int counter = 0;
+		for (EmployeeOverview overview : list.getEmployees()) {
+			String name = "";
+			if (overview.getFirstName() != null)
+				name += overview.getFirstName();
+			if (!name.equals(""))
+				name += " ";
+			if (overview.getLastName() != null)
+				name += overview.getLastName();
+			if (name.equals(""))
+				continue;
+			
+			if (mappingNameToOverview.containsKey(name)) {
+				mappingNameToOverview.put(name + counter, overview);
+				++counter;
+			}
+			else
+				mappingNameToOverview.put(name, overview);
+		}
+		String[] names = new String[mappingNameToOverview.size()];
+		mappingNameToOverview.keySet().toArray(names);
+		Arrays.sort(names);
+		EmployeeList sortedList = new EmployeeList();
+		for (String name : names) {
+			sortedList.addEmployee(mappingNameToOverview.get(name));
+		}
+		return sortedList;
+	}
+	
 	/* PROTECTED REGION END */
 }

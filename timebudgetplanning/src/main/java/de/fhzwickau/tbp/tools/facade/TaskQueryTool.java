@@ -4,6 +4,7 @@ package de.fhzwickau.tbp.tools.facade;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431687649394_793036_3858) 
  */
+import de.fhzwickau.tbp.tools.dto.EmployeeList;
 import de.fhzwickau.tbp.tools.dto.TaskDetails;
 import de.fhzwickau.tbp.tools.dto.CompoundTaskDetails;
 
@@ -24,6 +25,12 @@ public interface TaskQueryTool {
 	 */
 	
 	public CompoundTaskDetails getCompoundTaskDetails(int taskId);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public EmployeeList getAddableEmployees(int taskId);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431687649394_793036_3858) ENABLED START */
 	// TODO: put your own implementation code here
