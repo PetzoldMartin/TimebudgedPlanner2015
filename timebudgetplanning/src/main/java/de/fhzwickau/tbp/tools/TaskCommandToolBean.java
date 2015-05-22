@@ -4,6 +4,7 @@ package de.fhzwickau.tbp.tools;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431276472150_541750_3490) 
  */
+import de.fhzwickau.tbp.tools.dto.AddEmployee;
 import de.fhzwickau.tbp.tools.dto.NewTask;
 import de.fhzwickau.tbp.tools.facade.TaskCommandTool;
 import de.fhzwickau.tbp.datatypes.TaskState;
@@ -83,16 +84,16 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public String addEmployee(int taskId, int employeeId) {
+	public String addEmployee(AddEmployee addEmployee) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431435861434_256127_3719) ENABLED START */
 		// TODO: implementation of method 'TaskCommandToolBean.addEmployee(...)'
-		AbstractTask task = entityManager.find(AbstractTask.class, taskId);
-		Employee employee = entityManager.find(Employee.class, employeeId);
+		AbstractTask task = entityManager.find(AbstractTask.class, addEmployee.getTaskId());
+		Employee employee = entityManager.find(Employee.class, addEmployee.getEmployeeId());
 		if (task == null || employee == null)
 			return "project";
 		task.addEmployee(employee);
 		entityManager.merge(task);
-		return "taskDetails?faces-redirect=true&tid=" + taskId;
+		return "taskDetails?faces-redirect=true&tid=" + addEmployee.getTaskId();
 		/* PROTECTED REGION END */
 	}
 	

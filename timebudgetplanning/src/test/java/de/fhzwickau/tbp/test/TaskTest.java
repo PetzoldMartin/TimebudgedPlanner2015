@@ -28,6 +28,7 @@ import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Task;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
+import de.fhzwickau.tbp.tools.dto.AddEmployee;
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
 import de.fhzwickau.tbp.tools.dto.NewMilestone;
@@ -139,7 +140,10 @@ public class TaskTest {
 		Employee e = (Employee) em.createQuery("SELECT e FROM Employee e").getResultList().get(0);
 		Task t = (Task) em.createQuery("SELECT t FROM Task t").getResultList().get(0);
 		
-		taskCommandTool.addEmployee(t.getId(), e.getId());
+		AddEmployee addEmployee = new AddEmployee();
+		addEmployee.setTaskId(t.getId());
+		addEmployee.setEmployeeId(e.getId());
+		taskCommandTool.addEmployee(addEmployee);
 		
 		Assert.assertEquals(t.getEmployee().size(), 1);
 		

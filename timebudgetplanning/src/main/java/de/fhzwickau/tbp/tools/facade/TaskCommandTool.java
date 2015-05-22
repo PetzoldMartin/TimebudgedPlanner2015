@@ -4,6 +4,7 @@ package de.fhzwickau.tbp.tools.facade;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431276253958_640908_3465) 
  */
+import de.fhzwickau.tbp.tools.dto.AddEmployee;
 import de.fhzwickau.tbp.tools.dto.NewTask;
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
 
@@ -30,7 +31,7 @@ public interface TaskCommandTool {
 	 * @return 
 	 */
 	
-	public String addEmployee(int taskId, int employeeId);
+	public String addEmployee(AddEmployee addEmployee);
 	
 	/**
 	 * Method stub for further implementation.
