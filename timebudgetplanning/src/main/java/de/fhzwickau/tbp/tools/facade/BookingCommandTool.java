@@ -16,7 +16,7 @@ public interface BookingCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addBooking(NewBooking newBooking);
+	public String addBooking(NewBooking newBooking);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1432038793051_913097_3744) ENABLED START */
 	// TODO: put your own implementation code here

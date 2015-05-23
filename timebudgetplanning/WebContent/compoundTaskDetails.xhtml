@@ -11,11 +11,11 @@
     </f:metadata>
 	<ui:define name="content">
 		Aufgaben ID: #{addEmployeeDTO.taskId} <br />
-		Name: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).name} <br />
-		Beschreibung: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).description} <br />
+		Name: #{taskQuery.getCompoundTaskDetails(addEmployeeDTO.taskId).name} <br />
+		Beschreibung: #{taskQuery.getCompoundTaskDetails(addEmployeeDTO.taskId).description} <br />
 		Zugewiesene Mitarbeiter:
 		<table>
-			<ui:repeat var="v_employee" value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees.toArray()}">
+			<ui:repeat var="v_employee" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).employees.employees.toArray()}">
 				<tr>
 					<td>
 						<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
@@ -32,8 +32,10 @@
    					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
 			</h:selectOneMenu>
 			<h:commandButton value="Hinzufügen" action="#{taskCommand.addEmployee(addEmployeeDTO)}">
-				<f:param name="tid" value="#{params.tid}" />
+				<f:param name="tid" value="#{addEmployeeDTO.taskId}" />
 			</h:commandButton>
 		</o:form>
+		Untergeordnete Aufgaben:
+		<!-- TODO -->
 	</ui:define>
 </ui:composition>

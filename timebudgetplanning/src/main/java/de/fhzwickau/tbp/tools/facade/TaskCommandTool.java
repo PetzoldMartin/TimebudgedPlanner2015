@@ -28,34 +28,33 @@ public interface TaskCommandTool {
 	
 	/**
 	 * Method stub for further implementation.
-	 * @return 
 	 */
 	
-	public String addEmployee(AddEmployee addEmployee);
+	public String addEmployee(AddEmployee employee);
 	
 	/**
 	 * Method stub for further implementation.
 	 */
 	
-	public void removeEmployee(int taskId, int employeeId);
+	public String removeEmployee(int taskId, int employeeId);
 	
 	/**
 	 * Method stub for further implementation.
 	 */
 	
-	public void alterTask(AlteredTask alteredTask);
+	public String alterTask(AlteredTask alteredTask);
 	
 	/**
 	 * Method stub for further implementation.
 	 */
 	
-	public void addSubtaskToCompoundTask(int compoundTaskId, int subtaskId);
+	public String addSubtaskToCompoundTask(int compoundTaskId, int subtaskId);
 	
 	/**
 	 * Method stub for further implementation.
 	 */
 	
-	public void removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId);
+	public String removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431276253958_640908_3465) ENABLED START */
 	// TODO: put your own implementation code here

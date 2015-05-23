@@ -39,9 +39,8 @@ public class BookingCommandToolBean implements BookingCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addBooking(NewBooking newBooking) {
+	public String addBooking(NewBooking newBooking) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432038818637_977993_3764) ENABLED START */
-		// TODO: implementation of method 'BookingCommandToolBean.addBooking(...)'
 		Task task = entityManager.find(Task.class, newBooking.getTaskId());
 		Employee employee = entityManager.find(Employee.class, newBooking.getEmployeeId());
 		
@@ -51,12 +50,12 @@ public class BookingCommandToolBean implements BookingCommandTool {
 		booking.setDate(new Date());
 		booking.setStart(newBooking.getStart());
 		booking.setEnd(newBooking.getEnd());
-
+		
 		entityManager.persist(booking);
+		return "taskDetails?faces-redirect=true&tid=" + newBooking.getTaskId();
 		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1432038866553_552341_3769) ENABLED START */
-	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

@@ -22,7 +22,10 @@
 			<ui:repeat var="v_task" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).tasks.toArray()}">
 				<tr>
 					<td>
-						<h:link outcome="taskDetails" value="#{v_task.name}">
+						<h:link outcome="taskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Normal Task')}">
+							<f:param name="tid" value="#{v_task.id}" />
+						</h:link>
+						<h:link outcome="compoundTaskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Compound Task')}">
 							<f:param name="tid" value="#{v_task.id}" />
 						</h:link>
 					</td>

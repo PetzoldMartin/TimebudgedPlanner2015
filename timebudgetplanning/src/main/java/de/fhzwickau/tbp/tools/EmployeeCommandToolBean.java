@@ -13,8 +13,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.ejb.Stateless;
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
-import javax.enterprise.context.RequestScoped;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -50,16 +48,16 @@ public class EmployeeCommandToolBean implements EmployeeCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void alterEmployee(AlteredEmployee alteredEmployee) {
+	public String alterEmployee(AlteredEmployee alteredEmployee) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898907_434497_3667__17_0_4_2_8210263_1431069898961_908822_3835) ENABLED START */
 		Employee e = entityManager.find(Employee.class, alteredEmployee.getId());
 		e.setFirstName(alteredEmployee.getFirstName());
 		e.setLastName(alteredEmployee.getLastName());
 		entityManager.merge(e);
+		return "employeeDetails?faces-redirect=true&eid=" + alteredEmployee.getId();
 		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898907_434497_3667) ENABLED START */
-	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

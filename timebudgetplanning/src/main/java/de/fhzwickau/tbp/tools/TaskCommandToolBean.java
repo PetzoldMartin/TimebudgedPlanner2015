@@ -46,7 +46,6 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	
 	public String addTask(NewTask newTask) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.addTask(...)'
 		Milestone m = entityManager.find(Milestone.class, newTask.getMilestoneId());
 		if (m == null)
 			return "project";
@@ -66,7 +65,6 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	
 	public String addCompoundTask(NewTask newTask) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431534436418_545037_8891) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.addCompoundTask(...)'
 		Milestone m = entityManager.find(Milestone.class, newTask.getMilestoneId());
 		if (m == null)
 			return "project";
@@ -84,16 +82,18 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public String addEmployee(AddEmployee addEmployee) {
+	public String addEmployee(AddEmployee employee) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431435861434_256127_3719) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.addEmployee(...)'
-		AbstractTask task = entityManager.find(AbstractTask.class, addEmployee.getTaskId());
-		Employee employee = entityManager.find(Employee.class, addEmployee.getEmployeeId());
+		AbstractTask task = entityManager.find(AbstractTask.class, employee.getTaskId());
+		Employee e = entityManager.find(Employee.class, employee.getEmployeeId());
 		if (task == null || employee == null)
 			return "project";
-		task.addEmployee(employee);
+		task.addEmployee(e);
 		entityManager.merge(task);
-		return "taskDetails?faces-redirect=true&tid=" + addEmployee.getTaskId();
+		if (task instanceof Task)
+			return "taskDetails?faces-redirect=true&tid=" + employee.getTaskId();
+		else
+			return "compoundTaskDetails?faces-redirect=true&tid=" + employee.getTaskId();
 		/* PROTECTED REGION END */
 	}
 	
@@ -101,15 +101,18 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void removeEmployee(int taskId, int employeeId) {
+	public String removeEmployee(int taskId, int employeeId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431458648449_443645_3777) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.removeEmployee(...)'
 		AbstractTask task = entityManager.find(AbstractTask.class, taskId);
 		Employee employee = entityManager.find(Employee.class, employeeId);
 		if (task == null || employee == null)
-			return;
+			return "project";
 		task.removeEmployee(employee);
 		entityManager.merge(task);
+		if (task instanceof Task)
+			return "taskDetails?faces-redirect=true&tid=" + taskId;
+		else
+			return "compoundTaskDetails?faces-redirect=true&tid=" + taskId;
 		/* PROTECTED REGION END */
 	}
 	
@@ -117,13 +120,16 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void alterTask(AlteredTask alteredTask) {
+	public String alterTask(AlteredTask alteredTask) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431529388865_21163_4611) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.alterTask(...)'
 		AbstractTask task = entityManager.find(AbstractTask.class, alteredTask.getId());
 		task.setName(alteredTask.getName());
 		task.setDescription(alteredTask.getDescription());
 		entityManager.merge(task);
+		if (task instanceof Task)
+			return "taskDetails?faces-redirect=true&tid=" + alteredTask.getId();
+		else
+			return "compoundTaskDetails?faces-redirect=true&tid=" + alteredTask.getId();
 		/* PROTECTED REGION END */
 	}
 	
@@ -131,13 +137,13 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void addSubtaskToCompoundTask(int compoundTaskId, int subtaskId) {
+	public String addSubtaskToCompoundTask(int compoundTaskId, int subtaskId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431548056928_616978_3737) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.addSubtaskToCompoundTask(...)'
 		Task task = entityManager.find(Task.class, subtaskId);
 		CompoundTask cTask = entityManager.find(CompoundTask.class, compoundTaskId);
 		cTask.addAbstractTask(task);
 		entityManager.merge(cTask);
+		return "compoundTaskDetails?faces-redirect=true&tid" + compoundTaskId;
 		/* PROTECTED REGION END */
 	}
 	
@@ -145,17 +151,16 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public void removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId) {
+	public String removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431548124199_571091_3742) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.removeSubtaskFromCompoundTask(...)'
 		Task task = entityManager.find(Task.class, subtaskId);
 		CompoundTask cTask = entityManager.find(CompoundTask.class, compoundTaskId);
 		cTask.removeAbstractTask(task);
 		entityManager.merge(cTask);
+		return "compoundTaskDetails?faces-redirect=true&tid=" + compoundTaskId;
 		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431276472150_541750_3490) ENABLED START */
-	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

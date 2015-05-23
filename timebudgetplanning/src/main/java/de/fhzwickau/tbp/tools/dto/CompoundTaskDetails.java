@@ -28,8 +28,8 @@ public class CompoundTaskDetails implements Serializable {
 	
 	public CompoundTaskDetails() {
 		/* PROTECTED REGION ID(java.constructor._17_0_4_2_67b0227_1431945847485_649107_3880) ENABLED START */
-		// TODO: implementation of constructor for class 'CompoundTaskDetails'
-		throw new UnsupportedOperationException("The implementation of this generated constructor is missing!");
+		employees = new EmployeeList();
+		tasks = new TaskList();
 		/* PROTECTED REGION END */
 	}
 	

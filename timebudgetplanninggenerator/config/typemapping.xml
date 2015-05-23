@@ -60,6 +60,10 @@
 			<tns:to>LinkedList&lt;MilestoneOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
+		<tns:type from="MilestoneSetType">
+			<tns:to>Set&lt;Milestone&gt;</tns:to>
+			<tns:context name="Import">java.util.Set</tns:context>
+		</tns:type>
 		<tns:type from="ProjectListType">
 			<tns:to>LinkedList&lt;ProjectOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
