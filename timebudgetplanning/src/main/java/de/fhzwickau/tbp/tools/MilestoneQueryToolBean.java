@@ -31,6 +31,9 @@ import javax.ejb.Stateless;
 @Stateless(name = "MilestoneQueryToolBean")
 public class MilestoneQueryToolBean implements MilestoneQueryTool {
 	
+	@EJB(name = "ejb/TaskQueryTool")
+	private TaskQueryTool taskQueryTool;
+	
 	@PersistenceContext
 	private EntityManager entityManager;
 	
@@ -92,9 +95,5 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431851800414_576887_5372) ENABLED START */
-	
-	@EJB
-	TaskQueryTool taskQueryTool;
-	
 	/* PROTECTED REGION END */
 }

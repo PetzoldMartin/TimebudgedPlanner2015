@@ -187,9 +187,44 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		/* PROTECTED REGION END */
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431687680065_876144_3879) ENABLED START */
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public TaskList sortTasksByName(TaskList list) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431687680065_876144_3879__17_0_4_2_8210263_1432542106067_439776_5448) ENABLED START */
+		HashMap<String, TaskOverview> mappingNameToOverview = new HashMap<String, TaskOverview>();
+		int counter = 0;
+		for (TaskOverview overview : list.getTasks()) {
+			String name = "";
+			if (overview.getName() != null)
+				name += overview.getName();
+			if (name.equals(""))
+				continue;
+			
+			if (mappingNameToOverview.containsKey(name)) {
+				mappingNameToOverview.put(name + counter, overview);
+				++counter;
+			} else
+				mappingNameToOverview.put(name, overview);
+		}
+		String[] names = new String[mappingNameToOverview.size()];
+		mappingNameToOverview.keySet().toArray(names);
+		Arrays.sort(names);
+		TaskList sortedList = new TaskList();
+		for (String name : names) {
+			sortedList.addTask(mappingNameToOverview.get(name));
+		}
+		return sortedList;
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
 	
 	public TaskList getAddableTasks(int compoundTaskId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431687680065_876144_3879__17_0_4_2_8210263_1432542112939_407607_5452) ENABLED START */
 		TaskList list = new TaskList();
 		AbstractTask t = entityManager.find(AbstractTask.class, compoundTaskId);
 		if (t == null || !(t instanceof CompoundTask))
@@ -198,9 +233,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		@SuppressWarnings("unchecked")
 		List<AbstractTask> resultList = entityManager.createQuery("SELECT t FROM AbstractTask t WHERE t.milestone.id = " + m.getId()).getResultList();
 		for (AbstractTask aTask : resultList) {
-			if (!(aTask.getId() == compoundTaskId) && aTask.getState() == TaskState.OPEN && 
-					!((CompoundTask) t).getAbstractTask().contains(aTask) && !isTaskAlreadyAssigned(aTask) &&
-					!isParentTask((CompoundTask) t, aTask)) {
+			if (!(aTask.getId() == compoundTaskId) && aTask.getState() == TaskState.OPEN && !((CompoundTask) t).getAbstractTask().contains(aTask) && !isTaskAlreadyAssigned(aTask) && !isParentTask((CompoundTask) t, aTask)) {
 				TaskOverview o = new TaskOverview();
 				o.setId(aTask.getId());
 				o.setName(aTask.getName());
@@ -210,7 +243,10 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		}
 		list = sortTasksByName(list);
 		return list;
+		/* PROTECTED REGION END */
 	}
+	
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431687680065_876144_3879) ENABLED START */
 	
 	private boolean isTaskAlreadyAssigned(AbstractTask task) {
 		@SuppressWarnings("unchecked")
@@ -241,32 +277,6 @@ public class TaskQueryToolBean implements TaskQueryTool {
 			}
 		}
 		return false;
-	}
-	
-	public TaskList sortTasksByName(TaskList list) {
-		HashMap<String, TaskOverview> mappingNameToOverview = new HashMap<String, TaskOverview>();
-		int counter = 0;
-		for (TaskOverview overview : list.getTasks()) {
-			String name = "";
-			if (overview.getName() != null)
-				name += overview.getName();
-			if (name.equals(""))
-				continue;
-			
-			if (mappingNameToOverview.containsKey(name)) {
-				mappingNameToOverview.put(name + counter, overview);
-				++counter;
-			} else
-				mappingNameToOverview.put(name, overview);
-		}
-		String[] names = new String[mappingNameToOverview.size()];
-		mappingNameToOverview.keySet().toArray(names);
-		Arrays.sort(names);
-		TaskList sortedList = new TaskList();
-		for (String name : names) {
-			sortedList.addTask(mappingNameToOverview.get(name));
-		}
-		return sortedList;
 	}
 	
 	/* PROTECTED REGION END */
