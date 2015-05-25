@@ -12,12 +12,15 @@ import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.MilestoneData;
 import de.fhzwickau.tbp.material.Task;
 import de.fhzwickau.tbp.tools.dto.MilestoneDetails;
+import de.fhzwickau.tbp.tools.dto.TaskList;
 import de.fhzwickau.tbp.tools.dto.TaskOverview;
 import de.fhzwickau.tbp.tools.facade.MilestoneQueryTool;
+import de.fhzwickau.tbp.tools.facade.TaskQueryTool;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.inject.Named;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 /**
@@ -44,7 +47,6 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 	
 	public MilestoneDetails getMilestoneDetails(int milestoneId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431851800414_576887_5372__17_0_4_2_8210263_1431851780437_410379_5367) ENABLED START */
-		// TODO: implementation of method 'MilestoneQueryToolBean.getMilestoneDetails(...)'
 		Milestone m = entityManager.find(Milestone.class, milestoneId);
 		MilestoneDetails milestoneDetails = new MilestoneDetails();
 		if (m == null) {
@@ -57,6 +59,7 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 			milestoneDetails.setId(m.getId());
 			milestoneDetails.setName(m.getName());
 			milestoneDetails.setState(m.getState());
+			TaskList taskList = new TaskList();
 			for (AbstractTask t : m.getAbstractTask()) {
 				TaskOverview tOverview = new TaskOverview();
 				tOverview.setId(t.getId());
@@ -67,8 +70,10 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 				} else {
 					tOverview.setType("Compound Task");
 				}
-				milestoneDetails.addTask(tOverview);
+				taskList.addTask(tOverview);
 			}
+			taskList = taskQueryTool.sortTasksByName(taskList);
+			milestoneDetails.setTasks(taskList.getTasks());
 			MilestoneData latestMilestoneData = null;
 			for (MilestoneData mData : m.getMilestoneData()) {
 				if (latestMilestoneData == null || latestMilestoneData.getTstamp().getTime() < mData.getTstamp().getTime()) {
@@ -87,6 +92,9 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431851800414_576887_5372) ENABLED START */
-	// TODO: put your own implementation code here
+	
+	@EJB
+	TaskQueryTool taskQueryTool;
+	
 	/* PROTECTED REGION END */
 }

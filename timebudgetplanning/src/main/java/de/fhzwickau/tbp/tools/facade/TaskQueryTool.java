@@ -7,6 +7,7 @@ package de.fhzwickau.tbp.tools.facade;
 import de.fhzwickau.tbp.tools.dto.EmployeeList;
 import de.fhzwickau.tbp.tools.dto.TaskDetails;
 import de.fhzwickau.tbp.tools.dto.CompoundTaskDetails;
+import de.fhzwickau.tbp.tools.dto.TaskList;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -33,6 +34,10 @@ public interface TaskQueryTool {
 	public EmployeeList getAddableEmployees(int taskId);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431687649394_793036_3858) ENABLED START */
-	// TODO: put your own implementation code here
+	
+	public TaskList getAddableTasks(int compoundTaskId);
+	
+	public TaskList sortTasksByName(TaskList list);
+	
 	/* PROTECTED REGION END */
 }

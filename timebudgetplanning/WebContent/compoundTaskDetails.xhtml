@@ -8,11 +8,12 @@
 	template="/WEB-INF/templates/template.xhtml">
    	<f:metadata>
        	<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}"/>
+       	<f:viewParam name="tid" value="#{addTaskDTO.compoundTaskId}"/>
     </f:metadata>
 	<ui:define name="content">
-		Aufgaben ID: #{addEmployeeDTO.taskId} <br />
-		Name: #{taskQuery.getCompoundTaskDetails(addEmployeeDTO.taskId).name} <br />
-		Beschreibung: #{taskQuery.getCompoundTaskDetails(addEmployeeDTO.taskId).description} <br />
+		Aufgaben ID: #{request.getParameter('tid')} <br />
+		Name: #{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).name} <br />
+		Beschreibung: #{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).description} <br />
 		Zugewiesene Mitarbeiter:
 		<table>
 			<ui:repeat var="v_employee" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).employees.employees.toArray()}">
@@ -25,7 +26,7 @@
 				</tr>
 			</ui:repeat>
 		</table>
-		<o:form id="form" includeViewParams="true">
+		<o:form includeViewParams="true">
 			Mitarbeiter hinzufügen: <br />
 			<h:selectOneMenu value="#{addEmployeeDTO.employeeId}">
    				<f:selectItems value="#{taskQuery.getAddableEmployees(request.getParameter('tid')).getEmployees()}" var="v_employee"
@@ -36,6 +37,31 @@
 			</h:commandButton>
 		</o:form>
 		Untergeordnete Aufgaben:
-		<!-- TODO -->
+		<table>
+			<ui:repeat var="v_task" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).tasks.tasks.toArray()}">
+				<tr>
+					<td>
+						<h:link outcome="taskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Normal Task')}">
+							<f:param name="tid" value="#{v_task.id}" />
+						</h:link>
+						<h:link outcome="compoundTaskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Compound Task')}">
+							<f:param name="tid" value="#{v_task.id}" />
+						</h:link>
+					</td>
+					<td>#{v_task.state}</td>
+					<td>#{v_task.type}</td>
+				</tr>
+			</ui:repeat>
+		</table>
+		<o:form includeViewParams="true">
+			Untergeordnete Aufgaben hinzufügen: <br />
+			<h:selectOneMenu value="#{addTaskDTO.taskId}">
+   				<f:selectItems value="#{taskQuery.getAddableTasks(request.getParameter('tid')).getTasks()}" var="v_task"
+   					itemValue="#{v_task.id}" itemLabel="#{v_task.name}" />
+			</h:selectOneMenu>
+			<h:commandButton value="Hinzufügen" action="#{taskCommand.addSubtaskToCompoundTask(addTaskDTO)}">
+				<f:param name="tid" value="#{addTaskDTO.compoundTaskId}" />
+			</h:commandButton>
+		</o:form>
 	</ui:define>
 </ui:composition>

@@ -7,6 +7,7 @@ package de.fhzwickau.tbp.tools.facade;
 import de.fhzwickau.tbp.tools.dto.AddEmployee;
 import de.fhzwickau.tbp.tools.dto.NewTask;
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
+import de.fhzwickau.tbp.tools.dto.AddTask;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -48,13 +49,13 @@ public interface TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public String addSubtaskToCompoundTask(int compoundTaskId, int subtaskId);
+	public String addSubtaskToCompoundTask(AddTask task);
 	
 	/**
 	 * Method stub for further implementation.
 	 */
 	
-	public String removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId);
+	public String removeSubtaskFromCompoundTask(AddTask task);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431276253958_640908_3465) ENABLED START */
 	// TODO: put your own implementation code here

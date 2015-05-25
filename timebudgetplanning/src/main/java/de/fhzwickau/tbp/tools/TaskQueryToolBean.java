@@ -7,11 +7,14 @@ package de.fhzwickau.tbp.tools;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Employee;
+import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.material.Task;
@@ -125,9 +128,14 @@ public class TaskQueryToolBean implements TaskQueryTool {
 			tOverview.setId(t.getId());
 			tOverview.setName(t.getName());
 			tOverview.setState(t.getState());
-			;
+			if (t instanceof Task) {
+				tOverview.setType("Normal Task");
+			} else {
+				tOverview.setType("Compound Task");
+			}
 			taskList.addTask(tOverview);
 		}
+		taskList = sortTasksByName(taskList);
 		
 		CompoundTaskDetails details = new CompoundTaskDetails();
 		details.setId(taskId);
@@ -180,5 +188,86 @@ public class TaskQueryToolBean implements TaskQueryTool {
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431687680065_876144_3879) ENABLED START */
+	
+	public TaskList getAddableTasks(int compoundTaskId) {
+		TaskList list = new TaskList();
+		AbstractTask t = entityManager.find(AbstractTask.class, compoundTaskId);
+		if (t == null || !(t instanceof CompoundTask))
+			return list;
+		Milestone m = t.getMilestone();
+		@SuppressWarnings("unchecked")
+		List<AbstractTask> resultList = entityManager.createQuery("SELECT t FROM AbstractTask t WHERE t.milestone.id = " + m.getId()).getResultList();
+		for (AbstractTask aTask : resultList) {
+			if (!(aTask.getId() == compoundTaskId) && aTask.getState() == TaskState.OPEN && 
+					!((CompoundTask) t).getAbstractTask().contains(aTask) && !isTaskAlreadyAssigned(aTask) &&
+					!isParentTask((CompoundTask) t, aTask)) {
+				TaskOverview o = new TaskOverview();
+				o.setId(aTask.getId());
+				o.setName(aTask.getName());
+				o.setState(TaskState.OPEN);
+				list.addTask(o);
+			}
+		}
+		list = sortTasksByName(list);
+		return list;
+	}
+	
+	private boolean isTaskAlreadyAssigned(AbstractTask task) {
+		@SuppressWarnings("unchecked")
+		List<AbstractTask> resultList = entityManager.createQuery("SELECT t FROM AbstractTask t WHERE t.milestone.id = " + task.getMilestone().getId()).getResultList();
+		for (AbstractTask t : resultList) {
+			if (t instanceof CompoundTask) {
+				for (AbstractTask aTask : ((CompoundTask) t).getAbstractTask()) {
+					if (aTask.getId() == task.getId()) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	
+	private boolean isParentTask(CompoundTask compoundTask, AbstractTask parent) {
+		if (parent instanceof Task)
+			return false;
+		Set<AbstractTask> childTasks = ((CompoundTask) parent).getAbstractTask();
+		for (AbstractTask t : childTasks) {
+			if (t.getId() == compoundTask.getId())
+				return true;
+			if (t instanceof CompoundTask) {
+				boolean recursiveCheck = isParentTask(compoundTask, t);
+				if (recursiveCheck)
+					return true;
+			}
+		}
+		return false;
+	}
+	
+	public TaskList sortTasksByName(TaskList list) {
+		HashMap<String, TaskOverview> mappingNameToOverview = new HashMap<String, TaskOverview>();
+		int counter = 0;
+		for (TaskOverview overview : list.getTasks()) {
+			String name = "";
+			if (overview.getName() != null)
+				name += overview.getName();
+			if (name.equals(""))
+				continue;
+			
+			if (mappingNameToOverview.containsKey(name)) {
+				mappingNameToOverview.put(name + counter, overview);
+				++counter;
+			} else
+				mappingNameToOverview.put(name, overview);
+		}
+		String[] names = new String[mappingNameToOverview.size()];
+		mappingNameToOverview.keySet().toArray(names);
+		Arrays.sort(names);
+		TaskList sortedList = new TaskList();
+		for (String name : names) {
+			sortedList.addTask(mappingNameToOverview.get(name));
+		}
+		return sortedList;
+	}
+	
 	/* PROTECTED REGION END */
 }

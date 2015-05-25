@@ -29,6 +29,7 @@ import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Task;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
 import de.fhzwickau.tbp.tools.dto.AddEmployee;
+import de.fhzwickau.tbp.tools.dto.AddTask;
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
 import de.fhzwickau.tbp.tools.dto.NewMilestone;
@@ -191,7 +192,10 @@ public class TaskTest {
 		Assert.assertEquals(0, cTask.getAbstractTask().size());
 		Assert.assertFalse(cTask.getAbstractTask().contains(task));
 		
-		cTask.addAbstractTask(task);
+		AddTask t = new AddTask();
+		t.setCompoundTaskId(cTask.getId());
+		t.setTaskId(task.getId());
+		taskCommandTool.addSubtaskToCompoundTask(t);
 		
 		Assert.assertEquals(1, cTask.getAbstractTask().size());
 		Assert.assertTrue(cTask.getAbstractTask().contains(task));
@@ -203,7 +207,10 @@ public class TaskTest {
 		CompoundTask cTask = (CompoundTask) em.createQuery("SELECT t FROM CompoundTask t").getResultList().get(0);
 		Task task = (Task) em.createQuery("SELECT t from Task t").getResultList().get(0);
 		
-		taskCommandTool.removeSubtaskFromCompoundTask(cTask.getId(), task.getId());
+		AddTask t = new AddTask();
+		t.setCompoundTaskId(cTask.getId());
+		t.setTaskId(task.getId());
+		taskCommandTool.removeSubtaskFromCompoundTask(t);
 		
 		Assert.assertEquals(0, cTask.getAbstractTask().size());
 		Assert.assertFalse(cTask.getAbstractTask().contains(task));

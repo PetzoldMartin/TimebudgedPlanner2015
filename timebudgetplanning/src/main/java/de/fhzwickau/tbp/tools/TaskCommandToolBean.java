@@ -21,6 +21,7 @@ import javax.ejb.Stateless;
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
 
 import javax.inject.Named;
+import de.fhzwickau.tbp.tools.dto.AddTask;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -137,13 +138,13 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public String addSubtaskToCompoundTask(int compoundTaskId, int subtaskId) {
+	public String addSubtaskToCompoundTask(AddTask task) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431548056928_616978_3737) ENABLED START */
-		Task task = entityManager.find(Task.class, subtaskId);
-		CompoundTask cTask = entityManager.find(CompoundTask.class, compoundTaskId);
-		cTask.addAbstractTask(task);
+		AbstractTask t = entityManager.find(AbstractTask.class, task.getTaskId());
+		CompoundTask cTask = entityManager.find(CompoundTask.class, task.getCompoundTaskId());
+		cTask.addAbstractTask(t);
 		entityManager.merge(cTask);
-		return "compoundTaskDetails?faces-redirect=true&tid" + compoundTaskId;
+		return "compoundTaskDetails?faces-redirect=true&tid=" + task.getCompoundTaskId();
 		/* PROTECTED REGION END */
 	}
 	
@@ -151,13 +152,13 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	public String removeSubtaskFromCompoundTask(int compoundTaskId, int subtaskId) {
+	public String removeSubtaskFromCompoundTask(AddTask task) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431548124199_571091_3742) ENABLED START */
-		Task task = entityManager.find(Task.class, subtaskId);
-		CompoundTask cTask = entityManager.find(CompoundTask.class, compoundTaskId);
-		cTask.removeAbstractTask(task);
+		AbstractTask t = entityManager.find(AbstractTask.class, task.getTaskId());
+		CompoundTask cTask = entityManager.find(CompoundTask.class, task.getCompoundTaskId());
+		cTask.removeAbstractTask(t);
 		entityManager.merge(cTask);
-		return "compoundTaskDetails?faces-redirect=true&tid=" + compoundTaskId;
+		return "compoundTaskDetails?faces-redirect=true&tid=" + task.getCompoundTaskId();
 		/* PROTECTED REGION END */
 	}
 	
