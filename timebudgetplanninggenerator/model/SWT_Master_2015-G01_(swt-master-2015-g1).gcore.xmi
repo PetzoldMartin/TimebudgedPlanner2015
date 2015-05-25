@@ -431,11 +431,12 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="AlteredEmployee" xmiGuid="_17_0_4_2_8210263_1431069898927_748431_3708" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
+            <classifier xsi:type="gcore:MClass" name="AlteredEmployee" xmiGuid="_17_0_4_2_8210263_1431069898927_748431_3708" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
               <taggedValue value="true" tag="//@anyStereotype.1/@property.0"/>
               <taggedValue value="true" tag="//@anyStereotype.1/@property.1"/>
               <taggedValue value="true" tag="//@anyStereotype.1/@property.2"/>
               <taggedValue value="true" tag="//@anyStereotype.1/@property.3"/>
+              <taggedValue value="alteredEmployeeDTO" tag="//@anyStereotype.3/@property.0"/>
               <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431069898955_726012_3814_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898955_726012_3814_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898955_726012_3814"/>

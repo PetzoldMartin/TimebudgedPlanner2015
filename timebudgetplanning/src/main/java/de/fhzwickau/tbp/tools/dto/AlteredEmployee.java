@@ -5,11 +5,15 @@ package de.fhzwickau.tbp.tools.dto;
  * 	@FILE-ID : (_17_0_4_2_8210263_1431069898927_748431_3708) 
  */
 import java.io.Serializable;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("alteredEmployeeDTO")
+@RequestScoped
 public class AlteredEmployee implements Serializable {
 	
 	private int id;
@@ -49,6 +53,7 @@ public class AlteredEmployee implements Serializable {
 	 */
 	
 	public void setFirstName(String firstName) {
+		System.out.println(firstName);
 		this.firstName = firstName;
 	}
 	
