@@ -29,6 +29,16 @@ public class Task extends AbstractTask {
 	}
 	
 	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public Date getEnd() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432666238980_346811_4419) ENABLED START */
+		return this.getEndTime();
+		/* PROTECTED REGION END */
+	}
+	
+	/**
 	 * Returns all linked objects of association '<em><b>booking</b></em>'.
 	 */
 	
@@ -77,8 +87,19 @@ public class Task extends AbstractTask {
 	 */
 	private Date getEndTime() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898945_493082_3768) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'endTime'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
+		Date lastdate = null;
+		if (!booking.isEmpty()) {
+			for (Booking booking2 : booking) {
+				if (lastdate == null) {
+					lastdate = booking2.getEnd();
+				} else {
+					if (lastdate.before(booking2.getEnd())) {
+						lastdate = booking2.getEnd();
+					}
+				}
+			}
+		}
+		return lastdate;
 		/* PROTECTED REGION END */
 	}
 	

@@ -7,7 +7,6 @@ package de.fhzwickau.tbp.material;
 import java.util.Date;
 
 import javax.persistence.Entity;
-
 import javax.persistence.ManyToMany;
 
 /**
@@ -25,6 +24,16 @@ public class CompoundTask extends AbstractTask {
 	 */
 	
 	public CompoundTask() {
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public Date getEnd() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432666232908_938360_4415) ENABLED START */
+		return this.getEndTime();
+		/* PROTECTED REGION END */
 	}
 	
 	/**
@@ -74,8 +83,19 @@ public class CompoundTask extends AbstractTask {
 	 */
 	private Date getEndTime() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898934_834174_3726) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'endTime'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
+		Date lastdate = null;
+		if (!abstractTask.isEmpty()) {
+			for (AbstractTask abstractTask2 : abstractTask) {
+				if (lastdate == null) {
+					lastdate = abstractTask2.getEnd();
+				} else {
+					if (lastdate.before(abstractTask2.getEnd())) {
+						lastdate = abstractTask2.getEnd();
+					}
+				}
+			}
+		}
+		return lastdate;
 		/* PROTECTED REGION END */
 	}
 	

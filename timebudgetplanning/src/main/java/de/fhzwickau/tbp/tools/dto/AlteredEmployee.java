@@ -53,7 +53,6 @@ public class AlteredEmployee implements Serializable {
 	 */
 	
 	public void setFirstName(String firstName) {
-		System.out.println(firstName);
 		this.firstName = firstName;
 	}
 	

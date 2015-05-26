@@ -69,6 +69,16 @@ public class Milestone implements Serializable {
 	}
 	
 	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public Date getEnd() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432665741940_751559_3722) ENABLED START */
+		return this.getEndTime();
+		/* PROTECTED REGION END */
+	}
+	
+	/**
 	 * Returns the linked object of association '<em><b>project</b></em>'.
 	 */
 	
@@ -219,8 +229,19 @@ public class Milestone implements Serializable {
 	 */
 	private Date getEndTime() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898942_151186_3757) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'endTime'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
+		Date lastdate = null;
+		if (!abstractTask.isEmpty()) {
+			for (AbstractTask abstractTask2 : abstractTask) {
+				if (lastdate == null) {
+					lastdate = abstractTask2.getEnd();
+				} else {
+					if (lastdate.before(abstractTask2.getEnd())) {
+						lastdate = abstractTask2.getEnd();
+					}
+				}
+			}
+		}
+		return lastdate;
 		/* PROTECTED REGION END */
 	}
 	

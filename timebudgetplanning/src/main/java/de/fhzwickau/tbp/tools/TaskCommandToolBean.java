@@ -22,6 +22,7 @@ import de.fhzwickau.tbp.tools.dto.AlteredTask;
 
 import javax.inject.Named;
 import de.fhzwickau.tbp.tools.dto.AddTask;
+import java.util.Date;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -39,6 +40,17 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 */
 	
 	public TaskCommandToolBean() {
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	private void updateHolderEndDate(Date endDate, int milestoneId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432651407580_433136_5244) ENABLED START */
+		// TODO: implementation of method 'TaskCommandToolBean.updateHolderEndDate(...)'
+		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		/* PROTECTED REGION END */
 	}
 	
 	/**

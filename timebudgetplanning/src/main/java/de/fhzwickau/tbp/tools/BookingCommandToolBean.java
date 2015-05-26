@@ -16,6 +16,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.inject.Named;
 import javax.ejb.Stateless;
+import de.fhzwickau.tbp.tools.dto.AlteredBooking;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -53,6 +54,17 @@ public class BookingCommandToolBean implements BookingCommandTool {
 		
 		entityManager.persist(booking);
 		return "taskDetails?faces-redirect=true&tid=" + newBooking.getTaskId();
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String alterBooking(AlteredBooking alteredBooking) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432633786620_604630_3638) ENABLED START */
+		// TODO: implementation of method 'BookingCommandToolBean.alterBooking(...)'
+		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
 		/* PROTECTED REGION END */
 	}
 	
