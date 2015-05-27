@@ -64,7 +64,18 @@ public class BookingCommandToolBean implements BookingCommandTool {
 	public String alterBooking(AlteredBooking alteredBooking) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432633786620_604630_3638) ENABLED START */
 		// TODO: implementation of method 'BookingCommandToolBean.alterBooking(...)'
-		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		Task task = entityManager.find(Task.class, alteredBooking.getTaskId());
+		Employee employee = entityManager.find(Employee.class, alteredBooking.getEmployeeId());
+		
+		Booking booking = entityManager.find(Booking.class, alteredBooking.getId());
+		booking.setEmployee(employee);
+		booking.setTask(task);
+		booking.setDate(new Date());
+		booking.setStart(alteredBooking.getStart());
+		booking.setEnd(alteredBooking.getEnd());
+		
+		entityManager.merge(booking);
+		return "";
 		/* PROTECTED REGION END */
 	}
 	

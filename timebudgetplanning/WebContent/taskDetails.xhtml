@@ -8,6 +8,7 @@
 	template="/WEB-INF/templates/template.xhtml">
    	<f:metadata>
        	<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}"/>
+	    <f:viewParam name="tid" value="#{newBookingDTO.taskId}"/>
     </f:metadata>
 	<ui:define name="content">
 		Aufgaben ID: #{addEmployeeDTO.taskId} <br />
@@ -33,6 +34,20 @@
 			</h:selectOneMenu>
 			<h:commandButton value="Hinzufügen" action="#{taskCommand.addEmployee(addEmployeeDTO)}">
 				<f:param name="tid" value="#{params.tid}" />
+			</h:commandButton>
+		</o:form>
+		<o:form id="newBooking" includeViewParams="true">
+			Buchung hinzufügen: <br/>
+			<h:selectOneMenu value="#{newBookingDTO.employeeId}">
+   				<f:selectItems value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees}" var="v_employee"
+   					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+			</h:selectOneMenu>
+			<h:inputText value="#{newBookingDTO.start}">
+	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
+	        <h:inputText value="#{newBookingDTO.end}">
+	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
+			<h:commandButton action="#{bookingCommand.addBooking(newBookingDTO)}" value="Buchung hinzufügen">
+				
 			</h:commandButton>
 		</o:form>
 	</ui:define>

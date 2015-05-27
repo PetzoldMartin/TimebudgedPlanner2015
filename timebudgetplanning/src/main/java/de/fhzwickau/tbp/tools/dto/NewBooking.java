@@ -6,11 +6,15 @@ package de.fhzwickau.tbp.tools.dto;
  */
 import java.util.Date;
 import java.io.Serializable;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("newBookingDTO")
+@RequestScoped
 public class NewBooking implements Serializable {
 	
 	private Date start;
@@ -91,5 +95,9 @@ public class NewBooking implements Serializable {
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1432038449440_599475_3678) ENABLED START */
 	// TODO: put your own implementation code here
+	public NewBooking() {
+		start = new Date();
+		end = new Date();
+	}
 	/* PROTECTED REGION END */
 }
