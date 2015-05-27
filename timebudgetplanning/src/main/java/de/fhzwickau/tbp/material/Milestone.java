@@ -69,16 +69,6 @@ public class Milestone implements Serializable {
 	}
 	
 	/**
-	 * Method stub for further implementation.
-	 */
-	
-	public Date getEnd() {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432665741940_751559_3722) ENABLED START */
-		return this.getEndTime();
-		/* PROTECTED REGION END */
-	}
-	
-	/**
 	 * Returns the linked object of association '<em><b>project</b></em>'.
 	 */
 	
@@ -227,16 +217,16 @@ public class Milestone implements Serializable {
 	/**
 	 * Returns the value of attribute '<em><b>endTime</b></em>'
 	 */
-	private Date getEndTime() {
+	public Date getEndTime() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898942_151186_3757) ENABLED START */
 		Date lastdate = null;
 		if (!abstractTask.isEmpty()) {
 			for (AbstractTask abstractTask2 : abstractTask) {
 				if (lastdate == null) {
-					lastdate = abstractTask2.getEnd();
+					lastdate = abstractTask2.getEndTime();
 				} else {
-					if (lastdate.before(abstractTask2.getEnd())) {
-						lastdate = abstractTask2.getEnd();
+					if (lastdate.before(abstractTask2.getEndTime())) {
+						lastdate = abstractTask2.getEndTime();
 					}
 				}
 			}

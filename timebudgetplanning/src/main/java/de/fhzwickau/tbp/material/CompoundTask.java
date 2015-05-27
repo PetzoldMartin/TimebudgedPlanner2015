@@ -27,16 +27,6 @@ public class CompoundTask extends AbstractTask {
 	}
 	
 	/**
-	 * Method stub for further implementation.
-	 */
-	
-	public Date getEnd() {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432666232908_938360_4415) ENABLED START */
-		return this.getEndTime();
-		/* PROTECTED REGION END */
-	}
-	
-	/**
 	 * Returns all linked objects of association '<em><b>abstractTask</b></em>'.
 	 */
 	
@@ -81,16 +71,16 @@ public class CompoundTask extends AbstractTask {
 	/**
 	 * Returns the value of attribute '<em><b>endTime</b></em>'
 	 */
-	private Date getEndTime() {
+	public Date getEndTime() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898934_834174_3726) ENABLED START */
 		Date lastdate = null;
 		if (!abstractTask.isEmpty()) {
 			for (AbstractTask abstractTask2 : abstractTask) {
 				if (lastdate == null) {
-					lastdate = abstractTask2.getEnd();
+					lastdate = abstractTask2.getEndTime();
 				} else {
-					if (lastdate.before(abstractTask2.getEnd())) {
-						lastdate = abstractTask2.getEnd();
+					if (lastdate.before(abstractTask2.getEndTime())) {
+						lastdate = abstractTask2.getEndTime();
 					}
 				}
 			}
