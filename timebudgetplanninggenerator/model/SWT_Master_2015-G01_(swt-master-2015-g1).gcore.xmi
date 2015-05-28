@@ -4,7 +4,7 @@
     <nestedPackage name="fhzwickau" xmiGuid="_17_0_4_2_8210263_1431069898869_701392_3515">
       <nestedPackage name="tbp" xmiGuid="_17_0_4_2_8210263_1431069898889_831563_3556">
         <nestedPackage name="tools" xmiGuid="_17_0_4_2_8210263_1431069898901_825781_3618">
-          <classifier xsi:type="gcore:MClass" name="EmployeeCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431069898907_434497_3667" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898930_40027_3714" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431069898925_16848_3705 _17_0_4_2_8210263_1431069898927_748431_3708 _17_0_4_2_8210263_1431069898930_40027_3714">
+          <classifier xsi:type="gcore:MClass" name="EmployeeCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431069898907_434497_3667" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898930_40027_3714" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431069898925_16848_3705 _17_0_4_2_8210263_1431069898927_748431_3708 _17_0_4_2_8210263_1431069898930_40027_3714">
             <taggedValue value="employeeCommand" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
@@ -29,7 +29,7 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="EmployeeQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431069898908_528929_3669" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_936855_3715" supplier="EntityManager _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_8210263_1431069898928_459953_3709 //@externalTypes.11 //@externalTypes.4 _17_0_4_2_8210263_1431069898931_936855_3715">
+          <classifier xsi:type="gcore:MClass" name="EmployeeQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431069898908_528929_3669" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_936855_3715" supplier="EntityManager _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_8210263_1431069898928_459953_3709 //@externalTypes.11 //@externalTypes.4 _17_0_4_2_8210263_1431069898931_936855_3715">
             <taggedValue value="employeeQuery" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
@@ -56,7 +56,7 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="ProjectCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431069898909_18254_3671" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_715428_3716" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431069898928_74315_3710 _17_0_4_2_8210263_1431773678972_926874_5154 _17_0_4_2_8210263_1431069898931_715428_3716">
+          <classifier xsi:type="gcore:MClass" name="ProjectCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431069898909_18254_3671" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431069898931_715428_3716" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431069898928_74315_3710 _17_0_4_2_8210263_1431773678972_926874_5154 _17_0_4_2_8210263_1431069898931_715428_3716">
             <taggedValue value="projectCommand" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
@@ -81,18 +81,10 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="TaskCommandToolBean" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_67b0227_1431276253958_640908_3465" supplier="EntityManager //@externalTypes.0 //@externalTypes.6 //@externalTypes.4 _17_0_4_2_8210263_1431069898929_214298_3711 _17_0_4_2_8210263_1431876668710_598618_4824 _17_0_4_2_67b0227_1431529057664_847877_3864 _17_0_4_2_8210263_1432535047848_672823_3726 _17_0_4_2_67b0227_1431276253958_640908_3465">
+          <classifier xsi:type="gcore:MClass" name="TaskCommandToolBean" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_67b0227_1431276253958_640908_3465" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431069898929_214298_3711 _17_0_4_2_8210263_1431876668710_598618_4824 //@externalTypes.4 _17_0_4_2_67b0227_1431529057664_847877_3864 _17_0_4_2_8210263_1432535047848_672823_3726 _17_0_4_2_67b0227_1431276253958_640908_3465">
             <taggedValue value="taskCommand" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
-            <operation name="updateHolderEndDate" xmiGuid="_17_0_4_2_a9002bd_1432651407580_433136_5244" visibility="private">
-              <parameter name="endDate" xmiGuid="_17_0_4_2_a9002bd_1432651756546_144089_5518" direction="in" type="//@externalTypes.6" operation="_17_0_4_2_a9002bd_1432651407580_433136_5244">
-                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
-              </parameter>
-              <parameter name="MilestoneId" xmiGuid="_17_0_4_2_a9002bd_1432651790797_845554_5520" direction="in" type="//@externalTypes.4" operation="_17_0_4_2_a9002bd_1432651407580_433136_5244">
-                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
-              </parameter>
-            </operation>
             <operation name="TaskCommandToolBean" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="addTask" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484" visibility="public">
               <parameter name="newTask" xmiGuid="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484__17_0_4_2_67b0227_1431276441773_851413_3486" direction="in" type="_17_0_4_2_8210263_1431069898929_214298_3711" operation="_17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484">
@@ -157,7 +149,7 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="ProjectQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431440332515_22477_5154" stereotype="_17_0_6790224_1293095142853_418877_62555 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431439890197_862473_5015" supplier="EntityManager //@externalTypes.9 _17_0_4_2_8210263_1431439931053_525206_5039 _17_0_4_2_8210263_1431444853571_934375_5860 //@externalTypes.13 //@externalTypes.4 _17_0_4_2_8210263_1431439890197_862473_5015">
+          <classifier xsi:type="gcore:MClass" name="ProjectQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431440332515_22477_5154" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 _17_0_6790224_1293095142853_418877_62555 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431439890197_862473_5015" supplier="EntityManager //@externalTypes.9 _17_0_4_2_8210263_1431439931053_525206_5039 _17_0_4_2_8210263_1431444853571_934375_5860 //@externalTypes.13 //@externalTypes.4 _17_0_4_2_8210263_1431439890197_862473_5015">
             <taggedValue value="projectQuery" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
@@ -187,7 +179,7 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="TaskQueryToolBean" xmiGuid="_17_0_4_2_67b0227_1431687680065_876144_3879" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_67b0227_1431687649394_793036_3858" supplier="EntityManager _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_67b0227_1431687844640_177568_3920 _17_0_4_2_67b0227_1431945306441_237908_3801 _17_0_4_2_67b0227_1431945584592_165015_3843 //@externalTypes.4 _17_0_4_2_67b0227_1431687649394_793036_3858">
+          <classifier xsi:type="gcore:MClass" name="TaskQueryToolBean" xmiGuid="_17_0_4_2_67b0227_1431687680065_876144_3879" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_67b0227_1431687649394_793036_3858" supplier="EntityManager _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_67b0227_1431687844640_177568_3920 _17_0_4_2_67b0227_1431945306441_237908_3801 _17_0_4_2_67b0227_1431945584592_165015_3843 //@externalTypes.4 _17_0_4_2_67b0227_1431687649394_793036_3858">
             <taggedValue value="taskQuery" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
@@ -244,18 +236,10 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="MilestoneCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431844692471_274903_5195" supplier="EntityManager //@externalTypes.0 //@externalTypes.6 //@externalTypes.4 _17_0_4_2_8210263_1431845056158_686510_5218 _17_0_4_2_8210263_1431844692471_274903_5195">
+          <classifier xsi:type="gcore:MClass" name="MilestoneCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431844692471_274903_5195" supplier="EntityManager //@externalTypes.0 _17_0_4_2_8210263_1431845056158_686510_5218 _17_0_4_2_8210263_1431844692471_274903_5195">
             <taggedValue value="milestoneCommand" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
-            <operation name="updateHolderEndDate" xmiGuid="_17_0_4_2_a9002bd_1432651318299_140439_5239" visibility="private">
-              <parameter name="endDate" xmiGuid="_17_0_4_2_a9002bd_1432651662836_555836_5515" direction="in" type="//@externalTypes.6" operation="_17_0_4_2_a9002bd_1432651318299_140439_5239">
-                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
-              </parameter>
-              <parameter name="projectId" xmiGuid="_17_0_4_2_a9002bd_1432651738280_938536_5517" direction="in" type="//@externalTypes.4" operation="_17_0_4_2_a9002bd_1432651318299_140439_5239">
-                <multiplicity unique="true" lowerBound="1" upperBound="1"/>
-              </parameter>
-            </operation>
             <operation name="MilestoneCommandToolBean" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="addMilestone" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215" visibility="public">
               <parameter name="milestone" xmiGuid="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215__17_0_4_2_8210263_1431845665385_13007_5269" direction="in" type="_17_0_4_2_8210263_1431845056158_686510_5218" operation="_17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215">
@@ -269,7 +253,7 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="MilestoneQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431851800414_576887_5372" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431851758246_588946_5347" supplier="_17_0_4_2_67b0227_1431687649394_793036_3858 EntityManager _17_0_4_2_8210263_1431851606526_22411_5321 //@externalTypes.4 _17_0_4_2_8210263_1431851758246_588946_5347">
+          <classifier xsi:type="gcore:MClass" name="MilestoneQueryToolBean" xmiGuid="_17_0_4_2_8210263_1431851800414_576887_5372" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_987737_3537 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_8210263_1431851758246_588946_5347" supplier="_17_0_4_2_67b0227_1431687649394_793036_3858 EntityManager _17_0_4_2_8210263_1431851606526_22411_5321 //@externalTypes.4 _17_0_4_2_8210263_1431851758246_588946_5347">
             <taggedValue value="milestoneQuery" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
@@ -283,17 +267,17 @@
               </return>
             </operation>
             <property xsi:type="gcore:MAttribute" name="taskQueryTool" xmiGuid="_17_0_4_2_8210263_1432542165964_729237_5456" stereotype="_17_0_4_2_8210263_1432542538431_507293_5458 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="_17_0_4_2_67b0227_1431687649394_793036_3858">
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="entityManager" xmiGuid="_17_0_4_2_8210263_1431851800414_576887_5372_entityManager" stereotype="jpaPersistenceContext" visibility="private" type="EntityManager" defaultvalue="">
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="BookingCommandToolBean" xmiGuid="_17_0_4_2_67b0227_1432038866553_552341_3769" stereotype="_17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_67b0227_1432038793051_913097_3744" supplier="EntityManager //@externalTypes.0 _17_0_4_2_67b0227_1432038449440_599475_3678 _17_0_4_2_67b0227_1432633696569_60509_3605 _17_0_4_2_67b0227_1432038793051_913097_3744">
+          <classifier xsi:type="gcore:MClass" name="BookingCommandToolBean" xmiGuid="_17_0_4_2_67b0227_1432038866553_552341_3769" stereotype="_17_0_4_2_8210263_1431069898875_798049_3530 _17_0_4_2_8210263_1431069898877_812683_3539 _17_0_4_2_8210263_1431368332210_860992_4043 UID_ejb3SessionBean" visibility="public" realization="_17_0_4_2_67b0227_1432038793051_913097_3744" supplier="EntityManager //@externalTypes.0 _17_0_4_2_67b0227_1432038449440_599475_3678 _17_0_4_2_67b0227_1432633696569_60509_3605 _17_0_4_2_67b0227_1432038793051_913097_3744">
             <taggedValue value="bookingCommand" tag="//@anyStereotype.2/@property.0"/>
             <taggedValue value="false" tag="//@anyStereotype.15/@property.0"/>
             <taggedValue value="EntityManager" tag="//@anyStereotype.15/@property.1"/>
@@ -319,12 +303,12 @@
             </property>
           </classifier>
           <nestedPackage name="dto" xmiGuid="_17_0_4_2_8210263_1431069898907_162062_3668">
-            <classifier xsi:type="gcore:MClass" name="NewEmployee" xmiGuid="_17_0_4_2_8210263_1431069898925_16848_3705" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="NewEmployee" xmiGuid="_17_0_4_2_8210263_1431069898925_16848_3705" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 java.io.Serializable">
               <taggedValue value="newEmployeeDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getFirstName" xmiGuid="_17_0_4_2_8210263_1431069898952_535510_3802_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898952_535510_3802_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>firstName&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898952_535510_3802"/>
@@ -388,18 +372,18 @@
                 </return>
               </operation>
               <property xsi:type="gcore:MAttribute" name="employees" xmiGuid="_17_0_4_2_8210263_1431069898954_629763_3808" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.1">
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-                <taggedValue value="false" tag="//@anyStereotype.0/@property.1"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+                <taggedValue value="false" tag="//@anyStereotype.3/@property.1"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="EmployeeOverview" xmiGuid="_17_0_4_2_8210263_1431069898927_84738_3707" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="EmployeeOverview" xmiGuid="_17_0_4_2_8210263_1431069898927_84738_3707" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431069898954_381082_3810_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898954_381082_3810_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898954_381082_3810"/>
@@ -455,12 +439,12 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="AlteredEmployee" xmiGuid="_17_0_4_2_8210263_1431069898927_748431_3708" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="AlteredEmployee" xmiGuid="_17_0_4_2_8210263_1431069898927_748431_3708" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
               <taggedValue value="alteredEmployeeDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431069898955_726012_3814_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898955_726012_3814_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898955_726012_3814"/>
@@ -516,11 +500,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="EmployeeDetails" xmiGuid="_17_0_4_2_8210263_1431069898928_459953_3709" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 //@externalTypes.5 //@externalTypes.2 _17_0_4_2_8210263_1431069898922_391732_3697 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="EmployeeDetails" xmiGuid="_17_0_4_2_8210263_1431069898928_459953_3709" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 //@externalTypes.5 //@externalTypes.2 _17_0_4_2_8210263_1431069898922_391732_3697 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="EmployeeDetails" xmiGuid="_17_0_4_2_8210263_1431069898956_361663_3818" visibility="public"/>
               <operation name="addRoleInProject" xmiGuid="_17_0_4_2_8210263_1431069898957_927125_3819" visibility="public">
                 <parameter name="projectName" xmiGuid="_17_0_4_2_8210263_1431069898979_977348_3920" direction="in" type="//@externalTypes.0" operation="_17_0_4_2_8210263_1431069898957_927125_3819">
@@ -606,19 +590,19 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
               <property xsi:type="gcore:MAttribute" name="projectRoleMap" xmiGuid="_17_0_4_2_8210263_1431069898958_778797_3824" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.5">
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-                <taggedValue value="false" tag="//@anyStereotype.0/@property.1"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+                <taggedValue value="false" tag="//@anyStereotype.3/@property.1"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="NewProject" xmiGuid="_17_0_4_2_8210263_1431069898928_74315_3710" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.6 //@externalTypes.7 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="NewProject" xmiGuid="_17_0_4_2_8210263_1431069898928_74315_3710" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.6 //@externalTypes.7 java.io.Serializable">
               <taggedValue value="newProjectDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getName" xmiGuid="_17_0_4_2_8210263_1431069898959_951873_3826_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898959_951873_3826_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>name&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898959_951873_3826"/>
@@ -692,12 +676,12 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="NewTask" xmiGuid="_17_0_4_2_8210263_1431069898929_214298_3711" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.4 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="NewTask" xmiGuid="_17_0_4_2_8210263_1431069898929_214298_3711" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.4 java.io.Serializable">
               <taggedValue value="newTaskDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getName" xmiGuid="_17_0_4_2_8210263_1431069898960_39322_3831_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431069898960_39322_3831_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>name&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431069898960_39322_3831"/>
@@ -779,18 +763,18 @@
                 </return>
               </operation>
               <property xsi:type="gcore:MAttribute" name="projects" xmiGuid="_17_0_4_2_8210263_1431439948397_849273_5060" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.8">
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-                <taggedValue value="false" tag="//@anyStereotype.0/@property.1"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+                <taggedValue value="false" tag="//@anyStereotype.3/@property.1"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="ProjectOverview" xmiGuid="_17_0_4_2_8210263_1431440064380_628117_5112" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898923_11701_3699 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="ProjectOverview" xmiGuid="_17_0_4_2_8210263_1431440064380_628117_5112" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898923_11701_3699 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431440094725_901402_5139_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431440094725_901402_5139_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431440094725_901402_5139"/>
@@ -846,11 +830,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="ProjectDetails" xmiGuid="_17_0_4_2_8210263_1431444853571_934375_5860" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 //@externalTypes.6 //@externalTypes.7 //@externalTypes.9 //@externalTypes.10 //@externalTypes.2 //@externalTypes.11 _17_0_4_2_8210263_1431069898927_84738_3707 _17_0_4_2_8210263_1431069898922_391732_3697 _17_0_4_2_8210263_1431445368544_746787_5939 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="ProjectDetails" xmiGuid="_17_0_4_2_8210263_1431444853571_934375_5860" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 //@externalTypes.6 //@externalTypes.7 //@externalTypes.9 //@externalTypes.10 //@externalTypes.2 //@externalTypes.11 _17_0_4_2_8210263_1431069898927_84738_3707 _17_0_4_2_8210263_1431069898922_391732_3697 _17_0_4_2_8210263_1431445368544_746787_5939 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="ProjectDetails" xmiGuid="_17_0_4_2_8210263_1431445010921_359346_5891" visibility="public"/>
               <operation name="addEmployeeWithRole" xmiGuid="_17_0_4_2_8210263_1431445017966_389714_5894" visibility="public">
                 <parameter name="employee" xmiGuid="_17_0_4_2_8210263_1431445030770_976169_5896" direction="in" type="_17_0_4_2_8210263_1431069898927_84738_3707" operation="_17_0_4_2_8210263_1431445017966_389714_5894">
@@ -1061,11 +1045,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="MilestoneOverview" xmiGuid="_17_0_4_2_8210263_1431445368544_746787_5939" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="MilestoneOverview" xmiGuid="_17_0_4_2_8210263_1431445368544_746787_5939" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431445391271_418665_5964_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431445391271_418665_5964_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431445391271_418665_5964"/>
@@ -1139,11 +1123,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="AlteredTask" xmiGuid="_17_0_4_2_67b0227_1431529057664_847877_3864" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="AlteredTask" xmiGuid="_17_0_4_2_67b0227_1431529057664_847877_3864" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getId" xmiGuid="_17_0_4_2_67b0227_1431529105930_130072_3885_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_67b0227_1431529105930_130072_3885_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_67b0227_1431529105930_130072_3885"/>
@@ -1199,11 +1183,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="TaskDetails" xmiGuid="_17_0_4_2_67b0227_1431687844640_177568_3920" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898926_209813_3706 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="TaskDetails" xmiGuid="_17_0_4_2_67b0227_1431687844640_177568_3920" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898926_209813_3706 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="TaskDetails" xmiGuid="_17_0_4_2_67b0227_1431688377963_954313_3953" visibility="public"/>
               <operation name="getId" xmiGuid="_17_0_4_2_67b0227_1431688139845_267007_3947_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_67b0227_1431688139845_267007_3947_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
@@ -1296,12 +1280,12 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="AddEmployeeWithRole" xmiGuid="_17_0_4_2_8210263_1431773678972_926874_5154" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 _17_0_4_2_8210263_1431069898922_391732_3697 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="AddEmployeeWithRole" xmiGuid="_17_0_4_2_8210263_1431773678972_926874_5154" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 _17_0_4_2_8210263_1431069898922_391732_3697 java.io.Serializable">
               <taggedValue value="addEmployeeWithRoleDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getProjectId" xmiGuid="_17_0_4_2_8210263_1431773752777_290830_5181_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431773752777_290830_5181_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>projectId&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431773752777_290830_5181"/>
@@ -1357,12 +1341,12 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="NewMilestone" xmiGuid="_17_0_4_2_8210263_1431845056158_686510_5218" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.6 //@externalTypes.4 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="NewMilestone" xmiGuid="_17_0_4_2_8210263_1431845056158_686510_5218" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.0 //@externalTypes.6 //@externalTypes.4 java.io.Serializable">
               <taggedValue value="newMilestoneDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getName" xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431845601693_65739_5263_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>name&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431845601693_65739_5263"/>
@@ -1436,11 +1420,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="MilestoneDetails" xmiGuid="_17_0_4_2_8210263_1431851606526_22411_5321" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 //@externalTypes.12 //@externalTypes.2 _17_0_4_2_8210263_1431852013335_659270_5435 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="MilestoneDetails" xmiGuid="_17_0_4_2_8210263_1431851606526_22411_5321" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 //@externalTypes.12 //@externalTypes.2 _17_0_4_2_8210263_1431852013335_659270_5435 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="MilestoneDetails" xmiGuid="_17_0_4_2_8210263_1431851943665_2921_5406" visibility="public"/>
               <operation name="addTask" xmiGuid="_17_0_4_2_8210263_1431851988325_725129_5431" visibility="public">
                 <parameter name="task" xmiGuid="_17_0_4_2_8210263_1431852060744_955339_5461" direction="in" type="_17_0_4_2_8210263_1431852013335_659270_5435" operation="_17_0_4_2_8210263_1431851988325_725129_5431">
@@ -1567,11 +1551,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="TaskOverview" xmiGuid="_17_0_4_2_8210263_1431852013335_659270_5435" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_8354_3694 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="TaskOverview" xmiGuid="_17_0_4_2_8210263_1431852013335_659270_5435" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898921_8354_3694 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431852018998_604681_5455_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431852018998_604681_5455_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431852018998_604681_5455"/>
@@ -1645,12 +1629,12 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="AddEmployee" xmiGuid="_17_0_4_2_8210263_1431876668710_598618_4824" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="AddEmployee" xmiGuid="_17_0_4_2_8210263_1431876668710_598618_4824" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 java.io.Serializable">
               <taggedValue value="addEmployeeDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getEmployeeId" xmiGuid="_17_0_4_2_8210263_1431876677445_437777_4844_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1431876677445_437777_4844_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>employeeId&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1431876677445_437777_4844"/>
@@ -1688,11 +1672,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="CompoundTaskDetails" xmiGuid="_17_0_4_2_67b0227_1431945306441_237908_3801" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_67b0227_1431945584592_165015_3843 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="CompoundTaskDetails" xmiGuid="_17_0_4_2_67b0227_1431945306441_237908_3801" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.0 _17_0_4_2_8210263_1431069898926_209813_3706 _17_0_4_2_67b0227_1431945584592_165015_3843 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="CompoundTaskDetails" xmiGuid="_17_0_4_2_67b0227_1431945847485_649107_3880" visibility="public"/>
               <operation name="getId" xmiGuid="_17_0_4_2_67b0227_1431945365562_952387_3822_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_67b0227_1431945365562_952387_3822_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
@@ -1811,19 +1795,19 @@
                 </return>
               </operation>
               <property xsi:type="gcore:MAttribute" name="tasks" xmiGuid="_17_0_4_2_67b0227_1431945597516_997086_3864" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.12">
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-                <taggedValue value="false" tag="//@anyStereotype.0/@property.1"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-                <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+                <taggedValue value="false" tag="//@anyStereotype.3/@property.1"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+                <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="NewBooking" xmiGuid="_17_0_4_2_67b0227_1432038449440_599475_3678" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.6 //@externalTypes.4 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="NewBooking" xmiGuid="_17_0_4_2_67b0227_1432038449440_599475_3678" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.6 //@externalTypes.4 java.io.Serializable">
               <taggedValue value="newBookingDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getStart" xmiGuid="_17_0_4_2_67b0227_1432038530291_798577_3725_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_67b0227_1432038530291_798577_3725_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>start&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_67b0227_1432038530291_798577_3725"/>
@@ -1897,12 +1881,12 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="AddTask" xmiGuid="_17_0_4_2_8210263_1432535047848_672823_3726" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="AddTask" xmiGuid="_17_0_4_2_8210263_1432535047848_672823_3726" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431367479354_694416_3978 _17_0_4_2_8210263_1431368332210_860992_4043 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 java.io.Serializable">
               <taggedValue value="addTaskDTO" tag="//@anyStereotype.2/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getCompoundTaskId" xmiGuid="_17_0_4_2_8210263_1432535110365_377414_3753_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_8210263_1432535110365_377414_3753_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>compoundTaskId&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_8210263_1432535110365_377414_3753"/>
@@ -1940,11 +1924,11 @@
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
               </property>
             </classifier>
-            <classifier xsi:type="gcore:MClass" name="AlteredBooking" xmiGuid="_17_0_4_2_67b0227_1432633696569_60509_3605" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898883_988940_3543" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.6 java.io.Serializable">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+            <classifier xsi:type="gcore:MClass" name="AlteredBooking" xmiGuid="_17_0_4_2_67b0227_1432633696569_60509_3605" stereotype="_17_0_4_2_8210263_1431069898883_988940_3543 _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.4 //@externalTypes.6 java.io.Serializable">
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <operation name="getId" xmiGuid="_17_0_4_2_67b0227_1432634389237_256856_4824_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
                 <ownedComment xmiGuid="_17_0_4_2_67b0227_1432634389237_256856_4824_get_comment" annotation="Returns the value of attribute '&lt;em>&lt;b>id&lt;/b>&lt;/em>'."/>
                 <taggedValue tag="//@anyStereotype.18/@property.0" valueReference="_17_0_4_2_67b0227_1432634389237_256856_4824"/>
@@ -2275,10 +2259,10 @@
           <classifier xsi:type="gcore:MClass" name="Role" xmiGuid="_17_0_4_2_8210263_1431069898909_405156_3672" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="_17_0_4_2_8210263_1431069898922_391732_3697 _17_0_4_2_8210263_1431069898913_422495_3676 _17_0_4_2_8210263_1431069898911_269225_3674 //@externalTypes.4 java.io.Serializable">
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_Role" tag="//@anyStereotype.14/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
             <operation name="Role" xmiGuid="_17_0_4_2_8210263_1431069898909_405156_3672_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getProject" xmiGuid="_17_0_4_2_8210263_1431070898245_461498_7976_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_17_0_4_2_8210263_1431070898245_461498_7976_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>project&lt;/b>&lt;/em>'."/>
@@ -2341,10 +2325,10 @@
               </parameter>
             </operation>
             <property xsi:type="gcore:MAttribute" name="role" xmiGuid="_17_0_4_2_8210263_1431069898932_34794_3721" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="_17_0_4_2_8210263_1431069898922_391732_3697">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAssociationRole" name="project" xmiGuid="_17_0_4_2_8210263_1431070898245_461498_7976" stereotype="_17_0_4_2_8210263_1431069898887_813051_3549" visibility="private" type="_17_0_4_2_8210263_1431069898913_422495_3676" association="_17_0_4_2_8210263_1431070898245_694732_7975" opposite="_17_0_4_2_8210263_1431070898245_377746_7977">
@@ -2373,20 +2357,20 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898909_405156_3672_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
           <classifier xsi:type="gcore:MClass" name="Project" xmiGuid="_17_0_4_2_8210263_1431069898913_422495_3676" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.14 //@externalTypes.6 _17_0_4_2_8210263_1431069898923_11701_3699 //@externalTypes.7 _17_0_4_2_8210263_1431069898916_49315_3680 _17_0_4_2_8210263_1431069898916_172192_3681 _17_0_4_2_8210263_1431069898909_405156_3672 _17_0_4_2_8210263_1431069898914_143571_3677 //@externalTypes.4 java.io.Serializable">
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_Project" tag="//@anyStereotype.14/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
             <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431069898938_763436_3743" visibility="public">
               <return name="" xmiGuid="_17_0_4_2_8210263_1431069898971_576594_3868" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431069898938_763436_3743">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -2531,20 +2515,20 @@
               </parameter>
             </operation>
             <property xsi:type="gcore:MAttribute" name="name" xmiGuid="_17_0_4_2_8210263_1431069898939_886520_3745" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.14">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="endTime" xmiGuid="_17_0_4_2_8210263_1431069898939_134799_3746" visibility="public" derived="true" type="//@externalTypes.6">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="state" xmiGuid="_17_0_4_2_8210263_1431069898940_941017_3747" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="_17_0_4_2_8210263_1431069898923_11701_3699">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="timeBudgetAct" xmiGuid="_17_0_4_2_8210263_1431069898940_432963_3748" visibility="private" derived="true" type="//@externalTypes.7">
@@ -2594,18 +2578,18 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898913_422495_3676_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="Employee" xmiGuid="_17_0_4_2_8210263_1431069898911_269225_3674" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.14 _17_0_4_2_8210263_1431069898909_405156_3672 _17_0_4_2_8210263_1431069898916_49315_3680 _17_0_4_2_8210263_1431069898912_691863_3675 //@externalTypes.4 java.io.Serializable">
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+          <classifier xsi:type="gcore:MClass" name="Employee" xmiGuid="_17_0_4_2_8210263_1431069898911_269225_3674" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 _17_0_4_2_8210263_1431069898873_421655_3523 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.14 _17_0_4_2_8210263_1431069898909_405156_3672 _17_0_4_2_8210263_1431069898916_49315_3680 _17_0_4_2_8210263_1431069898912_691863_3675 //@externalTypes.4 java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_Employee" tag="//@anyStereotype.14/@property.1"/>
             <operation name="" xmiGuid="_17_0_4_2_8210263_1431069898934_419452_3728" stereotype="Create" visibility="public">
@@ -2787,20 +2771,20 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898911_269225_3674_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
           <classifier xsi:type="gcore:MClass" name="CompoundTask" xmiGuid="_17_0_4_2_8210263_1431069898910_767832_3673" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" generalization="_17_0_4_2_8210263_1431069898916_49315_3680" supplier="//@externalTypes.7 //@externalTypes.6 _17_0_4_2_8210263_1431069898916_49315_3680">
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="" tag="//@anyStereotype.14/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
             <operation name="CompoundTask" xmiGuid="_17_0_4_2_8210263_1431069898910_767832_3673_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getAbstractTask" xmiGuid="_17_0_4_2_8210263_1431071364972_19652_8368_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_17_0_4_2_8210263_1431071364972_19652_8368_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>abstractTask&lt;/b>&lt;/em>'."/>
@@ -2844,10 +2828,10 @@
           <classifier xsi:type="gcore:MClass" name="AbstractTask" xmiGuid="_17_0_4_2_8210263_1431069898916_49315_3680" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" specialization="_17_0_4_2_8210263_1431069898910_767832_3673 _17_0_4_2_8210263_1431069898915_87588_3679" visibility="public" abstract="true" realization="java.io.Serializable" supplier="//@externalTypes.14 //@externalTypes.15 //@externalTypes.6 _17_0_4_2_8210263_1431069898921_8354_3694 //@externalTypes.7 _17_0_4_2_8210263_1431069898914_143571_3677 _17_0_4_2_8210263_1431069898911_269225_3674 //@externalTypes.4 java.io.Serializable">
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_AbstractTask" tag="//@anyStereotype.14/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
             <operation name="getId" xmiGuid="_17_0_4_2_67b0227_1431438232389_656920_4463" visibility="public">
               <return name="" xmiGuid="_17_0_4_2_67b0227_1431438241384_938374_4466" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_67b0227_1431438232389_656920_4463">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -2953,27 +2937,27 @@
               </parameter>
             </operation>
             <property xsi:type="gcore:MAttribute" name="name" xmiGuid="_17_0_4_2_8210263_1431069898945_616716_3770" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.14">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="description" xmiGuid="_17_0_4_2_8210263_1431069898945_196231_3771" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.15">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="endTime" xmiGuid="_17_0_4_2_8210263_1431069898946_309236_3772" visibility="public" derived="true" type="//@externalTypes.6">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="state" xmiGuid="_17_0_4_2_8210263_1431069898946_820029_3773" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="_17_0_4_2_8210263_1431069898921_8354_3694">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="timeBudgetAct" xmiGuid="_17_0_4_2_8210263_1431069898946_389556_3774" visibility="private" derived="true" type="//@externalTypes.7">
@@ -3007,20 +2991,20 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898916_49315_3680_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
           <classifier xsi:type="gcore:MClass" name="Booking" xmiGuid="_17_0_4_2_8210263_1431069898912_691863_3675" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.6 //@externalTypes.7 _17_0_4_2_8210263_1431069898911_269225_3674 _17_0_4_2_8210263_1431069898915_87588_3679 //@externalTypes.4 java.io.Serializable">
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_Booking" tag="//@anyStereotype.14/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
             <operation name="Booking" xmiGuid="_17_0_4_2_8210263_1431069898912_691863_3675_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getEmployee" xmiGuid="_17_0_4_2_8210263_1431071600820_34982_8496_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_17_0_4_2_8210263_1431071600820_34982_8496_get_comment" annotation="Returns the linked object of association '&lt;em>&lt;b>employee&lt;/b>&lt;/em>'."/>
@@ -3113,27 +3097,27 @@
               </parameter>
             </operation>
             <property xsi:type="gcore:MAttribute" name="date" xmiGuid="_17_0_4_2_8210263_1431069898937_794547_3738" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.6">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="amount" xmiGuid="_17_0_4_2_8210263_1431069898937_184140_3739" visibility="private" derived="true" type="//@externalTypes.7">
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="start" xmiGuid="_17_0_4_2_8210263_1431069898938_288330_3740" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.6">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="end" xmiGuid="_17_0_4_2_8210263_1431069898938_596907_3741" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaColumn" visibility="private" type="//@externalTypes.6">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <taggedValue value="true" tag="//@anyStereotype.25/@property.0"/>
               <taggedValue value="true" tag="//@anyStereotype.25/@property.1"/>
               <taggedValue value="booking_end" tag="//@anyStereotype.25/@property.2"/>
@@ -3174,20 +3158,20 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898912_691863_3675_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
           <classifier xsi:type="gcore:MClass" name="Task" xmiGuid="_17_0_4_2_8210263_1431069898915_87588_3679" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" generalization="_17_0_4_2_8210263_1431069898916_49315_3680" supplier="//@externalTypes.7 //@externalTypes.6 _17_0_4_2_8210263_1431069898912_691863_3675 _17_0_4_2_8210263_1431069898916_49315_3680">
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="" tag="//@anyStereotype.14/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
             <operation name="Task" xmiGuid="_17_0_4_2_8210263_1431069898915_87588_3679_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
             <operation name="getBooking" xmiGuid="_17_0_4_2_8210263_1431071644483_885976_8538_get" stereotype="http://www.genesez.org/access/GetOperation" visibility="public">
               <ownedComment xmiGuid="_17_0_4_2_8210263_1431071644483_885976_8538_get_comment" annotation="Returns all linked objects of association '&lt;em>&lt;b>booking&lt;/b>&lt;/em>'."/>
@@ -3230,11 +3214,11 @@
               <oppositeMultiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="PlanningData" xmiGuid="_17_0_4_2_8210263_1431069898916_172192_3681" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.6 //@externalTypes.15 //@externalTypes.7 _17_0_4_2_8210263_1431069898913_422495_3676 //@externalTypes.4 java.io.Serializable">
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+          <classifier xsi:type="gcore:MClass" name="PlanningData" xmiGuid="_17_0_4_2_8210263_1431069898916_172192_3681" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 _17_0_4_2_8210263_1431069898873_421655_3523 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.6 //@externalTypes.15 //@externalTypes.7 _17_0_4_2_8210263_1431069898913_422495_3676 //@externalTypes.4 java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_PlanningData" tag="//@anyStereotype.14/@property.1"/>
             <operation name="PlanningData" xmiGuid="_17_0_4_2_8210263_1431069898916_172192_3681_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
@@ -3372,20 +3356,20 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898916_172192_3681_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
           <classifier xsi:type="gcore:MClass" name="Milestone" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity _17_0_4_2_8210263_1431069898873_421655_3523" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.14 _17_0_4_2_8210263_1431069898921_213176_3695 //@externalTypes.6 _17_0_4_2_8210263_1431069898913_422495_3676 _17_0_4_2_8210263_1431069898914_271009_3678 _17_0_4_2_8210263_1431069898916_49315_3680 //@externalTypes.4 java.io.Serializable">
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_Milestone" tag="//@anyStereotype.14/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
             <operation name="getId" xmiGuid="_17_0_4_2_8210263_1431845322822_274027_5249" visibility="public">
               <return name="" xmiGuid="_17_0_4_2_8210263_1431845329613_653824_5252" direction="return" type="//@externalTypes.4" operation="_17_0_4_2_8210263_1431845322822_274027_5249">
                 <multiplicity unique="true" lowerBound="1" upperBound="1"/>
@@ -3499,17 +3483,17 @@
               </parameter>
             </operation>
             <property xsi:type="gcore:MAttribute" name="name" xmiGuid="_17_0_4_2_8210263_1431069898942_294643_3755" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="//@externalTypes.14">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="state" xmiGuid="_17_0_4_2_8210263_1431069898942_728851_3756" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523" visibility="private" type="_17_0_4_2_8210263_1431069898921_213176_3695">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" lowerBound="1" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="endTime" xmiGuid="_17_0_4_2_8210263_1431069898942_151186_3757" visibility="public" derived="true" type="//@externalTypes.6">
@@ -3552,18 +3536,18 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898914_143571_3677_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
-          <classifier xsi:type="gcore:MClass" name="MilestoneData" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 _17_0_4_2_8210263_1431069898876_418716_3532 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.15 //@externalTypes.6 _17_0_4_2_8210263_1431069898914_143571_3677 //@externalTypes.4 java.io.Serializable">
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.2"/>
-            <taggedValue value="true" tag="//@anyStereotype.0/@property.3"/>
+          <classifier xsi:type="gcore:MClass" name="MilestoneData" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678" stereotype="_17_0_4_2_8210263_1431069898876_418716_3532 _17_0_4_2_8210263_1431069898873_421655_3523 UID_jpaPersistentEntity" visibility="public" realization="java.io.Serializable" supplier="//@externalTypes.15 //@externalTypes.6 _17_0_4_2_8210263_1431069898914_143571_3677 //@externalTypes.4 java.io.Serializable">
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.2"/>
+            <taggedValue value="true" tag="//@anyStereotype.3/@property.3"/>
             <taggedValue value="true" tag="//@anyStereotype.14/@property.0"/>
             <taggedValue value="tbl_MilestoneData" tag="//@anyStereotype.14/@property.1"/>
             <operation name="MilestoneData" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_StandardConstructor" stereotype="http://www.genesez.org/StandardConstructor" visibility="public"/>
@@ -3683,10 +3667,10 @@
               <multiplicity unique="true" upperBound="1"/>
             </property>
             <property xsi:type="gcore:MAttribute" name="version" xmiGuid="_17_0_4_2_8210263_1431069898914_271009_3678_version" stereotype="_17_0_4_2_8210263_1431069898873_421655_3523 jpaOptimisticLocking" visibility="private" type="//@externalTypes.4" defaultvalue="">
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.0"/>
-              <taggedValue value="true" tag="//@anyStereotype.0/@property.1"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.2"/>
-              <taggedValue value="false" tag="//@anyStereotype.0/@property.3"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.0"/>
+              <taggedValue value="true" tag="//@anyStereotype.3/@property.1"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.2"/>
+              <taggedValue value="false" tag="//@anyStereotype.3/@property.3"/>
               <multiplicity unique="true" upperBound="1"/>
             </property>
           </classifier>
@@ -3705,17 +3689,17 @@
       </nestedPackage>
     </nestedPackage>
   </nestedPackage>
+  <anyStereotype name="DTO" xmiGuid="_17_0_4_2_8210263_1431069898883_988940_3543"/>
+  <anyStereotype name="cdiRequestScoped" xmiGuid="_17_0_4_2_8210263_1431367479354_694416_3978"/>
+  <anyStereotype name="di4javaNamed" xmiGuid="_17_0_4_2_8210263_1431368332210_860992_4043">
+    <property name="value" type="String"/>
+  </anyStereotype>
   <anyStereotype name="accessor" xmiGuid="_17_0_4_2_8210263_1431069898873_421655_3523">
     <property name="getter" type="Boolean"/>
     <property name="setter" type="Boolean"/>
     <property name="add" type="Boolean"/>
     <property name="remove" type="Boolean"/>
   </anyStereotype>
-  <anyStereotype name="cdiRequestScoped" xmiGuid="_17_0_4_2_8210263_1431367479354_694416_3978"/>
-  <anyStereotype name="di4javaNamed" xmiGuid="_17_0_4_2_8210263_1431368332210_860992_4043">
-    <property name="value" type="String"/>
-  </anyStereotype>
-  <anyStereotype name="DTO" xmiGuid="_17_0_4_2_8210263_1431069898883_988940_3543"/>
   <anyStereotype name="Facade" xmiGuid="_17_0_4_2_8210263_1431069898878_292934_3541"/>
   <anyStereotype name="Tool" xmiGuid="_17_0_4_2_8210263_1431069898875_798049_3530"/>
   <anyStereotype name="Command" xmiGuid="_17_0_4_2_8210263_1431069898877_812683_3539"/>

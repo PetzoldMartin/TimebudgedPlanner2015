@@ -13,7 +13,9 @@
 		Name: #{projectQuery.getProjectDetails(request.getParameter('pid')).name} <br />
 		Beschreibung: #{projectQuery.getProjectDetails(request.getParameter('pid')).description} <br />
 		Startdatum: #{projectQuery.getProjectDetails(request.getParameter('pid')).startDate} <br />
+		Enddatum: #{projectQuery.getProjectDetails(request.getParameter('pid')).endDate} <br />
 		Geplantes Zeitbudget: #{projectQuery.getProjectDetails(request.getParameter('pid')).timeBudgetPlanned} <br />
+		Aktuelles Zeitbudget: <br />
 		<br />
 		Zugewiesene Mitarbeiter:
 		<table>

@@ -141,6 +141,7 @@ public class ProjectQueryToolBean implements ProjectQueryTool {
 		details.setDescription(latestPlanningData.getDescription());
 		details.setStartDate(latestPlanningData.getStartTime());
 		details.setTimeBudgetPlanned(latestPlanningData.getTimeBudgetPlan());
+		details.setEndDate(p.getEndTime());
 		// TODO Set endTime and timeBudgetAct
 		for (Role r : p.getRole()) {
 			EmployeeOverview employee = new EmployeeOverview();
