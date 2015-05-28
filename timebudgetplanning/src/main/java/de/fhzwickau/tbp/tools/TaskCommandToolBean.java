@@ -46,17 +46,6 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	private void updateHolderEndDate(Date endDate, int milestoneId) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432651407580_433136_5244) ENABLED START */
-		// TODO: implementation of method 'TaskCommandToolBean.updateHolderEndDate(...)'
-		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
-		/* PROTECTED REGION END */
-	}
-	
-	/**
-	 * Method stub for further implementation.
-	 */
-	
 	public String addTask(NewTask newTask) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1431276272635_392480_3484) ENABLED START */
 		Milestone m = entityManager.find(Milestone.class, newTask.getMilestoneId());

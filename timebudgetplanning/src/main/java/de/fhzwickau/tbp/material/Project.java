@@ -66,8 +66,7 @@ public class Project implements Serializable {
 	
 	public int getId() {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898938_763436_3743) ENABLED START */
-		// TODO: implementation of method 'Project.getId(...)'
-		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		return id;
 		/* PROTECTED REGION END */
 	}
 	

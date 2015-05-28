@@ -40,17 +40,6 @@ public class MilestoneCommandToolBean implements MilestoneCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	private void updateHolderEndDate(Date endDate, int projectId) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_a9002bd_1432651318299_140439_5239) ENABLED START */
-		// TODO: implementation of method 'MilestoneCommandToolBean.updateHolderEndDate(...)'
-		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
-		/* PROTECTED REGION END */
-	}
-	
-	/**
-	 * Method stub for further implementation.
-	 */
-	
 	public String addMilestone(NewMilestone milestone) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215) ENABLED START */
 		// TODO: implementation of method 'MilestoneCommandToolBean.addMilestone(...)'
