@@ -4,14 +4,16 @@ package de.fhzwickau.tbp.material;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_8210263_1431069898912_691863_3675) 
  */
+import java.util.Calendar;
 import java.util.Date;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.io.Serializable;
-import javax.persistence.Version;
 
+import java.io.Serializable;
+
+import javax.persistence.Version;
 import javax.persistence.ManyToOne;
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -177,12 +179,15 @@ public class Booking implements Serializable {
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>amount</b></em>'
+	 * Returns the amount of time for the booking in seconds
 	 */
-	private Float getAmount() {
+	public Float getAmount() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898937_184140_3739) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'amount'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'amount' is missing!");
+		Calendar startCal = Calendar.getInstance();
+		startCal.setTime(start);
+		Calendar endCal = Calendar.getInstance();
+		endCal.setTime(end);
+		return (float) (endCal.getTimeInMillis() - startCal.getTimeInMillis()) / 1000;
 		/* PROTECTED REGION END */
 	}
 	
