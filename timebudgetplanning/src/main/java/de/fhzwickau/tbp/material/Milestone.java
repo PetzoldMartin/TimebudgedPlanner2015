@@ -232,7 +232,11 @@ public class Milestone implements Serializable {
 				}
 			}
 		}
-		return lastdate;
+		if(lastdate!=null){
+			return lastdate;
+		}else{
+			return java.util.Calendar.getInstance().getTime();
+		}
 		/* PROTECTED REGION END */
 	}
 	

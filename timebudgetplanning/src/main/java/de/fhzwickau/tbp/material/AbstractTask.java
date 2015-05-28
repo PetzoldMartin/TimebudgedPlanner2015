@@ -59,6 +59,12 @@ public abstract class AbstractTask implements Serializable {
 	 * Method stub for further implementation.
 	 */
 	
+	public abstract Date getEndTime();
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
 	public int getId() {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431438232389_656920_4463) ENABLED START */
 		return id;
@@ -192,16 +198,6 @@ public abstract class AbstractTask implements Serializable {
 	
 	public void setVersion(int version) {
 		this.version = version;
-	}
-	
-	/**
-	 * Returns the value of attribute '<em><b>endTime</b></em>'
-	 */
-	public Date getEndTime() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898946_309236_3772) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'endTime'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'endTime' is missing!");
-		/* PROTECTED REGION END */
 	}
 	
 	/**

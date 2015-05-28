@@ -59,20 +59,11 @@ public class CompoundTask extends AbstractTask {
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
+	 * Method stub for further implementation.
 	 */
-	private Float getTimeBudgetAct() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898933_113639_3725) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
-		/* PROTECTED REGION END */
-	}
 	
-	/**
-	 * Returns the value of attribute '<em><b>endTime</b></em>'
-	 */
 	public Date getEndTime() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898934_834174_3726) ENABLED START */
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898910_767832_3673__17_0_4_2_a9002bd_1432829372106_274754_4155) ENABLED START */
 		Date lastdate = null;
 		if (!abstractTask.isEmpty()) {
 			for (AbstractTask abstractTask2 : abstractTask) {
@@ -87,7 +78,21 @@ public class CompoundTask extends AbstractTask {
 				}
 			}
 		}
-		return lastdate;
+		if(lastdate!=null){
+			return lastdate;
+		}else{
+			return java.util.Calendar.getInstance().getTime();
+		}
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
+	 */
+	private Float getTimeBudgetAct() {
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898933_113639_3725) ENABLED START */
+		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
+		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
 		/* PROTECTED REGION END */
 	}
 	
