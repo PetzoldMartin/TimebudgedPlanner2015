@@ -5,6 +5,7 @@ package de.fhzwickau.tbp.tools.facade;
  * 	@FILE-ID : (_17_0_4_2_8210263_1431844692471_274903_5195) 
  */
 import de.fhzwickau.tbp.tools.dto.NewMilestone;
+import de.fhzwickau.tbp.tools.dto.AlteredMilestone;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -17,6 +18,12 @@ public interface MilestoneCommandTool {
 	 */
 	
 	public String addMilestone(NewMilestone milestone);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String alterMilestone(AlteredMilestone milestone);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_8210263_1431844692471_274903_5195) ENABLED START */
 	// TODO: put your own implementation code here

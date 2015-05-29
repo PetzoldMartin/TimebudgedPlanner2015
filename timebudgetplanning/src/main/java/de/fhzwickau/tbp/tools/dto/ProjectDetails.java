@@ -47,6 +47,8 @@ public class ProjectDetails implements Serializable {
 		// TODO: implementation of constructor for class 'ProjectDetails'
 		milestones = new LinkedList<MilestoneOverview>();
 		employeeRoleMap = new HashMap<EmployeeOverview, HashSet<RoleType>>();
+		startDate = new Date();
+		endDate = new Date();
 		/* PROTECTED REGION END */
 	}
 	
@@ -254,7 +256,7 @@ public class ProjectDetails implements Serializable {
 	 */
 	
 	public Date getEndDate() {
-		return endDate;
+		return new Date(endDate.getTime());
 	}
 	
 	/**

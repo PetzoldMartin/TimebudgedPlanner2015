@@ -17,6 +17,7 @@ import javax.persistence.EntityManager;
 import javax.inject.Named;
 import javax.ejb.Stateless;
 import de.fhzwickau.tbp.tools.facade.MilestoneCommandTool;
+import de.fhzwickau.tbp.tools.dto.AlteredMilestone;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -58,6 +59,26 @@ public class MilestoneCommandToolBean implements MilestoneCommandTool {
 		m.setProject(project);
 		entityManager.persist(m);
 		return "projectDetails?faces-redirect=true&pid=" + milestone.getProjectId();
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String alterMilestone(AlteredMilestone milestone) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1432932007469_453713_5192) ENABLED START */
+		Milestone m = entityManager.find(Milestone.class, milestone.getId());
+		if (m == null)
+			return "project";
+		m.setName(milestone.getName());
+		MilestoneData mData = new MilestoneData();
+		mData.setDescription(milestone.getDescription());
+		mData.setEndDatePlanned(milestone.getEndDatePlanned());
+		mData.setTstamp(new Date());
+		m.addMilestoneData(mData);
+		entityManager.merge(m);
+		return "milestoneDetails?faces-redirect=true&mid=" + milestone.getId();
 		/* PROTECTED REGION END */
 	}
 	
