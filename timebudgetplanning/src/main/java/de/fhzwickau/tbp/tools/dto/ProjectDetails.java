@@ -254,7 +254,7 @@ public class ProjectDetails implements Serializable {
 	 */
 	
 	public Date getEndDate() {
-		return new Date(endDate.getTime());
+		return endDate;
 	}
 	
 	/**

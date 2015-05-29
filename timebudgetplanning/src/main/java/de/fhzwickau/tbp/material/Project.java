@@ -260,7 +260,7 @@ public class Project implements Serializable {
 	 */
 	public Date getEndTime() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898939_134799_3746) ENABLED START */
-		Date lastdate = java.util.Calendar.getInstance().getTime();
+		Date lastdate = null;
 		if (!milestone.isEmpty()) {
 			for (Milestone milestone2 : milestone) {
 				if (milestone2.getEndTime() != null) {
@@ -274,11 +274,7 @@ public class Project implements Serializable {
 				}
 			}
 		}
-		if(lastdate!=null){
-			return lastdate;
-		}else{
-			return java.util.Calendar.getInstance().getTime();
-		}
+		return lastdate;
 		
 		/* PROTECTED REGION END */
 	}
