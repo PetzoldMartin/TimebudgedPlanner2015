@@ -45,6 +45,12 @@ public interface TaskQueryTool {
 	
 	public TaskList getAddableTasks(int compoundTaskId);
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public EmployeeList sortEmployeesByName(EmployeeList list);
+	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431687649394_793036_3858) ENABLED START */
 	/* PROTECTED REGION END */
 }

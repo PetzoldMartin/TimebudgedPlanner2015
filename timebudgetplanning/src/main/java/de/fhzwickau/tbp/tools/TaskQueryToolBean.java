@@ -54,42 +54,6 @@ public class TaskQueryToolBean implements TaskQueryTool {
 	 * Method stub for further implementation.
 	 */
 	
-	private EmployeeList sortEmployeesByName(EmployeeList list) {
-		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1432371065116_644187_3858) ENABLED START */
-		HashMap<String, EmployeeOverview> mappingNameToOverview = new HashMap<String, EmployeeOverview>();
-		int counter = 0;
-		for (EmployeeOverview overview : list.getEmployees()) {
-			String name = "";
-			if (overview.getFirstName() != null)
-				name += overview.getFirstName();
-			if (!name.equals(""))
-				name += " ";
-			if (overview.getLastName() != null)
-				name += overview.getLastName();
-			if (name.equals(""))
-				continue;
-			
-			if (mappingNameToOverview.containsKey(name)) {
-				mappingNameToOverview.put(name + counter, overview);
-				++counter;
-			} else
-				mappingNameToOverview.put(name, overview);
-		}
-		String[] names = new String[mappingNameToOverview.size()];
-		mappingNameToOverview.keySet().toArray(names);
-		Arrays.sort(names);
-		EmployeeList sortedList = new EmployeeList();
-		for (String name : names) {
-			sortedList.addEmployee(mappingNameToOverview.get(name));
-		}
-		return sortedList;
-		/* PROTECTED REGION END */
-	}
-	
-	/**
-	 * Method stub for further implementation.
-	 */
-	
 	public TaskDetails getTaskDetails(int taskId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431687680065_876144_3879__17_0_4_2_67b0227_1431687761133_523686_3904) ENABLED START */
 		Task t = entityManager.find(Task.class, taskId);
@@ -243,6 +207,42 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		}
 		list = sortTasksByName(list);
 		return list;
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public EmployeeList sortEmployeesByName(EmployeeList list) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431687680065_876144_3879__17_0_4_2_8210263_1432886850219_593316_5481) ENABLED START */
+		HashMap<String, EmployeeOverview> mappingNameToOverview = new HashMap<String, EmployeeOverview>();
+		int counter = 0;
+		for (EmployeeOverview overview : list.getEmployees()) {
+			String name = "";
+			if (overview.getFirstName() != null)
+				name += overview.getFirstName();
+			if (!name.equals(""))
+				name += " ";
+			if (overview.getLastName() != null)
+				name += overview.getLastName();
+			if (name.equals(""))
+				continue;
+			
+			if (mappingNameToOverview.containsKey(name)) {
+				mappingNameToOverview.put(name + counter, overview);
+				++counter;
+			} else
+				mappingNameToOverview.put(name, overview);
+		}
+		String[] names = new String[mappingNameToOverview.size()];
+		mappingNameToOverview.keySet().toArray(names);
+		Arrays.sort(names);
+		EmployeeList sortedList = new EmployeeList();
+		for (String name : names) {
+			sortedList.addEmployee(mappingNameToOverview.get(name));
+		}
+		return sortedList;
 		/* PROTECTED REGION END */
 	}
 	

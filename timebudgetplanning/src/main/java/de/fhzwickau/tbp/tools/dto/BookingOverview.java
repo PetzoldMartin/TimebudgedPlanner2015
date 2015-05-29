@@ -13,34 +13,13 @@ import java.io.Serializable;
 
 public class BookingOverview implements Serializable {
 	
-	private int id;
-	
 	private Date start;
 	
 	private Date end;
 	
 	private Float amount;
 	
-	private int employeeId;
-	
-	private int taskId;
-	
-	/**
-	 * Returns the value of attribute '<em><b>id</b></em>'.
-	 */
-	
-	public int getId() {
-		return id;
-	}
-	
-	/**
-	 * Sets the value of attribute '<em><b>id</b></em>'.
-	 * @param	id	the value to set.
-	 */
-	
-	public void setId(int id) {
-		this.id = id;
-	}
+	private String employeeName;
 	
 	/**
 	 * Returns the value of attribute '<em><b>start</b></em>'.
@@ -94,37 +73,20 @@ public class BookingOverview implements Serializable {
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>employeeId</b></em>'.
+	 * Returns the value of attribute '<em><b>employeeName</b></em>'.
 	 */
 	
-	public int getEmployeeId() {
-		return employeeId;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 	
 	/**
-	 * Sets the value of attribute '<em><b>employeeId</b></em>'.
-	 * @param	employeeId	the value to set.
+	 * Sets the value of attribute '<em><b>employeeName</b></em>'.
+	 * @param	employeeName	the value to set.
 	 */
 	
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
-	}
-	
-	/**
-	 * Returns the value of attribute '<em><b>taskId</b></em>'.
-	 */
-	
-	public int getTaskId() {
-		return taskId;
-	}
-	
-	/**
-	 * Sets the value of attribute '<em><b>taskId</b></em>'.
-	 * @param	taskId	the value to set.
-	 */
-	
-	public void setTaskId(int taskId) {
-		this.taskId = taskId;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1432840025028_967203_3765) ENABLED START */

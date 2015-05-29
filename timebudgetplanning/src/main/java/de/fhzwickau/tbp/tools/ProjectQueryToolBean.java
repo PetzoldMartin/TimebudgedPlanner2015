@@ -24,9 +24,12 @@ import de.fhzwickau.tbp.tools.dto.MilestoneOverview;
 import de.fhzwickau.tbp.tools.dto.ProjectList;
 import de.fhzwickau.tbp.tools.dto.ProjectOverview;
 import de.fhzwickau.tbp.tools.facade.ProjectQueryTool;
+import de.fhzwickau.tbp.tools.facade.TaskQueryTool;
 import de.fhzwickau.tbp.tools.dto.ProjectDetails;
 
 import java.util.LinkedList;
+
+import javax.ejb.EJB;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -35,6 +38,9 @@ import java.util.LinkedList;
 @Named("projectQuery")
 @Stateless(name = "ProjectQueryToolBean")
 public class ProjectQueryToolBean implements ProjectQueryTool {
+	
+	@EJB(name = "ejb/TaskQueryTool")
+	private TaskQueryTool taskQueryTool;
 	
 	@PersistenceContext
 	private EntityManager entityManager;
