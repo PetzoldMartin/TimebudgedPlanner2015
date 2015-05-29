@@ -5,14 +5,16 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_17_0_4_2_8210263_1431069898914_143571_3677) 
  */
 import de.fhzwickau.tbp.datatypes.MilestoneState;
+
 import java.util.Date;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.io.Serializable;
-import javax.persistence.Version;
 
+import java.io.Serializable;
+
+import javax.persistence.Version;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Id;
@@ -232,11 +234,25 @@ public class Milestone implements Serializable {
 				}
 			}
 		}
-		if (lastdate != null) {
-			return lastdate;
-		} else {
-			return java.util.Calendar.getInstance().getTime();
+		
+		return lastdate;
+		
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
+	 */
+	public Float getTimeBudgetAct() {
+		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1432887230421_639919_4786) ENABLED START */
+		float timeBudget=0;
+		if (!abstractTask.isEmpty()) {
+			for (AbstractTask abstractTask2 : abstractTask) {
+				timeBudget=timeBudget+abstractTask2.getTimeBudgetAct();
+			}
 		}
+			
+		return timeBudget;
 		/* PROTECTED REGION END */
 	}
 	

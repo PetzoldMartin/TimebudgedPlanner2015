@@ -82,21 +82,26 @@ public class Task extends AbstractTask {
 				}
 			}
 		}
-		if (lastdate != null) {
-			return lastdate;
-		} else {
-			return java.util.Calendar.getInstance().getTime();
-		}
+		
+		return lastdate;
+		
 		/* PROTECTED REGION END */
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
+	 * Method stub for further implementation.
 	 */
-	private Float getTimeBudgetAct() {
-		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898944_193204_3767) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
+	
+	public Float getTimeBudgetAct() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898915_87588_3679__17_0_4_2_a9002bd_1432887065859_538336_4466) ENABLED START */
+		float timeBudget=0;
+		if (!booking.isEmpty()) {
+			for (Booking booking2 : booking) {
+				timeBudget=timeBudget+booking2.getAmount();
+			}
+		}
+			
+		return timeBudget;
 		/* PROTECTED REGION END */
 	}
 	

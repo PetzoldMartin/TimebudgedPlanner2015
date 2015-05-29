@@ -5,14 +5,17 @@ package de.fhzwickau.tbp.material;
  * 	@FILE-ID : (_17_0_4_2_8210263_1431069898913_422495_3676) 
  */
 import java.util.Date;
+
 import de.fhzwickau.tbp.datatypes.ProjectState;
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.io.Serializable;
-import javax.persistence.Version;
 
+import java.io.Serializable;
+
+import javax.persistence.Version;
 import javax.persistence.OneToMany;
 import javax.persistence.CascadeType;
 import javax.persistence.Id;
@@ -282,10 +285,16 @@ public class Project implements Serializable {
 	/**
 	 * Returns the value of attribute '<em><b>timeBudgetAct</b></em>'
 	 */
-	private Float getTimeBudgetAct() {
+	public Float getTimeBudgetAct() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898940_432963_3748) ENABLED START */
-		// TODO: implementation of derived (calculated) attribute 'timeBudgetAct'
-		throw new UnsupportedOperationException("The implementation of the derived attribute 'timeBudgetAct' is missing!");
+		float timeBudget=0;
+		if (!milestone.isEmpty()) {
+			for (Milestone milestone2 : milestone) {
+				timeBudget=timeBudget+milestone2.getTimeBudgetAct();
+			}
+		}
+			
+		return timeBudget;
 		/* PROTECTED REGION END */
 	}
 	
