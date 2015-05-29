@@ -94,13 +94,13 @@ public class Task extends AbstractTask {
 	
 	public Float getTimeBudgetAct() {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898915_87588_3679__17_0_4_2_a9002bd_1432887065859_538336_4466) ENABLED START */
-		float timeBudget=0;
+		float timeBudget = 0;
 		if (!booking.isEmpty()) {
 			for (Booking booking2 : booking) {
-				timeBudget=timeBudget+booking2.getAmount();
+				timeBudget = timeBudget + booking2.getAmount();
 			}
 		}
-			
+		
 		return timeBudget;
 		/* PROTECTED REGION END */
 	}

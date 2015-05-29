@@ -287,13 +287,13 @@ public class Project implements Serializable {
 	 */
 	public Float getTimeBudgetAct() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898940_432963_3748) ENABLED START */
-		float timeBudget=0;
+		float timeBudget = 0;
 		if (!milestone.isEmpty()) {
 			for (Milestone milestone2 : milestone) {
-				timeBudget=timeBudget+milestone2.getTimeBudgetAct();
+				timeBudget = timeBudget + milestone2.getTimeBudgetAct();
 			}
 		}
-			
+		
 		return timeBudget;
 		/* PROTECTED REGION END */
 	}

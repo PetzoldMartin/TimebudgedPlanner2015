@@ -245,13 +245,13 @@ public class Milestone implements Serializable {
 	 */
 	public Float getTimeBudgetAct() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_a9002bd_1432887230421_639919_4786) ENABLED START */
-		float timeBudget=0;
+		float timeBudget = 0;
 		if (!abstractTask.isEmpty()) {
 			for (AbstractTask abstractTask2 : abstractTask) {
-				timeBudget=timeBudget+abstractTask2.getTimeBudgetAct();
+				timeBudget = timeBudget + abstractTask2.getTimeBudgetAct();
 			}
 		}
-			
+		
 		return timeBudget;
 		/* PROTECTED REGION END */
 	}

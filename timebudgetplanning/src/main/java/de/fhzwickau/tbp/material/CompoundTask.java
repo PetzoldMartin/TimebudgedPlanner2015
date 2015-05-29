@@ -90,13 +90,13 @@ public class CompoundTask extends AbstractTask {
 	
 	public Float getTimeBudgetAct() {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898910_767832_3673__17_0_4_2_a9002bd_1432887065859_538336_4466) ENABLED START */
-		float timeBudget=0;
+		float timeBudget = 0;
 		if (!abstractTask.isEmpty()) {
 			for (AbstractTask abstractTask2 : abstractTask) {
-				timeBudget=timeBudget+abstractTask2.getTimeBudgetAct();
+				timeBudget = timeBudget + abstractTask2.getTimeBudgetAct();
 			}
 		}
-			
+		
 		return timeBudget;
 		/* PROTECTED REGION END */
 	}
