@@ -82,9 +82,9 @@ public class Task extends AbstractTask {
 				}
 			}
 		}
-		if(lastdate!=null){
+		if (lastdate != null) {
 			return lastdate;
-		}else{
+		} else {
 			return java.util.Calendar.getInstance().getTime();
 		}
 		/* PROTECTED REGION END */
