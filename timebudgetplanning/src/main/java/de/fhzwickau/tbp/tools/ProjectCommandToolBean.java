@@ -25,6 +25,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 
 import de.fhzwickau.tbp.tools.dto.AddEmployeeWithRole;
+import de.fhzwickau.tbp.tools.dto.AlteredProject;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -81,6 +82,27 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		r.setRole(employeeWithRole.getRole());
 		entityManager.persist(r);
 		return "projectDetails?faces-redirect=true&pid=" + employeeWithRole.getProjectId();
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String alterProject(AlteredProject alteredProject) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1432921638332_538277_4822) ENABLED START */
+		Project p = entityManager.find(Project.class, alteredProject.getId());
+		if (p == null)
+			return "project";
+		p.setName(alteredProject.getName());
+		PlanningData pData = new PlanningData();
+		pData.setStartTime(alteredProject.getStartTime());
+		pData.setDescription(alteredProject.getDescription());
+		pData.setTimeBudgetPlan(alteredProject.getTimeBudgetPlanned());
+		pData.setTstamp(new Date());
+		p.addPlanningData(pData);
+		entityManager.merge(p);
+		return "projectDetails?faces-redirect=true&pid=" + alteredProject.getId();
 		/* PROTECTED REGION END */
 	}
 	

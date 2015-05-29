@@ -7,6 +7,7 @@ package de.fhzwickau.tbp.tools.facade;
 import de.fhzwickau.tbp.tools.dto.NewProject;
 import de.fhzwickau.tbp.datatypes.RoleType;
 import de.fhzwickau.tbp.tools.dto.AddEmployeeWithRole;
+import de.fhzwickau.tbp.tools.dto.AlteredProject;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -25,6 +26,12 @@ public interface ProjectCommandTool {
 	 */
 	
 	public String addEmployeeWithRole(AddEmployeeWithRole employeeWithRole);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String alterProject(AlteredProject alteredProject);
 	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_8210263_1431069898931_715428_3716) ENABLED START */
 	// TODO: put your own implementation code here
