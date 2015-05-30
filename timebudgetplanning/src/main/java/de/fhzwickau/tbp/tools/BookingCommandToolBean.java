@@ -6,6 +6,7 @@ package de.fhzwickau.tbp.tools;
  */
 import java.util.Date;
 
+import de.fhzwickau.tbp.automat.BookingInterceptorImplementation;
 import de.fhzwickau.tbp.material.Booking;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Task;
@@ -15,7 +16,9 @@ import de.fhzwickau.tbp.tools.facade.BookingCommandTool;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.inject.Named;
+import javax.interceptor.Interceptors;
 import javax.ejb.Stateless;
+
 import de.fhzwickau.tbp.tools.dto.AlteredBooking;
 
 /**
@@ -40,6 +43,7 @@ public class BookingCommandToolBean implements BookingCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
+	@Interceptors(BookingInterceptorImplementation.class)
 	public String addBooking(NewBooking newBooking) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432038818637_977993_3764) ENABLED START */
 		Task task = entityManager.find(Task.class, newBooking.getTaskId());
