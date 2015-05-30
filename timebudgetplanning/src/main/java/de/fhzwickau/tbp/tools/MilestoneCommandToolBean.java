@@ -44,7 +44,6 @@ public class MilestoneCommandToolBean implements MilestoneCommandTool {
 	public String addMilestone(NewMilestone milestone) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1431844722678_156468_5215) ENABLED START */
 		// TODO: implementation of method 'MilestoneCommandToolBean.addMilestone(...)'
-		System.out.println(milestone.getProjectId());
 		Project project = entityManager.find(Project.class, milestone.getProjectId());
 		if (project == null)
 			return "project";
