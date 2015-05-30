@@ -1,5 +1,146 @@
 package de.fhzwickau.tbp.test;
 
-public class MilestoneTest {
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.UserTransaction;
+
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.junit.InSequence;
+import org.jboss.shrinkwrap.api.Archive;
+import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import de.fhzwickau.tbp.datatypes.MilestoneState;
+import de.fhzwickau.tbp.datatypes.ProjectState;
+import de.fhzwickau.tbp.datatypes.RoleType;
+import de.fhzwickau.tbp.datatypes.TaskState;
+import de.fhzwickau.tbp.material.Employee;
+import de.fhzwickau.tbp.material.Milestone;
+import de.fhzwickau.tbp.material.MilestoneData;
+import de.fhzwickau.tbp.material.PlanningData;
+import de.fhzwickau.tbp.material.Project;
+import de.fhzwickau.tbp.material.Role;
+import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
+import de.fhzwickau.tbp.tools.MilestoneCommandToolBean;
+import de.fhzwickau.tbp.tools.ProjectCommandToolBean;
+import de.fhzwickau.tbp.tools.dto.AddEmployeeWithRole;
+import de.fhzwickau.tbp.tools.dto.AlteredProject;
+import de.fhzwickau.tbp.tools.dto.NewEmployee;
+import de.fhzwickau.tbp.tools.dto.NewMilestone;
+import de.fhzwickau.tbp.tools.dto.NewProject;
+import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
+import de.fhzwickau.tbp.tools.facade.MilestoneCommandTool;
+import de.fhzwickau.tbp.tools.facade.ProjectCommandTool;
+
+@RunWith(Arquillian.class)
+public class MilestoneTest {
+	
+    @Deployment
+    public static Archive<?> createDeployment() {
+        return ShrinkWrap.create(WebArchive.class, "test.war")
+        	.addPackage(MilestoneCommandToolBean.class.getPackage())
+        	.addPackage(MilestoneCommandTool.class.getPackage())
+        	.addPackage(NewProject.class.getPackage())
+        	.addPackage(Project.class.getPackage())
+        	.addPackage(TaskState.class.getPackage())
+            .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
+            .addAsWebInfResource("wildfly-ds.xml")
+            .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
+    }
+    
+    @PersistenceContext
+    EntityManager em;
+    
+    @Inject
+    UserTransaction utx;
+    
+    @Inject
+    MilestoneCommandTool milestoneCommandTool;
+    
+    @Inject
+    ProjectCommandTool projectCommandTool;
+    
+    @Before
+    public void startTransaction() throws Exception {
+        utx.begin();
+        em.joinTransaction();
+    }
+    
+    @After
+    public void commitTransaction() throws Exception {
+        utx.commit();
+    }
+    
+    private static Date now;
+    
+    @Test
+    @InSequence(1)
+    public void addMilestoneTest() throws Exception {
+		// Create an initial project
+		NewProject newProject = new NewProject();
+		projectCommandTool.addProject(newProject);
+		Project p = (Project) em.createQuery("SELECT t FROM Project t").getResultList().get(0);
+    	
+    	NewMilestone newMilestone = new NewMilestone();
+    	newMilestone.setName("Test");
+    	newMilestone.setDescription("Test Description");
+    	now = new Date();
+    	newMilestone.setEndDatePlanned(new Date(now.getTime() + 10000));
+    	newMilestone.setProjectId(p.getId());
+    	milestoneCommandTool.addMilestone(newMilestone);
+    	@SuppressWarnings("unchecked")
+		List<Milestone> resultList = em.createQuery("SELECT e FROM Milestone e").getResultList();
+    	Assert.assertEquals(resultList.size(), 1);
+    	Assert.assertEquals(resultList.get(0).getName(), "Test");
+    	Assert.assertEquals(resultList.get(0).getState(), MilestoneState.OPEN);
+    	Assert.assertEquals(resultList.get(0).getProject(), p);
+    	MilestoneData milestoneData = resultList.get(0).getMilestoneData().iterator().next();
+    	Assert.assertEquals(milestoneData.getDescription(), "Test Description");
+    	Assert.assertEquals(milestoneData.getEndDatePlanned(), new Date(now.getTime() + 10000));
+    }
+    
+    @Test
+    @InSequence(2)
+    public void alterMilestoneTest() throws Exception {
+//    	AlteredProject alteredProject = new AlteredProject();
+//    	alteredProject.setName("Project");
+//    	alteredProject.setDescription("Description");
+//    	alteredProject.setStartTime(new Date(now.getTime() + 10000));
+//    	alteredProject.setTimeBudgetPlanned((float) 5000); 
+//    	alteredProject.setId(((Project) em.createQuery("SELECT e FROM Project e").getResultList().get(0)).getId());
+//    	
+//    	ProjectCommandTool.alterProject(alteredProject);
+//    	@SuppressWarnings("unchecked")
+//		List<Project> resultList = em.createQuery("SELECT e FROM Project e").getResultList();
+//    	Assert.assertEquals(resultList.size(), 1);
+//    	Assert.assertEquals(resultList.get(0).getName(), "Project");
+//    	Assert.assertEquals(resultList.get(0).getState(), ProjectState.OPEN);
+//    	Assert.assertEquals(resultList.get(0).getPlanningData().size(), 2);
+//    	Iterator<PlanningData> iterator = resultList.get(0).getPlanningData().iterator();
+//    	while (iterator.hasNext()) {
+//    		PlanningData planningData = iterator.next();
+//    		if (planningData.getDescription().equals("Test Description")) {
+//    	    	Assert.assertEquals(planningData.getStartTime(), now);
+//    	    	Assert.assertEquals(planningData.getTimeBudgetPlan(), (float) 10000, 0.05);
+//    		}
+//    		else {
+//    	    	Assert.assertEquals(planningData.getDescription(), "Description");
+//    	    	Assert.assertEquals(planningData.getStartTime(), new Date(now.getTime() + 10000));
+//    	    	Assert.assertEquals(planningData.getTimeBudgetPlan(), (float) 5000, 0.05);
+//    		}
+//    	}
+    }
+    
 }

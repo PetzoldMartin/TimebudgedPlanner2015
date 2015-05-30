@@ -60,7 +60,7 @@ public class ProjectTest {
     UserTransaction utx;
     
     @Inject
-    ProjectCommandTool ProjectCommandTool;
+    ProjectCommandTool projectCommandTool;
     
     @Inject
     EmployeeCommandTool employeeCommandTool;
@@ -87,7 +87,7 @@ public class ProjectTest {
     	now = new Date();
     	newProject.setStartTime(now);
     	newProject.setTimeBudgetPlanned((float) 10000); 
-    	ProjectCommandTool.addProject(newProject);
+    	projectCommandTool.addProject(newProject);
     	@SuppressWarnings("unchecked")
 		List<Project> resultList = em.createQuery("SELECT e FROM Project e").getResultList();
     	Assert.assertEquals(resultList.size(), 1);
@@ -114,7 +114,7 @@ public class ProjectTest {
     	addEmployeeWithRole.setProjectId(projectId);
     	addEmployeeWithRole.setEmployeeId(employeeId);
     	addEmployeeWithRole.setRole(RoleType.WORKER);
-    	ProjectCommandTool.addEmployeeWithRole(addEmployeeWithRole);
+    	projectCommandTool.addEmployeeWithRole(addEmployeeWithRole);
     	
     	@SuppressWarnings("unchecked")
 		List<Role> resultList = (List<Role>) em.createQuery("SELECT e FROM Role e").getResultList();
@@ -146,7 +146,7 @@ public class ProjectTest {
     	alteredProject.setTimeBudgetPlanned((float) 5000); 
     	alteredProject.setId(((Project) em.createQuery("SELECT e FROM Project e").getResultList().get(0)).getId());
     	
-    	ProjectCommandTool.alterProject(alteredProject);
+    	projectCommandTool.alterProject(alteredProject);
     	@SuppressWarnings("unchecked")
 		List<Project> resultList = em.createQuery("SELECT e FROM Project e").getResultList();
     	Assert.assertEquals(resultList.size(), 1);
