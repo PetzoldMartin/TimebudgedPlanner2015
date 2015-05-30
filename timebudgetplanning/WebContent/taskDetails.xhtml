@@ -36,6 +36,22 @@
 				<f:param name="tid" value="#{params.tid}" />
 			</h:commandButton>
 		</o:form>
+		<br/>
+		Buchungsübersicht:
+		<table>
+			<ui:repeat var="v_booking" value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
+				<tr>
+					<td>
+						<h:outputText value="#{v_booking.start}"><f:convertDateTime pattern="hh:mm dd.MM.yy"/></h:outputText> -
+					</td>
+					<td>
+						<h:outputText value="#{v_booking.end}"><f:convertDateTime pattern="hh:mm dd.MM.yy"/></h:outputText>
+					</td>
+					<td>#{v_booking.employeeName}</td>
+					<td>#{v_booking.amount} Minuten</td>
+				</tr>
+			</ui:repeat>
+		</table>
 		<o:form id="newBooking" includeViewParams="true">
 			Buchung hinzufügen: <br/>
 			<h:selectOneMenu value="#{newBookingDTO.employeeId}">

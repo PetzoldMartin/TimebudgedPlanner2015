@@ -12,6 +12,7 @@ import java.util.Set;
 
 import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.AbstractTask;
+import de.fhzwickau.tbp.material.Booking;
 import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Milestone;
@@ -23,6 +24,7 @@ import de.fhzwickau.tbp.tools.dto.EmployeeOverview;
 import de.fhzwickau.tbp.tools.dto.TaskDetails;
 import de.fhzwickau.tbp.tools.dto.TaskList;
 import de.fhzwickau.tbp.tools.dto.TaskOverview;
+import de.fhzwickau.tbp.tools.facade.BookingQueryTool;
 import de.fhzwickau.tbp.tools.facade.TaskQueryTool;
 
 import javax.persistence.PersistenceContext;
@@ -31,6 +33,8 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 
 import de.fhzwickau.tbp.tools.dto.CompoundTaskDetails;
+import de.fhzwickau.tbp.tools.dto.BookingList;
+import javax.ejb.EJB;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -39,6 +43,9 @@ import de.fhzwickau.tbp.tools.dto.CompoundTaskDetails;
 @Named("taskQuery")
 @Stateless(name = "TaskQueryToolBean")
 public class TaskQueryToolBean implements TaskQueryTool {
+	
+	@EJB(name = "ejb/BookingQueryTool")
+	private BookingQueryTool bookingQueryTool;
 	
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -243,6 +250,21 @@ public class TaskQueryToolBean implements TaskQueryTool {
 			sortedList.addEmployee(mappingNameToOverview.get(name));
 		}
 		return sortedList;
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public BookingList getBookingOverviews(int taskId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431687680065_876144_3879__17_0_4_2_67b0227_1432971664975_977619_3669) ENABLED START */
+		Task t = entityManager.find(Task.class, taskId);
+		BookingList bookingList = new BookingList();
+		for (Booking b : t.getBooking()) {
+			bookingList.addBooking(bookingQueryTool.getBookingOverview(b.getId()));
+		}
+		return bookingList;
 		/* PROTECTED REGION END */
 	}
 	

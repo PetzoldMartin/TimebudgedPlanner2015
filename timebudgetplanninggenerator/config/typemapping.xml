@@ -68,5 +68,9 @@
 			<tns:to>LinkedList&lt;ProjectOverview&gt;</tns:to>
 			<tns:context name="Import">java.util.LinkedList</tns:context>
 		</tns:type>
+		<tns:type from="BookingListType">
+			<tns:to>LinkedList&lt;BookingOverview&gt;</tns:to>
+			<tns:context name="Import">java.util.LinkedList</tns:context>
+		</tns:type>
 	</tns:externalTypes>
 </tns:typeMapping>

@@ -13,6 +13,8 @@ import java.io.Serializable;
 
 public class BookingOverview implements Serializable {
 	
+	private int id;
+	
 	private Date start;
 	
 	private Date end;
@@ -20,6 +22,23 @@ public class BookingOverview implements Serializable {
 	private Float amount;
 	
 	private String employeeName;
+	
+	/**
+	 * Returns the value of attribute '<em><b>id</b></em>'.
+	 */
+	
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>id</b></em>'.
+	 * @param	id	the value to set.
+	 */
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	/**
 	 * Returns the value of attribute '<em><b>start</b></em>'.

@@ -57,6 +57,16 @@ public class Booking implements Serializable {
 	}
 	
 	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public int getId() {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432977517456_722481_5237) ENABLED START */
+		return id;
+		/* PROTECTED REGION END */
+	}
+	
+	/**
 	 * Returns the linked object of association '<em><b>employee</b></em>'.
 	 */
 	
@@ -179,7 +189,7 @@ public class Booking implements Serializable {
 	}
 	
 	/**
-	 * Returns the amount of time for the booking in seconds
+	 * Returns the amount of time for the booking in minutes
 	 */
 	public Float getAmount() {
 		/* PROTECTED REGION ID(java.derived.attribute.implementation._17_0_4_2_8210263_1431069898937_184140_3739) ENABLED START */
@@ -187,7 +197,7 @@ public class Booking implements Serializable {
 		startCal.setTime(start);
 		Calendar endCal = Calendar.getInstance();
 		endCal.setTime(end);
-		return (float) (endCal.getTimeInMillis() - startCal.getTimeInMillis()) / 1000;
+		return (float) (endCal.getTimeInMillis() - startCal.getTimeInMillis()) / 1000 / 60;
 		/* PROTECTED REGION END */
 	}
 	
