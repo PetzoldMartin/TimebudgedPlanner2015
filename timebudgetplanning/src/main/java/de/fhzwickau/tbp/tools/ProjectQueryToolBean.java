@@ -4,6 +4,7 @@ package de.fhzwickau.tbp.tools;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_8210263_1431440332515_22477_5154) 
  */
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -147,7 +148,7 @@ public class ProjectQueryToolBean implements ProjectQueryTool {
 		details.setDescription(latestPlanningData.getDescription());
 		details.setStartDate(latestPlanningData.getStartTime());
 		details.setTimeBudgetPlanned(latestPlanningData.getTimeBudgetPlan());
-		details.setEndDate(p.getEndTime());
+		details.setEndDate(p.getEndTime() == null ? new Date() : p.getEndTime());
 		details.setTimeBudetAct(p.getTimeBudgetAct());
 		for (Role r : p.getRole()) {
 			EmployeeOverview employee = new EmployeeOverview();
