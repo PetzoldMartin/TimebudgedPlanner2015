@@ -1,6 +1,7 @@
 package de.fhzwickau.tbp.test;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -31,6 +32,7 @@ import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.tools.EmployeeCommandToolBean;
 import de.fhzwickau.tbp.tools.ProjectCommandToolBean;
 import de.fhzwickau.tbp.tools.dto.AddEmployeeWithRole;
+import de.fhzwickau.tbp.tools.dto.AlteredProject;
 import de.fhzwickau.tbp.tools.dto.NewEmployee;
 import de.fhzwickau.tbp.tools.dto.NewProject;
 import de.fhzwickau.tbp.tools.facade.EmployeeCommandTool;
@@ -74,13 +76,15 @@ public class ProjectTest {
         utx.commit();
     }
     
+    private static Date now;
+    
     @Test
     @InSequence(1)
     public void addProjectTest() throws Exception {
     	NewProject newProject = new NewProject();
     	newProject.setName("Test");
     	newProject.setDescription("Test Description");
-    	Date now = new Date();
+    	now = new Date();
     	newProject.setStartTime(now);
     	newProject.setTimeBudgetPlanned((float) 10000); 
     	ProjectCommandTool.addProject(newProject);
@@ -130,6 +134,38 @@ public class ProjectTest {
     	Assert.assertEquals(employee.getRole().size(), 1);
     	Assert.assertEquals(employee.getRole().iterator().next().getProject().getName(), "Test");
     	Assert.assertEquals(employee.getRole().iterator().next().getProject().getId(), projectId);
+    }
+    
+    @Test
+    @InSequence(3)
+    public void alterProjectTest() throws Exception {
+    	AlteredProject alteredProject = new AlteredProject();
+    	alteredProject.setName("Project");
+    	alteredProject.setDescription("Description");
+    	alteredProject.setStartTime(new Date(now.getTime() + 10000));
+    	alteredProject.setTimeBudgetPlanned((float) 5000); 
+    	alteredProject.setId(((Project) em.createQuery("SELECT e FROM Project e").getResultList().get(0)).getId());
+    	
+    	ProjectCommandTool.alterProject(alteredProject);
+    	@SuppressWarnings("unchecked")
+		List<Project> resultList = em.createQuery("SELECT e FROM Project e").getResultList();
+    	Assert.assertEquals(resultList.size(), 1);
+    	Assert.assertEquals(resultList.get(0).getName(), "Project");
+    	Assert.assertEquals(resultList.get(0).getState(), ProjectState.OPEN);
+    	Assert.assertEquals(resultList.get(0).getPlanningData().size(), 2);
+    	Iterator<PlanningData> iterator = resultList.get(0).getPlanningData().iterator();
+    	while (iterator.hasNext()) {
+    		PlanningData planningData = iterator.next();
+    		if (planningData.getDescription().equals("Test Description")) {
+    	    	Assert.assertEquals(planningData.getStartTime(), now);
+    	    	Assert.assertEquals(planningData.getTimeBudgetPlan(), (float) 10000, 0.05);
+    		}
+    		else {
+    	    	Assert.assertEquals(planningData.getDescription(), "Description");
+    	    	Assert.assertEquals(planningData.getStartTime(), new Date(now.getTime() + 10000));
+    	    	Assert.assertEquals(planningData.getTimeBudgetPlan(), (float) 5000, 0.05);
+    		}
+    	}
     }
     
 }
