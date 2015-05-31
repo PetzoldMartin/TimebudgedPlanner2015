@@ -6,7 +6,7 @@ package de.fhzwickau.tbp.tools;
  */
 import java.util.Date;
 
-import de.fhzwickau.tbp.automat.BookingInterceptorImplementation;
+import de.fhzwickau.tbp.automat.BookingInterceptor;
 import de.fhzwickau.tbp.material.Booking;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Task;
@@ -43,7 +43,7 @@ public class BookingCommandToolBean implements BookingCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
-	@Interceptors(BookingInterceptorImplementation.class)
+	@Interceptors(value = { BookingInterceptor.class })
 	public String addBooking(NewBooking newBooking) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432038818637_977993_3764) ENABLED START */
 		Task task = entityManager.find(Task.class, newBooking.getTaskId());
@@ -65,6 +65,7 @@ public class BookingCommandToolBean implements BookingCommandTool {
 	 * Method stub for further implementation.
 	 */
 	
+	@Interceptors(value = { BookingInterceptor.class })
 	public String alterBooking(AlteredBooking alteredBooking) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432633786620_604630_3638) ENABLED START */
 		// TODO: implementation of method 'BookingCommandToolBean.alterBooking(...)'
