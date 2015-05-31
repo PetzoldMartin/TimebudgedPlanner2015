@@ -93,6 +93,10 @@ Workflow {
 		model2model = org.genesez.workflow.SimpleScript {
 			script = "org::genesez::metamodel::core::util::m2m::UseDependencies::addUseDependencies"
 		}
+		
+		model2model = org.genesez.workflow.SimpleScript {
+			script = "makeInterceptors::transform"
+		}
 	}
 	// serialize the GeneSEZ model - just for info if you want to have a look at it
 	component = org.genesez.workflow.EmfWriter {

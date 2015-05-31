@@ -49,9 +49,17 @@
 			<tns:to>HashMap&lt;EmployeeOverview,HashSet&lt;RoleType&gt;&gt;</tns:to>
 			<tns:context name="Import">java.util.HashMap</tns:context>
 		</tns:type>
-		<tns:type from="ObjType">
+		<tns:type from="ObjectType">
 			<tns:to>Object</tns:to>
 			<tns:context name="Import">java.lang.Object</tns:context>
+		</tns:type>
+		<tns:type from="EntityManagerType">
+			<tns:to>EntityManager</tns:to>
+			<tns:context name="Import">javax.persistence.EntityManager</tns:context>
+		</tns:type>
+		<tns:type from="InterceptorType">
+			<tns:to>InvocationContext</tns:to>
+			<tns:context name="Import">javax.interceptor.InvocationContext</tns:context>
 		</tns:type>
 		<tns:type from="RoleTypeArray">
 			<tns:to>RoleType[]</tns:to>

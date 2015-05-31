@@ -1,0 +1,37 @@
+import gcore;
+
+extension org::genesez::metamodel::core::util::AccessElement;
+extension org::genesez::metamodel::core::util::NavigateElement;
+extension org::genesez::metamodel::core::util::CreateElement;
+extension org::genesez::metamodel::core::util::CloneElement;
+extension org::genesez::util::logging::Logging;
+
+MModel transform(MModel this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MPackage transform(MPackage this) :
+	nestedPackage.transform() ->
+	classifier.transform() ->
+	this;
+	
+MClassifier transform(MClassifier this) :
+	emHasStereotypeAssignment( "Automat" )
+		? (makeInterceptorImplementation(navModel()))
+		: this ->
+	emHasStereotypeAssignment( "BookingInterceptorTarget" )
+		? (addBookingInterceptorAnnotation(navModel()))
+		: this;
+		
+MClassifier makeInterceptorImplementation(MClassifier this, MModel model) :
+	//let stereoType = createStereotype(model, "UID_ejb3SessionBean", "ejb3SessionBean") :
+		//createTaggedValue(createTag(stereoType, "stateful", "Boolean"), "false") ->
+    	//createTaggedValue(createTag(stereoType, "entityManager", "ejb3EntityManagerType"), "EntityManager") ->
+    property.select(e|e.name == "entityManager").createTaggedValue(createTag(createStereotype(model, "UID_jpaPersistenceContext", "jpaPersistenceContext"), "jpaPersistenceContext", "Boolean"), "true") ->	
+    operation.createTaggedValue(createTag(createStereotype(model, "UID_ejb3OperationInterceptor", "ejb3OperationInterceptor"), "aroundInvoke", "Boolean"), "true") ->
+    this; 
+	
+MClassifier addBookingInterceptorAnnotation(MClassifier this, MModel model) :
+	operation.select(e|!e.isConstructor()).createTaggedValue(createTag(createStereotype(model, "UID_ejb3OperationInterceptor", "ejb3OperationInterceptor"), "interceptors", "Boolean"), "BookingInterceptor") ->
+	this;
