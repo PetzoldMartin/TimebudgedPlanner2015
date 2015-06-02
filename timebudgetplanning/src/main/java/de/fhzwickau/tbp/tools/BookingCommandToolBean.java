@@ -49,6 +49,9 @@ public class BookingCommandToolBean implements BookingCommandTool {
 		Task task = entityManager.find(Task.class, newBooking.getTaskId());
 		Employee employee = entityManager.find(Employee.class, newBooking.getEmployeeId());
 		
+		if (employee == null)
+			return "taskDetails?faces-redirect=true&tid=" + newBooking.getTaskId();
+		
 		Booking booking = new Booking();
 		booking.setEmployee(employee);
 		booking.setTask(task);
