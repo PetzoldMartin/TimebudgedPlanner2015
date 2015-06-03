@@ -22,6 +22,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import de.fhzwickau.tbp.automat.BookingInterceptor;
 import de.fhzwickau.tbp.datatypes.MilestoneState;
 import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.Milestone;
@@ -45,6 +46,7 @@ public class MilestoneTest {
         	.addPackage(NewProject.class.getPackage())
         	.addPackage(Project.class.getPackage())
         	.addPackage(TaskState.class.getPackage())
+        	.addPackage(BookingInterceptor.class.getPackage())
             .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
             .addAsWebInfResource("wildfly-ds.xml")
             .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");

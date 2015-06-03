@@ -20,6 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import de.fhzwickau.tbp.automat.BookingInterceptor;
 import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.CompoundTask;
@@ -51,6 +52,7 @@ public class TaskTest {
 				.addPackage(TaskState.class.getPackage())
 				.addPackage(EmployeeCommandToolBean.class.getPackage())
 				.addPackage(EmployeeCommandTool.class.getPackage())
+				.addPackage(BookingInterceptor.class.getPackage())
 				.addAsResource("test-persistence.xml", "META-INF/persistence.xml")
 	            .addAsWebInfResource("wildfly-ds.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
