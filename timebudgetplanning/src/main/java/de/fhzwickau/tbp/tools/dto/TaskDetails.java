@@ -5,6 +5,7 @@ package de.fhzwickau.tbp.tools.dto;
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431687844640_177568_3920) 
  */
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -21,6 +22,10 @@ public class TaskDetails implements Serializable {
 	private EmployeeList employees;
 	
 	private String type;
+	
+	private Date endDate;
+	
+	private Float timeBudetAct;
 	
 	/**
 	 * Constructor for class '<em><b>TaskDetails</b></em>'.
@@ -116,6 +121,40 @@ public class TaskDetails implements Serializable {
 	
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>endDate</b></em>'.
+	 */
+	
+	public Date getEndDate() {
+		return new Date(endDate.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>endDate</b></em>'.
+	 * @param	endDate	the value to set.
+	 */
+	
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudetAct</b></em>'.
+	 */
+	
+	public Float getTimeBudetAct() {
+		return timeBudetAct;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>timeBudetAct</b></em>'.
+	 * @param	timeBudetAct	the value to set.
+	 */
+	
+	public void setTimeBudetAct(Float timeBudetAct) {
+		this.timeBudetAct = timeBudetAct;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431687844640_177568_3920) ENABLED START */

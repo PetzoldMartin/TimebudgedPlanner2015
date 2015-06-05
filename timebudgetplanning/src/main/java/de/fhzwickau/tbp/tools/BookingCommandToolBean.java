@@ -87,6 +87,19 @@ public class BookingCommandToolBean implements BookingCommandTool {
 		/* PROTECTED REGION END */
 	}
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+//	@Interceptors(value = { BookingInterceptor.class })
+	public void removeBooking(int bookingId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1433533974064_574809_4115) ENABLED START */
+		// TODO: implementation of method 'BookingCommandToolBean.removeBookiing(...)'
+		Booking booking = entityManager.find(Booking.class, bookingId);
+		entityManager.remove(booking);
+		/* PROTECTED REGION END */
+	}
+	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1432038866553_552341_3769) ENABLED START */
 	/* PROTECTED REGION END */
 }

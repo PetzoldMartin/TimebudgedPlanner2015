@@ -25,6 +25,12 @@ public interface BookingCommandTool {
 	
 	public String alterBooking(AlteredBooking alteredBooking);
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void removeBooking(int bookingId);
+	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1432038793051_913097_3744) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */

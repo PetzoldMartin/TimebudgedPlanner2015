@@ -27,6 +27,8 @@ public class MilestoneDetails implements Serializable {
 	
 	private String description;
 	
+	private Float timeBudetAct;
+	
 	/**
 	 * Constructor for class '<em><b>MilestoneDetails</b></em>'.
 	 */
@@ -169,6 +171,23 @@ public class MilestoneDetails implements Serializable {
 	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudetAct</b></em>'.
+	 */
+	
+	public Float getTimeBudetAct() {
+		return timeBudetAct;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>timeBudetAct</b></em>'.
+	 * @param	timeBudetAct	the value to set.
+	 */
+	
+	public void setTimeBudetAct(Float timeBudetAct) {
+		this.timeBudetAct = timeBudetAct;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431851606526_22411_5321) ENABLED START */
