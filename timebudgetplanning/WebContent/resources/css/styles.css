@@ -35,6 +35,7 @@ body {
 }
 
 #sidebar {
+	vertical-align: top;
 	float: left;
 	width: 200px;	
 	border: 1px solid #d0d0d0;
@@ -110,6 +111,10 @@ body {
 	float: left;
 	width: 100px;
 	padding-top: 4px;
+}
+
+td {
+	vertical-align: top;
 }
 
 .value {	
