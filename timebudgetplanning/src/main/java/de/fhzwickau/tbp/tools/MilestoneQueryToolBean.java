@@ -5,9 +5,12 @@ package de.fhzwickau.tbp.tools;
  * 	@FILE-ID : (_17_0_4_2_8210263_1431851800414_576887_5372) 
  */
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 import de.fhzwickau.tbp.datatypes.MilestoneState;
 import de.fhzwickau.tbp.material.AbstractTask;
+import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.MilestoneData;
 import de.fhzwickau.tbp.material.Task;
@@ -64,6 +67,8 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 			milestoneDetails.setState(m.getState());
 			TaskList taskList = new TaskList();
 			for (AbstractTask t : m.getAbstractTask()) {
+				if (isChildTask(t))
+					continue;
 				TaskOverview tOverview = new TaskOverview();
 				tOverview.setId(t.getId());
 				tOverview.setName(t.getName());
@@ -95,5 +100,19 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431851800414_576887_5372) ENABLED START */
+	
+	private boolean isChildTask(AbstractTask task) {
+		@SuppressWarnings("unchecked")
+		List<CompoundTask> resultList = entityManager.createQuery("SELECT t FROM CompoundTask t WHERE t.milestone.id = " + task.getMilestone().getId()).getResultList();
+		for (CompoundTask t : resultList) {
+			Set<AbstractTask> subTasks = ((CompoundTask) t).getAbstractTask();
+			for (AbstractTask aTask : subTasks) {
+				if (aTask.getId() == task.getId())
+					return true;
+			}
+		}
+		return false;
+	}
+	
 	/* PROTECTED REGION END */
 }
