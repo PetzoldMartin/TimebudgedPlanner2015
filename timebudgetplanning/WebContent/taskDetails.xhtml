@@ -49,6 +49,9 @@
 					</td>
 					<td>#{v_booking.employeeName}</td>
 					<td>#{v_booking.amount} Minuten</td>
+					<td><o:form id="booking" includeViewParams="true">
+						<h:commandButton action="#{bookingCommand.removeBooking(v_booking.id)}" value="Buchung löschen" />
+					</o:form></td>
 				</tr>
 			</ui:repeat>
 		</table>
