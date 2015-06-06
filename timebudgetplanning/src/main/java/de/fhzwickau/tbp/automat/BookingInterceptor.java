@@ -31,22 +31,24 @@ public class BookingInterceptor {
 	public Object aroundInvoke(InvocationContext ctx) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1433001489477_281391_3717) ENABLED START */
 		try {
-			System.out.println("Interceptor called");
-			NewBooking newBooking = (NewBooking) ctx.getParameters()[0];
-			Task t = entityManager.find(Task.class, newBooking.getTaskId());
-			Project p = t.getMilestone().getProject();
-			PlanningData latestPlanningData = null;
-			for (PlanningData d : p.getPlanningData()) {
-				if (latestPlanningData == null || latestPlanningData.getTstamp().getTime() < d.getTstamp().getTime()) {
-					latestPlanningData = d;
+			if (ctx.getParameters()[0] instanceof NewBooking) {
+				NewBooking newBooking = (NewBooking) ctx.getParameters()[0];
+				Task t = entityManager.find(Task.class, newBooking.getTaskId());
+				Project p = t.getMilestone().getProject();
+				PlanningData latestPlanningData = null;
+				for (PlanningData d : p.getPlanningData()) {
+					if (latestPlanningData == null || latestPlanningData.getTstamp().getTime() < d.getTstamp().getTime()) {
+						latestPlanningData = d;
+					}
 				}
+				float budgetLimit = latestPlanningData.getTimeBudgetPlan();
+				float currentTimeBudgetUsed = p.getTimeBudgetAct();
+				if (currentTimeBudgetUsed + ((newBooking.getEnd().getTime() - newBooking.getStart().getTime()) / 1000 / 60 / 60) > budgetLimit)
+					System.out.println("Time Budget exceeded");
+				else
+					System.out.println("Time Budget okay");
 			}
-			float budgetLimit = latestPlanningData.getTimeBudgetPlan();
-			float currentTimeBudgetUsed = p.getTimeBudgetAct();
-			if (currentTimeBudgetUsed + ((newBooking.getEnd().getTime() - newBooking.getStart().getTime()) / 1000 / 60 / 60) > budgetLimit)
-				System.out.println("Time Budget exceeded");
-			else
-				System.out.println("Time Budget okay");
+			
 			try {
 				ctx.proceed();
 			} catch (Exception ex) {
