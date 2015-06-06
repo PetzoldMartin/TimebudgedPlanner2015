@@ -38,7 +38,7 @@ public class Project implements Serializable {
 	private java.util.Set<PlanningData> planningData = new java.util.HashSet<PlanningData>();
 	
 	/** Stores all linked objects of association '<em><b>role</b></em>' */
-	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "project")
+	@OneToMany(cascade = {}, mappedBy = "project")
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
 	/** Stores all linked objects of association '<em><b>milestone</b></em>' */

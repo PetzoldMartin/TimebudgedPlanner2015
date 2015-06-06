@@ -46,9 +46,11 @@
 						</h:link>
 					</td>
 					<td>
-						<ui:repeat var="v_role" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).getRoleTypes(v_employee)}">
-							#{v_role}
-						</ui:repeat>
+						<o:form includeViewParams="true">
+							<ui:repeat var="v_role" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).getRoleTypes(v_employee)}">
+								#{v_role} 
+							</ui:repeat>
+						</o:form>
 					</td>
 				</tr>
 			</ui:repeat>
@@ -66,6 +68,18 @@
 			<h:commandButton value="Hinzufügen" action="#{projectCommand.addEmployeeWithRole(addEmployeeWithRoleDTO)}" />
 		</h:form>
 		<br />
+		<o:form includeViewParams="true">
+			Mitarbeiter entfernen: <br />
+			<h:selectOneMenu value="#{addEmployeeWithRoleDTO.employeeId}">
+				<f:selectItems var="v_employee" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).employeeRoleMap.keySet().toArray()}"
+					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+			</h:selectOneMenu>
+			<h:selectOneMenu value="#{addEmployeeWithRoleDTO.role}">
+				<f:selectItems value="#{employeeQuery.listAllRoleTypes()}" var="v_role"
+   					itemValue="#{v_role}" itemLabel="#{v_role}" />
+			</h:selectOneMenu>
+			<h:commandButton value="Entfernen" action="#{projectCommand.removeEmployeeWithRole(request.getParameter('pid'), addEmployeeWithRoleDTO.employeeId, addEmployeeWithRoleDTO.role)}" />  
+		</o:form>
 		Angelegte Meilensteine:
 		<table>
 			<ui:repeat var="v_milestone" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">

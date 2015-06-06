@@ -28,7 +28,7 @@ import javax.persistence.CascadeType;
 public abstract class AbstractTask implements Serializable {
 	
 	/** Stores the linked object of association '<em><b>milestone</b></em>' */
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = {})
 	private Milestone milestone;
 	
 	/** Stores all linked objects of association '<em><b>employee</b></em>' */

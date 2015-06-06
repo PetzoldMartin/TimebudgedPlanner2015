@@ -26,11 +26,11 @@ import javax.persistence.GenerationType;
 public class Role implements Serializable {
 	
 	/** Stores the linked object of association '<em><b>project</b></em>' */
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = {})
 	private Project project;
 	
 	/** Stores the linked object of association '<em><b>employee</b></em>' */
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = {})
 	private Employee employee;
 	
 	private RoleType role;

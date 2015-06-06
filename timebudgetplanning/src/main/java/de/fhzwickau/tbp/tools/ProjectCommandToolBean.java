@@ -6,8 +6,11 @@ package de.fhzwickau.tbp.tools;
  */
 import java.io.IOException;
 import java.util.Date;
+import java.util.Set;
 
+import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.Employee;
+import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.PlanningData;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
@@ -103,6 +106,45 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		p.addPlanningData(pData);
 		entityManager.merge(p);
 		return "projectDetails?faces-redirect=true&pid=" + alteredProject.getId();
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String removeEmployeeWithRole(int projectId, int employeeId, RoleType role) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1433589056657_773658_3915) ENABLED START */
+		Project p = entityManager.find(Project.class, projectId);
+		if (p == null)
+			return "project";
+		Set<Role> roles = p.getRole();
+		Role roleToRemove = null;
+		for (Role r : roles) {
+			if (r.getEmployee().getId() == employeeId && r.getRole() == role) {
+				roleToRemove = r;
+				break;
+			}
+		}
+		if (roleToRemove == null)
+			return "projectDetails?faces-redirect=true&pid=" + projectId;
+		roleToRemove.setProject(null);
+		roleToRemove.setEmployee(null);
+		entityManager.remove(roleToRemove);
+		for (Milestone m : p.getMilestone()) {
+			for (AbstractTask t : m.getAbstractTask()) {
+				Employee employeeToRemove = null;
+				for (Employee e : t.getEmployee()) {
+					if (e.getId() == employeeId) {
+						employeeToRemove = e;
+						e.removeAbstractTask(t);
+					}
+				}
+				if (employeeToRemove != null)
+					t.removeEmployee(employeeToRemove);
+			}
+		}
+		return "projectDetails?faces-redirect=true&pid=" + projectId;
 		/* PROTECTED REGION END */
 	}
 	

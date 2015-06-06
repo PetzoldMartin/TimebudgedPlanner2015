@@ -26,7 +26,7 @@ import javax.persistence.GenerationType;
 public class Employee implements Serializable {
 	
 	/** Stores all linked objects of association '<em><b>role</b></em>' */
-	@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "employee")
+	@OneToMany(cascade = {}, mappedBy = "employee")
 	private java.util.Set<Role> role = new java.util.HashSet<Role>();
 	
 	/** Stores all linked objects of association '<em><b>abstractTask</b></em>' */
