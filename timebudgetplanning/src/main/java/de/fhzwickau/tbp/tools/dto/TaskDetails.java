@@ -35,6 +35,8 @@ public class TaskDetails implements Serializable {
 		/* PROTECTED REGION ID(java.constructor._17_0_4_2_67b0227_1431688377963_954313_3953) ENABLED START */
 		// TODO: implementation of constructor for class 'TaskDetails'
 		employees = new EmployeeList();
+		endDate = new Date();
+		
 		/* PROTECTED REGION END */
 	}
 	

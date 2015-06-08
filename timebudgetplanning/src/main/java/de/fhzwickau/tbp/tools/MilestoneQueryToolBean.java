@@ -65,6 +65,7 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 			milestoneDetails.setId(m.getId());
 			milestoneDetails.setName(m.getName());
 			milestoneDetails.setState(m.getState());
+			milestoneDetails.setTimeBudetAct(m.getTimeBudgetAct());
 			TaskList taskList = new TaskList();
 			for (AbstractTask t : m.getAbstractTask()) {
 				if (isChildTask(t))
@@ -89,7 +90,7 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 				}
 			}
 			if (m.getState() == MilestoneState.OPEN) {
-				milestoneDetails.setEndDate(latestMilestoneData.getEndDatePlanned());
+				milestoneDetails.setEndDate(m.getEndTime() == null ? new Date() : m.getEndTime());
 			} else {
 				// TODO Set calculated end date
 			}

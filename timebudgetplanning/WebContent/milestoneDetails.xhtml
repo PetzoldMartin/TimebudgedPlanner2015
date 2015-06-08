@@ -20,9 +20,13 @@
 				Name: <h:inputText value="#{alteredMilestoneDTO.name}"/> <br />
 				Beschreibung: <h:inputText value="#{alteredMilestoneDTO.description}"/> <br />
 				<h:outputText value="Geplantes " rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
-				Enddatum: <h:outputText value="#{alteredMilestoneDTO.endDatePlanned}">
+				Enddatum: 
+				<h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate != null}">
 					<f:convertDateTime pattern="dd.MM.yyyy" />
-				</h:outputText> <br />
+				</h:outputText>
+				<h:outputText value="nicht bekannt" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate == null}"/>
+				<br />
+				Verbrauchtes Zeitbudget: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).timeBudetAct} <br />
 				Status: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state} <br />
 				<h:commandButton value="Änderungen speichern" action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}"/>
 			</h:panelGrid>

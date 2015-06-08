@@ -5,6 +5,7 @@ package de.fhzwickau.tbp.tools;
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431687680065_876144_3879) 
  */
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -34,6 +35,7 @@ import javax.inject.Named;
 
 import de.fhzwickau.tbp.tools.dto.CompoundTaskDetails;
 import de.fhzwickau.tbp.tools.dto.BookingList;
+
 import javax.ejb.EJB;
 
 /**
@@ -68,6 +70,8 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		details.setId(taskId);
 		details.setName(t.getName());
 		details.setDescription(t.getDescription());
+		details.setEndDate(t.getEndTime() == null ? new Date() : t.getEndTime());
+		details.setTimeBudetAct(t.getTimeBudgetAct());
 		
 		Set<Employee> employees = t.getEmployee();
 		EmployeeList employeeList = new EmployeeList();
@@ -112,6 +116,8 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		details.setId(taskId);
 		details.setName(cTask.getName());
 		details.setTasks(taskList);
+		details.setEndDate(cTask.getEndTime() == null ? new Date() : cTask.getEndTime());
+		details.setTimeBudetAct(cTask.getTimeBudgetAct());
 		
 		Set<Employee> employees = cTask.getEmployee();
 		EmployeeList employeeList = new EmployeeList();

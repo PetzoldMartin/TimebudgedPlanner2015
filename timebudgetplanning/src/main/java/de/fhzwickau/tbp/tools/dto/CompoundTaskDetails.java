@@ -5,6 +5,7 @@ package de.fhzwickau.tbp.tools.dto;
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431945306441_237908_3801) 
  */
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -22,6 +23,10 @@ public class CompoundTaskDetails implements Serializable {
 	
 	private TaskList tasks;
 	
+	private Date endDate;
+	
+	private Float timeBudetAct;
+	
 	/**
 	 * Constructor for class '<em><b>CompoundTaskDetails</b></em>'.
 	 */
@@ -30,6 +35,8 @@ public class CompoundTaskDetails implements Serializable {
 		/* PROTECTED REGION ID(java.constructor._17_0_4_2_67b0227_1431945847485_649107_3880) ENABLED START */
 		employees = new EmployeeList();
 		tasks = new TaskList();
+		endDate = new Date();
+
 		/* PROTECTED REGION END */
 	}
 	
@@ -116,6 +123,40 @@ public class CompoundTaskDetails implements Serializable {
 	
 	public void setTasks(TaskList tasks) {
 		this.tasks = tasks;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>endDate</b></em>'.
+	 */
+	
+	public Date getEndDate() {
+		return new Date(endDate.getTime());
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>endDate</b></em>'.
+	 * @param	endDate	the value to set.
+	 */
+	
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>timeBudetAct</b></em>'.
+	 */
+	
+	public Float getTimeBudetAct() {
+		return timeBudetAct;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>timeBudetAct</b></em>'.
+	 * @param	timeBudetAct	the value to set.
+	 */
+	
+	public void setTimeBudetAct(Float timeBudetAct) {
+		this.timeBudetAct = timeBudetAct;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431945306441_237908_3801) ENABLED START */

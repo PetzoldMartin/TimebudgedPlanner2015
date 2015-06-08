@@ -37,6 +37,8 @@ public class MilestoneDetails implements Serializable {
 		/* PROTECTED REGION ID(java.constructor._17_0_4_2_8210263_1431851943665_2921_5406) ENABLED START */
 		// TODO: implementation of constructor for class 'MilestoneDetails'
 		tasks = new LinkedList<TaskOverview>();
+		endDate = new Date();
+		
 		/* PROTECTED REGION END */
 	}
 	
