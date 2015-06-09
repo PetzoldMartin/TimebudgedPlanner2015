@@ -163,6 +163,17 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		/* PROTECTED REGION END */
 	}
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void removeTask(int taskId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1433833978851_696857_3986) ENABLED START */
+		// TODO: implementation of method 'TaskCommandToolBean.removeTask(...)'
+		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		/* PROTECTED REGION END */
+	}
+	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431276472150_541750_3490) ENABLED START */
 	/* PROTECTED REGION END */
 }
