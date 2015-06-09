@@ -45,6 +45,10 @@
 					</td>
 					<td>#{v_task.state}</td>
 					<td>#{v_task.type}</td>
+					<td><o:form includeViewParams="true" id="tasks">
+						<h:commandButton action="#{taskCommand.removeTask(v_task.id)}" value="Task löschen" />
+						</o:form>
+					</td>
 				</tr>
 			</ui:repeat>
 		</table>

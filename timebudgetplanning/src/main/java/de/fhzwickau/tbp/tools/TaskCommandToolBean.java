@@ -9,6 +9,7 @@ import de.fhzwickau.tbp.tools.dto.NewTask;
 import de.fhzwickau.tbp.tools.facade.TaskCommandTool;
 import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.AbstractTask;
+import de.fhzwickau.tbp.material.Booking;
 import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Employee;
 import de.fhzwickau.tbp.material.Milestone;
@@ -21,8 +22,11 @@ import javax.ejb.Stateless;
 import de.fhzwickau.tbp.tools.dto.AlteredTask;
 
 import javax.inject.Named;
+
 import de.fhzwickau.tbp.tools.dto.AddTask;
-import java.util.Date;
+import de.fhzwickau.tbp.tools.facade.BookingCommandTool;
+
+import javax.ejb.EJB;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -31,6 +35,9 @@ import java.util.Date;
 @Named("taskCommand")
 @Stateless(name = "TaskCommandToolBean")
 public class TaskCommandToolBean implements TaskCommandTool {
+	
+	@EJB(name = "ejb/BookingCommandTool")
+	private BookingCommandTool bookingCommandTool;
 	
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -170,10 +177,43 @@ public class TaskCommandToolBean implements TaskCommandTool {
 	public void removeTask(int taskId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1433833978851_696857_3986) ENABLED START */
 		// TODO: implementation of method 'TaskCommandToolBean.removeTask(...)'
-		throw new UnsupportedOperationException("The implementation of this generated method stub is missing!");
+		AbstractTask aTask = entityManager.find(AbstractTask.class, taskId);
+		if (aTask instanceof Task) {
+			for (Booking b : ((Task) aTask).getBooking()) {
+				bookingCommandTool.removeBooking(b.getId());
+			}
+			entityManager.remove(aTask);
+		}
+		if (aTask instanceof CompoundTask) {
+			removeCompoundTask(taskId);
+		}
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void removeSubtask(int taskId, int parentId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_67b0227_1433863725798_386645_3843) ENABLED START */
+		AddTask addTask = new AddTask();
+		addTask.setCompoundTaskId(parentId);
+		addTask.setTaskId(taskId);
+		removeSubtaskFromCompoundTask(addTask);
+		removeTask(taskId);
 		/* PROTECTED REGION END */
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431276472150_541750_3490) ENABLED START */
+	private void removeCompoundTask(int taskId) {
+		CompoundTask task = entityManager.find(CompoundTask.class, taskId);
+		for (AbstractTask t : task.getAbstractTask()) {
+			if (t instanceof CompoundTask)
+				removeCompoundTask(t.getId());
+			if (t instanceof Task)
+				removeTask(t.getId());
+		}
+		entityManager.remove(task);
+	}
 	/* PROTECTED REGION END */
 }
