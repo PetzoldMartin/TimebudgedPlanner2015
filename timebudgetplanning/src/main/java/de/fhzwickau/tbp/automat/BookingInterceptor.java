@@ -4,6 +4,8 @@ package de.fhzwickau.tbp.automat;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_8210263_1433001027643_848303_3640) 
  */
+import java.util.Date;
+
 import javax.interceptor.InvocationContext;
 import javax.interceptor.AroundInvoke;
 import javax.persistence.EntityManager;
@@ -12,6 +14,7 @@ import javax.persistence.PersistenceContext;
 import de.fhzwickau.tbp.material.PlanningData;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Task;
+import de.fhzwickau.tbp.tools.dto.AlteredBooking;
 import de.fhzwickau.tbp.tools.dto.NewBooking;
 
 /**
@@ -31,9 +34,23 @@ public class BookingInterceptor {
 	public Object aroundInvoke(InvocationContext ctx) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1433001489477_281391_3717) ENABLED START */
 		try {
+			Date start = null;
+			Date end = null;
+			int taskId = 0;
 			if (ctx.getParameters()[0] instanceof NewBooking) {
 				NewBooking newBooking = (NewBooking) ctx.getParameters()[0];
-				Task t = entityManager.find(Task.class, newBooking.getTaskId());
+				start = newBooking.getStart();
+				end = newBooking.getEnd();
+				taskId = newBooking.getTaskId();
+			}
+			if (ctx.getParameters()[0] instanceof AlteredBooking) {
+				AlteredBooking alteredBooking = (AlteredBooking) ctx.getParameters()[0];
+				start = alteredBooking.getStart();
+				end = alteredBooking.getEnd();
+				taskId = alteredBooking.getTaskId();
+			}
+			if (start != null && end != null && taskId != 0) {
+				Task t = entityManager.find(Task.class, taskId);
 				Project p = t.getMilestone().getProject();
 				PlanningData latestPlanningData = null;
 				for (PlanningData d : p.getPlanningData()) {
@@ -43,7 +60,7 @@ public class BookingInterceptor {
 				}
 				float budgetLimit = latestPlanningData.getTimeBudgetPlan();
 				float currentTimeBudgetUsed = p.getTimeBudgetAct();
-				if (currentTimeBudgetUsed + ((newBooking.getEnd().getTime() - newBooking.getStart().getTime()) / 1000 / 60 / 60) > budgetLimit)
+				if (currentTimeBudgetUsed + ((end.getTime() - start.getTime()) / 1000 / 60 / 60) > budgetLimit)
 					System.out.println("Time Budget exceeded");
 				else
 					System.out.println("Time Budget okay");
