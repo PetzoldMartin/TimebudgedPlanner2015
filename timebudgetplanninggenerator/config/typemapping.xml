@@ -13,6 +13,9 @@
 			<tns:to>Serializable</tns:to>
 			<tns:context name="Import">java.io.Serializable</tns:context>
 		</tns:type>
+		<tns:type from="EmployeeOverviewComparable">
+			<tns:to>Comparable&lt;EmployeeOverview&gt;</tns:to>
+		</tns:type>
 		<tns:type from="JavaDate">
 			<tns:to>Date</tns:to>
 			<tns:context name="Import">java.util.Date</tns:context>
@@ -46,8 +49,8 @@
 			<tns:context name="Import">java.util.HashMap</tns:context>
 		</tns:type>
 		<tns:type from="EmployeeRoleMapType">
-			<tns:to>HashMap&lt;EmployeeOverview,HashSet&lt;RoleType&gt;&gt;</tns:to>
-			<tns:context name="Import">java.util.HashMap</tns:context>
+			<tns:to>TreeMap&lt;EmployeeOverview,HashSet&lt;RoleType&gt;&gt;</tns:to>
+			<tns:context name="Import">java.util.TreeMap</tns:context>
 		</tns:type>
 		<tns:type from="ObjectType">
 			<tns:to>Object</tns:to>
