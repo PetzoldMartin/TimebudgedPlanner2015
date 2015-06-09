@@ -36,7 +36,6 @@ public class CompoundTaskDetails implements Serializable {
 		employees = new EmployeeList();
 		tasks = new TaskList();
 		endDate = new Date();
-
 		/* PROTECTED REGION END */
 	}
 	
