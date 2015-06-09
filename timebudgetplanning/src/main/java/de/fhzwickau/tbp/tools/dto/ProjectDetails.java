@@ -4,15 +4,14 @@ package de.fhzwickau.tbp.tools.dto;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_8210263_1431444853571_934375_5860) 
  */
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.HashMap;
 import java.util.Set;
+import java.util.TreeMap;
 
 import de.fhzwickau.tbp.datatypes.RoleType;
-
-import java.io.Serializable;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
@@ -36,7 +35,7 @@ public class ProjectDetails implements Serializable {
 	
 	private LinkedList<MilestoneOverview> milestones;
 	
-	private HashMap<EmployeeOverview, HashSet<RoleType>> employeeRoleMap;
+	private TreeMap<EmployeeOverview, HashSet<RoleType>> employeeRoleMap;
 	
 	/**
 	 * Constructor for class '<em><b>ProjectDetails</b></em>'.
@@ -46,7 +45,7 @@ public class ProjectDetails implements Serializable {
 		/* PROTECTED REGION ID(java.constructor._17_0_4_2_8210263_1431445010921_359346_5891) ENABLED START */
 		// TODO: implementation of constructor for class 'ProjectDetails'
 		milestones = new LinkedList<MilestoneOverview>();
-		employeeRoleMap = new HashMap<EmployeeOverview, HashSet<RoleType>>();
+		employeeRoleMap = new TreeMap<EmployeeOverview, HashSet<RoleType>>();
 		startDate = new Date();
 		endDate = new Date();
 		/* PROTECTED REGION END */
@@ -289,7 +288,7 @@ public class ProjectDetails implements Serializable {
 	 * Returns the value of attribute '<em><b>employeeRoleMap</b></em>'.
 	 */
 	
-	public HashMap<EmployeeOverview, HashSet<RoleType>> getEmployeeRoleMap() {
+	public TreeMap<EmployeeOverview, HashSet<RoleType>> getEmployeeRoleMap() {
 		return employeeRoleMap;
 	}
 	
@@ -298,11 +297,10 @@ public class ProjectDetails implements Serializable {
 	 * @param	employeeRoleMap	the value to set.
 	 */
 	
-	public void setEmployeeRoleMap(HashMap<EmployeeOverview, HashSet<RoleType>> employeeRoleMap) {
+	public void setEmployeeRoleMap(TreeMap<EmployeeOverview, HashSet<RoleType>> employeeRoleMap) {
 		this.employeeRoleMap = employeeRoleMap;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431444853571_934375_5860) ENABLED START */
-	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }
