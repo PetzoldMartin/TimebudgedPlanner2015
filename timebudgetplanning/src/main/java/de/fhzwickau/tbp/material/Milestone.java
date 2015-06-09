@@ -248,8 +248,8 @@ public class Milestone implements Serializable {
 		float timeBudget = 0;
 		if (!abstractTask.isEmpty()) {
 			for (AbstractTask abstractTask2 : abstractTask) {
-				if(abstractTask2.getClass()==Task.class)
-				timeBudget = timeBudget + abstractTask2.getTimeBudgetAct();
+				if (abstractTask2.getClass() == Task.class)
+					timeBudget = timeBudget + abstractTask2.getTimeBudgetAct();
 			}
 		}
 		
