@@ -10,7 +10,7 @@ import java.io.Serializable;
  * Please describe the responsibility of your class in your modeling tool.
  */
 
-public class EmployeeOverview implements Serializable {
+public class EmployeeOverview implements Comparable<EmployeeOverview>, Serializable {
 	
 	private int id;
 	
@@ -70,6 +70,13 @@ public class EmployeeOverview implements Serializable {
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898927_84738_3707) ENABLED START */
-	// TODO: put your own implementation code here
+	
+	@Override
+	public int compareTo(EmployeeOverview o) {
+		String name1 = getFirstName() + " " + getLastName();
+		String name2 = o.getFirstName() + " " + o.getLastName();
+		return name1.compareTo(name2);
+	}
+	
 	/* PROTECTED REGION END */
 }
