@@ -36,25 +36,18 @@
 			</h:panelGrid>
 		</o:form>
 		<br />
-		Zugewiesene Mitarbeiter:
-		<table>
-			<ui:repeat var="v_employee" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).employeeRoleMap.keySet().toArray()}">
-				<tr>
-					<td>
-						<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
-								<f:param name="eid" value="#{v_employee.id}" />
-						</h:link>
-					</td>
-					<td>
-						<o:form includeViewParams="true">
-							<ui:repeat var="v_role" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).getRoleTypes(v_employee)}">
-								#{v_role} 
-							</ui:repeat>
-						</o:form>
-					</td>
-				</tr>
-			</ui:repeat>
-		</table>
+		Zugewiesene Mitarbeiter: <br/>
+		<ui:repeat var="v_employee" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).employeeRoleMap.keySet().toArray()}">
+			<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
+					<f:param name="eid" value="#{v_employee.id}" />
+			</h:link>
+			<br />
+				<ui:repeat var="v_role" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).getRoleTypes(v_employee)}">
+					<o:form includeViewParams="true">
+						<h:outputText value="&#160;&#160;&#160;#{v_role}&#160;" /> (<h:commandLink action="#{projectCommand.removeEmployeeWithRole(request.getParameter('pid'), v_employee.id, v_role)}" value="Löschen" />) <br />
+					</o:form>
+				</ui:repeat>
+		</ui:repeat>
 		<h:form id="form">
 			Mitarbeiter hinzufügen: <br />
 			<h:selectOneMenu value="#{addEmployeeWithRoleDTO.employeeId}">
@@ -68,18 +61,6 @@
 			<h:commandButton value="Hinzufügen" action="#{projectCommand.addEmployeeWithRole(addEmployeeWithRoleDTO)}" />
 		</h:form>
 		<br />
-		<o:form includeViewParams="true">
-			Mitarbeiter entfernen: <br />
-			<h:selectOneMenu value="#{addEmployeeWithRoleDTO.employeeId}">
-				<f:selectItems var="v_employee" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).employeeRoleMap.keySet().toArray()}"
-					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
-			</h:selectOneMenu>
-			<h:selectOneMenu value="#{addEmployeeWithRoleDTO.role}">
-				<f:selectItems value="#{employeeQuery.listAllRoleTypes()}" var="v_role"
-   					itemValue="#{v_role}" itemLabel="#{v_role}" />
-			</h:selectOneMenu>
-			<h:commandButton value="Entfernen" action="#{projectCommand.removeEmployeeWithRole(request.getParameter('pid'), addEmployeeWithRoleDTO.employeeId, addEmployeeWithRoleDTO.role)}" />  
-		</o:form>
 		Angelegte Meilensteine:
 		<table>
 			<ui:repeat var="v_milestone" value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
