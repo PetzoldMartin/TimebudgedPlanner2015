@@ -57,6 +57,12 @@ public interface TaskCommandTool {
 	
 	public String removeSubtaskFromCompoundTask(AddTask task);
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public void removeTask(int taskId);
+	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_67b0227_1431276253958_640908_3465) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
