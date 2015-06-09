@@ -31,6 +31,11 @@
 								<f:param name="eid" value="#{v_employee.id}" />
 						</h:link>
 					</td>
+					<td>
+						<o:form includeViewParams="true">
+							(<h:commandLink action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}" value="Löschen" />)
+						</o:form>
+					</td>
 				</tr>
 			</ui:repeat>
 		</table>
