@@ -11,6 +11,8 @@ import javax.interceptor.AroundInvoke;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.primefaces.context.RequestContext;
+
 import de.fhzwickau.tbp.material.PlanningData;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Task;
@@ -60,8 +62,11 @@ public class BookingInterceptor {
 				}
 				float budgetLimit = latestPlanningData.getTimeBudgetPlan();
 				float currentTimeBudgetUsed = p.getTimeBudgetAct();
-				if (currentTimeBudgetUsed + ((end.getTime() - start.getTime()) / 1000 / 60 / 60) > budgetLimit)
+				if (currentTimeBudgetUsed + ((end.getTime() - start.getTime()) / 1000 / 60 / 60) > budgetLimit) {
 					System.out.println("Time Budget exceeded");
+					RequestContext context = RequestContext.getCurrentInstance();
+					context.execute("PF('dialogWidget').show();");
+				}
 				else
 					System.out.println("Time Budget okay");
 			}

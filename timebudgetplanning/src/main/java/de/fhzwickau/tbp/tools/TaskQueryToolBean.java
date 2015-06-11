@@ -4,7 +4,9 @@ package de.fhzwickau.tbp.tools;
  *	Do not place import/include statements above this comment, just below. 
  * 	@FILE-ID : (_17_0_4_2_67b0227_1431687680065_876144_3879) 
  */
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,6 +22,7 @@ import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.material.Task;
+import de.fhzwickau.tbp.tools.dto.BookingOverview;
 import de.fhzwickau.tbp.tools.dto.EmployeeList;
 import de.fhzwickau.tbp.tools.dto.EmployeeOverview;
 import de.fhzwickau.tbp.tools.dto.TaskDetails;
@@ -270,6 +273,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		for (Booking b : t.getBooking()) {
 			bookingList.addBooking(bookingQueryTool.getBookingOverview(b.getId()));
 		}
+		bookingList = sortBookingsByTStamp(bookingList);
 		return bookingList;
 		/* PROTECTED REGION END */
 	}
@@ -305,6 +309,26 @@ public class TaskQueryToolBean implements TaskQueryTool {
 			}
 		}
 		return false;
+	}
+	
+	private BookingList sortBookingsByTStamp(BookingList bookingList) {
+		BookingList sortedList = new BookingList();
+		HashMap<Long, BookingOverview> mappingTStampToOverview = new HashMap<Long, BookingOverview>();
+		int counter = 1;
+		for (BookingOverview o : bookingList.getBookings()) {
+			if (!mappingTStampToOverview.containsKey(o.getStart().getTime()))
+				mappingTStampToOverview.put(o.getStart().getTime(), o);
+			else {
+				mappingTStampToOverview.put(o.getStart().getTime() + counter, o);
+				++counter;
+			}
+		}
+		List<Long> tStampList = new ArrayList<Long>(mappingTStampToOverview.keySet());
+		Collections.sort(tStampList);
+		for (Long l : tStampList) {
+			sortedList.addBooking(mappingTStampToOverview.remove(l));
+		}
+		return sortedList;
 	}
 	
 	/* PROTECTED REGION END */

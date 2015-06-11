@@ -5,6 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:o="http://omnifaces.org/ui"
+	xmlns:p="http://primefaces.org/ui" 
 	template="/WEB-INF/templates/template.xhtml">
    	<f:metadata>
        	<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}"/>
@@ -78,9 +79,20 @@
 	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
 	        <h:inputText value="#{newBookingDTO.end}">
 	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
-			<h:commandButton action="#{bookingCommand.addBooking(newBookingDTO)}" value="Buchung hinzufügen">
-				
-			</h:commandButton>
+			<h:commandButton action="#{bookingCommand.addBooking(newBookingDTO)}" value="Buchung hinzufügen" />
 		</o:form>
+
+	    <p:dialog id="dialog" widgetVar="dialogWidget" height="150" width="400">
+	        <h:form>
+	            <p:panel>
+	                <h3>Warnung</h3>
+	                <p>
+	                    <h:outputText value="Zeitbudget des Projekts überschritten" /> <br />
+	                    <h:outputText value="Bitte Planung anpassen" />
+	                </p>
+	            </p:panel>
+	        </h:form>       
+	    </p:dialog>
+	    
 	</ui:define>
 </ui:composition>

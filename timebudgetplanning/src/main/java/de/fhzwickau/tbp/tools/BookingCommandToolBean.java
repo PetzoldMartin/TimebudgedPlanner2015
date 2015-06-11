@@ -19,6 +19,8 @@ import javax.inject.Named;
 import javax.interceptor.Interceptors;
 import javax.ejb.Stateless;
 
+import org.primefaces.context.RequestContext;
+
 import de.fhzwickau.tbp.tools.dto.AlteredBooking;
 
 /**
