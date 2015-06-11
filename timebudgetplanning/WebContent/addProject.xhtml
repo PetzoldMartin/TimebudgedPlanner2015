@@ -7,12 +7,12 @@
 	<ui:define name="content">
 		<h:form id="form">
 			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-	            Name : <h:inputText value="#{newProjectDTO.name}" /> <br />
-	            Beschreibung : <h:inputTextarea value="#{newProjectDTO.description}" /> <br />
+	            Name : <h:inputText value="#{newProjectDTO.name}" />
+	            Beschreibung : <h:inputTextarea value="#{newProjectDTO.description}" />
 	            Start Datum : <h:inputText value="#{newProjectDTO.startTime}">
 	            	<f:convertDateTime pattern="dd.MM.yyyy" />
-	            </h:inputText> <br />
-	            Geplantes Zeitbudget : <h:inputText value="#{newProjectDTO.timeBudgetPlanned}" /> <br />
+	            </h:inputText>
+	            Geplantes Zeitbudget : <h:inputText value="#{newProjectDTO.timeBudgetPlanned}" />
 				<h:commandButton value="Hinzufügen" action="#{projectCommand.addProject(newProjectDTO)}" />
 			</h:panelGrid>
 		</h:form>

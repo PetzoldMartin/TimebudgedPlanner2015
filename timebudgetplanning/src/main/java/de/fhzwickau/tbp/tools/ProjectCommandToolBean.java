@@ -131,6 +131,10 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		roleToRemove.setProject(null);
 		roleToRemove.setEmployee(null);
 		entityManager.remove(roleToRemove);
+		for (Role r : roles) {
+			if (r.getEmployee().getId() == employeeId)
+				return "projectDetails?faces-redirect=true&pid=" + projectId;
+		}
 		for (Milestone m : p.getMilestone()) {
 			for (AbstractTask t : m.getAbstractTask()) {
 				Employee employeeToRemove = null;

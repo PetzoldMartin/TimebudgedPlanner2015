@@ -16,18 +16,17 @@
 		<c:set target="#{alteredMilestoneDTO}" property="endDatePlanned" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}"/>
 		<o:form includeViewParams="true">
 			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-				Meilenstein ID: #{request.getParameter('mid')} <br />
-				Name: <h:inputText value="#{alteredMilestoneDTO.name}"/> <br />
-				Beschreibung: <h:inputText value="#{alteredMilestoneDTO.description}"/> <br />
-				<h:outputText value="Geplantes " rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
-				Enddatum: 
+				Meilenstein ID: #{request.getParameter('mid')}
+				Name: <h:inputText value="#{alteredMilestoneDTO.name}"/>
+				Beschreibung: <h:inputText value="#{alteredMilestoneDTO.description}"/>
+				<h:outputText value="Geplantes Enddatum:" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
+				<h:outputText value="Enddatum:" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'CLOSED'}"/>
 				<h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate != null}">
 					<f:convertDateTime pattern="dd.MM.yyyy" />
 				</h:outputText>
 				<h:outputText value="nicht bekannt" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate == null}"/>
-				<br />
-				Verbrauchtes Zeitbudget: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).timeBudetAct} <br />
-				Status: #{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state} <br />
+				Verbrauchtes Zeitbudget: <h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).timeBudetAct}" />
+				Status: <h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state}" />
 				<h:commandButton value="Änderungen speichern" action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}"/>
 			</h:panelGrid>
 		</o:form>
