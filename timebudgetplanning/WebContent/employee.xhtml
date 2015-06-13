@@ -5,18 +5,32 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/templates/template.xhtml">
 	<ui:define name="content">
-		<h1>Mitarbeiterverwaltung</h1>
-		<p>
-			<h3>Angelegte Mitarbeiter:</h3>
-			<br />
-			<ui:repeat var="v_employee" value="#{employeeQuery.listAllEmployees().getEmployees()}">
-				<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
-					<f:param name="eid" value="#{v_employee.id}" />
-				</h:link>
-				<br />
-			</ui:repeat>
-			<br />
-			<h:button outcome="addEmployee.jsf" value="Mitarbeiter hinzufügen" />
-		</p>
+
+		
+			<div class="panel panel-default">
+			
+				<div class="panel-heading">
+					<h2>Mitarbeiterverwaltung</h2>
+	  			</div>
+	  			
+	  			<div class="panel-body">
+	  			<div class="list-group">
+		  			<h3 class="list-group-item active">Angelegte Mitarbeiter:</h3>
+		  			
+					<ui:repeat   var="v_employee" value="#{employeeQuery.listAllEmployees().getEmployees()}" >
+						<h:link class="list-group-item" outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
+							<f:param name="eid" value="#{v_employee.id}" />
+						</h:link>
+					</ui:repeat>
+				</div>
+					<div class="panel-footer">
+						<button type="button" onclick="window.location.href='/timebudgetplanning/addEmployee.jsf'" class="btn btn-default btn-lg">			
+							Mitarbeiter hinzufügen
+							<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
 	</ui:define>
 </ui:composition>
