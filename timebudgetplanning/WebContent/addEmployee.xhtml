@@ -3,14 +3,45 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	
 	template="/WEB-INF/templates/template.xhtml">
 	<ui:define name="content">
 		<h:form id="form">
-			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-	            Vorname : <h:inputText value="#{newEmployeeDTO.firstName}" /> <br />
-	            Nachname : <h:inputText value="#{newEmployeeDTO.lastName}" /> <br />
-				<h:commandButton value="Hinzufügen" action="#{employeeCommand.addEmployee(newEmployeeDTO)}" />
-			</h:panelGrid>
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+					<h2>Mitarbeiter anlegen</h2>
+				</div>
+
+				<div class="panel-body">
+					<div class="list-group">
+						<h3 class="list-group-item active">Daten</h3>
+						
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon" >Vorname :</span>
+								<h:inputText class="form-control"
+									value="#{newEmployeeDTO.firstName}"  placeholder="Vorname..."/>
+							</div>
+						</div>
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Nachname :</span>
+								<h:inputText class="form-control"
+									value="#{newEmployeeDTO.lastName}" placeholder="Nachname..."/>
+							</div>
+						</div>
+
+
+					</div>
+					<div class="panel-footer">
+						<h:commandButton class="btn btn-default btn-lg" value="Hinzufügen"
+							action="#{employeeCommand.addEmployee(newEmployeeDTO)}">
+						</h:commandButton>
+					</div>
+				</div>
+			</div>
 		</h:form>
 	</ui:define>
 </ui:composition>

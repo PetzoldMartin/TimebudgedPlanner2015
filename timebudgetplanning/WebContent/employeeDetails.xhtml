@@ -10,31 +10,78 @@
 		<f:viewParam name="eid" value="#{alteredEmployeeDTO.id}" />
 	</f:metadata>
 	<ui:define name="content">
-		<c:set target="#{alteredEmployeeDTO}" property="firstName" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).firstName}"/>
-		<c:set target="#{alteredEmployeeDTO}" property="lastName" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).lastName}"/>
+		<c:set target="#{alteredEmployeeDTO}" property="firstName"
+			value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).firstName}" />
+		<c:set target="#{alteredEmployeeDTO}" property="lastName"
+			value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).lastName}" />
 		<o:form includeViewParams="true">
-			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-				Mitarbeiter ID: #{request.getParameter('eid')} <br />
-				Vorname: <h:inputText value="#{alteredEmployeeDTO.firstName}"/> <br />
-				Nachname: <h:inputText value="#{alteredEmployeeDTO.lastName}"/> <br />
-				<table>
-					<tr>
-						<th>Projekt</th>
-						<th>Rollen</th>
-					</tr>
-					<ui:repeat var="v_project" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.keySet().toArray()}">
-						<td>#{v_project}</td>
-						<td>
-							<ui:repeat var="v_role" value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.get(v_project).toArray()}">
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+					<h2>Mitarbeiterdaten</h2>
+				</div>
+
+				<div class="panel-body">
+					<div class="list-group">
+						<h3 class="list-group-item active">Daten</h3>
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Mitarbeiter ID: </span> <span
+									class="form-control"> #{request.getParameter('eid')} </span>
+							</div>
+						</div>
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Vorname : </span>
+								<h:inputText class="form-control"
+									value="#{alteredEmployeeDTO.firstName}"
+									placeholder="Vorname..." />
+							</div>
+						</div>
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Nachname : </span>
+								<h:inputText class="form-control"
+									value="#{alteredEmployeeDTO.lastName}"
+									placeholder="Nachname..." />
+							</div>
+						</div>
+						<h3 class="list-group-item active">Projekte des Mitarbeiters</h3>
+
+						<div class="list-group-item">
+							<table class="table">
+								<thead>
+									<th>Projekt</th>
+									<th>Rollen</th>
+								</thead>
+
+								<ui:repeat var="v_project"
+									value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.keySet().toArray()}">
+									<tr>
+										<td>#{v_project}</td>
+										<td><ui:repeat var="v_role"
+												value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.get(v_project).toArray()}">
 								#{v_role}
-							</ui:repeat>
-						</td>
-					</ui:repeat>
-				</table>
-				<br />
-				<h:commandButton value="Änderungen speichern" action="#{employeeCommand.alterEmployee(alteredEmployeeDTO)}"/>
-				<h:commandButton value="Zurück" action="employee"/>
-			</h:panelGrid>
+							</ui:repeat></td>
+									</tr>
+
+								</ui:repeat>
+							</table>
+						</div>
+
+					</div>
+					<div class="panel-footer">
+						<h:commandButton class="btn btn-default btn-lg"
+							value="Änderungen speichern"
+							action="#{employeeCommand.alterEmployee(alteredEmployeeDTO)}">
+						</h:commandButton>
+					</div>
+				</div>
+			</div>
+
 		</o:form>
 	</ui:define>
 </ui:composition>
