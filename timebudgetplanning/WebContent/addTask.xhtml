@@ -9,12 +9,44 @@
     </f:metadata>
 	<ui:define name="content">
 		<h:form id="form">
-			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-	            Name : <h:inputText value="#{newTaskDTO.name}" /> <br />
-	            Beschreibung : <h:inputText value="#{newTaskDTO.description}" /> <br />
-				<h:commandButton value="Compound Task hinzufügen" action="#{taskCommand.addCompoundTask(newTaskDTO)}" />
-				<h:commandButton value="Normal Task hinzufügen" action="#{taskCommand.addTask(newTaskDTO)}" />
-			</h:panelGrid>
+		<div class="panel panel-default">
+
+				<div class="panel-heading">
+					<h2>Task anlegen</h2>
+				</div>
+				<div class="panel-body">
+					<div class="list-group">
+						<h3 class="list-group-item active">Daten</h3>
+						
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Name
+									:</span>
+								<h:inputText class="form-control"
+									value="#{newTaskDTO.name}" placeholder="Name..." />
+							</div>
+						</div>
+						<div class="list-group-item">
+							<div class="input-group input-group-lg" >
+								<span style="text-align: right;" class="input-group-addon">Beschreibung
+									:</span>
+								<h:inputTextarea class="form-control" style="min-height: 100px;"
+									value="#{newTaskDTO.description}" placeholder="Beschreibung..." />
+							</div>
+						</div>
+						
+						
+						<div class="panel-footer">
+						
+												<h:commandButton class="btn btn-default btn-lg" value="Compound Task hinzufügen"
+							action="#{taskCommand.addCompoundTask(newTaskDTO)}" />
+							<h:commandButton class="btn btn-default btn-lg" value="Normal Task hinzufügen"
+							action="#{taskCommand.addTask(newTaskDTO)}" />
+							</div>
+					</div>
+				</div>
+			</div>
+			
 		</h:form>
 	</ui:define>
 </ui:composition>

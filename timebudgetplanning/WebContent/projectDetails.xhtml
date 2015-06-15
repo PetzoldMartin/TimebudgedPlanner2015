@@ -19,8 +19,9 @@
 			value="#{projectQuery.getProjectDetails(request.getParameter('pid')).startDate}" />
 		<c:set target="#{alteredProjectDTO}" property="timeBudgetPlanned"
 			value="#{projectQuery.getProjectDetails(request.getParameter('pid')).timeBudgetPlanned}" />
-		<o:form includeViewParams="true">
-			<div class="panel panel-default">
+		<div class="panel panel-default">
+
+			<o:form includeViewParams="true">
 
 				<div class="panel-heading">
 					<h2>Einzelprojektsicht</h2>
@@ -50,9 +51,9 @@
 
 						<div class="list-group-item">
 							<div class="input-group input-group-lg">
-								<span style="text-align: right;" class="input-group-addon">Beschreibung
+								<span style="text-align: right" class="input-group-addon">Beschreibung
 									:</span>
-								<h:inputText class="form-control"
+								<h:inputTextarea style="min-height: 100px;" class="form-control"
 									value="#{alteredProjectDTO.description}" />
 							</div>
 						</div>
@@ -97,13 +98,15 @@
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Verbrauchtes
 									Zeitbudget: </span> <span class="form-control">
-									#{projectQuery.getProjectDetails(request.getParameter('pid')).timeBudetAct} </span>
+									#{projectQuery.getProjectDetails(request.getParameter('pid')).timeBudetAct}
+								</span>
 							</div>
 						</div>
 
 					</div>
 					<div class="panel-footer">
-						<h:commandButton class="btn btn-default btn-lg" value="Änderungen speichern"
+						<h:commandButton class="btn btn-default btn-lg"
+							value="Änderungen speichern"
 							action="#{projectCommand.alterProject(alteredProjectDTO)}">
 						</h:commandButton>
 
@@ -112,61 +115,112 @@
 							onclick="history.back();" value="zurück"></h:commandButton>
 					</div>
 				</div>
+			</o:form>
+			<h3 class="list-group-item active">Zugewiesene Mitarbeiter:</h3>
+
+			<div class="list-group-item">
+				<table class="table table-striped">
+					<thead>
+						<th>Mitarbeiter</th>
+						<th>Rolle</th>
+					</thead>
+
+					<ui:repeat var="v_employee"
+						value="#{projectQuery.getProjectDetails(request.getParameter('pid')).employeeRoleMap.keySet().toArray()}">
+						<tr>
+							<td><h:link outcome="employeeDetails"
+									value="#{v_employee.firstName} #{v_employee.lastName}">
+									<f:param name="eid" value="#{v_employee.id}" />
+								</h:link></td>
+							<td><ui:repeat var="v_role"
+									value="#{employeeQuery.getEmployeeDetails(request.getParameter('eid')).projectRoleMap.get(v_project).toArray()}">
+								#{v_role}
+							</ui:repeat> <ui:repeat var="v_role"
+									value="#{projectQuery.getProjectDetails(request.getParameter('pid')).getRoleTypes(v_employee)}">
+									<o:form includeViewParams="true">
+										<h:outputText value="&#160;&#160;&#160;#{v_role}&#160;" />
+										<h:commandLink class="badge alert-danger"
+											action="#{projectCommand.removeEmployeeWithRole(request.getParameter('pid'), v_employee.id, v_role)}"
+											value="Löschen" />
+									</o:form>
+								</ui:repeat></td>
+						</tr>
+
+					</ui:repeat>
+				</table>
+				<div class="panel-footer">
+
+					<h:form id="form">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="list-group-item list-group-item-info">Mitarbeiter
+									Hinzufügen:</h4>
+							</div>
+							<div class="panel-body">
+
+								<div class="navbar navbar-default">
+									<div class="container-fluid">
+										<div class="nav navbar-nav">
+											<h:selectOneMenu class="btn btn-default navbar-btn dropdown"
+												value="#{addEmployeeWithRoleDTO.employeeId}">
+												<f:selectItems
+													value="#{employeeQuery.listAllEmployees().getEmployees()}"
+													var="v_employee" itemValue="#{v_employee.id}"
+													itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+											</h:selectOneMenu>
+
+											<h:selectOneMenu class="btn btn-default dropdown-toggle"
+												value="#{addEmployeeWithRoleDTO.role}">
+												<f:selectItems value="#{employeeQuery.listAllRoleTypes()}"
+													var="v_role" itemValue="#{v_role}" itemLabel="#{v_role}" />
+											</h:selectOneMenu>
+
+
+
+											<h:commandButton class="btn btn-default" value="Hinzufügen"
+												action="#{projectCommand.addEmployeeWithRole(addEmployeeWithRoleDTO)}" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</h:form>
+
+				</div>
 			</div>
-		</o:form>
-		<br />
-		Zugewiesene Mitarbeiter: <br />
-		<ui:repeat var="v_employee"
-			value="#{projectQuery.getProjectDetails(request.getParameter('pid')).employeeRoleMap.keySet().toArray()}">
-			<h:link outcome="employeeDetails"
-				value="#{v_employee.firstName} #{v_employee.lastName}">
-				<f:param name="eid" value="#{v_employee.id}" />
-			</h:link>
-			<br />
-			<ui:repeat var="v_role"
-				value="#{projectQuery.getProjectDetails(request.getParameter('pid')).getRoleTypes(v_employee)}">
-				<o:form includeViewParams="true">
-					<h:outputText value="&#160;&#160;&#160;#{v_role}&#160;" /> (<h:commandLink
-						action="#{projectCommand.removeEmployeeWithRole(request.getParameter('pid'), v_employee.id, v_role)}"
-						value="Löschen" />) <br />
-				</o:form>
-			</ui:repeat>
-		</ui:repeat>
-		<h:form id="form">
-			Mitarbeiter hinzufügen: <br />
-			<h:selectOneMenu value="#{addEmployeeWithRoleDTO.employeeId}">
-				<f:selectItems
-					value="#{employeeQuery.listAllEmployees().getEmployees()}"
-					var="v_employee" itemValue="#{v_employee.id}"
-					itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
-			</h:selectOneMenu>
-			<h:selectOneMenu value="#{addEmployeeWithRoleDTO.role}">
-				<f:selectItems value="#{employeeQuery.listAllRoleTypes()}"
-					var="v_role" itemValue="#{v_role}" itemLabel="#{v_role}" />
-			</h:selectOneMenu>
-			<h:commandButton value="Hinzufügen"
-				action="#{projectCommand.addEmployeeWithRole(addEmployeeWithRoleDTO)}" />
-		</h:form>
-		<br />
-		Angelegte Meilensteine:
-		<table>
-			<ui:repeat var="v_milestone"
-				value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
-				<tr>
-					<td><h:link outcome="milestoneDetails"
-							value="#{v_milestone.name}">
-							<f:param name="mid" value="#{v_milestone.id}" />
-						</h:link></td>
-					<td>#{v_milestone.state}</td>
-					<td><h:outputText value="#{v_milestone.endDate}">
-							<f:convertDateTime pattern="dd.MM.yyyy" />
-						</h:outputText></td>
-				</tr>
-			</ui:repeat>
-		</table>
-		<br />
-		<h:button outcome="addMilestone" value="Meilenstein anlegen">
-			<f:param name="pid" value="#{addEmployeeWithRoleDTO.projectId}" />
-		</h:button>
+
+			<h3 class="list-group-item active">Angelegte Meilensteine:</h3>
+
+			<div class="list-group-item">
+			<table class="table table-striped">
+			<thead>
+						<th>Meilenstein</th>
+						<th>Status</th>
+						<th>Enddatum</th>
+					</thead>
+				<ui:repeat var="v_milestone"
+					value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
+					<tr>
+						<td><h:link outcome="milestoneDetails"
+								value="#{v_milestone.name}">
+								<f:param name="mid" value="#{v_milestone.id}" />
+							</h:link></td>
+						<td  ><span class="badge">#{v_milestone.state}</span></td>
+						<td><h:outputText value="#{v_milestone.endDate}">
+								<f:convertDateTime pattern="dd.MM.yyyy" />
+							</h:outputText></td>
+					</tr>
+				</ui:repeat>
+			</table>
+			</div>
+							<div class="panel-footer">
+			
+			<h:button class="btn btn-default btn-lg" outcome="addMilestone" value="Meilenstein anlegen">
+				<f:param name="pid" value="#{addEmployeeWithRoleDTO.projectId}" />
+			</h:button>
+			</div>
+		</div>
+
 	</ui:define>
 </ui:composition>
