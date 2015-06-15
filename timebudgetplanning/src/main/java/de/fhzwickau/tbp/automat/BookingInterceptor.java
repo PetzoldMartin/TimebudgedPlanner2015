@@ -66,8 +66,7 @@ public class BookingInterceptor {
 					System.out.println("Time Budget exceeded");
 					RequestContext context = RequestContext.getCurrentInstance();
 					context.execute("PF('dialogWidget').show();");
-				}
-				else
+				} else
 					System.out.println("Time Budget okay");
 			}
 			

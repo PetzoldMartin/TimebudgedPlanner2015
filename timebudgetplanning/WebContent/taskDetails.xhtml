@@ -10,18 +10,25 @@
    	<f:metadata>
        	<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}"/>
 	    <f:viewParam name="tid" value="#{newBookingDTO.taskId}"/>
+	    <f:viewParam name="tid" value="#{alteredTaskDTO.id}"/>
     </f:metadata>
 	<ui:define name="content">
-		Aufgaben ID: #{addEmployeeDTO.taskId} <br />
-		Name: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).name} <br />
-		Beschreibung: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).description} <br />
-		Enddatum: 
-				<h:outputText value="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate}" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate != null}">
-					<f:convertDateTime pattern="dd.MM.yyyy" />
-				</h:outputText>
-				<h:outputText value="nicht bekannt" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate == null}"/>
-				<br />
-				Verbrauchtes Zeitbudget: #{taskQuery.getTaskDetails(request.getParameter('tid')).timeBudetAct} <br />
+		<c:set target="#{alteredTaskDTO}" property="name" value="#{taskQuery.getTaskDetails(request.getParameter('tid')).name}"/>
+		<c:set target="#{alteredTaskDTO}" property="description" value="#{taskQuery.getTaskDetails(request.getParameter('tid')).description}"/>
+		<o:form includeViewParams="true">
+			Aufgaben ID: #{addEmployeeDTO.taskId} <br />
+			Name: <h:inputText value="#{alteredTaskDTO.name}" /> <br />
+			Beschreibung: <h:inputText value="#{alteredTaskDTO.description}" /> <br />
+			<h:commandButton action="#{taskCommand.alterTask(alteredTaskDTO)}" value="Änderungen speichern" /> <br />
+			<br />
+			Enddatum: 
+					<h:outputText value="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate}" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate != null}">
+						<f:convertDateTime pattern="dd.MM.yyyy" />
+					</h:outputText>
+					<h:outputText value="nicht bekannt" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate == null}"/>
+					<br />
+					Verbrauchtes Zeitbudget: #{taskQuery.getTaskDetails(request.getParameter('tid')).timeBudetAct} <br />
+		</o:form>
 				
 		Zugewiesene Mitarbeiter:
 		<table>

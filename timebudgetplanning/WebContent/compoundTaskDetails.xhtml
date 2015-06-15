@@ -9,18 +9,28 @@
    	<f:metadata>
        	<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}"/>
        	<f:viewParam name="tid" value="#{addTaskDTO.compoundTaskId}"/>
+       	<f:viewParam name="tid" value="#{alteredTaskDTO.id}"/>
     </f:metadata>
 	<ui:define name="content">
-		Aufgaben ID: #{request.getParameter('tid')} <br />
-		Name: #{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).name} <br />
-		Beschreibung: #{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).description} <br />
-		Enddatum: 
-				<h:outputText value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate}" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate != null}">
-					<f:convertDateTime pattern="dd.MM.yyyy" />
-				</h:outputText>
-				<h:outputText value="nicht bekannt" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate == null}"/>
-				<br />
-				Verbrauchtes Zeitbudget: #{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).timeBudetAct} <br />
+		<c:set target="#{alteredTaskDTO}" property="name" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).name}"/>
+		<c:set target="#{alteredTaskDTO}" property="description" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).description}"/>
+		<o:form includeViewParams="true">
+		<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
+			Aufgaben ID: <h:outputText value="#{request.getParameter('tid')}" />
+			Name: <h:inputText value="#{alteredTaskDTO.name}" />
+			Beschreibung: <h:inputText value="#{alteredTaskDTO.description}" />
+			<h:commandButton action="#{taskCommand.alterTask(alteredTaskDTO)}" value="Änderungen speichern" /><h:outputText value="" />
+			
+			Enddatum: 
+					<h:outputText value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate}" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate != null}">
+						<f:convertDateTime pattern="dd.MM.yyyy" />
+					</h:outputText>
+					<h:outputText value="nicht bekannt" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate == null}"/>
+			Verbrauchtes Zeitbudget: <h:outputText value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).timeBudetAct}" />
+		</h:panelGrid>
+		</o:form>
+
+		<br />
 		Zugewiesene Mitarbeiter:
 		<table>
 			<ui:repeat var="v_employee" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).employees.employees.toArray()}">

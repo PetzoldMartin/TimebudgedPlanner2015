@@ -118,6 +118,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		CompoundTaskDetails details = new CompoundTaskDetails();
 		details.setId(taskId);
 		details.setName(cTask.getName());
+		details.setDescription(cTask.getDescription());
 		details.setTasks(taskList);
 		details.setEndDate(cTask.getEndTime() == null ? new Date() : cTask.getEndTime());
 		details.setTimeBudetAct(cTask.getTimeBudgetAct());

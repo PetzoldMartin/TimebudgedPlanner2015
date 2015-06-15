@@ -16,7 +16,7 @@
 		<c:set target="#{alteredMilestoneDTO}" property="endDatePlanned" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}"/>
 		<o:form includeViewParams="true">
 			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-				Meilenstein ID: #{request.getParameter('mid')}
+				Meilenstein ID: <h:outputText value="#{request.getParameter('mid')}" /> 
 				Name: <h:inputText value="#{alteredMilestoneDTO.name}"/>
 				Beschreibung: <h:inputText value="#{alteredMilestoneDTO.description}"/>
 				<h:outputText value="Geplantes Enddatum:" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
