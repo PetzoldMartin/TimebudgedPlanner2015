@@ -83,7 +83,20 @@ public class ProjectQueryToolBean implements ProjectQueryTool {
 				sortedList.add(i, m);
 			}
 		}
-		// TODO Find all milestones that are already closed and sort them by end date 
+		// Find all milestones that are already closed and sort them by end date 
+		int startIndex = sortedList.size();
+		for (Milestone m : milestones) {
+			if (m.getState() == MilestoneState.COMPLETED) {
+				int i = startIndex;
+				for (; i < sortedList.size(); ++i) {
+					Milestone mStone = sortedList.get(i);
+					if (mDatas.get(m).getEndDatePlanned().getTime() <= mDatas.get(mStone).getEndDatePlanned().getTime()) {
+						break;
+					}
+				}
+				sortedList.add(i, m);
+			}
+		}
 		
 		LinkedList<MilestoneOverview> overviews = new LinkedList<MilestoneOverview>();
 		for (Milestone m : sortedList) {

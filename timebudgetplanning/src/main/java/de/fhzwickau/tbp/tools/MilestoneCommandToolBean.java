@@ -87,7 +87,7 @@ public class MilestoneCommandToolBean implements MilestoneCommandTool {
 	
 	public String closeMilestone(int milestoneId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1434469171585_366598_5148) ENABLED START */
-		Milestone m = entityManager.find(Milestone.class,milestoneId);
+		Milestone m = entityManager.find(Milestone.class, milestoneId);
 		if (m == null)
 			return "project";
 		m.setState(MilestoneState.COMPLETED);
@@ -102,7 +102,7 @@ public class MilestoneCommandToolBean implements MilestoneCommandTool {
 	
 	public String openMilestone(int milestoneId) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1434469183291_249358_5152) ENABLED START */
-		Milestone m = entityManager.find(Milestone.class,milestoneId);
+		Milestone m = entityManager.find(Milestone.class, milestoneId);
 		if (m == null)
 			return "project";
 		m.setState(MilestoneState.OPEN);
