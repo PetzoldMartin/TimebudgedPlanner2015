@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 import de.fhzwickau.tbp.datatypes.MilestoneState;
+import de.fhzwickau.tbp.datatypes.ProjectState;
 import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.CompoundTask;
 import de.fhzwickau.tbp.material.Milestone;
@@ -66,6 +67,7 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 			milestoneDetails.setName(m.getName());
 			milestoneDetails.setState(m.getState());
 			milestoneDetails.setTimeBudetAct(m.getTimeBudgetAct());
+			milestoneDetails.setProjectClosed(m.getProject().getState() == ProjectState.CLOSED);
 			TaskList taskList = new TaskList();
 			for (AbstractTask t : m.getAbstractTask()) {
 				if (isChildTask(t))
@@ -89,11 +91,7 @@ public class MilestoneQueryToolBean implements MilestoneQueryTool {
 					latestMilestoneData = mData;
 				}
 			}
-			if (m.getState() == MilestoneState.OPEN) {
-				milestoneDetails.setEndDate(m.getEndTime() == null ? new Date() : m.getEndTime());
-			} else {
-				// TODO Set calculated end date
-			}
+			milestoneDetails.setEndDate(m.getEndTime() == null ? new Date() : m.getEndTime());
 			milestoneDetails.setDescription(latestMilestoneData.getDescription());
 		}
 		return milestoneDetails;

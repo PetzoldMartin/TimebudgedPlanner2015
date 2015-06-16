@@ -27,6 +27,8 @@ public class CompoundTaskDetails implements Serializable {
 	
 	private Float timeBudetAct;
 	
+	private boolean milestoneClosed;
+	
 	/**
 	 * Constructor for class '<em><b>CompoundTaskDetails</b></em>'.
 	 */
@@ -156,6 +158,23 @@ public class CompoundTaskDetails implements Serializable {
 	
 	public void setTimeBudetAct(Float timeBudetAct) {
 		this.timeBudetAct = timeBudetAct;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>milestoneClosed</b></em>'.
+	 */
+	
+	public boolean getMilestoneClosed() {
+		return milestoneClosed;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>milestoneClosed</b></em>'.
+	 * @param	milestoneClosed	the value to set.
+	 */
+	
+	public void setMilestoneClosed(boolean milestoneClosed) {
+		this.milestoneClosed = milestoneClosed;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431945306441_237908_3801) ENABLED START */

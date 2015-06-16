@@ -13,6 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import de.fhzwickau.tbp.datatypes.MilestoneState;
 import de.fhzwickau.tbp.datatypes.TaskState;
 import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.Booking;
@@ -75,6 +76,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		details.setDescription(t.getDescription());
 		details.setEndDate(t.getEndTime() == null ? new Date() : t.getEndTime());
 		details.setTimeBudetAct(t.getTimeBudgetAct());
+		details.setMilestoneClosed(t.getMilestone().getState() == MilestoneState.COMPLETED);
 		
 		Set<Employee> employees = t.getEmployee();
 		EmployeeList employeeList = new EmployeeList();
@@ -122,6 +124,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		details.setTasks(taskList);
 		details.setEndDate(cTask.getEndTime() == null ? new Date() : cTask.getEndTime());
 		details.setTimeBudetAct(cTask.getTimeBudgetAct());
+		details.setMilestoneClosed(cTask.getMilestone().getState() == MilestoneState.COMPLETED);
 		
 		Set<Employee> employees = cTask.getEmployee();
 		EmployeeList employeeList = new EmployeeList();

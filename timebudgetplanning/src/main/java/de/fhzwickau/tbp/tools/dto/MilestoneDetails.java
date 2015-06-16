@@ -29,6 +29,8 @@ public class MilestoneDetails implements Serializable {
 	
 	private Float timeBudetAct;
 	
+	private boolean projectClosed;
+	
 	/**
 	 * Constructor for class '<em><b>MilestoneDetails</b></em>'.
 	 */
@@ -190,6 +192,23 @@ public class MilestoneDetails implements Serializable {
 	
 	public void setTimeBudetAct(Float timeBudetAct) {
 		this.timeBudetAct = timeBudetAct;
+	}
+	
+	/**
+	 * Returns the value of attribute '<em><b>projectClosed</b></em>'.
+	 */
+	
+	public boolean getProjectClosed() {
+		return projectClosed;
+	}
+	
+	/**
+	 * Sets the value of attribute '<em><b>projectClosed</b></em>'.
+	 * @param	projectClosed	the value to set.
+	 */
+	
+	public void setProjectClosed(boolean projectClosed) {
+		this.projectClosed = projectClosed;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431851606526_22411_5321) ENABLED START */
