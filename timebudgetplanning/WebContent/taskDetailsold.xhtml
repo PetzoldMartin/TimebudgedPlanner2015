@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:o="http://omnifaces.org/ui" xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/template.xhtml">
+	<f:metadata>
+		<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}" />
+		<f:viewParam name="tid" value="#{newBookingDTO.taskId}" />
+	</f:metadata>
+
+	<ui:define name="content">
+		Aufgaben ID: #{addEmployeeDTO.taskId} <br />
+		Name: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).name} <br />
+		Beschreibung: #{taskQuery.getTaskDetails(addEmployeeDTO.taskId).description} <br />
+		Enddatum: 
+				<h:outputText value="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate}" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate != null}">
+					<f:convertDateTime pattern="dd.MM.yyyy" />
+				</h:outputText>
+				<h:outputText value="nicht bekannt" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate == null}"/>
+				<br />
+				Verbrauchtes Zeitbudget: #{taskQuery.getTaskDetails(request.getParameter('tid')).timeBudetAct} <br />
+				
+		Zugewiesene Mitarbeiter:
+		<table>
+			<ui:repeat var="v_employee" value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees.toArray()}">
+				<tr>
+					<td>
+						<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
+								<f:param name="eid" value="#{v_employee.id}" />
+						</h:link>
+					</td>
+					<td>
+						<o:form includeViewParams="true">
+							(<h:commandLink action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}" value="Löschen" />)
+						</o:form>
+					</td>
+				</tr>
+			</ui:repeat>
+		</table>
+		<o:form id="form" includeViewParams="true">
+			Mitarbeiter hinzufügen: <br />
+			<h:selectOneMenu value="#{addEmployeeDTO.employeeId}">
+   				<f:selectItems value="#{taskQuery.getAddableEmployees(request.getParameter('tid')).getEmployees()}" var="v_employee"
+   					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+			</h:selectOneMenu>
+			<h:commandButton value="Hinzufügen" action="#{taskCommand.addEmployee(addEmployeeDTO)}">
+				<f:param name="tid" value="#{params.tid}" />
+			</h:commandButton>
+		</o:form>
+		<br/>
+		Buchungsübersicht:
+		<table>
+			<ui:repeat var="v_booking" value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
+				<tr>
+					<td>
+						<h:outputText value="#{v_booking.start}"><f:convertDateTime pattern="hh:mm dd.MM.yy"/></h:outputText> -
+					</td>
+					<td>
+						<h:outputText value="#{v_booking.end}"><f:convertDateTime pattern="hh:mm dd.MM.yy"/></h:outputText>
+					</td>
+					<td>#{v_booking.employeeName}</td>
+					<td>#{v_booking.amount} Minuten</td>
+					<td><o:form id="booking" includeViewParams="true">
+						<h:commandButton action="#{bookingCommand.removeBooking(v_booking.id)}" value="Buchung löschen" />
+					</o:form></td>
+				</tr>
+			</ui:repeat>
+		</table>
+		<o:form id="newBooking" includeViewParams="true">
+			Buchung hinzufügen: <br/>
+			<h:selectOneMenu value="#{newBookingDTO.employeeId}">
+   				<f:selectItems value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees}" var="v_employee"
+   					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+			</h:selectOneMenu>
+			<h:inputText value="#{newBookingDTO.start}">
+	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
+	        <h:inputText value="#{newBookingDTO.end}">
+	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
+			<h:commandButton action="#{bookingCommand.addBooking(newBookingDTO)}" value="Buchung hinzufügen" />
+		</o:form>
+
+	    <p:dialog id="dialog" widgetVar="dialogWidget" height="150" width="400">
+	        <h:form>
+	            <p:panel>
+	                <h3>Warnung</h3>
+	                <p>
+	                    <h:outputText value="Zeitbudget des Projekts überschritten" /> <br />
+	                    <h:outputText value="Bitte Planung anpassen" />
+	                </p>
+	            </p:panel>
+	        </h:form>       
+	    </p:dialog>
+
+
+
+	</ui:define>
+</ui:composition>
+
+
+<c:set target="#{alteredMilestoneDTO}" property="name" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).name}"/>
+		<c:set target="#{alteredMilestoneDTO}" property="description" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).description}"/>
+		<c:set target="#{alteredMilestoneDTO}" property="endDatePlanned" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}"/>
+		<o:form includeViewParams="true">
+			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
+				Meilenstein ID: <h:outputText value="#{request.getParameter('mid')}" /> 
+				Name: <h:inputText value="#{alteredMilestoneDTO.name}"/>
+				Beschreibung: <h:inputText value="#{alteredMilestoneDTO.description}"/>
+				<h:outputText value="Geplantes Enddatum:" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
+				<h:outputText value="Enddatum:" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'CLOSED'}"/>
+				<h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate != null}">
+					<f:convertDateTime pattern="dd.MM.yyyy" />
+				</h:outputText>
+				<h:outputText value="nicht bekannt" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate == null}"/>
+				Verbrauchtes Zeitbudget: <h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).timeBudetAct}" />
+				Status: <h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state}" />
+				<h:commandButton value="Änderungen speichern" action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}"/>
+			</h:panelGrid>
+		</o:form>
+		Angelegte Aufgaben:
+		<table>
+			<ui:repeat var="v_task" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).tasks.toArray()}">
+				<tr>
+					<td>
+						<h:link outcome="taskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Normal Task')}">
+							<f:param name="tid" value="#{v_task.id}" />
+						</h:link>
+						<h:link outcome="compoundTaskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Compound Task')}">
+							<f:param name="tid" value="#{v_task.id}" />
+						</h:link>
+					</td>
+					<td>#{v_task.state}</td>
+					<td>#{v_task.type}</td>
+					<td><o:form includeViewParams="true" id="tasks">
+						<h:commandButton action="#{taskCommand.removeTask(v_task.id)}" value="Task löschen" />
+						</o:form>
+					</td>
+				</tr>
+			</ui:repeat>
+		</table>
+		<br />
+		<h:button outcome="addTask" value="Aufgabe anlegen">
+			<f:param name="mid" value="#{newTaskDTO.milestoneId}" />
+		</h:button>

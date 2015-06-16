@@ -7,53 +7,150 @@
 	xmlns:o="http://omnifaces.org/ui"
 	template="/WEB-INF/templates/template.xhtml">
 	<f:metadata>
-        <f:viewParam name="mid" value="#{newTaskDTO.milestoneId}" />
-        <f:viewParam name="mid" value="#{alteredMilestoneDTO.id}" />
-    </f:metadata>
+		<f:viewParam name="mid" value="#{newTaskDTO.milestoneId}" />
+		<f:viewParam name="mid" value="#{alteredMilestoneDTO.id}" />
+	</f:metadata>
 	<ui:define name="content">
-		<c:set target="#{alteredMilestoneDTO}" property="name" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).name}"/>
-		<c:set target="#{alteredMilestoneDTO}" property="description" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).description}"/>
-		<c:set target="#{alteredMilestoneDTO}" property="endDatePlanned" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}"/>
-		<o:form includeViewParams="true">
-			<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
-				Meilenstein ID: <h:outputText value="#{request.getParameter('mid')}" /> 
-				Name: <h:inputText value="#{alteredMilestoneDTO.name}"/>
-				Beschreibung: <h:inputText value="#{alteredMilestoneDTO.description}"/>
-				<h:outputText value="Geplantes Enddatum:" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
-				<h:outputText value="Enddatum:" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'CLOSED'}"/>
-				<h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate != null}">
-					<f:convertDateTime pattern="dd.MM.yyyy" />
-				</h:outputText>
-				<h:outputText value="nicht bekannt" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate == null}"/>
-				Verbrauchtes Zeitbudget: <h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).timeBudetAct}" />
-				Status: <h:outputText value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state}" />
-				<h:commandButton value="Änderungen speichern" action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}"/>
-			</h:panelGrid>
-		</o:form>
-		Angelegte Aufgaben:
-		<table>
-			<ui:repeat var="v_task" value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).tasks.toArray()}">
-				<tr>
-					<td>
-						<h:link outcome="taskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Normal Task')}">
-							<f:param name="tid" value="#{v_task.id}" />
-						</h:link>
-						<h:link outcome="compoundTaskDetails" value="#{v_task.name}" rendered="#{v_task.type.equals('Compound Task')}">
-							<f:param name="tid" value="#{v_task.id}" />
-						</h:link>
-					</td>
-					<td>#{v_task.state}</td>
-					<td>#{v_task.type}</td>
-					<td><o:form includeViewParams="true" id="tasks">
-						<h:commandButton action="#{taskCommand.removeTask(v_task.id)}" value="Task löschen" />
-						</o:form>
-					</td>
-				</tr>
-			</ui:repeat>
-		</table>
-		<br />
-		<h:button outcome="addTask" value="Aufgabe anlegen">
-			<f:param name="mid" value="#{newTaskDTO.milestoneId}" />
-		</h:button>
+<<<<<<< .mine
+		<c:set target="#{alteredMilestoneDTO}" property="name"
+			value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).name}" />
+		<c:set target="#{alteredMilestoneDTO}" property="description"
+			value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).description}" />
+		<c:set target="#{alteredMilestoneDTO}" property="endDatePlanned"
+			value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}" />
+		<div class="panel panel-default">
+
+			<o:form includeViewParams="true">
+				<div class="panel-heading">
+					<h2>Meilensteinansicht</h2>
+				</div>
+
+				<div class="panel-body">
+					<div class="list-group">
+						<h3 class="list-group-item active">Daten</h3>
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Meilenstein
+									ID: </span> <span class="form-control">
+									#{request.getParameter('mid')} </span>
+							</div>
+						</div>
+
+
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Name
+									:</span>
+								<h:inputText class="form-control"
+									value="#{alteredMilestoneDTO.name}" />
+							</div>
+						</div>
+
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right" class="input-group-addon">Beschreibung
+									:</span>
+								<h:inputTextarea style="min-height: 100px;" class="form-control"
+									value="#{alteredMilestoneDTO.description}" />
+							</div>
+						</div>
+
+
+
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">
+									<h:outputText value="Geplantes Enddatum:"
+										rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}" />
+									<h:outputText value="Enddatum:"
+										rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'CLOSED'}" />
+
+								</span>
+								<h:outputText class="form-control"
+									value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}"
+									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate != null}">
+									<f:convertDateTime pattern="dd.MM.yyyy" />
+								</h:outputText>
+								<h:outputText class="form-control" value="nicht bekannt"
+									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate == null}" />
+
+							</div>
+						</div>
+
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Verbrauchtes
+									Zeitbudget: </span> <span class="form-control">
+									#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).timeBudetAct}
+								</span>
+							</div>
+						</div>
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Status
+									: </span> <span class="form-control  "> <span class="badge">
+										#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state}
+								</span>
+								</span>
+							</div>
+						</div>
+
+					</div>
+					<div class="panel-footer">
+						<h:commandButton class="btn btn-default btn-lg"
+							value="Änderungen speichern"
+							action="#{projectCommand.alterProject(alteredProjectDTO)}">
+						</h:commandButton>
+
+						<H />
+						<h:commandButton class="btn btn-default btn-lg"
+							onclick="history.back();" value="zurück"></h:commandButton>
+					</div>
+				</div>
+				<h3 class="list-group-item active">Angelegte Tasks:</h3>
+
+				<div class="list-group-item">
+					<table class="table table-striped">
+						<thead>
+							<th>Name</th>
+							<th>Status</th>
+							<th>Art</th>
+
+						</thead>
+
+						<ui:repeat var="v_task"
+							value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).tasks.toArray()}">
+							<tr>
+								<td><h:link outcome="taskDetails" value="#{v_task.name}"
+										rendered="#{v_task.type.equals('Normal Task')}">
+										<f:param name="tid" value="#{v_task.id}" />
+									</h:link> <h:link outcome="compoundTaskDetails" value="#{v_task.name}"
+										rendered="#{v_task.type.equals('Compound Task')}">
+										<f:param name="tid" value="#{v_task.id}" />
+									</h:link></td>
+								<td>#{v_task.state}</td>
+								<td>#{v_task.type} <h:commandLink
+										class="badge alert-danger"
+										action="#{taskCommand.removeTask(v_task.id)}" value="Löschen" />
+								</td>
+
+							</tr>
+
+						</ui:repeat>
+					</table>
+					<div class="panel-footer">
+						<h:button class="btn btn-default btn-lg" outcome="addTask" value="Aufgabe anlegen">
+							<f:param name="mid" value="#{newTaskDTO.milestoneId}" />
+						</h:button>
+
+					</div>
+				</div>
+			</o:form>
+
+		</div>
+
 	</ui:define>
 </ui:composition>
