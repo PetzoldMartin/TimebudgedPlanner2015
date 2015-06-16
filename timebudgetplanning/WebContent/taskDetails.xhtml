@@ -153,6 +153,11 @@
 			<h3 class="list-group-item active">Buchungsübersicht:</h3>
 			<div class="list-group-item">
 				<table class="table table-striped">
+				<th>Startzeit</th>
+						<th>Endzeit</th>
+						<th>Mitarbeiter</th>
+						<th>Dauer</th>
+						<th></th>
 					<ui:repeat var="v_booking"
 						value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
 						<tr>
