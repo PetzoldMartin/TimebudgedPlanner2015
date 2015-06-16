@@ -109,7 +109,7 @@
 									<f:param name="eid" value="#{v_employee.id}" />
 								</h:link></td>
 							<td><o:form includeViewParams="true">
-									<h:commandLink class="badge alert-danger"
+									<h:commandButton  class="btn btn-default alert-danger"
 										action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}"
 										value="Löschen" />
 								</o:form></td>
