@@ -45,7 +45,7 @@
 								<span style="text-align: right;" class="input-group-addon">Name
 									:</span>
 								<h:inputText class="form-control"
-									value="#{alteredProjectDTO.name}" />
+									value="#{alteredProjectDTO.name}" readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}" />
 							</div>
 						</div>
 
@@ -54,7 +54,26 @@
 								<span style="text-align: right" class="input-group-addon">Beschreibung
 									:</span>
 								<h:inputTextarea style="min-height: 100px;" class="form-control"
-									value="#{alteredProjectDTO.description}" />
+									value="#{alteredProjectDTO.description}" readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}" />
+							</div>
+						</div>
+						
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right" class="input-group-addon">Status
+									:</span>
+								<span class="form-control">
+									#{projectQuery.getProjectDetails(request.getParameter('pid')).status} </span>
+								<h:commandButton class="btn btn-default btn-lg"
+									value="Schließen"
+									action="#{projectCommand.closeProject(alteredProjectDTO.id)}"
+									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
+								</h:commandButton>
+								<h:commandButton class="btn btn-default btn-lg"
+									value="Erneut öffnen"
+									action="#{projectCommand.openProject(alteredProjectDTO.id)}"
+									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}">
+								</h:commandButton>
 							</div>
 						</div>
 
@@ -63,7 +82,8 @@
 								<span style="text-align: right;" class="input-group-addon">Startdatum
 									:</span>
 								<h:inputText class="form-control"
-									value="#{alteredProjectDTO.startTime}">
+									value="#{alteredProjectDTO.startTime}"
+									readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}">
 									<f:convertDateTime pattern="dd.MM.yyyy" />
 								</h:inputText>
 							</div>
@@ -89,7 +109,8 @@
 								<span style="text-align: right;" class="input-group-addon">Geplantes
 									Zeitbudget:</span>
 								<h:inputText class="form-control"
-									value="#{alteredProjectDTO.timeBudgetPlanned}">
+									value="#{alteredProjectDTO.timeBudgetPlanned}"
+									readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}">
 								</h:inputText>
 							</div>
 						</div>
@@ -107,10 +128,10 @@
 					<div class="panel-footer">
 						<h:commandButton class="btn btn-default btn-lg"
 							value="Änderungen speichern"
-							action="#{projectCommand.alterProject(alteredProjectDTO)}">
+							action="#{projectCommand.alterProject(alteredProjectDTO)}"
+							rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
 						</h:commandButton>
 
-						<H />
 						<h:commandButton class="btn btn-default btn-lg"
 							onclick="history.back();" value="zurück"></h:commandButton>
 					</div>
@@ -141,7 +162,7 @@
 										<h:outputText value="&#160;&#160;&#160;#{v_role}&#160;" />
 										<h:commandLink class="badge alert-danger"
 											action="#{projectCommand.removeEmployeeWithRole(request.getParameter('pid'), v_employee.id, v_role)}"
-											value="Löschen" />
+											value="Löschen" rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}" />
 									</o:form>
 								</ui:repeat></td>
 						</tr>
@@ -150,7 +171,7 @@
 				</table>
 				<div class="panel-footer">
 
-					<h:form id="form">
+					<h:form id="form" rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}" >
 
 						<div class="panel panel-default">
 							<div class="panel-heading">

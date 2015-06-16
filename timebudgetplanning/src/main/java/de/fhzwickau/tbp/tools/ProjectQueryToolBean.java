@@ -146,6 +146,7 @@ public class ProjectQueryToolBean implements ProjectQueryTool {
 		details.setId(p.getId());
 		details.setName(p.getName());
 		details.setDescription(latestPlanningData.getDescription());
+		details.setStatus(p.getState());
 		details.setStartDate(latestPlanningData.getStartTime());
 		details.setTimeBudgetPlanned(latestPlanningData.getTimeBudgetPlan());
 		details.setEndDate(p.getEndTime() == null ? new Date() : p.getEndTime());

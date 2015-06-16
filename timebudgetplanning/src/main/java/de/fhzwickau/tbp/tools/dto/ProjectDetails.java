@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeMap;
 
+import de.fhzwickau.tbp.datatypes.ProjectState;
 import de.fhzwickau.tbp.datatypes.RoleType;
 
 /**
@@ -302,5 +303,16 @@ public class ProjectDetails implements Serializable {
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431444853571_934375_5860) ENABLED START */
+	
+	private ProjectState status;
+	
+	public ProjectState getStatus() {
+		return status;
+	}
+	
+	public void setStatus(ProjectState status) {
+		this.status = status;
+	}
+	
 	/* PROTECTED REGION END */
 }
