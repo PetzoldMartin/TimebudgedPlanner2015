@@ -7,6 +7,8 @@ package de.fhzwickau.tbp.tools;
 import java.util.Date;
 
 import de.fhzwickau.tbp.datatypes.MilestoneState;
+import de.fhzwickau.tbp.datatypes.TaskState;
+import de.fhzwickau.tbp.material.AbstractTask;
 import de.fhzwickau.tbp.material.Milestone;
 import de.fhzwickau.tbp.material.MilestoneData;
 import de.fhzwickau.tbp.material.Project;
@@ -16,6 +18,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.inject.Named;
 import javax.ejb.Stateless;
+
 import de.fhzwickau.tbp.tools.facade.MilestoneCommandTool;
 import de.fhzwickau.tbp.tools.dto.AlteredMilestone;
 
@@ -90,6 +93,10 @@ public class MilestoneCommandToolBean implements MilestoneCommandTool {
 		Milestone m = entityManager.find(Milestone.class, milestoneId);
 		if (m == null)
 			return "project";
+		for (AbstractTask t : m.getAbstractTask()) {
+			t.setState(TaskState.CLOSED);
+			entityManager.merge(t);
+		}
 		m.setState(MilestoneState.COMPLETED);
 		entityManager.merge(m);
 		return "milestoneDetails?faces-redirect=true&mid=" + milestoneId;
