@@ -15,6 +15,7 @@ import de.fhzwickau.tbp.material.PlanningData;
 import de.fhzwickau.tbp.material.Project;
 import de.fhzwickau.tbp.material.Role;
 import de.fhzwickau.tbp.tools.dto.NewProject;
+import de.fhzwickau.tbp.datatypes.MilestoneState;
 import de.fhzwickau.tbp.datatypes.ProjectState;
 import de.fhzwickau.tbp.datatypes.RoleType;
 import de.fhzwickau.tbp.tools.facade.ProjectCommandTool;
@@ -162,6 +163,10 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		if (p == null)
 			return "project";
 		p.setState(ProjectState.CLOSED);
+		for (Milestone m : p.getMilestone()) {
+			m.setState(MilestoneState.COMPLETED);
+			entityManager.merge(m);
+		}
 		entityManager.merge(p);
 		return "projectDetails?faces-redirect=true&pid=" + projectId;
 		/* PROTECTED REGION END */
