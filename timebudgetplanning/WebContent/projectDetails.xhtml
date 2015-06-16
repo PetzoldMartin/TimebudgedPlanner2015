@@ -62,8 +62,11 @@
 							<div class="input-group input-group-lg">
 								<span style="text-align: right" class="input-group-addon">Status
 									:</span>
-								<span class="form-control">
-									#{projectQuery.getProjectDetails(request.getParameter('pid')).status} </span>
+								<span class="form-control  "> 
+									<span class="badge">
+										#{projectQuery.getProjectDetails(request.getParameter('pid')).status}
+									</span>
+								</span>
 								<h:commandButton class="btn btn-default btn-lg"
 									value="Schließen"
 									action="#{projectCommand.closeProject(alteredProjectDTO.id)}"
