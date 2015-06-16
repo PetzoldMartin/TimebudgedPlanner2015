@@ -36,7 +36,7 @@
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Name
 									:</span>
-								<h:inputText class="form-control" value="#{alteredTaskDTO.name}" />
+								<h:inputText class="form-control" value="#{alteredTaskDTO.name}" readonly="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).milestoneClosed == true}" />
 							</div>
 						</div>
 						<div class="list-group-item">
@@ -44,7 +44,7 @@
 								<span style="text-align: right;" class="input-group-addon">Beschreibung
 									:</span>
 								<h:inputTextarea style="min-height: 100px;" class="form-control"
-									value="#{alteredTaskDTO.description}" />
+									value="#{alteredTaskDTO.description}" readonly="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).milestoneClosed == true}" />
 							</div>
 						</div>
 						<div class="list-group-item ">
@@ -68,7 +68,8 @@
 						<div class="panel-footer">
 						<h:commandButton class="btn btn-default btn-lg"
 							value="Änderungen speichern"
-							action="#{taskCommand.alterTask(alteredTaskDTO)}">
+							action="#{taskCommand.alterTask(alteredTaskDTO)}"
+							rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 						</h:commandButton>
 
 						<H />
@@ -93,7 +94,7 @@
 								value="#{v_employee.firstName} #{v_employee.lastName}">
 								<f:param name="eid" value="#{v_employee.id}" />
 							</h:link></td>
-						<td><o:form includeViewParams="true">
+						<td><o:form includeViewParams="true" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 							<h:commandLink class="btn btn-default alert-danger"
 									action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}"
 									value="Löschen" />
@@ -104,7 +105,7 @@
 			</div>
 			<div class="panel-footer">
 
-				<o:form id="form" includeViewParams="true">
+				<o:form id="form" includeViewParams="true" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="list-group-item list-group-item-info">Mitarbeiter
@@ -152,7 +153,7 @@
 							</h:link></td>
 						<td><span class="badge ">#{v_task.state}</span></td>
 						<td>#{v_task.type}</td>
-						<td><o:form id="tasks" includeViewParams="true">
+						<td><o:form id="tasks" includeViewParams="true" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 								<h:commandButton class="btn btn-default alert-danger"
 									action="#{taskCommand.removeSubtask(v_task.id, request.getParameter('tid'))}"
 									value="Task löschen" />
@@ -163,12 +164,12 @@
 			</div>
 			<div class="panel-footer">
 
-				<o:form  includeViewParams="true">
+				<o:form  includeViewParams="true" rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h4 class="list-group-item list-group-item-info">untergeordnete Aufgabe Hinzufügen;</h4>
+							<h4 class="list-group-item list-group-item-info">Untergeordnete Aufgabe Hinzufügen;</h4>
 						</div>
 						<div class="panel-body">
 							<div class="navbar navbar-default">

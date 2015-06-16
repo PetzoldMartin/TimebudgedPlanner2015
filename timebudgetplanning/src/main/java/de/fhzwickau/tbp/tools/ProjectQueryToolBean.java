@@ -111,9 +111,9 @@ public class ProjectQueryToolBean implements ProjectQueryTool {
 				}
 			}
 			if (m.getState() == MilestoneState.OPEN)
-				milestoneOverview.setEndDate(latestMilestoneData.getEndDatePlanned());
+				milestoneOverview.setEndDate(latestMilestoneData.getEndDatePlanned() == null ? new Date() : latestMilestoneData.getEndDatePlanned());
 			else
-				milestoneOverview.setEndDate(m.getEndTime());
+				milestoneOverview.setEndDate(m.getEndTime() == null ? new Date() : m.getEndTime());
 			overviews.add(milestoneOverview);
 		}
 		return overviews;
