@@ -144,7 +144,7 @@
 					<td>#{v_task.type}
 					<h:commandLink class="badge alert-danger"
 											action="#{taskCommand.removeTask(v_task.id)}"
-											value="Löschen" />
+											value="Löschen" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}"/>
 					</td>
 							
 						</tr>

@@ -38,7 +38,7 @@
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Name
 									:</span>
-								<h:inputText class="form-control" value="#{alteredTaskDTO.name}" />
+								<h:inputText class="form-control" value="#{alteredTaskDTO.name}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == true}" />
 							</div>
 						</div>
 
@@ -47,7 +47,7 @@
 								<span style="text-align: right;" class="input-group-addon">Beschreibung
 									:</span>
 								<h:inputTextarea style="min-height: 100px;" class="form-control"
-									value="#{alteredTaskDTO.description}" />
+									value="#{alteredTaskDTO.description}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == true}" />
 							</div>
 						</div>
 
@@ -82,7 +82,8 @@
 					<div class="panel-footer">
 						<h:commandButton class="btn btn-default btn-lg"
 							value="Änderungen speichern"
-							action="#{taskCommand.alterTask(alteredTaskDTO)}">
+							action="#{taskCommand.alterTask(alteredTaskDTO)}"
+							rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}" >
 						</h:commandButton>
 
 						<H />
@@ -108,7 +109,7 @@
 									value="#{v_employee.firstName} #{v_employee.lastName}">
 									<f:param name="eid" value="#{v_employee.id}" />
 								</h:link></td>
-							<td><o:form includeViewParams="true">
+							<td><o:form includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 									<h:commandButton  class="btn btn-default alert-danger"
 										action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}"
 										value="Löschen" />
@@ -120,7 +121,7 @@
 
 			<div class="panel-footer">
 
-				<o:form id="form" includeViewParams="true">
+				<o:form id="form" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="list-group-item list-group-item-info">Mitarbeiter
@@ -169,7 +170,7 @@
 								</h:outputText></td>
 							<td>#{v_booking.employeeName}</td>
 							<td>#{v_booking.amount} Minuten</td>
-							<td><o:form id="booking" includeViewParams="true">
+							<td><o:form id="booking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 									<h:commandLink class="badge alert-danger"
 										action="#{bookingCommand.removeBooking(v_booking.id)}"
 										value="Buchung löschen" />
@@ -180,7 +181,7 @@
 			</div>
 			<div class="panel-footer">
 
-				<o:form id="newBooking" includeViewParams="true">
+				<o:form id="newBooking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 
 
 					<div class="panel panel-default">
