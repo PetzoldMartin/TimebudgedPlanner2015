@@ -91,6 +91,10 @@ public class MilestoneOverview implements Serializable {
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431445368544_746787_5939) ENABLED START */
-	// TODO: put your own implementation code here
+	
+	public MilestoneOverview() {
+		endDate = new Date();
+	}
+	
 	/* PROTECTED REGION END */
 }
