@@ -159,24 +159,37 @@
 					<th>Mitarbeiter</th>
 					<th>Zeit</th>
 					<th></th>
-					<ui:repeat var="v_booking"
-						value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
+					<c:forEach var="v_booking" items="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
+					<c:set target="#{alteredBookingDTO}" property="start" 
+						value="#{bookingQuery.getBookingOverview(v_booking.id).start}" />
+					<c:set target="#{alteredBookingDTO}" property="end" 
+						value="#{bookingQuery.getBookingOverview(v_booking.id).end}" />
+					<c:set target="#{alteredBookingDTO}" property="id" 
+						value="#{bookingQuery.getBookingOverview(v_booking.id).id}" />
+						<o:form id="booking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
 						<tr>
-							<td><h:outputText value="#{v_booking.start}">
+							<td>
+								<h:inputText class="form-control" value="#{alteredBookingDTO.start}">
 									<f:convertDateTime pattern="hh:mm dd.MM.yy" />
-								</h:outputText></td>
-							<td><h:outputText value="#{v_booking.end}">
+								</h:inputText>
+							</td>
+							<td><h:inputText class="form-control" value="#{alteredBookingDTO.end}">
 									<f:convertDateTime pattern="hh:mm dd.MM.yy" />
-								</h:outputText></td>
+								</h:inputText>
+							</td>
 							<td>#{v_booking.employeeName}</td>
 							<td>#{v_booking.amount} Minuten</td>
-							<td><o:form id="booking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
-									<h:commandLink class="badge alert-danger"
-										action="#{bookingCommand.removeBooking(v_booking.id)}"
-										value="Buchung löschen" />
-								</o:form></td>
+							<td>
+								<h:commandLink class="badge alert-danger"
+									action="#{bookingCommand.removeBooking(v_booking.id)}"
+									value="Buchung löschen" />
+								<h:commandLink class="badge alert-success" 
+									action="#{bookingCommand.alterBooking(alteredBookingDTO)}" 
+									value="Änderungen speichern" />
+							</td>
 						</tr>
-					</ui:repeat>
+						</o:form>
+					</c:forEach>
 				</table>
 			</div>
 			<div class="panel-footer">
