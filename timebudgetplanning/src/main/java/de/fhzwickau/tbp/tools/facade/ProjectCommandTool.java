@@ -39,10 +39,18 @@ public interface ProjectCommandTool {
 	
 	public String removeEmployeeWithRole(int projectId, int employeeId, RoleType role);
 	
-	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_8210263_1431069898931_715428_3716) ENABLED START */
-
+	/**
+	 * Method stub for further implementation.
+	 */
+	
 	public String closeProject(int projectId);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
 	public String openProject(int projectId);
 	
+	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_8210263_1431069898931_715428_3716) ENABLED START */
 	/* PROTECTED REGION END */
 }

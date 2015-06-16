@@ -38,6 +38,8 @@ public class ProjectDetails implements Serializable {
 	
 	private TreeMap<EmployeeOverview, HashSet<RoleType>> employeeRoleMap;
 	
+	private ProjectState status;
+	
 	/**
 	 * Constructor for class '<em><b>ProjectDetails</b></em>'.
 	 */
@@ -302,17 +304,23 @@ public class ProjectDetails implements Serializable {
 		this.employeeRoleMap = employeeRoleMap;
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431444853571_934375_5860) ENABLED START */
-	
-	private ProjectState status;
+	/**
+	 * Returns the value of attribute '<em><b>status</b></em>'.
+	 */
 	
 	public ProjectState getStatus() {
 		return status;
 	}
 	
+	/**
+	 * Sets the value of attribute '<em><b>status</b></em>'.
+	 * @param	status	the value to set.
+	 */
+	
 	public void setStatus(ProjectState status) {
 		this.status = status;
 	}
 	
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431444853571_934375_5860) ENABLED START */
 	/* PROTECTED REGION END */
 }

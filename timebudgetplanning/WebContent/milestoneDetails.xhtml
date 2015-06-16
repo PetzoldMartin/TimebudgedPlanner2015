@@ -42,7 +42,7 @@
 								<span style="text-align: right;" class="input-group-addon">Name
 									:</span>
 								<h:inputText class="form-control"
-									value="#{alteredMilestoneDTO.name}" />
+									value="#{alteredMilestoneDTO.name}" readonly="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}" />
 							</div>
 						</div>
 
@@ -51,7 +51,7 @@
 								<span style="text-align: right" class="input-group-addon">Beschreibung
 									:</span>
 								<h:inputTextarea style="min-height: 100px;" class="form-control"
-									value="#{alteredMilestoneDTO.description}" />
+									value="#{alteredMilestoneDTO.description}" readonly="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}" />
 							</div>
 						</div>
 
@@ -63,16 +63,14 @@
 									<h:outputText value="Geplantes Enddatum:"
 										rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}" />
 									<h:outputText value="Enddatum:"
-										rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'CLOSED'}" />
+										rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}" />
 
 								</span>
-								<h:outputText class="form-control"
-									value="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate}"
-									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate != null}">
+								<h:inputText class="form-control"
+									value="#{alteredMilestoneDTO.endDatePlanned}"
+									readonly="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}">
 									<f:convertDateTime pattern="dd.MM.yyyy" />
-								</h:outputText>
-								<h:outputText class="form-control" value="nicht bekannt"
-									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).endDate == null}" />
+								</h:inputText>
 
 							</div>
 						</div>
@@ -94,6 +92,16 @@
 										#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state}
 								</span>
 								</span>
+								<h:commandButton class="btn btn-default btn-lg"
+									value="Schließen"
+									action="#{milestoneCommand.closeMilestone(alteredMilestoneDTO.id)}"
+									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}">
+								</h:commandButton>
+								<h:commandButton class="btn btn-default btn-lg"
+									value="Erneut öffnen"
+									action="#{milestoneCommand.openMilestone(alteredMilestoneDTO.id)}"
+									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}">
+								</h:commandButton>
 							</div>
 						</div>
 
@@ -101,7 +109,7 @@
 					<div class="panel-footer">
 						<h:commandButton class="btn btn-default btn-lg"
 							value="Änderungen speichern"
-							action="#{projectCommand.alterProject(alteredProjectDTO)}">
+							action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}">
 						</h:commandButton>
 
 						<H />
@@ -143,7 +151,7 @@
 					</ui:repeat>
 				</table>
 				<div class="panel-footer">
-				<h:button class="btn btn-default btn-lg" outcome="addTask" value="Aufgabe anlegen">
+				<h:button class="btn btn-default btn-lg" outcome="addTask" value="Aufgabe anlegen" rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}">
 			<f:param name="mid" value="#{newTaskDTO.milestoneId}" />
 		</h:button>
 				

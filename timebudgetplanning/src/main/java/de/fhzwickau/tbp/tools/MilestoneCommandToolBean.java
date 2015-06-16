@@ -81,7 +81,36 @@ public class MilestoneCommandToolBean implements MilestoneCommandTool {
 		/* PROTECTED REGION END */
 	}
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String closeMilestone(int milestoneId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1434469171585_366598_5148) ENABLED START */
+		Milestone m = entityManager.find(Milestone.class,milestoneId);
+		if (m == null)
+			return "project";
+		m.setState(MilestoneState.COMPLETED);
+		entityManager.merge(m);
+		return "milestoneDetails?faces-redirect=true&mid=" + milestoneId;
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String openMilestone(int milestoneId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431845671198_988384_5272__17_0_4_2_8210263_1434469183291_249358_5152) ENABLED START */
+		Milestone m = entityManager.find(Milestone.class,milestoneId);
+		if (m == null)
+			return "project";
+		m.setState(MilestoneState.OPEN);
+		entityManager.merge(m);
+		return "milestoneDetails?faces-redirect=true&mid=" + milestoneId;
+		/* PROTECTED REGION END */
+	}
+	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431845671198_988384_5272) ENABLED START */
-	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */
 }

@@ -25,6 +25,18 @@ public interface MilestoneCommandTool {
 	
 	public String alterMilestone(AlteredMilestone milestone);
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String closeMilestone(int milestoneId);
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String openMilestone(int milestoneId);
+	
 	/* PROTECTED REGION ID(java.interface.own.code.declaration._17_0_4_2_8210263_1431844692471_274903_5195) ENABLED START */
 	// TODO: put your own implementation code here
 	/* PROTECTED REGION END */

@@ -152,25 +152,36 @@ public class ProjectCommandToolBean implements ProjectCommandTool {
 		/* PROTECTED REGION END */
 	}
 	
-	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898909_18254_3671) ENABLED START */
+	/**
+	 * Method stub for further implementation.
+	 */
 	
 	public String closeProject(int projectId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1434469128905_692051_5140) ENABLED START */
 		Project p = entityManager.find(Project.class, projectId);
 		if (p == null)
 			return "project";
 		p.setState(ProjectState.CLOSED);
 		entityManager.merge(p);
 		return "projectDetails?faces-redirect=true&pid=" + projectId;
+		/* PROTECTED REGION END */
 	}
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
 	public String openProject(int projectId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_8210263_1431069898909_18254_3671__17_0_4_2_8210263_1434469140306_225177_5144) ENABLED START */
 		Project p = entityManager.find(Project.class, projectId);
 		if (p == null)
 			return "project";
 		p.setState(ProjectState.OPEN);
 		entityManager.merge(p);
 		return "projectDetails?faces-redirect=true&pid=" + projectId;
+		/* PROTECTED REGION END */
 	}
 	
+	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_8210263_1431069898909_18254_3671) ENABLED START */
 	/* PROTECTED REGION END */
 }

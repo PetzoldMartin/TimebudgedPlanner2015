@@ -6,11 +6,15 @@ package de.fhzwickau.tbp.tools.dto;
  */
 import java.util.Date;
 import java.io.Serializable;
+import javax.inject.Named;
+import javax.enterprise.context.RequestScoped;
 
 /**
  * Please describe the responsibility of your class in your modeling tool.
  */
 
+@Named("alteredBookingDTO")
+@RequestScoped
 public class AlteredBooking implements Serializable {
 	
 	private int id;
