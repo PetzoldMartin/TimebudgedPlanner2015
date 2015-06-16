@@ -4,102 +4,225 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:o="http://omnifaces.org/ui"
-	xmlns:p="http://primefaces.org/ui" 
+	xmlns:o="http://omnifaces.org/ui" xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/templates/template.xhtml">
-   	<f:metadata>
-       	<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}"/>
-	    <f:viewParam name="tid" value="#{newBookingDTO.taskId}"/>
-	    <f:viewParam name="tid" value="#{alteredTaskDTO.id}"/>
-    </f:metadata>
+	<f:metadata>
+		<f:viewParam name="tid" value="#{addEmployeeDTO.taskId}" />
+		<f:viewParam name="tid" value="#{newBookingDTO.taskId}" />
+		<f:viewParam name="tid" value="#{alteredTaskDTO.id}" />
+	</f:metadata>
 	<ui:define name="content">
-		<c:set target="#{alteredTaskDTO}" property="name" value="#{taskQuery.getTaskDetails(request.getParameter('tid')).name}"/>
-		<c:set target="#{alteredTaskDTO}" property="description" value="#{taskQuery.getTaskDetails(request.getParameter('tid')).description}"/>
-		<o:form includeViewParams="true">
-			Aufgaben ID: #{addEmployeeDTO.taskId} <br />
-			Name: <h:inputText value="#{alteredTaskDTO.name}" /> <br />
-			Beschreibung: <h:inputText value="#{alteredTaskDTO.description}" /> <br />
-			<h:commandButton action="#{taskCommand.alterTask(alteredTaskDTO)}" value="Änderungen speichern" /> <br />
-			<br />
-			Enddatum: 
-					<h:outputText value="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate}" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate != null}">
-						<f:convertDateTime pattern="dd.MM.yyyy" />
-					</h:outputText>
-					<h:outputText value="nicht bekannt" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate == null}"/>
-					<br />
-					Verbrauchtes Zeitbudget: #{taskQuery.getTaskDetails(request.getParameter('tid')).timeBudetAct} <br />
-		</o:form>
-				
-		Zugewiesene Mitarbeiter:
-		<table>
-			<ui:repeat var="v_employee" value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees.toArray()}">
-				<tr>
-					<td>
-						<h:link outcome="employeeDetails" value="#{v_employee.firstName} #{v_employee.lastName}">
-								<f:param name="eid" value="#{v_employee.id}" />
-						</h:link>
-					</td>
-					<td>
-						<o:form includeViewParams="true">
-							(<h:commandLink action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}" value="Löschen" />)
-						</o:form>
-					</td>
-				</tr>
-			</ui:repeat>
-		</table>
-		<o:form id="form" includeViewParams="true">
-			Mitarbeiter hinzufügen: <br />
-			<h:selectOneMenu value="#{addEmployeeDTO.employeeId}">
-   				<f:selectItems value="#{taskQuery.getAddableEmployees(request.getParameter('tid')).getEmployees()}" var="v_employee"
-   					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
-			</h:selectOneMenu>
-			<h:commandButton value="Hinzufügen" action="#{taskCommand.addEmployee(addEmployeeDTO)}">
-				<f:param name="tid" value="#{params.tid}" />
-			</h:commandButton>
-		</o:form>
-		<br/>
-		Buchungsübersicht:
-		<table>
-			<ui:repeat var="v_booking" value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
-				<tr>
-					<td>
-						<h:outputText value="#{v_booking.start}"><f:convertDateTime pattern="hh:mm dd.MM.yy"/></h:outputText> -
-					</td>
-					<td>
-						<h:outputText value="#{v_booking.end}"><f:convertDateTime pattern="hh:mm dd.MM.yy"/></h:outputText>
-					</td>
-					<td>#{v_booking.employeeName}</td>
-					<td>#{v_booking.amount} Minuten</td>
-					<td><o:form id="booking" includeViewParams="true">
-						<h:commandButton action="#{bookingCommand.removeBooking(v_booking.id)}" value="Buchung löschen" />
-					</o:form></td>
-				</tr>
-			</ui:repeat>
-		</table>
-		<o:form id="newBooking" includeViewParams="true">
-			Buchung hinzufügen: <br/>
-			<h:selectOneMenu value="#{newBookingDTO.employeeId}">
-   				<f:selectItems value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees}" var="v_employee"
-   					itemValue="#{v_employee.id}" itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
-			</h:selectOneMenu>
-			<h:inputText value="#{newBookingDTO.start}">
-	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
-	        <h:inputText value="#{newBookingDTO.end}">
-	            	<f:convertDateTime pattern="hh:mm dd.MM.yyyy" /></h:inputText>
-			<h:commandButton action="#{bookingCommand.addBooking(newBookingDTO)}" value="Buchung hinzufügen" />
-		</o:form>
+		<c:set target="#{alteredTaskDTO}" property="name"
+			value="#{taskQuery.getTaskDetails(request.getParameter('tid')).name}" />
+		<c:set target="#{alteredTaskDTO}" property="description"
+			value="#{taskQuery.getTaskDetails(request.getParameter('tid')).description}" />
+		<div class="panel panel-default">
 
-	    <p:dialog id="dialog" widgetVar="dialogWidget" height="150" width="400">
-	        <h:form>
-	            <p:panel>
-	                <h3>Warnung</h3>
-	                <p>
-	                    <h:outputText value="Zeitbudget des Projekts überschritten" /> <br />
-	                    <h:outputText value="Bitte Planung anpassen" />
-	                </p>
-	            </p:panel>
-	        </h:form>       
-	    </p:dialog>
-	    
+			<o:form includeViewParams="true">
+				<div class="panel-heading">
+					<h2>Meilensteinansicht</h2>
+				</div>
+
+				<div class="panel-body">
+					<div class="list-group">
+						<h3 class="list-group-item active">Daten</h3>
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">
+									Aufgaben ID:</span><span class="form-control">
+									#{addEmployeeDTO.taskId} </span>
+							</div>
+						</div>
+
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Name
+									:</span>
+								<h:inputText class="form-control" value="#{alteredTaskDTO.name}" />
+							</div>
+						</div>
+
+						<div class="list-group-item">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">Beschreibung
+									:</span>
+								<h:inputTextarea style="min-height: 100px;" class="form-control"
+									value="#{alteredTaskDTO.description}" />
+							</div>
+						</div>
+
+
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">
+									Enddatum:</span><span class="form-control"> <h:outputText
+										value="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate}"
+										rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate != null}">
+										<f:convertDateTime pattern="dd.MM.yyyy" />
+									</h:outputText> <h:outputText value="nicht bekannt"
+										rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).endDate == null}" />
+								</span>
+							</div>
+						</div>
+
+						<div class="list-group-item ">
+							<div class="input-group input-group-lg">
+								<span style="text-align: right;" class="input-group-addon">
+									Verbrauchtes Zeitbudget:</span><span class="form-control">
+									#{taskQuery.getTaskDetails(request.getParameter('tid')).timeBudetAct}
+								</span>
+							</div>
+						</div>
+
+
+
+
+					</div>
+					<div class="panel-footer">
+						<h:commandButton class="btn btn-default btn-lg"
+							value="Änderungen speichern"
+							action="#{taskCommand.alterTask(alteredTaskDTO)}">
+						</h:commandButton>
+
+						<H />
+						<h:commandButton class="btn btn-default btn-lg"
+							onclick="history.back();" value="zurück"></h:commandButton>
+					</div>
+				</div>
+
+			</o:form>
+
+			<h3 class="list-group-item active">Zugewiesene Mitarbeiter:</h3>
+
+			<div class="list-group-item">
+				<table class="table table-striped">
+					<thead>
+						<th>Mitarbeiter</th>
+						<th></th>
+					</thead>
+					<ui:repeat var="v_employee"
+						value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees.toArray()}">
+						<tr>
+							<td><h:link outcome="employeeDetails"
+									value="#{v_employee.firstName} #{v_employee.lastName}">
+									<f:param name="eid" value="#{v_employee.id}" />
+								</h:link></td>
+							<td><o:form includeViewParams="true">
+									<h:commandLink class="badge alert-danger"
+										action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}"
+										value="Löschen" />
+								</o:form></td>
+						</tr>
+					</ui:repeat>
+				</table>
+			</div>
+
+			<div class="panel-footer">
+
+				<o:form id="form" includeViewParams="true">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="list-group-item list-group-item-info">Mitarbeiter
+								Hinzufügen:</h4>
+						</div>
+						<div class="panel-body">
+							<div class="navbar navbar-default">
+								<div class="container-fluid">
+									<div class="nav navbar-nav">
+										<h:selectOneMenu class="btn btn-default navbar-btn dropdown"
+											value="#{addEmployeeDTO.employeeId}">
+											<f:selectItems
+												value="#{taskQuery.getAddableEmployees(request.getParameter('tid')).getEmployees()}"
+												var="v_employee" itemValue="#{v_employee.id}"
+												itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+										</h:selectOneMenu>
+										<h:commandButton class="btn btn-default" value="Hinzufügen"
+											action="#{taskCommand.addEmployee(addEmployeeDTO)}">
+											<f:param name="tid" value="#{params.tid}" />
+										</h:commandButton>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</o:form>
+			</div>
+
+
+			<h3 class="list-group-item active">Buchungsübersicht:</h3>
+			<div class="list-group-item">
+				<table class="table table-striped">
+					<ui:repeat var="v_booking"
+						value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
+						<tr>
+							<td><h:outputText value="#{v_booking.start}">
+									<f:convertDateTime pattern="hh:mm dd.MM.yy" />
+								</h:outputText> -</td>
+							<td><h:outputText value="#{v_booking.end}">
+									<f:convertDateTime pattern="hh:mm dd.MM.yy" />
+								</h:outputText></td>
+							<td>#{v_booking.employeeName}</td>
+							<td>#{v_booking.amount} Minuten</td>
+							<td><o:form id="booking" includeViewParams="true">
+									<h:commandLink class="badge alert-danger"
+										action="#{bookingCommand.removeBooking(v_booking.id)}"
+										value="Buchung löschen" />
+								</o:form></td>
+						</tr>
+					</ui:repeat>
+				</table>
+			</div>
+			<div class="panel-footer">
+
+				<o:form id="newBooking" includeViewParams="true">
+
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="list-group-item list-group-item-info">Buchung
+								Hinzufügen:</h4>
+						</div>
+						<div class="panel-body">
+							<div class="navbar navbar-default">
+								<div class="container-fluid">
+									<div class="nav navbar-nav">
+										<h:selectOneMenu class="btn btn-default navbar-btn dropdown" value="#{newBookingDTO.employeeId}">
+											<f:selectItems
+												value="#{taskQuery.getTaskDetails(request.getParameter('tid')).employees.employees}"
+												var="v_employee" itemValue="#{v_employee.id}"
+												itemLabel="#{v_employee.firstName} #{v_employee.lastName}" />
+										</h:selectOneMenu>
+										<h:inputText  class="navbar-form" value="#{newBookingDTO.start}">
+											<f:convertDateTime pattern="hh:mm dd.MM.yyyy" />
+										</h:inputText>
+										<h:inputText  class="navbar-form" value="#{newBookingDTO.end}">
+											<f:convertDateTime pattern="hh:mm dd.MM.yyyy" />
+										</h:inputText>
+										<h:commandButton class="btn btn-default"
+											action="#{bookingCommand.addBooking(newBookingDTO)}"
+											value="Buchung hinzufügen" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</o:form>
+			</div>
+
+			<p:dialog id="dialog" widgetVar="dialogWidget" height="150"
+				width="400">
+				<h:form>
+					<p:panel>
+						<h3>Warnung</h3>
+						<p>
+							<h:outputText value="Zeitbudget des Projekts überschritten" />
+							<br />
+							<h:outputText value="Bitte Planung anpassen" />
+						</p>
+					</p:panel>
+				</h:form>
+			</p:dialog>
+		</div>
 	</ui:define>
 </ui:composition>

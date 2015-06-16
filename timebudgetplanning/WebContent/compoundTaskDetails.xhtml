@@ -14,6 +14,8 @@
 	<ui:define name="content">
 		<c:set target="#{alteredTaskDTO}" property="name" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).name}"/>
 		<c:set target="#{alteredTaskDTO}" property="description" value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).description}"/>
+				<div class="panel panel-default">
+		
 		<o:form includeViewParams="true">
 		<h:panelGrid columns="2" cellpadding="0" cellspacing="2">
 			Aufgaben ID: <h:outputText value="#{request.getParameter('tid')}" />
@@ -89,5 +91,6 @@
 				<f:param name="tid" value="#{addTaskDTO.compoundTaskId}" />
 			</h:commandButton>
 		</o:form>
+		</div>
 	</ui:define>
 </ui:composition>
