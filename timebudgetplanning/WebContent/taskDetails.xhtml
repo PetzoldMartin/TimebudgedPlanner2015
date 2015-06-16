@@ -156,7 +156,7 @@
 				<th>Startzeit</th>
 						<th>Endzeit</th>
 						<th>Mitarbeiter</th>
-						<th>Dauer</th>
+						<th>Zeit</th>
 						<th></th>
 					<ui:repeat var="v_booking"
 						value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
@@ -228,6 +228,7 @@
 					</p:panel>
 				</h:form>
 			</p:dialog>
+		
 		</div>
 	</ui:define>
 </ui:composition>
