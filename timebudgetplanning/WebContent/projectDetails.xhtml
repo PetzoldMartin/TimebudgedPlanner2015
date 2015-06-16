@@ -45,7 +45,8 @@
 								<span style="text-align: right;" class="input-group-addon">Name
 									:</span>
 								<h:inputText class="form-control"
-									value="#{alteredProjectDTO.name}" readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}" />
+									value="#{alteredProjectDTO.name}"
+									readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}" />
 							</div>
 						</div>
 
@@ -54,29 +55,19 @@
 								<span style="text-align: right" class="input-group-addon">Beschreibung
 									:</span>
 								<h:inputTextarea style="min-height: 100px;" class="form-control"
-									value="#{alteredProjectDTO.description}" readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}" />
+									value="#{alteredProjectDTO.description}"
+									readonly="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}" />
 							</div>
 						</div>
-						
+
 						<div class="list-group-item">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right" class="input-group-addon">Status
-									:</span>
-								<span class="form-control  "> 
-									<span class="badge">
+									:</span> <span class="form-control  "> <span class="badge">
 										#{projectQuery.getProjectDetails(request.getParameter('pid')).status}
-									</span>
 								</span>
-								<h:commandButton class="btn btn-default btn-lg"
-									value="Schließen"
-									action="#{projectCommand.closeProject(alteredProjectDTO.id)}"
-									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
-								</h:commandButton>
-								<h:commandButton class="btn btn-default btn-lg"
-									value="Erneut öffnen"
-									action="#{projectCommand.openProject(alteredProjectDTO.id)}"
-									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}">
-								</h:commandButton>
+								
+								</span>
 							</div>
 						</div>
 
@@ -134,7 +125,16 @@
 							action="#{projectCommand.alterProject(alteredProjectDTO)}"
 							rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
 						</h:commandButton>
-
+						<h:commandButton class="btn btn-default btn-lg"
+									value="Schließen"
+									action="#{projectCommand.closeProject(alteredProjectDTO.id)}"
+									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
+								</h:commandButton>
+								<h:commandButton class="btn btn-default btn-lg"
+									value="Erneut öffnen"
+									action="#{projectCommand.openProject(alteredProjectDTO.id)}"
+									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'CLOSED'}">
+								</h:commandButton>
 						<h:commandButton class="btn btn-default btn-lg"
 							onclick="history.back();" value="zurück"></h:commandButton>
 					</div>
@@ -165,7 +165,8 @@
 										<h:outputText value="&#160;&#160;&#160;#{v_role}&#160;" />
 										<h:commandLink class="badge alert-danger"
 											action="#{projectCommand.removeEmployeeWithRole(request.getParameter('pid'), v_employee.id, v_role)}"
-											value="Löschen" rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}" />
+											value="Löschen"
+											rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}" />
 									</o:form>
 								</ui:repeat></td>
 						</tr>
@@ -174,7 +175,8 @@
 				</table>
 				<div class="panel-footer">
 
-					<h:form id="form" rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}" >
+					<h:form id="form"
+						rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
 
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -217,32 +219,34 @@
 			<h3 class="list-group-item active">Angelegte Meilensteine:</h3>
 
 			<div class="list-group-item">
-			<table class="table table-striped">
-			<thead>
+				<table class="table table-striped">
+					<thead>
 						<th>Meilenstein</th>
 						<th>Status</th>
 						<th>Enddatum</th>
 					</thead>
-				<ui:repeat var="v_milestone"
-					value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
-					<tr>
-						<td><h:link outcome="milestoneDetails"
-								value="#{v_milestone.name}">
-								<f:param name="mid" value="#{v_milestone.id}" />
-							</h:link></td>
-						<td  ><span class="badge">#{v_milestone.state}</span></td>
-						<td><h:outputText value="#{v_milestone.endDate}">
-								<f:convertDateTime pattern="dd.MM.yyyy" />
-							</h:outputText></td>
-					</tr>
-				</ui:repeat>
-			</table>
+					<ui:repeat var="v_milestone"
+						value="#{projectQuery.getProjectDetails(request.getParameter('pid')).milestones.toArray()}">
+						<tr>
+							<td><h:link outcome="milestoneDetails"
+									value="#{v_milestone.name}">
+									<f:param name="mid" value="#{v_milestone.id}" />
+								</h:link></td>
+							<td><span class="badge">#{v_milestone.state}</span></td>
+							<td><h:outputText value="#{v_milestone.endDate}">
+									<f:convertDateTime pattern="dd.MM.yyyy" />
+								</h:outputText></td>
+						</tr>
+					</ui:repeat>
+				</table>
 			</div>
-							<div class="panel-footer">
-			
-			<h:button class="btn btn-default btn-lg" outcome="addMilestone" value="Meilenstein anlegen" rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
-				<f:param name="pid" value="#{addEmployeeWithRoleDTO.projectId}" />
-			</h:button>
+			<div class="panel-footer">
+
+				<h:button class="btn btn-default btn-lg" outcome="addMilestone"
+					value="Meilenstein anlegen"
+					rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
+					<f:param name="pid" value="#{addEmployeeWithRoleDTO.projectId}" />
+				</h:button>
 			</div>
 		</div>
 

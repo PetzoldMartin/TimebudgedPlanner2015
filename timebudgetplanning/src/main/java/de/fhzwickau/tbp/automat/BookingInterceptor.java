@@ -6,6 +6,7 @@ package de.fhzwickau.tbp.automat;
  */
 import java.util.Date;
 
+import javax.faces.application.FacesMessage;
 import javax.interceptor.InvocationContext;
 import javax.interceptor.AroundInvoke;
 import javax.persistence.EntityManager;
@@ -66,6 +67,8 @@ public class BookingInterceptor {
 					System.out.println("Time Budget exceeded");
 					RequestContext context = RequestContext.getCurrentInstance();
 					context.execute("PF('dialogWidget').show();");
+					
+					
 				} else
 					System.out.println("Time Budget okay");
 			}

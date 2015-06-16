@@ -92,16 +92,7 @@
 										#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state}
 								</span>
 								</span>
-								<h:commandButton class="btn btn-default btn-lg"
-									value="Schließen"
-									action="#{milestoneCommand.closeMilestone(alteredMilestoneDTO.id)}"
-									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}">
-								</h:commandButton>
-								<h:commandButton class="btn btn-default btn-lg"
-									value="Erneut öffnen"
-									action="#{milestoneCommand.openMilestone(alteredMilestoneDTO.id)}"
-									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED' and milestoneQuery.getMilestoneDetails(request.getParameter('mid')).projectClosed == false}">
-								</h:commandButton>
+								
 							</div>
 						</div>
 
@@ -112,7 +103,16 @@
 							action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}"
 							rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}">
 						</h:commandButton>
-
+						<h:commandButton class="btn btn-default btn-lg"
+									value="Schließen"
+									action="#{milestoneCommand.closeMilestone(alteredMilestoneDTO.id)}"
+									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}">
+								</h:commandButton>
+								<h:commandButton class="btn btn-default btn-lg"
+									value="Erneut öffnen"
+									action="#{milestoneCommand.openMilestone(alteredMilestoneDTO.id)}"
+									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED' and milestoneQuery.getMilestoneDetails(request.getParameter('mid')).projectClosed == false}">
+								</h:commandButton>
 						<H />
 						<h:commandButton class="btn btn-default btn-lg"
 							onclick="history.back();" value="zurück"></h:commandButton>
