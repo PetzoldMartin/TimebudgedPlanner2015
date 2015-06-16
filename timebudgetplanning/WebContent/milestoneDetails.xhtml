@@ -100,7 +100,7 @@
 								<h:commandButton class="btn btn-default btn-lg"
 									value="Erneut öffnen"
 									action="#{milestoneCommand.openMilestone(alteredMilestoneDTO.id)}"
-									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}">
+									rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED' and milestoneQuery.getMilestoneDetails(request.getParameter('mid')).projectClosed == false}">
 								</h:commandButton>
 							</div>
 						</div>
@@ -109,7 +109,8 @@
 					<div class="panel-footer">
 						<h:commandButton class="btn btn-default btn-lg"
 							value="Änderungen speichern"
-							action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}">
+							action="#{milestoneCommand.alterMilestone(alteredMilestoneDTO)}"
+							rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}">
 						</h:commandButton>
 
 						<H />

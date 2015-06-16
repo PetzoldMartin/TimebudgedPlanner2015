@@ -240,7 +240,7 @@
 			</div>
 							<div class="panel-footer">
 			
-			<h:button class="btn btn-default btn-lg" outcome="addMilestone" value="Meilenstein anlegen">
+			<h:button class="btn btn-default btn-lg" outcome="addMilestone" value="Meilenstein anlegen" rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).status.name() == 'OPEN'}">
 				<f:param name="pid" value="#{addEmployeeWithRoleDTO.projectId}" />
 			</h:button>
 			</div>
