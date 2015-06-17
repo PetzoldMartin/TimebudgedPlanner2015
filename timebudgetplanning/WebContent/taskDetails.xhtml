@@ -170,11 +170,11 @@
 						<tr>
 							<td>
 								<h:inputText class="form-control" value="#{alteredBookingDTO.start}">
-									<f:convertDateTime pattern="hh:mm dd.MM.yy" />
+									<f:convertDateTime pattern="hh:mm dd.MM.yy a" />
 								</h:inputText>
 							</td>
 							<td><h:inputText class="form-control" value="#{alteredBookingDTO.end}">
-									<f:convertDateTime pattern="hh:mm dd.MM.yy" />
+									<f:convertDateTime pattern="hh:mm dd.MM.yy a" />
 								</h:inputText>
 							</td>
 							<td>#{v_booking.employeeName}</td>
@@ -215,10 +215,10 @@
 										</h:selectOneMenu>
 										<h:inputText class="navbar-form"
 											value="#{newBookingDTO.start}">
-											<f:convertDateTime pattern="hh:mm dd.MM.yyyy" />
+											<f:convertDateTime pattern="hh:mm dd.MM.yyyy a" />
 										</h:inputText>
 										<h:inputText class="navbar-form" value="#{newBookingDTO.end}">
-											<f:convertDateTime pattern="hh:mm dd.MM.yyyy" />
+											<f:convertDateTime pattern="hh:mm dd.MM.yyyy a" />
 										</h:inputText>
 										<h:commandButton class="btn btn-default"
 											action="#{bookingCommand.addBooking(newBookingDTO)}"
