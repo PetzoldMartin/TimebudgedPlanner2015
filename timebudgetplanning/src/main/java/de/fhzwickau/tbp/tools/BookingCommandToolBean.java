@@ -74,12 +74,15 @@ public class BookingCommandToolBean implements BookingCommandTool {
 	public String alterBooking(AlteredBooking alteredBooking) {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432633786620_604630_3638) ENABLED START */
 		// TODO: implementation of method 'BookingCommandToolBean.alterBooking(...)'
-//		Task task = entityManager.find(Task.class, alteredBooking.getTaskId());
-//		Employee employee = entityManager.find(Employee.class, alteredBooking.getEmployeeId());
-		
 		Booking booking = entityManager.find(Booking.class, alteredBooking.getId());
-//		booking.setEmployee(employee);
-//		booking.setTask(task);
+		if(alteredBooking.getEmployeeId() != 0) {
+			Employee employee = entityManager.find(Employee.class, alteredBooking.getEmployeeId());
+			booking.setEmployee(employee);
+		}
+		if(alteredBooking.getTaskId() != 0) {
+			Task task = entityManager.find(Task.class, alteredBooking.getTaskId());
+			booking.setTask(task);
+		}
 		booking.setDate(new Date());
 		booking.setStart(alteredBooking.getStart());
 		booking.setEnd(alteredBooking.getEnd());
@@ -99,6 +102,21 @@ public class BookingCommandToolBean implements BookingCommandTool {
 		// TODO: implementation of method 'BookingCommandToolBean.removeBookiing(...)'
 		Booking booking = entityManager.find(Booking.class, bookingId);
 		entityManager.remove(booking);
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	@Interceptors(value = { BookingInterceptor.class })
+	public void alterBooking(int bookingId, Date start, Date end) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1434640985826_823303_3857) ENABLED START */
+		AlteredBooking alteredBooking = new AlteredBooking();
+		alteredBooking.setId(bookingId);
+		alteredBooking.setStart(start);
+		alteredBooking.setEnd(end);
+		alterBooking(alteredBooking);
 		/* PROTECTED REGION END */
 	}
 	

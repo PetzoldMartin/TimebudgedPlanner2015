@@ -159,21 +159,15 @@
 					<th>Mitarbeiter</th>
 					<th>Zeit</th>
 					<th></th>
-					<c:forEach var="v_booking" items="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
-					<c:set target="#{alteredBookingDTO}" property="start" 
-						value="#{bookingQuery.getBookingOverview(v_booking.id).start}" />
-					<c:set target="#{alteredBookingDTO}" property="end" 
-						value="#{bookingQuery.getBookingOverview(v_booking.id).end}" />
-					<c:set target="#{alteredBookingDTO}" property="id" 
-						value="#{bookingQuery.getBookingOverview(v_booking.id).id}" />
-						<o:form id="booking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
+					<o:form id="booking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
+					<ui:repeat var="v_booking" value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
 						<tr>
 							<td>
-								<h:inputText class="form-control" value="#{alteredBookingDTO.start}">
+								<h:inputText class="form-control" value="#{v_booking.start}">
 									<f:convertDateTime pattern="hh:mm dd.MM.yy a" />
 								</h:inputText>
 							</td>
-							<td><h:inputText class="form-control" value="#{alteredBookingDTO.end}">
+							<td><h:inputText class="form-control" value="#{v_booking.end}">
 									<f:convertDateTime pattern="hh:mm dd.MM.yy a" />
 								</h:inputText>
 							</td>
@@ -184,12 +178,12 @@
 									action="#{bookingCommand.removeBooking(v_booking.id)}"
 									value="Buchung löschen" />
 								<h:commandLink class="badge alert-success" 
-									action="#{bookingCommand.alterBooking(alteredBookingDTO)}" 
+									action="#{bookingCommand.alterBooking(v_booking.id, v_booking.start, v_booking.end)}" 
 									value="Änderungen speichern" />
 							</td>
 						</tr>
-						</o:form>
-					</c:forEach>
+					</ui:repeat>
+					</o:form>
 				</table>
 			</div>
 			<div class="panel-footer">

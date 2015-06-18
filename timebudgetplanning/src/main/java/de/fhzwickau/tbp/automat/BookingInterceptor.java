@@ -68,7 +68,6 @@ public class BookingInterceptor {
 					RequestContext context = RequestContext.getCurrentInstance();
 					context.execute("PF('dialogWidget').show();");
 					
-					
 				} else
 					System.out.println("Time Budget okay");
 			}
