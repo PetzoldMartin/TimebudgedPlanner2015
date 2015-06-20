@@ -204,6 +204,49 @@ public class TaskCommandToolBean implements TaskCommandTool {
 		/* PROTECTED REGION END */
 	}
 	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String closeTask(int taskId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_8210263_1434806798160_41505_3976) ENABLED START */
+		AbstractTask t = entityManager.find(AbstractTask.class, taskId);
+		if (t == null)
+			return "project";
+		t.setState(TaskState.CLOSED);
+		entityManager.merge(t);
+		if (t instanceof CompoundTask) {
+			for (AbstractTask task : ((CompoundTask) t).getAbstractTask()) {
+				closeTask(task.getId());
+			}
+			return "compoundTaskDetails?faces-redirect=true&tid=" + taskId;
+		}
+		else {
+			return "taskDetails?faces-redirect=true&tid=" + taskId;
+		}
+		/* PROTECTED REGION END */
+	}
+	
+	/**
+	 * Method stub for further implementation.
+	 */
+	
+	public String openTask(int taskId) {
+		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1431276472150_541750_3490__17_0_4_2_8210263_1434806826482_374501_3980) ENABLED START */
+		AbstractTask t = entityManager.find(AbstractTask.class, taskId);
+		if (t == null)
+			return "project";
+		t.setState(TaskState.OPEN);
+		entityManager.merge(t);
+		if (t instanceof CompoundTask) {
+			return "compoundTaskDetails?faces-redirect=true&tid=" + taskId;
+		}
+		else {
+			return "taskDetails?faces-redirect=true&tid=" + taskId;
+		}
+		/* PROTECTED REGION END */
+	}
+	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431276472150_541750_3490) ENABLED START */
 	private void removeCompoundTask(int taskId) {
 		CompoundTask task = entityManager.find(CompoundTask.class, taskId);

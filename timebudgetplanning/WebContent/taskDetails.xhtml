@@ -38,7 +38,7 @@
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Name
 									:</span>
-								<h:inputText class="form-control" value="#{alteredTaskDTO.name}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == true}" />
+								<h:inputText class="form-control" value="#{alteredTaskDTO.name}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == true}" />
 							</div>
 						</div>
 
@@ -47,7 +47,7 @@
 								<span style="text-align: right;" class="input-group-addon">Beschreibung
 									:</span>
 								<h:inputTextarea style="min-height: 100px;" class="form-control"
-									value="#{alteredTaskDTO.description}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == true}" />
+									value="#{alteredTaskDTO.description}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == true}" />
 							</div>
 						</div>
 
@@ -83,10 +83,18 @@
 						<h:commandButton class="btn btn-default btn-lg"
 							value="Änderungen speichern"
 							action="#{taskCommand.alterTask(alteredTaskDTO)}"
-							rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}" >
+							rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == false}" >
 						</h:commandButton>
-
-						<H />
+						<h:commandButton class="btn btn-default btn-lg"
+							value="Schließen"
+							action="#{taskCommand.closeTask(alteredTaskDTO.id)}"
+							rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == false}">
+						</h:commandButton>
+						<h:commandButton class="btn btn-default btn-lg"
+							value="Erneut öffnen"
+							action="#{taskCommand.openTask(alteredTaskDTO.id)}"
+							rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == true}">
+						</h:commandButton>
 						<h:commandButton class="btn btn-default btn-lg"
 							onclick="history.back();" value="zurück"></h:commandButton>
 					</div>
@@ -109,7 +117,7 @@
 									value="#{v_employee.firstName} #{v_employee.lastName}">
 									<f:param name="eid" value="#{v_employee.id}" />
 								</h:link></td>
-							<td><o:form includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
+							<td><o:form includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == false}">
 									<h:commandButton class="btn btn-default alert-danger"
 										action="#{taskCommand.removeEmployee(request.getParameter('tid'), v_employee.id)}"
 										value="Löschen" />
@@ -121,7 +129,7 @@
 
 			<div class="panel-footer">
 
-				<o:form id="form" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
+				<o:form id="form" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == false}">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="list-group-item list-group-item-info">Mitarbeiter
@@ -159,15 +167,15 @@
 					<th>Mitarbeiter</th>
 					<th>Zeit</th>
 					<th></th>
-					<o:form id="booking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
+					<o:form id="booking" includeViewParams="true">
 					<ui:repeat var="v_booking" value="#{taskQuery.getBookingOverviews(request.getParameter('tid')).bookings.toArray()}">
 						<tr>
 							<td>
-								<h:inputText class="form-control" value="#{v_booking.start}">
+								<h:inputText class="form-control" value="#{v_booking.start}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == true}">
 									<f:convertDateTime pattern="hh:mm dd.MM.yy a" />
 								</h:inputText>
 							</td>
-							<td><h:inputText class="form-control" value="#{v_booking.end}">
+							<td><h:inputText class="form-control" value="#{v_booking.end}" readonly="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == true}">
 									<f:convertDateTime pattern="hh:mm dd.MM.yy a" />
 								</h:inputText>
 							</td>
@@ -176,10 +184,12 @@
 							<td>
 								<h:commandLink class="badge alert-danger"
 									action="#{bookingCommand.removeBooking(v_booking.id)}"
-									value="Buchung löschen" />
+									value="Buchung löschen" 
+									rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == false}" />
 								<h:commandLink class="badge alert-success" 
 									action="#{bookingCommand.alterBooking(v_booking.id, v_booking.start, v_booking.end)}" 
-									value="Änderungen speichern" />
+									value="Änderungen speichern" 
+									rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == false}" />
 							</td>
 						</tr>
 					</ui:repeat>
@@ -188,7 +198,7 @@
 			</div>
 			<div class="panel-footer">
 
-				<o:form id="newBooking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).milestoneClosed == false}">
+				<o:form id="newBooking" includeViewParams="true" rendered="#{taskQuery.getTaskDetails(request.getParameter('tid')).closed == false}">
 
 
 					<div class="panel panel-default">

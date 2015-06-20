@@ -27,7 +27,7 @@ public class TaskDetails implements Serializable {
 	
 	private Float timeBudetAct;
 	
-	private boolean milestoneClosed;
+	private boolean closed;
 	
 	/**
 	 * Constructor for class '<em><b>TaskDetails</b></em>'.
@@ -162,20 +162,20 @@ public class TaskDetails implements Serializable {
 	}
 	
 	/**
-	 * Returns the value of attribute '<em><b>milestoneClosed</b></em>'.
+	 * Returns the value of attribute '<em><b>closed</b></em>'.
 	 */
 	
-	public boolean getMilestoneClosed() {
-		return milestoneClosed;
+	public boolean getClosed() {
+		return closed;
 	}
 	
 	/**
-	 * Sets the value of attribute '<em><b>milestoneClosed</b></em>'.
-	 * @param	milestoneClosed	the value to set.
+	 * Sets the value of attribute '<em><b>closed</b></em>'.
+	 * @param	closed	the value to set.
 	 */
 	
-	public void setMilestoneClosed(boolean milestoneClosed) {
-		this.milestoneClosed = milestoneClosed;
+	public void setClosed(boolean closed) {
+		this.closed = closed;
 	}
 	
 	/* PROTECTED REGION ID(java.class.own.code.implementation._17_0_4_2_67b0227_1431687844640_177568_3920) ENABLED START */

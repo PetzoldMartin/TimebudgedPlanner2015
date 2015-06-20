@@ -76,7 +76,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		details.setDescription(t.getDescription());
 		details.setEndDate(t.getEndTime() == null ? new Date() : t.getEndTime());
 		details.setTimeBudetAct(t.getTimeBudgetAct());
-		details.setMilestoneClosed(t.getMilestone().getState() == MilestoneState.COMPLETED);
+		details.setClosed(t.getMilestone().getState() == MilestoneState.COMPLETED || t.getState() == TaskState.CLOSED || t.getState() == TaskState.CANCELLED);
 		
 		Set<Employee> employees = t.getEmployee();
 		EmployeeList employeeList = new EmployeeList();
@@ -124,7 +124,7 @@ public class TaskQueryToolBean implements TaskQueryTool {
 		details.setTasks(taskList);
 		details.setEndDate(cTask.getEndTime() == null ? new Date() : cTask.getEndTime());
 		details.setTimeBudetAct(cTask.getTimeBudgetAct());
-		details.setMilestoneClosed(cTask.getMilestone().getState() == MilestoneState.COMPLETED);
+		details.setClosed(cTask.getMilestone().getState() == MilestoneState.COMPLETED || cTask.getState() == TaskState.CLOSED || cTask.getState() == TaskState.CANCELLED);
 		
 		Set<Employee> employees = cTask.getEmployee();
 		EmployeeList employeeList = new EmployeeList();
