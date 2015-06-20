@@ -75,11 +75,11 @@ public class BookingCommandToolBean implements BookingCommandTool {
 		/* PROTECTED REGION ID(java.implementation._17_0_4_2_67b0227_1432038866553_552341_3769__17_0_4_2_67b0227_1432633786620_604630_3638) ENABLED START */
 		// TODO: implementation of method 'BookingCommandToolBean.alterBooking(...)'
 		Booking booking = entityManager.find(Booking.class, alteredBooking.getId());
-		if(alteredBooking.getEmployeeId() != 0) {
+		if (alteredBooking.getEmployeeId() != 0) {
 			Employee employee = entityManager.find(Employee.class, alteredBooking.getEmployeeId());
 			booking.setEmployee(employee);
 		}
-		if(alteredBooking.getTaskId() != 0) {
+		if (alteredBooking.getTaskId() != 0) {
 			Task task = entityManager.find(Task.class, alteredBooking.getTaskId());
 			booking.setTask(task);
 		}
