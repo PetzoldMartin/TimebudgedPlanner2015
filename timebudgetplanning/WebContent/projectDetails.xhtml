@@ -34,7 +34,7 @@
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Projekt
-									ID: </span> <span class="form-control">
+									ID: </span> <span readonly="true" class="form-control">
 									#{request.getParameter('pid')} </span>
 							</div>
 						</div>
@@ -63,7 +63,7 @@
 						<div class="list-group-item">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right" class="input-group-addon">Status
-									:</span> <span class="form-control  "> <span class="badge">
+									:</span> <span readonly="true" class="form-control  "> <span  class="badge">
 										#{projectQuery.getProjectDetails(request.getParameter('pid')).status}
 								</span>
 								
@@ -86,13 +86,13 @@
 						<div class="list-group-item">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Enddatum
-									:</span>
-								<h:outputText class="form-control"
+									:</span> 
+								<h:inputText readonly="true"   class="form-control"
 									value="#{projectQuery.getProjectDetails(request.getParameter('pid')).endDate}"
-									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).endDate != null}">
+									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).endDate != null}" >
 									<f:convertDateTime pattern="dd.MM.yyyy" />
-								</h:outputText>
-								<h:outputText class="form-control" value="nicht bekannt"
+								</h:inputText>
+								<h:inputText  readonly="true" class="form-control" value="nicht bekannt"
 									rendered="#{projectQuery.getProjectDetails(request.getParameter('pid')).endDate == null}" />
 
 							</div>
@@ -111,8 +111,8 @@
 
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
-								<span style="text-align: right;" class="input-group-addon">Verbrauchtes
-									Zeitbudget: </span> <span class="form-control">
+								<span  style="text-align: right;" class="input-group-addon">Verbrauchtes
+									Zeitbudget: </span> <span readonly="true" class="form-control">
 									#{projectQuery.getProjectDetails(request.getParameter('pid')).timeBudetAct}
 								</span>
 							</div>

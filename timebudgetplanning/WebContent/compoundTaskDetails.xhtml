@@ -28,7 +28,7 @@
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">
-									Aufgaben ID:</span><span class="form-control">
+									Aufgaben ID:</span><span readonly="true" class="form-control">
 									#{request.getParameter('tid')} </span>
 							</div>
 						</div>
@@ -50,7 +50,7 @@
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">
-									Enddatum:</span><span class="form-control"><h:outputText
+									Enddatum:</span><span readonly="true" class="form-control"><h:outputText 
 										value="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate}"
 										rendered="#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).endDate != null}">
 										<f:convertDateTime pattern="dd.MM.yyyy" />
@@ -60,7 +60,7 @@
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">
-									Verbrauchtes Zeitbudget:</span><span class="form-control">
+									Verbrauchtes Zeitbudget:</span><span readonly="true" class="form-control">
 									#{taskQuery.getCompoundTaskDetails(request.getParameter('tid')).timeBudetAct}
 								</span>
 							</div>

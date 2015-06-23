@@ -31,7 +31,7 @@
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Meilenstein
-									ID: </span> <span class="form-control">
+									ID: </span> <span readonly="true" class="form-control">
 									#{request.getParameter('mid')} </span>
 							</div>
 						</div>
@@ -59,16 +59,16 @@
 
 						<div class="list-group-item">
 							<div class="input-group input-group-lg">
-								<span style="text-align: right;" class="input-group-addon">
+								<span  style="text-align: right;" class="input-group-addon">
 									<h:outputText value="Geplantes Enddatum:"
 										rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'OPEN'}" />
 									<h:outputText value="Enddatum:"
 										rendered="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}" />
 
 								</span>
-								<h:inputText class="form-control"
+								<h:inputText  class="form-control"
 									value="#{alteredMilestoneDTO.endDatePlanned}"
-									readonly="#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state.name() == 'COMPLETED'}">
+									readonly="true">
 									<f:convertDateTime pattern="dd.MM.yyyy" />
 								</h:inputText>
 
@@ -79,7 +79,7 @@
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Verbrauchtes
-									Zeitbudget: </span> <span class="form-control">
+									Zeitbudget: </span> <span readonly="true" class="form-control">
 									#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).timeBudetAct}
 								</span>
 							</div>
@@ -88,7 +88,7 @@
 						<div class="list-group-item ">
 							<div class="input-group input-group-lg">
 								<span style="text-align: right;" class="input-group-addon">Status
-									: </span> <span class="form-control  "> <span class="badge">
+									: </span> <span readonly="true" class="form-control  "> <span class="badge">
 										#{milestoneQuery.getMilestoneDetails(request.getParameter('mid')).state}
 								</span>
 								</span>
